@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10320" started-at="2015-02-10T05:22:39Z" finished-at="2015-02-10T05:22:49Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10320" started-at="2015-02-10T05:22:39Z" finished-at="2015-02-10T05:22:49Z">
+      <class name="com.ptl.testcases.LoginTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.ptl.testcases.LoginTest@399f45b1]" name="init" is-config="true" duration-ms="18383" started-at="2015-02-10T10:52:20Z" finished-at="2015-02-10T10:52:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="loginTest(java.util.Hashtable)[pri:0, instance:com.ptl.testcases.LoginTest@399f45b1]" name="loginTest" duration-ms="10280" started-at="2015-02-10T10:52:39Z" data-provider="getLoginData" finished-at="2015-02-10T10:52:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Username=admin, Password=prison, Runmode=Yes}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+      </class> <!-- com.ptl.testcases.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
