@@ -15,11 +15,13 @@ public class Constants {
 	public static final String username = "//*[@id='login-form-login']";
 	public static final String password = "//*[@id='login-form-password']";
 	public static final String login = "//*[@id='login-form']/button";
-	
+	public static final String LogOutLink ="//*[@id='w1']/li[6]/a";
 	
 	//Home Page
-	public static final String Home_PageHeader = "//img[contains(@alt, 'placeholder image')]/ancestor::div[1]/h1";
+	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
 	public static final String Home_PageHeaderText = "Prison Information Management System";
+	public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
+	public static final String Home_PageHeaderText2 = "Login";
 	
 	
 	// Top Menu Links
@@ -36,7 +38,8 @@ public class Constants {
 	public static final String PostRegistrationMainLink = "//a[text()='Post Registration ']";
 	public static final String PostRegistrationSubLink = "//a[text()='Post Registration']";
 	public static final String AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";
-	public static final String LogOut = "//*[text()='Logout (admin)']";
+	public static final String LogOut = "//*[text()='Logout (admin_wataraka)']";
+	//Logout (admin_wataraka)
 	
 	
 	//New Admission Page
