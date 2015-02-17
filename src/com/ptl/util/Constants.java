@@ -20,6 +20,7 @@ public class Constants {
 	//Home Page
 	public static final String Home_PageHeader = "//img[contains(@alt, 'placeholder image')]/ancestor::div[1]/h1";
 	public static final String Home_PageHeaderText = "Prison Information Management System";
+	public static final String Home_AllocateLocationLink = ".//*[@id='w4']/li[2]/a";
 	
 	
 	// Top Menu Links
@@ -82,4 +83,30 @@ public class Constants {
 	public static final String CreateAdmission_HistoryTab = "";
 	
 	
+	//Allocate Location Page	
+	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
+	public static final String AllocateLocation_ExpectedHeader = "Allocate Location";
+	public static final String AllocateLocation_RegNoSearchField = "(.//*[@id='w0-filters']//input)[1]";
+	public static final String AllocateLocation_BiometricSearchField = "(.//*[@id='w0-filters']//input)[2]";
+	public static final String AllocateLocation_NameSearchField = "(.//*[@id='w0-filters']//input)[3]";
+	public static final String AllocateLocation_OtherName1SearchField = "(.//*[@id='w0-filters']//input)[4]";
+	public static final String AllocateLocation_LocationSearchField = "(.//*[@id='w0-filters']//input)[5]";
+	public static final String AllocateLocation_TableFirstLink = "(.//*[@id='w0']//td[7]//a)[1]";
+	public static final String AllocateLocation_LocationDropdown = ".//*[@id='admission-adm_current_permenent_location_id']";
+	public static final String AllocateLocation_SaveLocation = ".//*[text()='Save']";
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
