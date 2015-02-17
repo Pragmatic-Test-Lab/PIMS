@@ -82,4 +82,25 @@ public class Constants {
 	public static final String CreateAdmission_HistoryTab = "";
 	
 	
+	
+	//Registration Page:
+	public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
+	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
+	public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
+	public static final String InmateRegistration_Personal_CallName2 = "//*[@id='admission-adm_call_name2']";
+	public static final String InmateRegistration_Personal_AddressLine1 = "//*[@id='admission-adm_address_line_1']";
+	public static final String InmateRegistration_Personal_AddressLine2 = "//*[@id='admission-adm_address_line_2']";
+	public static final String InmateRegistration_Personal_PostOffice = "//*[@id='admission-adm_delivery_post_office']";
+	public static final String InmateRegistration_Personal_PostalCode = "//*[@id='admission-adm_address_postal_code']";
+	public static final String InmateRegistration_Personal_Country = "//*[@id='admission-adm_address_country']";
+	public static final String InmateRegistration_Personal_Province = "//*[@id='admission-adm_province_id']";
+	public static final String InmateRegistration_Personal_District = "//*[@id='admission-adm_district_id']";
+	public static final String InmateRegistration_Personal_DS = "//*[@id='admission-adm_ds_id']";
+	public static final String InmateRegistration_Personal_GSDivision = "//*[@id='admission-adm_gn_devision_id']";
+	public static final String InmateRegistration_Personal_City = "//*[@id='admission-adm_city_id']";
+	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
+	public static final String InmateRegistration_Personal_Update = "//*[@id='w0']/div[2]/button";
+	
+	
 }
