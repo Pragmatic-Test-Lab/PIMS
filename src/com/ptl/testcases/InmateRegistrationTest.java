@@ -37,6 +37,7 @@ public class InmateRegistrationTest extends TestBase {
 		System.out.println("************************************************");
 
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		//add comment
 		
 		
 		if (!isLoggedIn) {
