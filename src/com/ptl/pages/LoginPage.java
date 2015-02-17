@@ -32,9 +32,8 @@ public class LoginPage {
 		// validate login - successful
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-		
+
 		return homePage;
 	}
-	
-	
+
 }
