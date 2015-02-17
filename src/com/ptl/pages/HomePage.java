@@ -4,11 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
-
 import com.ptl.util.Constants;
 
 public class HomePage {
@@ -28,6 +23,9 @@ public class HomePage {
 	@FindBy(xpath=Constants.LogOutLink)
 	WebElement LogoutLink;
 	
+	//Registration Menu
+	@FindBy(xpath = Constants.Home_RegistrationLink)
+	WebElement RegistrationLink;
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
 	WebElement AllocateLocationLink;
 
@@ -46,6 +44,7 @@ public class HomePage {
 
 	public AllocateLocation goToAllocateLocation() {
 
+		RegistrationLink.click();
 		AllocateLocationLink.click();		
 		AllocateLocation allocateLocation = PageFactory.initElements(driver,
 				AllocateLocation.class);
