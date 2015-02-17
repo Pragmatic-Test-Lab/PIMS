@@ -4,10 +4,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import com.ptl.util.Constants;
 
 public class HomePage {
 
+	@FindBy(xpath=Constants.RegistrationMainLink)
+	WebElement registrationMainLink;
+	@FindBy(xpath=Constants.RegistrationSubLink)
+	WebElement registrationSubLink;
+	
+	
+	public InmateRegistration goToInmateRegistration(){
+	    registrationMainLink.click();
+	    registrationSubLink.click();
+		InmateRegistration inmateRegistration = PageFactory.initElements(driver, InmateRegistration.class);
+	    return inmateRegistration;
+	}
+	
 	WebDriver driver;
 
 	@FindBy(xpath = Constants.Home_PageHeader)
@@ -23,7 +37,6 @@ public class HomePage {
 	@FindBy(xpath=Constants.LogOutLink)
 	WebElement LogoutLink;
 	
-	//Registration Menu
 	@FindBy(xpath = Constants.Home_RegistrationLink)
 	WebElement RegistrationLink;
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
@@ -44,7 +57,6 @@ public class HomePage {
 
 	public AllocateLocation goToAllocateLocation() {
 
-		RegistrationLink.click();
 		AllocateLocationLink.click();		
 		AllocateLocation allocateLocation = PageFactory.initElements(driver,
 				AllocateLocation.class);
@@ -66,3 +78,4 @@ public class HomePage {
 	}
 
 }
+

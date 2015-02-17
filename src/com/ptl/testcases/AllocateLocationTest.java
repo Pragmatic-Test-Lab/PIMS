@@ -128,3 +128,4 @@ public class AllocateLocationTest extends TestBase {
 
 	}
 }
+
