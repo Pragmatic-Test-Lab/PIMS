@@ -10,12 +10,12 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
 import com.ptl.util.TestUtil;
 
-
-public class LoginTest extends TestBase {
+public class LogoutTest extends TestBase {
 	HomePage landingPage = null;
 
 	@BeforeSuite
@@ -29,7 +29,7 @@ public class LoginTest extends TestBase {
 	
 	
 	@Test(dataProvider = "getLoginData")
-	public void loginTest(Hashtable<String, String> data) {
+	public void logoutTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Login Test", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
@@ -42,14 +42,15 @@ public class LoginTest extends TestBase {
 		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 		
 		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
+		 landingPage.gotoLogout();
 		
-		String ActualHeader = landingPage.getActualPageHeader();
-		String ExpectedHeader = landingPage.getExpectedPageHeader();
+		String ActualHeader2 = landingPage.getActualPageHeader2();
+		String ExpectedHeader2 = landingPage.getExpectedPageHeader2();
 		
-		Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not login!");
+		Assert.assertTrue(ActualHeader2.equalsIgnoreCase(ExpectedHeader2), "Could not logout!");
 		
-		isLoggedIn=true;
-		APPLICATION_LOGS.debug("logged in");
+		isLoggedout=true;
+		APPLICATION_LOGS.debug("logged out");
 		//landingPage.gotoProfile();
 		APPLICATION_LOGS.debug("In Home page");
 	

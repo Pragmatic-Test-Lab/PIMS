@@ -32,12 +32,7 @@ public class LoginPage {
 		// validate login - successful
 
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-		String LOGOUT = logOut.getText();
-		if (LOGOUT.equalsIgnoreCase("Logout")) {
-			TestBase.isLoggedIn = true;
-		} else {
-			TestBase.isLoggedIn = false;
-		}
+
 		return homePage;
 	}
 	
