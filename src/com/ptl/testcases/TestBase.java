@@ -29,6 +29,7 @@ public class TestBase {
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
 	public static boolean isLoggedout = false;
+	public static boolean isPasswordcorrect = false;
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")+"\\src\\com\\ptl\\data\\TestData.xlsx");
 	
 	

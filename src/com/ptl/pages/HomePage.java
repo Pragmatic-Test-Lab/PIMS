@@ -17,6 +17,12 @@ public class HomePage {
 	WebElement pageHeader;
 	String ExpectedPageHeader = Constants.Home_PageHeaderText;
 	
+	
+	@FindBy(xpath=Constants.PasswordError)
+	WebElement ErrorMessage2;
+	String ExpectedErrorMessage = Constants.PasswordErrorText;
+	String ErrorMessage;
+	
 	String ActualPageHeader;
 	@FindBy(xpath=Constants.Home_PageHeader2)
 	WebElement pageHeader2;
@@ -25,7 +31,12 @@ public class HomePage {
 	String ActualPageHeader2;
 	@FindBy(xpath=Constants.LogOutLink)
 	WebElement LogoutLink;
-		
+	
+	String loginline;
+	@FindBy(xpath=Constants.Loginline2)
+	WebElement loginline2;
+	String emptyLogin= Constants.emptylogin;
+	
 	public HomePage(WebDriver dr){
 		driver = dr;
 		
@@ -39,13 +50,31 @@ public class HomePage {
 		return ExpectedPageHeader;
 	}
 	
+	public String getErrorMessage(){
+		return ErrorMessage = ErrorMessage2.getText();
+	}
+		
+	public String getExpectedErrorMessage(){
+		return ExpectedErrorMessage;
+	}
+	
+
+public String getExpectedPageHeader2(){
+		return ExpectedPageHeader2;
+	}
+	
 	public String getActualPageHeader2(){
 		return ActualPageHeader = pageHeader2.getText();
 	}
 	
-	public String getExpectedPageHeader2(){
-		return ExpectedPageHeader2;
+	public String getloginline(){
+		return loginline = loginline2.getText();
 	}
+	
+	public String getemptylogin(){
+		return emptyLogin;
+	}
+	
 	public LoginPage gotoLogout(){
 		LogoutLink.click();
 		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);

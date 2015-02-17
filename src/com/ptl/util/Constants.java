@@ -16,6 +16,11 @@ public class Constants {
 	public static final String password = "//*[@id='login-form-password']";
 	public static final String login = "//*[@id='login-form']/button";
 	public static final String LogOutLink ="//*[@id='w1']/li[6]/a";
+	public static final String PasswordError ="//*[@id='login-form']/div[2]/div";
+	public static final String PasswordErrorText ="Invalid login or password";
+	public static final String Loginline2 ="//*[@id='login-form-login']";
+	public static final String emptylogin ="";
+	
 	
 	//Home Page
 	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
