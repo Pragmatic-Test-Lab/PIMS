@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ptl.testcases.LoginTest">
+      <class name="com.ptl.testcases.AllocateLocationTest">
         <methods>
           <include name="init"/>
-          <include name="loginTest"/>
+          <include name="loginToSystem" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.ptl.testcases.LoginTest -->
+      </class> <!-- com.ptl.testcases.AllocateLocationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

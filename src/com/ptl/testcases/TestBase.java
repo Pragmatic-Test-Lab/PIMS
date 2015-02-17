@@ -28,6 +28,7 @@ public class TestBase {
 	public static WebDriver driver = null;
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
+	public static boolean isLoggedout = false;
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")+"\\src\\com\\ptl\\data\\TestData.xlsx");
 	
 	
@@ -71,6 +72,7 @@ public class TestBase {
 				FirefoxProfile profile = allProfiles.getProfile("Selenium");
 				//FirefoxBinary binary = new FirefoxBinary(new File("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"));
 				driver = new FirefoxDriver(profile);
+				//driver = new FirefoxDriver();
 				
 			}else if (CONFIG.getProperty("browser").equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//drivers//chromedriver.exe");
