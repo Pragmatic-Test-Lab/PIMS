@@ -1,5 +1,4 @@
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,18 +8,6 @@ import com.ptl.util.Constants;
 
 public class HomePage {
 
-	@FindBy(xpath=Constants.RegistrationMainLink)
-	WebElement registrationMainLink;
-	@FindBy(xpath=Constants.RegistrationSubLink)
-	WebElement registrationSubLink;
-	
-	
-	public InmateRegistration goToInmateRegistration(){
-	    registrationMainLink.click();
-	    registrationSubLink.click();
-		InmateRegistration inmateRegistration = PageFactory.initElements(driver, InmateRegistration.class);
-	    return inmateRegistration;
-	}
 	
 	WebDriver driver;
 
@@ -39,6 +26,13 @@ public class HomePage {
 	
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
 	WebElement AllocateLocationLink;
+	
+	@FindBy(xpath=Constants.RegistrationMainLink)
+	WebElement registrationMainLink;
+	@FindBy(xpath=Constants.RegistrationSubLink)
+	WebElement registrationSubLink;
+	
+	
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
@@ -61,6 +55,14 @@ public class HomePage {
 		return allocateLocation;
 	}
 	
+
+	public InmateRegistration goToInmateRegistration(){
+	    registrationMainLink.click();
+	    registrationSubLink.click();
+		InmateRegistration inmateRegistration = PageFactory.initElements(driver, InmateRegistration.class);
+	    return inmateRegistration;
+	}
+	
 	public String getActualPageHeader2(){
 		return ActualPageHeader = pageHeader2.getText();
 	}
@@ -76,4 +78,4 @@ public class HomePage {
 	}
 
 }
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS
+
