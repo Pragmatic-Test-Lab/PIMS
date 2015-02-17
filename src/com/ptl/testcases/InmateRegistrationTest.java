@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.ptl.pages.HomePage;
@@ -26,7 +28,7 @@ public class InmateRegistrationTest extends TestBase {
 		APPLICATION_LOGS.debug("Browser initialized in Inmate Registration Test");
 	}
 
-	@Test(dataProvider = "getInmatePersonalData")
+	@Test(dataProvider = "getInmatePersonalData")   //PIM-1079
 	public void loginTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration-Personal", xls) || data.get("Runmode").equals("No"))
@@ -58,13 +60,30 @@ public class InmateRegistrationTest extends TestBase {
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		InmateRegistration inmateRegistration  = landingPage.goToInmateRegistration();
 		
-		//String ActualHeader = allocateLocation.getHeader();
-		//String ExpectedHeader = allocateLocation.getExpectedHeader();
+		String ActualHeader = inmateRegistration.getHeader();
+	    String ExpectedHeader = inmateRegistration.getExpectedHeader();
 		
-		//Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Allocate Location");
+	//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
 		
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
+		
+		inmateRegistration.doAddPersonalDetailsOfInmate(data.get("OtherName1"),data.get("OtherName2"), 
+				data.get("CallName1"), data.get("CallName2"),data.get("AddrLine1"), data.get("AddrLine2"), 
+				data.get("PostOffice"),data.get("PostCode"), data.get("Country"),	data.get("Province"), 
+				data.get("District"),data.get("DS"), data.get("GsDiv"), data.get("City"),data.get("PoliceDiv"));
 	
 	}
+	
+	@DataProvider
+	public Object[][] getInmatePersonalData() {
+		return TestUtil.getTestData("Inmate Registration-Personal", xls);
+		
+	}
+	
+	@AfterSuite
+	public void quite(){
+		driver.quit();
+	}
+	
 }
 

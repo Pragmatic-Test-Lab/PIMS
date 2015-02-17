@@ -44,10 +44,20 @@ public class InmateRegistration {
 	public WebElement policeDivision;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
 	public WebElement updateButton;
+	@FindBy(xpath = Constants.InmateRegistration_Header)
+	public WebElement HeaderField;	
 	
 	
 	public InmateRegistration(WebDriver dr){		
 		driver = dr;
+	}
+	
+	public String getHeader(){		
+		return HeaderField.getText();
+	}
+	
+	public String getExpectedHeader(){
+		return Constants.InmateRegistration_ExpectedHeader;
 	}
 	
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 
