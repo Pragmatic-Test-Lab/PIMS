@@ -16,6 +16,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import com.ptl.pages.TopMenu;
 import com.ptl.util.Constants;
@@ -33,6 +35,7 @@ public class TestBase {
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
+	@BeforeSuite
 	public void initConfiguration() {
 
 		if (CONFIG == null) {
@@ -45,13 +48,16 @@ public class TestBase {
 			try {
 				fs = new FileInputStream(Constants.CONFIG_FILE_PATH);
 				CONFIG.load(fs);
+				APPLICATION_LOGS.debug("Configuration File initialized");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 
 	}
-
+	
+	
+	@BeforeSuite
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
@@ -115,12 +121,16 @@ public class TestBase {
 				// "E:\\Selenium\\workspace\\IEDriverServer.exe");
 				// driver = new InternetExplorerDriver();
 			}
+			APPLICATION_LOGS.debug("Browser initialized");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
 
 		}
 	}
 
+	
+	@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
