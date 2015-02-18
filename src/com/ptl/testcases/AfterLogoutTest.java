@@ -1,3 +1,4 @@
+
 package com.ptl.testcases;
 
 import java.util.Hashtable;
@@ -45,14 +46,12 @@ public class AfterLogoutTest extends TestBase {
 		
 		//String ActualHeader2 = landingPage.getActualPageHeader2();
 		String Loginline= landingPage.getloginline();
-		//System.out.println("what it should:"+Loginline);
 		String emptylogin= landingPage.getemptylogin();
-		//System.out.println("what it is:"+emptylogin);
-		String Passwordline= landingPage.getpasswordline();
-		String emptypassword= landingPage.getemptypassword();
+		//String Passwordline= landingPage.getpasswordline();
+		//String emptypassword= landingPage.getemptypassword();
 		//String ExpectedHeader2 = landingPage.getExpectedPageHeader2();
 		
-		Assert.assertTrue(Loginline.equalsIgnoreCase(emptylogin) && Passwordline.equalsIgnoreCase(emptypassword), "login not empty");
+		Assert.assertTrue(Loginline.equalsIgnoreCase(emptylogin), "login not empty");
 		
 		isLoggedout=true;
 		APPLICATION_LOGS.debug("logged out");
@@ -69,3 +68,4 @@ public class AfterLogoutTest extends TestBase {
 	}
 
 }
+

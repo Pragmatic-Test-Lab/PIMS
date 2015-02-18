@@ -23,6 +23,8 @@ public class HomePage {
 	WebElement RegistrationLink;
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
 	WebElement AllocateLocationLink;
+	@FindBy(xpath = Constants.Home_PropertyManagementLink)
+	WebElement PropertyManagementLink;
 
 	@FindBy(xpath = Constants.Home_PageHeader2)
 	WebElement pageHeader2;
@@ -44,7 +46,7 @@ public class HomePage {
 	@FindBy(xpath = Constants.Loginline2)
 	WebElement loginline2;
 	String emptyLogin = Constants.emptylogin;
-	
+
 	String passwordline;
 	@FindBy(xpath = Constants.passwordline2)
 	WebElement PasswordLine2;
@@ -55,28 +57,12 @@ public class HomePage {
 
 	}
 
-	public InmateRegistration goToInmateRegistration() {
-		registrationMainLink.click();
-		registrationSubLink.click();
-		InmateRegistration inmateRegistration = PageFactory.initElements(
-				driver, InmateRegistration.class);
-		return inmateRegistration;
-	}
-
 	public String getErrorMessage() {
 		return ErrorMessage = ErrorMessage2.getText();
 	}
 
 	public String getExpectedErrorMessage() {
 		return ExpectedErrorMessage;
-	}
-
-	public String getExpectedPageHeader2() {
-		return ExpectedPageHeader2;
-	}
-
-	public String getActualPageHeader2() {
-		return ActualPageHeader = pageHeader2.getText();
 	}
 
 	public String getloginline() {
@@ -90,17 +76,9 @@ public class HomePage {
 	public String getpasswordline() {
 		return passwordline = PasswordLine2.getText();
 	}
-	
+
 	public String getemptypassword() {
 		return emptyPassword;
-	}
-
-	
-	public LoginPage gotoLogout() {
-		LogoutLink.click();
-		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);
-		System.out.println("Logout done");
-		return Logout;
 	}
 
 	public String getActualPageHeader() {
@@ -111,12 +89,43 @@ public class HomePage {
 		return ExpectedPageHeader;
 	}
 
-	public AllocateLocation goToAllocateLocation() {
+	public AllocateLocationPage goToAllocateLocation() {
 
 		AllocateLocationLink.click();
-		AllocateLocation allocateLocation = PageFactory.initElements(driver,
-				AllocateLocation.class);
+
+		AllocateLocationPage allocateLocation = PageFactory.initElements(
+				driver, AllocateLocationPage.class);
 		return allocateLocation;
 	}
 
+	public InmateRegistration goToInmateRegistration() {
+		registrationMainLink.click();
+		registrationSubLink.click();
+		InmateRegistration inmateRegistration = PageFactory.initElements(
+				driver, InmateRegistration.class);
+		return inmateRegistration;
+	}
+
+	public String getActualPageHeader2() {
+		return ActualPageHeader = pageHeader2.getText();
+	}
+
+	public String getExpectedPageHeader2() {
+		return ExpectedPageHeader2;
+	}
+
+	public LoginPage gotoLogout() {
+		LogoutLink.click();
+		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);
+		System.out.println("Logout done");
+		return Logout;
+	}
+
+	public PropertyManagement goToManageProperty() {
+
+		PropertyManagementLink.click();
+		PropertyManagement propertyManagement = PageFactory.initElements(
+				driver, PropertyManagement.class);
+		return propertyManagement;
+	}
 }

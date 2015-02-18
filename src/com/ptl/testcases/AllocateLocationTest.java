@@ -12,15 +12,17 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.AllocateLocation;
+import com.ptl.pages.AllocateLocationPage;
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
+import com.ptl.pages.TopMenu;
 import com.ptl.util.TestUtil;
 
 public class AllocateLocationTest extends TestBase {
 
-	HomePage landingPage = null;
-	AllocateLocation allocateLocation = null;
+	
+	AllocateLocationPage allocateLocation = null;
+	HomePage landingPage;
 	
 	String FInmate_RegNum;
 	String FInmate_Name;
@@ -37,10 +39,6 @@ public class AllocateLocationTest extends TestBase {
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
 
-		APPLICATION_LOGS.setLevel(Level.ALL);
-		ConsoleHandler handler = new ConsoleHandler();
-		handler.setLevel(java.util.logging.Level.ALL);
-
 		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls)
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
@@ -48,24 +46,7 @@ public class AllocateLocationTest extends TestBase {
 		System.out.println("************************************************");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		if (!isLoggedIn) {
-			APPLICATION_LOGS.debug("Attempting login to system");
-			driver.get(CONFIG.getProperty("BASE_URL"));
-			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
-
-			landingPage = lp
-					.doLogin(data.get("Username"), data.get("Password"));
-
-			String ActualHeader = landingPage.getActualPageHeader();
-			String ExpectedHeader = landingPage.getExpectedPageHeader();
-
-			Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
-					"Could not login!");
-			APPLICATION_LOGS.debug("Successfully logged in");
-			isLoggedIn = true;
-		} else {
-			// to implement topmenu code
-		}
+		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");
 		allocateLocation = landingPage.goToAllocateLocation();
@@ -128,4 +109,3 @@ public class AllocateLocationTest extends TestBase {
 
 	}
 }
-

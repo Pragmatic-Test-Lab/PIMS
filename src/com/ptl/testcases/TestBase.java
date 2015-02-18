@@ -16,7 +16,12 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
+import com.ptl.pages.HomePage;
+import com.ptl.pages.LoginPage;
 import com.ptl.pages.TopMenu;
 import com.ptl.util.Constants;
 import com.ptl.util.ReadXLS;
@@ -33,6 +38,7 @@ public class TestBase {
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
+	@BeforeSuite
 	public void initConfiguration() {
 
 		if (CONFIG == null) {
@@ -52,6 +58,7 @@ public class TestBase {
 
 	}
 
+	@BeforeSuite
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
@@ -115,12 +122,15 @@ public class TestBase {
 				// "E:\\Selenium\\workspace\\IEDriverServer.exe");
 				// driver = new InternetExplorerDriver();
 			}
+			APPLICATION_LOGS.debug("Browser initialized");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 
 		}
 	}
 
+	@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
@@ -147,6 +157,35 @@ public class TestBase {
 			topMenu = PageFactory.initElements(driver, TopMenu.class);
 		}
 		return topMenu;
+	}
+	
+	public HomePage returnToHomePage(){
+		
+		HomePage landingPage;
+				
+		if (!isLoggedIn) {
+			APPLICATION_LOGS.debug("Attempting login to system");
+			driver.get(CONFIG.getProperty("BASE_URL"));
+			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
+
+			landingPage = lp
+					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
+
+			String ActualHeader = landingPage.getActualPageHeader();
+			String ExpectedHeader = landingPage.getExpectedPageHeader();
+
+			Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
+					"Could not login!");
+			APPLICATION_LOGS.debug("Successfully logged in");
+			isLoggedIn = true;
+		} else {
+			APPLICATION_LOGS.debug("User is already logged in, so do not want to go to the log in page");
+			topMenu = PageFactory.initElements(driver, TopMenu.class);
+			landingPage = topMenu.gotoHomePage();
+			APPLICATION_LOGS.debug("Navigated to Home page through the top menu");
+		}
+		
+		return landingPage;
 	}
 
 }
