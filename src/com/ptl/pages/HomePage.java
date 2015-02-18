@@ -44,6 +44,11 @@ public class HomePage {
 	@FindBy(xpath = Constants.Loginline2)
 	WebElement loginline2;
 	String emptyLogin = Constants.emptylogin;
+	
+	String passwordline;
+	@FindBy(xpath = Constants.passwordline2)
+	WebElement PasswordLine2;
+	String emptyPassword = Constants.emptyPassword;
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
@@ -82,6 +87,15 @@ public class HomePage {
 		return emptyLogin;
 	}
 
+	public String getpasswordline() {
+		return passwordline = PasswordLine2.getText();
+	}
+	
+	public String getemptypassword() {
+		return emptyPassword;
+	}
+
+	
 	public LoginPage gotoLogout() {
 		LogoutLink.click();
 		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);

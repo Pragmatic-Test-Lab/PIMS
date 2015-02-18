@@ -39,7 +39,9 @@ public class Constants {
 	public static final String PasswordErrorText = "Invalid login or password";
 	public static final String Loginline2 = "//*[@id='login-form-login']";
 	public static final String emptylogin = "";
-
+	public static final String passwordline2 = "//*[@id='login-form-password']";
+	public static final String emptyPassword = "";
+	
 	// Home Page
 	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
 	public static final String Home_PageHeaderText = "Prison Information Management System";
