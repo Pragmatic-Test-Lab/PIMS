@@ -1,3 +1,4 @@
+
 package com.ptl.testcases;
 
 import java.util.Hashtable;
@@ -33,15 +34,13 @@ public class AfterLogoutTest extends TestBase {
 		if(!TestUtil.isTestCaseRunmodeYes("Login Test", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
 		
-		System.out.println("************************************************");
-
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		
 		driver.get(CONFIG.getProperty("BASE_URL"));		
 		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 		
 		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
-		 landingPage.gotoLogout();
+		isLoggedIn = true;
+		
+		landingPage.gotoLogout();
 		
 		//String ActualHeader2 = landingPage.getActualPageHeader2();
 		String Loginline= landingPage.getloginline();
@@ -52,7 +51,8 @@ public class AfterLogoutTest extends TestBase {
 		
 		Assert.assertTrue(Loginline.equalsIgnoreCase(emptylogin), "login not empty");
 		
-		isLoggedout=true;
+		isLoggedIn =false;
+		
 		APPLICATION_LOGS.debug("logged out");
 		//landingPage.gotoProfile();
 		APPLICATION_LOGS.debug("In Home page");
@@ -67,3 +67,4 @@ public class AfterLogoutTest extends TestBase {
 	}
 
 }
+

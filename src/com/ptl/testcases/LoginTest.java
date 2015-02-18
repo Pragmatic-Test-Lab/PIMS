@@ -12,20 +12,14 @@ import org.testng.annotations.Test;
 
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
+import com.ptl.util.Constants;
 import com.ptl.util.TestUtil;
 
 
 public class LoginTest extends TestBase {
 	HomePage landingPage = null;
 
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
-
+	
 	
 	
 	@Test(dataProvider = "getLoginData")
@@ -34,19 +28,12 @@ public class LoginTest extends TestBase {
 		if(!TestUtil.isTestCaseRunmodeYes("Login Test", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
 		
-		System.out.println("************************************************");
-
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		
 		driver.get(CONFIG.getProperty("BASE_URL"));		
 		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 		
 		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
 		
-		String ActualHeader = landingPage.getActualPageHeader();
-		String ExpectedHeader = landingPage.getExpectedPageHeader();
-		
-		Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not login!");
+		Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText, "Could not login!");
 		
 		isLoggedIn=true;
 		APPLICATION_LOGS.debug("logged in");

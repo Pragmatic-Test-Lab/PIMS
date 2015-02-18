@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.util.Constants;
 
@@ -44,12 +45,8 @@ public class AllocateLocationInmateSelectPage {
 		return HeaderField.getText();
 	}
 
-	public String getExpectedHeader() {
-		return Constants.AllocateLocation_ExpectedHeader;
-	}
-
 	// Search for inmate
-	public void doSearch(String RegNo, String Biometric, String Name,
+	public AllocateLocationInmateSelectPage doSearch(String RegNo, String Biometric, String Name,
 			String OtherName1, String Location) {
 
 		RegNoSearchField.sendKeys(RegNo);
@@ -59,6 +56,11 @@ public class AllocateLocationInmateSelectPage {
 		LocationSearchField.sendKeys(Location);
 
 		LocationSearchField.sendKeys(Keys.ENTER);
+		
+		AllocateLocationInmateSelectPage searchResultPage = PageFactory
+				.initElements(driver, AllocateLocationInmateSelectPage.class);
+		
+		return searchResultPage; 
 	}
 
 	// gets First Inmates Registration No
@@ -77,8 +79,13 @@ public class AllocateLocationInmateSelectPage {
 	}
 
 	// clicks the first inmate in Table
-	public void clickFirstInmate() {
+	public AllocateLocationPage clickFirstInmate() {
+		
 		firstInmateLink.click();
+		
+		AllocateLocationPage allocateLocation = PageFactory
+				.initElements(driver, AllocateLocationPage.class);
+		return allocateLocation;
 	}
 
 

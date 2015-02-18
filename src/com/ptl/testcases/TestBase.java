@@ -33,8 +33,6 @@ public class TestBase {
 	public static WebDriver driver = null;
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
-	public static boolean isLoggedout = false;
-	public static boolean isPasswordcorrect = false;
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
@@ -171,11 +169,9 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			String ActualHeader = landingPage.getActualPageHeader();
-			String ExpectedHeader = landingPage.getExpectedPageHeader();
-
-			Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
+			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
 					"Could not login!");
+			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;
 		} else {

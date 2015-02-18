@@ -31,26 +31,30 @@ public class Constants {
 		// Page Title
 		public static final String landingPageTitle = "Home";
 
-		// Login Page
-		public static final String username = "//*[@id='login-form-login']";
-		public static final String password = "//*[@id='login-form-password']";
-		public static final String login = "//*[@id='login-form']/button";
-		public static final String PasswordError = "//*[@id='login-form']/div[2]/div";
-		public static final String PasswordErrorText = "Invalid login or password";
-		public static final String Loginline2 = "//*[@id='login-form-login']";
-		public static final String emptylogin = "";
 
-		// Home Page
-		public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
-		public static final String Home_PageHeaderText = "Prison Information Management System";
-		public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
-		public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
-		public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";	
-		public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
-		public static final String Home_PageHeaderText2 = "Login";
-		public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
 
-		// Top Menu Links
+	// Login Page
+	public static final String username = "//*[@id='login-form-login']";
+	public static final String password = "//*[@id='login-form-password']";
+	public static final String login = "//*[@id='login-form']/button";
+	public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
+	public static final String PasswordError = "//*[@id='login-form']/div[2]/div";
+	public static final String PasswordErrorText = "Invalid login or password";
+	public static final String Loginline2 = "//*[@id='login-form-login']";
+	public static final String emptylogin = "";
+	public static final String passwordline2 = "//*[@id='login-form-password']";
+	public static final String emptyPassword = "";
+	
+	// Home Page
+	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
+	public static final String Home_PageHeaderText = "Prison Information Management System";
+	public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
+	public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
+	public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
+	public static final String Home_PageHeaderText2 = "Login";
+	public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";	
+
+	// Top Menu Links
 		public static final String PIMSTopLink = "//a[text()='PIMS']";
 		public static final String AdmissionTopLink = "//*[text()='Admission ']";
 		public static final String NewAdmissionSubLink = "//*[text()='New Admission']";
@@ -69,6 +73,7 @@ public class Constants {
 
 		// New Admission Page
 		public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
+
 
 		// Create Admission Page
 		public static final String CreateAdmission_InmateCategory = "";
