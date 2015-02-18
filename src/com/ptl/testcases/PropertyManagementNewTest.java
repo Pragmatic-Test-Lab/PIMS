@@ -21,13 +21,7 @@ public class PropertyManagementNewTest extends TestBase {
 	HomePage landingPage = null;
 	PropertyManagement manageProperty = null;
 	
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
+	
 
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
@@ -35,32 +29,8 @@ public class PropertyManagementNewTest extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
-
-		System.out.println("************************************************");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		if (!isLoggedIn) {
-			APPLICATION_LOGS.debug("Attempting login to system");
-			driver.get(CONFIG.getProperty("BASE_URL"));
-			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
-
-			landingPage = lp
-					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
-
-			String ActualHeader = landingPage.getActualPageHeader();
-			String ExpectedHeader = landingPage.getExpectedPageHeader();
-
-			Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
-					"Could not login!");
-			APPLICATION_LOGS.debug("Successfully logged in");
-			isLoggedIn = true;
-		} else {
-			APPLICATION_LOGS.debug("User is already logged in, so do not want to go to the log in page");
-			topMenu = PageFactory.initElements(driver, TopMenu.class);
-			landingPage = topMenu.gotoHomePage();
-			APPLICATION_LOGS.debug("Navigated to Home page through the top menu");
-		}
 		
+		landingPage = returnToHomePage();
 		APPLICATION_LOGS.debug("Going to Property Management Page");
 		manageProperty = landingPage.goToManageProperty();
 
@@ -86,7 +56,7 @@ public class PropertyManagementNewTest extends TestBase {
 //		FInmate_Name = manageProperty.getFInmateName();
 //		FInmate_Location = manageProperty.getFInmateLocation();
 
-		System.out.println("First Inmate : " + FInmate_RegNum + " -- " + FInmate_Name + " -- " + FInmate_Location);
+		
 		manageProperty.clickFirstInmate();	
 		
 		//checks Inmate details

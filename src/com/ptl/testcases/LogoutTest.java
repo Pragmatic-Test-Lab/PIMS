@@ -18,13 +18,6 @@ import com.ptl.util.TestUtil;
 public class LogoutTest extends TestBase {
 	HomePage landingPage = null;
 
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
 
 	
 	
