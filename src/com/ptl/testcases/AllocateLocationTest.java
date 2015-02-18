@@ -12,16 +12,20 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.AllocateLocation;
+import com.ptl.pages.AllocateLocationInmateSelectPage;
+import com.ptl.pages.AllocateLocationPage;
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
 import com.ptl.pages.TopMenu;
+import com.ptl.util.Constants;
 import com.ptl.util.TestUtil;
 
 public class AllocateLocationTest extends TestBase {
 
-	HomePage landingPage = null;
-	AllocateLocation allocateLocation = null;
+	
+	AllocateLocationInmateSelectPage allocateLocationInmateSelect = null;
+	AllocateLocationPage allocationPage;
+	HomePage landingPage;
 	
 	String FInmate_RegNum;
 	String FInmate_Name;
@@ -45,35 +49,12 @@ public class AllocateLocationTest extends TestBase {
 		System.out.println("************************************************");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		if (!isLoggedIn) {
-			APPLICATION_LOGS.debug("Attempting login to system");
-			driver.get(CONFIG.getProperty("BASE_URL"));
-			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
-
-			landingPage = lp
-					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
-
-			String ActualHeader = landingPage.getActualPageHeader();
-			String ExpectedHeader = landingPage.getExpectedPageHeader();
-
-			Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
-					"Could not login!");
-			APPLICATION_LOGS.debug("Successfully logged in");
-			isLoggedIn = true;
-		} else {
-			APPLICATION_LOGS.debug("User is already logged in, so do not want to go to the log in page");
-			topMenu = PageFactory.initElements(driver, TopMenu.class);
-			landingPage = topMenu.gotoHomePage();
-			APPLICATION_LOGS.debug("Navigated to Home page through the top menu");
-		}
+		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");
-		allocateLocation = landingPage.goToAllocateLocation();
+		allocateLocationInmateSelect = landingPage.goToAllocateLocation();
 
-		String ActualHeader = allocateLocation.getHeader();
-		String ExpectedHeader = allocateLocation.getExpectedHeader();
-
-		Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
+		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
 				"Could not reach Allocate Location");
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
@@ -85,17 +66,18 @@ public class AllocateLocationTest extends TestBase {
 		//
 		// Use search if specific inmate is needed
 		//
+		//
 
 		// Saves First Inmates Registration Number, Name and Location
-		FInmate_RegNum = allocateLocation.getFInmateRegNo();
-		FInmate_Name = allocateLocation.getFInmateName();
-		FInmate_Location = allocateLocation.getFInmateLocation();
+		FInmate_RegNum = allocateLocationInmateSelect.getFInmateRegNo();
+		FInmate_Name = allocateLocationInmateSelect.getFInmateName();
+		FInmate_Location = allocateLocationInmateSelect.getFInmateLocation();
 
 		System.out.println("First Inmate : " + FInmate_RegNum + " -- " + FInmate_Name + " -- " + FInmate_Location);
-		allocateLocation.clickFirstInmate();	
+		allocationPage = allocateLocationInmateSelect.clickFirstInmate();	
 		
 		//checks Inmate details
-		boolean inmateDetailsValid = allocateLocation.validateAllocateLocationPageData(FInmate_RegNum, FInmate_Name, FInmate_Location);
+		boolean inmateDetailsValid = allocationPage.validateAllocateLocationPageData(FInmate_RegNum, FInmate_Name, FInmate_Location);
 		
 		Assert.assertTrue(inmateDetailsValid, "Inmate details in page are not Matching");
 		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
@@ -108,14 +90,13 @@ public class AllocateLocationTest extends TestBase {
 		
 		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");
 		//change Inmate Location
-		allocateLocation.changeLocation(data.get("New Location"));
+		allocationPage.changeLocation(data.get("New Location"));
 		
 		APPLICATION_LOGS.debug("Changed Inmates Location");
-
 		
 		//check if Inmate Location has changed		
 		//gets changed Inmate
-		allocateLocation.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);		
+		allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);		
 		//check location and compare
 		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");		
 		
@@ -128,4 +109,3 @@ public class AllocateLocationTest extends TestBase {
 
 	}
 }
-

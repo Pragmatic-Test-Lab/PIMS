@@ -37,6 +37,12 @@ public class Constants {
 		public static final String InmateRegistration_Classification_Pervious_Conviction = "";
 		public static final String InmateRegistration_Classifiaction_Calssification = "";
 		
+		// paths
+			public static String CONFIG_FILE_PATH = System.getProperty("user.dir") +
+					 "\\src\\com\\ptl\\config\\config.properties";
+			public static String EXCEL_Path = System.getProperty("user.dir") +
+					 "\\src\\com\\ptl\\data\\TestData.xlsx";
+		
 		// Page Title
 		public static final String landingPageTitle = "Home";
 

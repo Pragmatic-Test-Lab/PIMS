@@ -128,8 +128,5 @@ public class PropertyManagement {
 		return HeaderField.getText();
 	}
 
-	public String getExpectedHeader() {
-		return Constants.PropertyManagement_ExpectedHeader;
-	}
 	
 }

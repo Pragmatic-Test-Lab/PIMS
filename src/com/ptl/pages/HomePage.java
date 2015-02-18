@@ -10,7 +10,6 @@ public class HomePage {
 
 	WebDriver driver;
 
-	String ExpectedPageHeader = Constants.Home_PageHeaderText;
 	String ActualPageHeader;
 
 	@FindBy(xpath = Constants.Home_RegistrationLink)
@@ -21,7 +20,6 @@ public class HomePage {
 
 	@FindBy(xpath = Constants.Home_PageHeader2)
 	WebElement pageHeader2;
-	String ExpectedPageHeader2 = Constants.Home_PageHeaderText2;
 
 	String ActualPageHeader2;
 	@FindBy(xpath = Constants.LogOutLink)
@@ -40,13 +38,16 @@ public class HomePage {
 
 	@FindBy(xpath = Constants.PasswordError)
 	WebElement ErrorMessage2;
-	String ExpectedErrorMessage = Constants.PasswordErrorText;
-	String ErrorMessage;
 
 	String loginline;
 	@FindBy(xpath = Constants.Loginline2)
 	WebElement loginline2;
 	String emptyLogin = Constants.emptylogin;
+
+	String passwordline;
+	@FindBy(xpath = Constants.passwordline2)
+	WebElement PasswordLine2;
+	String emptyPassword = Constants.emptyPassword;
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
@@ -54,11 +55,7 @@ public class HomePage {
 	}
 
 	public String getErrorMessage() {
-		return ErrorMessage = ErrorMessage2.getText();
-	}
-
-	public String getExpectedErrorMessage() {
-		return ExpectedErrorMessage;
+		return ErrorMessage2.getText();
 	}
 
 	public String getloginline() {
@@ -69,19 +66,24 @@ public class HomePage {
 		return emptyLogin;
 	}
 
+	public String getpasswordline() {
+		return passwordline = PasswordLine2.getText();
+	}
+
+	public String getemptypassword() {
+		return emptyPassword;
+	}
+
 	public String getActualPageHeader() {
 		return ActualPageHeader = pageHeader.getText();
 	}
 
-	public String getExpectedPageHeader() {
-		return ExpectedPageHeader;
-	}
-
-	public AllocateLocation goToAllocateLocation() {
+	public AllocateLocationInmateSelectPage goToAllocateLocation() {
 
 		AllocateLocationLink.click();
-		AllocateLocation allocateLocation = PageFactory.initElements(driver,
-				AllocateLocation.class);
+
+		AllocateLocationInmateSelectPage allocateLocation = PageFactory
+				.initElements(driver, AllocateLocationInmateSelectPage.class);
 		return allocateLocation;
 	}
 
@@ -95,10 +97,6 @@ public class HomePage {
 
 	public String getActualPageHeader2() {
 		return ActualPageHeader = pageHeader2.getText();
-	}
-
-	public String getExpectedPageHeader2() {
-		return ExpectedPageHeader2;
 	}
 
 	public LoginPage gotoLogout() {
