@@ -72,7 +72,7 @@ public class InmateRegistration {
 	}
 	
 	public String getExpectedHeader(){
-		return Constants.InmateRegistration_ExpectedHeader;
+	//	return Constants.InmateRegistration_ExpectedHeader;
 	}
 	
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 

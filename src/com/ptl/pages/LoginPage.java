@@ -35,6 +35,5 @@ public class LoginPage {
 
 		return homePage;
 	}
-	
-	
+
 }
