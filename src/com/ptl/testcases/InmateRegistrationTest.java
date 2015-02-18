@@ -28,8 +28,8 @@ public class InmateRegistrationTest extends TestBase {
 		APPLICATION_LOGS.debug("Browser initialized in Inmate Registration Test");
 	}
 
-	@Test(dataProvider = "getInmatePersonalData")   //PIM-1079
-	public void loginTest(Hashtable<String, String> data) {
+	@Test(dataProvider = "getInmatePersonalData")   //PIM-1080
+	public void enterInmatePersonalDataTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration-Personal", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
@@ -75,9 +75,61 @@ public class InmateRegistrationTest extends TestBase {
 	
 	}
 	
+	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
+	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
+
+		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Classification", xls) || data.get("Runmode").equals("No"))
+		throw new SkipException("Skipping the test");
+		
+		System.out.println("************************************************");
+
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		//add comment to the
+		
+		
+		if (!isLoggedIn) {
+		APPLICATION_LOGS.debug("Attempting login to system");
+		driver.get(CONFIG.getProperty("BASE_URL"));
+		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
+		
+		landingPage = lp.doLogin(data.get("Username"), data.get("Password"));
+		
+		String ActualHeader = landingPage.getActualPageHeader();
+		String ExpectedHeader = landingPage.getExpectedPageHeader();
+		
+		Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
+		"Could not login!");
+		APPLICATION_LOGS.debug("Successfully logged in");
+		isLoggedIn = true;
+		} else {
+		//to implement topmenu code
+		}
+		
+		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
+		InmateRegistration inmateRegistration  = landingPage.goToInmateRegistration();
+		
+		String ActualHeader = inmateRegistration.getHeader();
+	    String ExpectedHeader = inmateRegistration.getExpectedHeader();
+		
+	//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
+		
+		APPLICATION_LOGS.debug("Reached Allocate Location Page");
+		
+		inmateRegistration.doAddCalsifiactionDetailsOfInmate(data.get("gender"),data.get("preConvict"),data.get("classif")); 
+	
+	
+	}
+	
+	
 	@DataProvider
 	public Object[][] getInmatePersonalData() {
 		return TestUtil.getTestData("Inmate Registration-Personal", xls);
+		
+	}
+	
+	@DataProvider
+	public Object[][] getInmateClassificationData() {
+		return TestUtil.getTestData("Inmate Reg-Classification", xls);
 		
 	}
 	

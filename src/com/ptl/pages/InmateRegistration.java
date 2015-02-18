@@ -12,6 +12,16 @@ public class InmateRegistration {
 	
 	@FindBy(xpath = Constants.InmateRegistaration_FirtstRow_EditButton)
 	public WebElement editFirstInmate;
+	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
+	public WebElement updateButton;
+	@FindBy(xpath = Constants.InmateRegistration_Header)
+	public WebElement HeaderField;
+	@FindBy(xpath = Constants.InmateRegistration_personal_tab)
+	public WebElement tab_personal;
+	@FindBy(xpath = Constants.InmateRegistration_calssfication_tab)
+	public WebElement tab_classification;
+	
+	//Personal details tab
 	@FindBy(xpath = Constants.InmateRegistration_Personal_OtherName1)
 	public WebElement otherName1;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_OtherName2)
@@ -42,10 +52,15 @@ public class InmateRegistration {
 	public WebElement city;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_PoliceDivision)
 	public WebElement policeDivision;
-	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
-	public WebElement updateButton;
-	@FindBy(xpath = Constants.InmateRegistration_Header)
-	public WebElement HeaderField;	
+	
+	
+	//Classification details tab
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_Gender)
+	public WebElement gender;
+	@FindBy(xpath = Constants.InmateRegistration_Classification_Pervious_Conviction)
+	public WebElement previous_conviction;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_Calssification)
+	public WebElement classification;
 	
 	
 	public InmateRegistration(WebDriver dr){		
@@ -67,6 +82,7 @@ public class InmateRegistration {
 		
 		//TODO : add method to search by reg number
 		editFirstInmate.click();
+		tab_personal.click();
 		otherName1.sendKeys(othrName1);
 		otherName2.sendKeys(othrName2);
 		callName1.sendKeys(cllName1);
@@ -82,6 +98,18 @@ public class InmateRegistration {
 		gsDivision.sendKeys(gsDiv);
 		city.sendKeys(cty);
 		policeDivision.sendKeys(plicDiv);
+		updateButton.click();
+		
+	}
+	
+	public void doAddCalsifiactionDetailsOfInmate(String gender, String preConvictions, String classif){
+		
+		//TODO : add method to search by reg number
+		editFirstInmate.click();
+		tab_classification.click();
+		this.gender.sendKeys(gender);
+		previous_conviction.sendKeys(preConvictions);
+		classification.sendKeys(classif);		
 		updateButton.click();
 		
 	}
