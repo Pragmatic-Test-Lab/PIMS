@@ -29,10 +29,9 @@ public class TestBase {
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
 	public static boolean isLoggedout = false;
-	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")+"\\src\\com\\ptl\\data\\TestData.xlsx");
-	
-	
-		
+	public static boolean isPasswordcorrect = false;
+	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
+			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
 	public void initConfiguration() {
 
@@ -56,87 +55,98 @@ public class TestBase {
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
-				/*System.setProperty("webdriver.firefox.bin",
-						"C:\\Program Files (x86)\\Mozilla Firefox17\\firefox.exe");*/
+				/*
+				 * System.setProperty("webdriver.firefox.bin",
+				 * "C:\\Program Files (x86)\\Mozilla Firefox17\\firefox.exe");
+				 */
 				ProfilesIni allProfiles = new ProfilesIni();
-				FirefoxProfile profile17 = allProfiles.getProfile("Firefox17");	
-				FirefoxBinary binary17 = new FirefoxBinary(new File("C:\\Program Files (x86)\\Mozilla Firefox17\\firefox.exe"));
+				FirefoxProfile profile17 = allProfiles.getProfile("Firefox17");
+				FirefoxBinary binary17 = new FirefoxBinary(
+						new File(
+								"C:\\Program Files (x86)\\Mozilla Firefox17\\firefox.exe"));
 				driver = new FirefoxDriver(binary17, profile17);
-				
-				
-			} else if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox")) {
-				/*System.setProperty("webdriver.firefox.bin",
-						"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");*/
-								
-				ProfilesIni allProfiles = new ProfilesIni();				
+
+			} else if (CONFIG.getProperty("browser")
+					.equalsIgnoreCase("firefox")) {
+				/*
+				 * System.setProperty("webdriver.firefox.bin",
+				 * "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+				 */
+
+				ProfilesIni allProfiles = new ProfilesIni();
 				FirefoxProfile profile = allProfiles.getProfile("Selenium");
-				//FirefoxBinary binary = new FirefoxBinary(new File("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"));
+				// FirefoxBinary binary = new FirefoxBinary(new
+				// File("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"));
 				driver = new FirefoxDriver(profile);
-				//driver = new FirefoxDriver();
-				
-			}else if (CONFIG.getProperty("browser").equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//drivers//chromedriver.exe");
+				// driver = new FirefoxDriver();
+
+			} else if (CONFIG.getProperty("browser").equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir")
+								+ "//drivers//chromedriver.exe");
 				DesiredCapabilities capability = DesiredCapabilities.chrome();
 				capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				
-				//ChromeOptions options = new ChromeOptions();				
-				//options.setBinary(new File("C://Program Files (x86)//Google//Chrome//Application//chrome.exe"));
+
+				// ChromeOptions options = new ChromeOptions();
+				// options.setBinary(new
+				// File("C://Program Files (x86)//Google//Chrome//Application//chrome.exe"));
 				driver = new ChromeDriver(capability);
-				//driver = new ChromeDriver();
+				// driver = new ChromeDriver();
 			} else if (CONFIG.getProperty("browser").equalsIgnoreCase("IE")) {
-				/*File file = new File("C:\\IEDriverServer.exe");
-				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());*/
-				
-				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"//drivers//IEDriverServer.exe");
-				DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
-				caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+				/*
+				 * File file = new File("C:\\IEDriverServer.exe");
+				 * System.setProperty("webdriver.ie.driver",
+				 * file.getAbsolutePath());
+				 */
+
+				System.setProperty("webdriver.ie.driver",
+						System.getProperty("user.dir")
+								+ "//drivers//IEDriverServer.exe");
+				DesiredCapabilities caps = DesiredCapabilities
+						.internetExplorer();
+				caps.setCapability(
+						InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+						true);
 				driver = new InternetExplorerDriver(caps);
-				
-				//System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"//drivers//IEDriverServer.exe");
-				//System.setProperty("webdriver.ie.driver", "E:\\Selenium\\workspace\\IEDriverServer.exe");
-				//driver = new InternetExplorerDriver();
+
+				// System.setProperty("webdriver.ie.driver",
+				// System.getProperty("user.dir")+"//drivers//IEDriverServer.exe");
+				// System.setProperty("webdriver.ie.driver",
+				// "E:\\Selenium\\workspace\\IEDriverServer.exe");
+				// driver = new InternetExplorerDriver();
 			}
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			
+
 		}
 	}
-	
-	
-	
-	
+
 	public void quitDriver() {
 
 		driver.quit();
 		driver = null;
-		
-		/*try {
-			if (isProcessRunging("chromedriver.exe (32 bit)") == true) {
-				Runtime.getRuntime().exec("taskkill /F /IM <chromedriver>.exe");
-				final String KILL = "taskkill /IM ";
-				String processName = "chromedriver.exe"; 
-				Runtime.getRuntime().exec(KILL + processName); 
-				
-				
-			    Thread.sleep(2000L);
-			   }
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
-		   /*if (isProcessRunging("chrome.exe") == true) {
-		    killProcess("chrome.exe");
-		    Thread.sleep(2000L);
-		   }*/
-		
-		
-		
+
+		/*
+		 * try { if (isProcessRunging("chromedriver.exe (32 bit)") == true) {
+		 * Runtime.getRuntime().exec("taskkill /F /IM <chromedriver>.exe");
+		 * final String KILL = "taskkill /IM "; String processName =
+		 * "chromedriver.exe"; Runtime.getRuntime().exec(KILL + processName);
+		 * 
+		 * 
+		 * Thread.sleep(2000L); } } catch (Exception e) { e.printStackTrace(); }
+		 */
+		/*
+		 * if (isProcessRunging("chrome.exe") == true) {
+		 * killProcess("chrome.exe"); Thread.sleep(2000L); }
+		 */
+
 	}
 
-	public TopMenu getTopMenu(){
-		if(topMenu == null){
+	public TopMenu getTopMenu() {
+		if (topMenu == null) {
 			topMenu = PageFactory.initElements(driver, TopMenu.class);
 		}
 		return topMenu;
-	}	
+	}
 
 }
