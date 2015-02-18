@@ -41,6 +41,8 @@ public class HomePage {
 	WebElement RegistrationLink;
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
 	WebElement AllocateLocationLink;
+	@FindBy(xpath = Constants.Home_PropertyManagementLink)
+	WebElement PropertyManagementLink;
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
@@ -75,6 +77,14 @@ public class HomePage {
 		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);
 		System.out.println("Logout done");
 		return Logout;
+	}
+
+	public PropertyManagement goToManageProperty() {
+		
+		PropertyManagementLink.click();		
+		PropertyManagement propertyManagement = PageFactory.initElements(driver,
+				PropertyManagement.class);
+		return propertyManagement;
 	}
 
 }
