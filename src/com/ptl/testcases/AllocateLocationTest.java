@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.AllocateLocationPage;
+import com.ptl.pages.AllocateLocationInmateSelectPage;
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
 import com.ptl.pages.TopMenu;
@@ -21,7 +21,7 @@ import com.ptl.util.TestUtil;
 public class AllocateLocationTest extends TestBase {
 
 	
-	AllocateLocationPage allocateLocation = null;
+	AllocateLocationInmateSelectPage allocateLocation = null;
 	HomePage landingPage;
 	
 	String FInmate_RegNum;

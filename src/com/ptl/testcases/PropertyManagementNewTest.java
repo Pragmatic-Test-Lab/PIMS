@@ -14,6 +14,7 @@ import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
 import com.ptl.pages.PropertyManagement;
 import com.ptl.pages.TopMenu;
+import com.ptl.util.Constants;
 import com.ptl.util.TestUtil;
 
 public class PropertyManagementNewTest extends TestBase {
@@ -61,13 +62,10 @@ public class PropertyManagementNewTest extends TestBase {
 			APPLICATION_LOGS.debug("Navigated to Home page through the top menu");
 		}
 		
-		APPLICATION_LOGS.debug("Going to Property Management Page");
+		APPLICATION_LOGS.debug("Going to Property Management Page");		
 		manageProperty = landingPage.goToManageProperty();
 
-		String ActualHeader = manageProperty.getHeader();
-		String ExpectedHeader = manageProperty.getExpectedHeader();
-
-		Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader),
+		Assert.assertEquals(manageProperty.getHeader(), Constants.PropertyManagement_ExpectedHeader, 
 				"Could not reach Property Management");
 
 		APPLICATION_LOGS.debug("Reached Property Management Page");
@@ -86,7 +84,7 @@ public class PropertyManagementNewTest extends TestBase {
 //		FInmate_Name = manageProperty.getFInmateName();
 //		FInmate_Location = manageProperty.getFInmateLocation();
 
-		System.out.println("First Inmate : " + FInmate_RegNum + " -- " + FInmate_Name + " -- " + FInmate_Location);
+		//System.out.println("First Inmate : " + FInmate_RegNum + " -- " + FInmate_Name + " -- " + FInmate_Location);
 		manageProperty.clickFirstInmate();	
 		
 		//checks Inmate details

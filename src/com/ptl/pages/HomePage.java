@@ -77,11 +77,11 @@ public class HomePage {
 		return ExpectedPageHeader;
 	}
 
-	public AllocateLocationPage goToAllocateLocation() {
+	public AllocateLocationInmateSelectPage goToAllocateLocation() {
 
 		AllocateLocationLink.click();
-		AllocateLocationPage allocateLocation = PageFactory.initElements(driver,
-				AllocateLocationPage.class);
+		AllocateLocationInmateSelectPage allocateLocation = PageFactory.initElements(driver,
+				AllocateLocationInmateSelectPage.class);
 		return allocateLocation;
 	}
 
