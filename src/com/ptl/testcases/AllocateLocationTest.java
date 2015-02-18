@@ -46,9 +46,6 @@ public class AllocateLocationTest extends TestBase {
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		System.out.println("************************************************");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");
