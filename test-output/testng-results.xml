@@ -2,43 +2,47 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30594" started-at="2015-02-17T06:04:38Z" finished-at="2015-02-17T06:05:09Z">
+  <suite name="Default suite" duration-ms="31498" started-at="2015-02-19T05:43:33Z" finished-at="2015-02-19T05:44:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30594" started-at="2015-02-17T06:04:38Z" finished-at="2015-02-17T06:05:09Z">
-      <class name="com.ptl.testcases.AllocateLocationTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.ptl.testcases.AllocateLocationTest@1b13e52f]" name="init" is-config="true" duration-ms="5643" started-at="2015-02-17T11:34:32Z" finished-at="2015-02-17T11:34:38Z">
+    <test name="Default test" duration-ms="31498" started-at="2015-02-19T05:43:33Z" finished-at="2015-02-19T05:44:04Z">
+      <class name="com.ptl.testcases.LoginTest">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.testcases.LoginTest@3a93b025]" name="initConfiguration" is-config="true" duration-ms="219" started-at="2015-02-19T11:13:12Z" finished-at="2015-02-19T11:13:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="FAIL" signature="loginToSystem(java.util.Hashtable)[pri:0, instance:com.ptl.testcases.AllocateLocationTest@1b13e52f]" name="loginToSystem" duration-ms="30562" started-at="2015-02-17T11:34:38Z" data-provider="getAllocationData" finished-at="2015-02-17T11:35:09Z">
+        </test-method> <!-- initConfiguration -->
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.testcases.LoginTest@3a93b025]" name="initDriver" is-config="true" duration-ms="20737" started-at="2015-02-19T11:13:12Z" finished-at="2015-02-19T11:13:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method status="FAIL" signature="loginTest(java.util.Hashtable)[pri:0, instance:com.ptl.testcases.LoginTest@3a93b025]" name="loginTest" duration-ms="30756" started-at="2015-02-19T11:13:33Z" data-provider="getLoginData" finished-at="2015-02-19T11:14:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Username=admin_welikada, Password=test$123, Runmode=Yes, New Location=ward1}]]>
+                <![CDATA[{Username=admin, Password=prison, Runmode=Yes}]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//img[contains(@alt, 'placeholder image')]/ancestor::div[1]/h1"}
-Command duration or timeout: 10.11 seconds
+              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//*[@id='login-form-login']"}
+Command duration or timeout: 30.15 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
-System info: host: 'GMAX-PC', ip: '192.168.1.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
-Session ID: 8a1298e4-76e2-4a4c-bf20-bfd1b8ee2959
+System info: host: 'Pragmatic', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_05'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=35.0.1}]]]>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 670262f9-d972-4f0b-969c-46b0a732715f]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//img[contains(@alt, 'placeholder image')]/ancestor::div[1]/h1"}
-Command duration or timeout: 10.11 seconds
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='login-form-login']"}
+Command duration or timeout: 30.15 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
-System info: host: 'GMAX-PC', ip: '192.168.1.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
-Session ID: 8a1298e4-76e2-4a4c-bf20-bfd1b8ee2959
+System info: host: 'Pragmatic', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_05'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=35.0.1}]
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=35.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 670262f9-d972-4f0b-969c-46b0a732715f
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -52,9 +56,9 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
-	at com.sun.proxy.$Proxy6.getText(Unknown Source)
-	at com.ptl.pages.HomePage.getActualPageHeader(HomePage.java:28)
-	at com.ptl.testcases.AllocateLocationTest.loginToSystem(AllocateLocationTest.java:48)
+	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
+	at com.ptl.pages.LoginPage.doLogin(LoginPage.java:29)
+	at com.ptl.testcases.LoginTest.loginTest(LoginTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -79,20 +83,24 @@ Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cs
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//img[contains(@alt, 'placeholder image')]/ancestor::div[1]/h1"}
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//*[@id='login-form-login']"}
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
-System info: host: 'GMAX-PC', ip: '192.168.1.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_71'
+System info: host: 'Pragmatic', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_05'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Gayashan/AppData/Local/Temp/anonymous745325883715133286webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9641:26)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Gayashan/AppData/Local/Temp/anonymous745325883715133286webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:548:5)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PTL/AppData/Local/Temp/anonymous3674626745346411646webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9641:26)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/PTL/AppData/Local/Temp/anonymous3674626745346411646webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:548:5)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToSystem -->
-      </class> <!-- com.ptl.testcases.AllocateLocationTest -->
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.ptl.testcases.LoginTest@3a93b025]" name="quitDriver" is-config="true" duration-ms="267" started-at="2015-02-19T11:14:04Z" finished-at="2015-02-19T11:14:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- com.ptl.testcases.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

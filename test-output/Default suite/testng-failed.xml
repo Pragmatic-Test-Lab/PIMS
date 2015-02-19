@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ptl.testcases.AllocateLocationTest">
+      <class name="com.ptl.testcases.LoginTest">
         <methods>
-          <include name="init"/>
-          <include name="loginToSystem" invocation-numbers="0"/>
+          <include name="initDriver"/>
+          <include name="initConfiguration"/>
+          <include name="loginTest" invocation-numbers="0"/>
+          <include name="quitDriver"/>
         </methods>
-      </class> <!-- com.ptl.testcases.AllocateLocationTest -->
+      </class> <!-- com.ptl.testcases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

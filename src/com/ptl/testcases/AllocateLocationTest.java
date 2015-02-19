@@ -1,11 +1,6 @@
 package com.ptl.testcases;
 
 import java.util.Hashtable;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.ConsoleHandler;
-
-import org.apache.log4j.Level;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.BeforeSuite;
@@ -45,9 +40,6 @@ public class AllocateLocationTest extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls)
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
-
-		System.out.println("************************************************");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		landingPage = returnToHomePage();
 
