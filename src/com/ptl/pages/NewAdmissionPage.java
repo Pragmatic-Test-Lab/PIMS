@@ -89,6 +89,21 @@ public class NewAdmissionPage {
 	
 	public void doCreateNewAdmition(){
 		
+		InmateCatagory.sendKeys("lady");
+		CourtWarant.sendKeys("colombo");
+		AgeAddmission.sendKeys("40");
+		AgeCatagory.sendKeys("adult");
+		DateAddmission.sendKeys("2015-01-28 13:30");
+		MealType.sendKeys("Diet");
+		BioMetric.sendKeys("Biometric");
+		NameWarrent.sendKeys("Name As Warrent");
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");
+		CurrentPositionInstitute.sendKeys("welikada");
+		
+		
+		
+		
 		
 	}
 
