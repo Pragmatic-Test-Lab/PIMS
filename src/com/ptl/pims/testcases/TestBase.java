@@ -151,6 +151,7 @@ public class TestBase {
 
 	}
 
+
 	public TopMenu getTopMenu() {
 		if (topMenu == null) {
 			topMenu = PageFactory.initElements(driver, TopMenu.class);
@@ -170,8 +171,10 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
+			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
 					"Could not login!");
+//			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
+//					"Could not login!");
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;
