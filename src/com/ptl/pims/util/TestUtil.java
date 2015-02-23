@@ -1,4 +1,4 @@
-package com.ptl.util;
+package com.ptl.pims.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.ptl.testcases.TestBase;
+import com.ptl.pims.testcases.TestBase;
 
 public class TestUtil {
 

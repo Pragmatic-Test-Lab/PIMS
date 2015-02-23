@@ -1,26 +1,26 @@
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.HomePage;
-import com.ptl.pages.LoginPage;
-import com.ptl.util.Constants;
-import com.ptl.util.TestUtil;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.util.Constants;
+import com.ptl.pims.util.TestUtil;
 
-public class LogoutTest extends TestBase {
+public class WrongPasswordTest extends TestBase {
 	HomePage landingPage = null;
 
-
-	
-	
+		
 	@Test(dataProvider = "getLoginData")
-	public void logoutTest(Hashtable<String, String> data) {
+	public void wrongpassword(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Login Test", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
@@ -28,14 +28,11 @@ public class LogoutTest extends TestBase {
 		driver.get(CONFIG.getProperty("BASE_URL"));		
 		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 		
-		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
-		isLoggedIn=true;
-		landingPage.gotoLogout();
+		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));		
 		
-		Assert.assertEquals(landingPage.getActualPageHeader2(), Constants.Home_PageHeaderText2, "Could not logout!");
+		Assert.assertEquals(landingPage.getErrorMessage(),Constants.PasswordErrorText, "Could not login!");
 		
-		isLoggedIn=false;
-		APPLICATION_LOGS.debug("logged out");
+		APPLICATION_LOGS.debug("Password error");
 		//landingPage.gotoProfile();
 		APPLICATION_LOGS.debug("In Home page");
 	
@@ -47,5 +44,4 @@ public class LogoutTest extends TestBase {
 		return TestUtil.getTestData("Login Test", xls);
 		
 	}
-
 }

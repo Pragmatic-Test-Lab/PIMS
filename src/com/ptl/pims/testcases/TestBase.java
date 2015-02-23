@@ -1,4 +1,4 @@
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,11 +20,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import com.ptl.pages.HomePage;
-import com.ptl.pages.LoginPage;
-import com.ptl.pages.TopMenu;
-import com.ptl.util.Constants;
-import com.ptl.util.ReadXLS;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.TopMenu;
+import com.ptl.pims.util.Constants;
+import com.ptl.pims.util.ReadXLS;
 
 public class TestBase {
 
@@ -53,12 +53,11 @@ public class TestBase {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("iNIT CONFIG");
 		
 
 	}
 
-	@BeforeSuite
+	
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
@@ -127,13 +126,10 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 
-			System.out.println("iNIT drive");
-			
-
 		}
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
@@ -155,6 +151,7 @@ public class TestBase {
 
 	}
 
+
 	public TopMenu getTopMenu() {
 		if (topMenu == null) {
 			topMenu = PageFactory.initElements(driver, TopMenu.class);
@@ -174,8 +171,10 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
+
+			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
 					"Could not login!");
+
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;

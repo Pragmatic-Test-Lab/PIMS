@@ -1,4 +1,4 @@
-package com.ptl.pages;
+package com.ptl.pims.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
