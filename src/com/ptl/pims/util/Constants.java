@@ -80,45 +80,77 @@ public class Constants {
 	// Logout (admin_wataraka)
 
 	// New Admission Page
-	public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
+			public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
+			public static final String NewAdmissionHeder = "html/body/div[2]/div/div/h1";
+			public static final String NewAdmission_ExpectedPageHeader = "Create Admission"; 
 
-	// Create Admission Page
-	public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
-	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
-	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
-	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
-	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_age_category_id']";
-	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
-	public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
-	public static final String CreateAdmission_Biometric = "//*[@id='admission-adm_biometric_id']";
-	public static final String CreateAdmission_NameWarrant = "//*[@id='admission-adm_name_as_in_warrant']";
-	public static final String CreateAdmission_OccurenceClassification = "//*[@id='admission-adm_occurrence_classification_id']";
-	public static final String CreateAdmission_Gender = ".//*[@id='admission-adm_gender_id']";
-	public static final String CreateAdmission_CurrentPrisonInstitute = "//*[@id='admission-adm_current_prison_institute_id']";
-	public static final String CreateAdmission_ImageRHSBrowse = "";
-	public static final String CreateAdmission_ImageRHSRemove = "";
-	public static final String CreateAdmission_ImageFrontBrowse = "";
-	public static final String CreateAdmission_ImageFrontRemove = "";
-	public static final String CreateAdmission_ImageLHSBrowse = "";
-	public static final String CreateAdmission_ImageLHSRemove = "";
-	public static final String CreateAdmission_InmateCaseDetailTab = "//*[@id='w7']/li[1]/a";
-	public static final String CreateAdmission_InmateCaseDetail_AddNew = "//*[@id='w7-tab0']/div/div[2]/button";
-	public static final String CreateAdmission_InmateCaseDetail_Court = "//*[@id='inmatecasedetails-1-icd_court_id']";
-	public static final String CreateAdmission_InmateCaseDetail_CaseNumber = "//*[@id='inmatecasedetails-1-icd_case_number']";
-	public static final String CreateAdmission_InmateCaseDetail_DateConviction = "//*[@id='inmatecasedetails-1-icd_date_of_conviction']";
-	public static final String CreateAdmission_InmateCaseDetail_Action = "";
-	public static final String CreateAdmission_HealthConditionTab = "//*[@id='w7']/li[2]/a";
-	public static final String CreateAdmission_HealthCondition_AddNew = "//*[@id='w7-tab1']/div[1]/div[2]/button";
-	public static final String CreateAdmission_HealthCondition_MedicalAttention = "//*[@id='healthcondition-1-hco_is_medical_attention_needed']";
-	public static final String CreateAdmission_HealthCondition_Pregnant = "//*[@id='healthcondition-1-hco_is_pregnant']";
-	public static final String CreateAdmission_HealthCondition_Remarks = "//*[@id='healthcondition-1-hco_remarks']";
-	public static final String CreateAdmission_HealthCondition_ForPreschool = "//*[@id='healthcondition-1-hco_is_medical_attention_needed_for__preschool']";
-	public static final String CreateAdmission_HealthCondition_OfPreschool = "//*[@id='healthcondition-1-hco_helth_condition_of_preschool']";
-	public static final String CreateAdmission_HealthCondition_Action = "//*[@id='health_condition_row_1']/td[8]/a/span";
-	public static final String CreateAdmission_InmateComplainTab = "//*[@id='w7']/li[3]/a";
-	public static final String CreateAdmission_PrivatePropertiesTab = "//*[@id='w7']/li[3]/a";
-	public static final String CreateAdmission_InfantsPreschoolTab = "//*[@id='w7']/li[5]/a";
-	public static final String CreateAdmission_HistoryTab = "//*[@id='w7']/li[6]/a";
+			// Create Admission Page
+			public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
+			public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
+			public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
+			public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
+			public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_age_category_id']";
+			public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
+			public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
+			public static final String CreateAdmission_Biometric = "//*[@id='admission-adm_biometric_id']";
+			public static final String CreateAdmission_NameWarrant = "//*[@id='admission-adm_name_as_in_warrant']";
+			public static final String CreateAdmission_OccurenceClassification = "//*[@id='admission-adm_occurrence_classification_id']";
+			public static final String CreateAdmission_Gender = "//*[@id='admission-adm_gender_id']";
+			public static final String CreateAdmission_CurrentPrisonInstitute = "//*[@id='admission-adm_current_prison_institute_id']";
+			public static final String CreateAdmission_ImageRHSBrowse = "//*[@id='admission-image_rhs']";
+			public static final String CreateAdmission_ImageRHSRemove = "";
+			public static final String CreateAdmission_ImageFrontBrowse = "//*[@id='admission-image_front']";
+			public static final String CreateAdmission_ImageFrontRemove = "";
+			public static final String CreateAdmission_ImageLHSBrowse = "//*[@id='admission-image_lhs']";
+			public static final String CreateAdmission_ImageLHSRemove = "";
+			
+			public static final String CreateAdmission_InmateCourtDetailTab = "//*[@id='w7']/li[1]/a";
+			public static final String CreateAdmission_InmateCourtDetail_AddNew = "//*[@id='w7-tab0']/div/div[2]/button";
+			public static final String CreateAdmission_InmateCourtDetail_Court = "//*[@id='inmatecasedetails-1-icd_court_id']";
+			public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "//*[@id='inmatecasedetails-1-icd_case_number']";
+			public static final String CreateAdmission_InmateCourtDetail_DateConviction = "//*[@id='inmatecasedetails-1-icd_date_of_conviction']";
+			public static final String CreateAdmission_InmateCourtDetail_Action = "";
+
+			public static final String CreateAdmission_HealthConditionTab = "//*[@id='w7']/li[2]/a";
+			public static final String CreateAdmission_HealthCondition_AddNew = "//*[@id='w7-tab1']/div[1]/div[2]/button";
+			public static final String CreateAdmission_HealthCondition_MedicalAttention = "//*[@id='healthcondition-1-hco_is_medical_attention_needed']";
+			public static final String CreateAdmission_HealthCondition_Pregnant = "//*[@id='healthcondition-1-hco_is_pregnant']";
+			public static final String CreateAdmission_HealthCondition_Remarks = "//*[@id='healthcondition-1-hco_remarks']";
+			public static final String CreateAdmission_HealthCondition_ForPreschool = "//*[@id='healthcondition-1-hco_is_medical_attention_needed_for__preschool']";
+			public static final String CreateAdmission_HealthCondition_OfPreschool = "//*[@id='healthcondition-1-hco_helth_condition_of_preschool']";
+			public static final String CreateAdmission_HealthCondition_Action = "//*[@id='health_condition_row_1']/td[8]/a/span";
+			
+			public static final String CreateAdmission_HealthCondition_ManageDrugs_AddNew ="//*[@id='w7-tab1']/div[2]/div[2]/button";
+			public static final String CreateAdmission_HealthCondition_ManageDrugs_Drug = "//*[@id='helthconditiondrugused-1-hdu_drugs_id']";
+			
+			public static final String CreateAdmission_HealthCondition_ManagePhysical_AddNew ="//*[@id='w7-tab1']/div[3]/div[2]/button";
+			public static final String CreateAdmission_HealthCondition_ManagePhysical_Observation = "//*[@id='helthconditionphysicalobservation-1-hpo_physical_observation_id']";
+			
+			
+			public static final String CreateAdmission_InmateComplainTab = "//*[@id='w7']/li[3]/a";
+			public static final String CreateAdmission_InmateComplainNew = "//*[@id='w7-tab2']/div/div[2]/button";
+			public static final String CreateAdmission_InmateComplainDate = "//*[@id='inmatecomplain-1-ico_date']";
+			public static final String CreateAdmission_InmateComplain_TypeOfComplaint = "//*[@id='inmatecomplain-1-ico_type_of_compain_id']";
+			public static final String CreateAdmission_InmateComplain_Description = "//*[@id='inmatecomplain-1-ico_description']";
+				
+			public static final String CreateAdmission_PrivateProperties_Tab = "//*[@id='w7']/li[4]/a";
+			public static final String CreateAdmission_PrivateProperties_AddNew = "//*[@id='w7-tab3']/div/div[2]/button";
+			public static final String CreateAdmission_PrivateProperties_Date = "//*[@id='privateproperty-1-prp_date']";
+			public static final String CreateAdmission_PrivateProperties_Item = "//*[@id='privateproperty-1-prp_item_id']";
+			public static final String CreateAdmission_PrivateProperties_Description = "//*[@id='privateproperty-1-prp_description']";
+			public static final String CreateAdmission_PrivateProperties_Quantity = "//*[@id='privateproperty-1-prp_quantity']";
+			public static final String CreateAdmission_PrivateProperties_Value = "//*[@id='privateproperty-1-prp_value']";
+			
+			
+			public static final String CreateAdmission_InfantsPreschoolTab = "//*[@id='w7']/li[5]/a";
+			public static final String CreateAdmission_InfantsPreschoolAddNew = "//*[@id='w7-tab4']/div/div[2]/button";
+			public static final String CreateAdmission_InfantsPreschoolName = "//*[@id='infantsorpreschool-1-psc_name']";
+			public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "//*[@id='infantsorpreschool-1-psc_date_of_birth']";
+			
+			public static final String CreateAdmission_HistoryTab = "//*[@id='w7']/li[6]/a";
+
+			
+			
 
 	
 	// Allocate Location Inmate Select Page
