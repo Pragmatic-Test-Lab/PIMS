@@ -8,6 +8,7 @@ import org.testng.SkipException;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.ptl.pages.HomePage;
 import com.ptl.pages.LoginPage;
 import com.ptl.pages.PropertyManagement;
