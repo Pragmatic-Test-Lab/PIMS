@@ -1,4 +1,4 @@
-package com.ptl.pages;
+package com.ptl.pims.pages;
 
 public class AuthorizeAdmissionPage {
 

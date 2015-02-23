@@ -1,4 +1,4 @@
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,11 +20,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import com.ptl.pages.HomePage;
-import com.ptl.pages.LoginPage;
-import com.ptl.pages.TopMenu;
-import com.ptl.util.Constants;
-import com.ptl.util.ReadXLS;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.TopMenu;
+import com.ptl.pims.util.Constants;
+import com.ptl.pims.util.ReadXLS;
 
 public class TestBase {
 

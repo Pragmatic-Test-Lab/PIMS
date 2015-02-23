@@ -1,4 +1,4 @@
-package com.ptl.pages;
+package com.ptl.pims.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.util.Constants;
+import com.ptl.pims.util.Constants;
 
 public class AllocateLocationInmateSelectPage {
 

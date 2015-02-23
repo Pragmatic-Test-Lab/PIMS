@@ -1,5 +1,5 @@
 
-package com.ptl.util;
+package com.ptl.pims.util;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

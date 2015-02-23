@@ -1,4 +1,4 @@
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
 
@@ -8,10 +8,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.HomePage;
-import com.ptl.pages.InmateRegistration;
-import com.ptl.pages.NewAdmissionPage;
-import com.ptl.util.TestUtil;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.InmateRegistration;
+import com.ptl.pims.pages.NewAdmissionPage;
+import com.ptl.pims.util.TestUtil;
 
 public class NewAdmissionTest extends TestBase{
 
