@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-23/02/2015 11:38:52 devpinoyLogger Configuration File initialized in Login Test
-23/02/2015 11:39:10 devpinoyLogger Browser initialized
-23/02/2015 11:39:10 devpinoyLogger Browser initialized in Login Test
-23/02/2015 11:39:10 devpinoyLogger Attempting login to system
-23/02/2015 11:41:42 devpinoyLogger Successfully logged in
-23/02/2015 11:41:42 devpinoyLogger Going to Allocate Location Page
-=======
-23/02/2015 11:10:00 devpinoyLogger Configuration File initialized in Login Test
-23/02/2015 11:10:05 devpinoyLogger Browser initialized
-23/02/2015 11:10:06 devpinoyLogger Browser initialized in Login Test
-23/02/2015 11:10:06 devpinoyLogger Attempting login to system
-23/02/2015 11:11:07 devpinoyLogger Successfully logged in
-23/02/2015 11:11:07 devpinoyLogger Going to Allocate Location Page
-23/02/2015 11:11:43 devpinoyLogger Reached Allocate Location Page
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+23/02/2015 16:17:01 devpinoyLogger Browser initialized
+23/02/2015 16:17:02 devpinoyLogger Attempting login to system
+23/02/2015 16:21:43 devpinoyLogger Successfully logged in
+23/02/2015 16:21:43 devpinoyLogger Going to Inmate Registration Page
+23/02/2015 16:23:26 devpinoyLogger Reached Allocate Location Page

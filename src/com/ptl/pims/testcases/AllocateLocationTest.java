@@ -27,13 +27,6 @@ public class AllocateLocationTest extends TestBase {
 	String FInmate_Name;
 	String FInmate_Location;
 
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
 
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {

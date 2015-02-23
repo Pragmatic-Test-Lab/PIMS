@@ -3,26 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.ptl.pims.testcases.AllocateLocationTest">
+      <class name="com.ptl.pims.testcases.InmateRegistrationTest">
         <methods>
-          <include name="GoToAllocateLocationPage" invocation-numbers="0"/>
+          <include name="enterInmatePersonalDataTest" invocation-numbers="0"/>
           <include name="initConfiguration"/>
-          <include name="changeInmateLocation"/>
-          <include name="init"/>
-          <include name="clickInmateLink"/>
+          <include name="initDriver"/>
         </methods>
-      </class> <!-- com.ptl.pims.testcases.AllocateLocationTest -->
-=======
-      <class name="com.ptl.pims.testcases.CopyOfAllocateLocationTest">
-        <methods>
-          <include name="init"/>
-          <include name="initConfiguration"/>
-          <include name="GoToAllocateLocationPage" invocation-numbers="0"/>
-          <include name="clickInmateLink"/>
-        </methods>
-      </class> <!-- com.ptl.pims.testcases.CopyOfAllocateLocationTest -->
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+      </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

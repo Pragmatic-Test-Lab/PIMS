@@ -52,12 +52,12 @@ public class TestBase {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}	
 		
 
 	}
 
-	
+	@BeforeSuite
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
@@ -124,8 +124,6 @@ public class TestBase {
 			APPLICATION_LOGS.debug("Browser initialized");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-
 		}
 	}
 
