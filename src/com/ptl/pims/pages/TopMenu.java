@@ -78,6 +78,14 @@ public class TopMenu {
 	}
 	
 	
+	public PostRegistrationPage gotoPostRegistrationPage(){
+		postRegMain.click();
+		postRegSub.click();
+		PostRegistrationPage postRegPage = PageFactory.initElements(driver, PostRegistrationPage.class);
+		return postRegPage;
+		
+	}
+	
 	public LoginPage doLogout(){
 		logOut.click();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);

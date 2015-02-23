@@ -4,15 +4,12 @@ import java.util.Hashtable;
 
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.AllocateLocationInmateSelectPage;
 import com.ptl.pims.pages.AllocateLocationPage;
 import com.ptl.pims.pages.HomePage;
-import com.ptl.pims.pages.LoginPage;
-import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
@@ -27,14 +24,7 @@ public class AllocateLocationTest extends TestBase {
 	String FInmate_Name;
 	String FInmate_Location;
 
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
-
+	
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
 

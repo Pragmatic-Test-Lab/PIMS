@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 import com.ptl.pims.util.Constants;
 
-public class PostRegistrationMainPage {
+public class PostRegistrationPage {
 	WebDriver driver ;
 	
 	@FindBy(xpath=Constants.PostRegistration_PageTitle)
 	WebElement pageTitle;
 	
 	
-	public PostRegistrationMainPage(WebDriver dr){
+	public PostRegistrationPage(WebDriver dr){
 		driver = dr;
 	}
 	

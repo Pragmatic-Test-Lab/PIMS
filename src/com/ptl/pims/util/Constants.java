@@ -60,7 +60,7 @@ public class Constants {
 		
 		// Home Page
 		public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
-		public static final String Home_PageHeaderText = "Prison Information Management System";
+		public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
 		public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
 		public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
 		public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";	
@@ -81,7 +81,7 @@ public class Constants {
 		public static final String AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
 		public static final String PostRegistrationMainLink = "//a[text()='Post Registration ']";
 		public static final String PostRegistrationSubLink = "//a[text()='Post Registration']";
-		public static final String AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";
+		public static final String AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";		
 		public static final String LogOut = "//*[text()='Logout (admin_wataraka)']";
 		// Logout (admin_wataraka)
 
