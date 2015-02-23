@@ -46,9 +46,9 @@ public class AllocateLocationTest extends TestBase {
 
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");
 		allocateLocationInmateSelect = landingPage.goToAllocateLocation();
-
-		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
-				"Could not reach Allocate Location");
+		Assert.assertTrue(allocateLocationInmateSelect.getHeader().equalsIgnoreCase(Constants.AllocateLocation_ExpectedHeader),"Could not reach Allocate Location");
+		//Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
+			//	"Could not reach Allocate Location");
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 	}

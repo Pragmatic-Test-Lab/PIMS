@@ -29,7 +29,7 @@ public class AfterLogoutTest extends TestBase {
 	
 	
 	@Test(dataProvider = "getLoginData")
-	public void logoutTest(Hashtable<String, String> data) {
+	public void afterlogoutTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Login Test", xls) || data.get("Runmode").equals("No"))
 		throw new SkipException("Skipping the test");
@@ -45,11 +45,12 @@ public class AfterLogoutTest extends TestBase {
 		//String ActualHeader2 = landingPage.getActualPageHeader2();
 		String Loginline= landingPage.getloginline();
 		String emptylogin= landingPage.getemptylogin();
-		//String Passwordline= landingPage.getpasswordline();
-		//String emptypassword= landingPage.getemptypassword();
+		String Passwordline= landingPage.getpasswordline();
+		String emptypassword= landingPage.getemptypassword();
 		//String ExpectedHeader2 = landingPage.getExpectedPageHeader2();
 		
 		Assert.assertTrue(Loginline.equalsIgnoreCase(emptylogin), "login not empty");
+		Assert.assertTrue(Passwordline.equalsIgnoreCase(emptypassword), "password not empty");
 		
 		isLoggedIn =false;
 		
