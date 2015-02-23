@@ -53,10 +53,11 @@ public class TestBase {
 				e.printStackTrace();
 			}
 		}
+		
 
 	}
 
-	@BeforeSuite
+	
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {

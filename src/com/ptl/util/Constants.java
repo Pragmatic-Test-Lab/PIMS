@@ -73,7 +73,7 @@ public class Constants {
 
 		// Top Menu Links
 		public static final String PIMSTopLink = "//a[text()='PIMS']";
-		public static final String AdmissionTopLink = "//*[text()='Admission ']";
+		public static final String AdmissionTopLink = "//*[text()='Admission']";
 		public static final String NewAdmissionSubLink = "//*[text()='New Admission']";
 		public static final String EditSubLink = "//*[text()='Edit']";
 		public static final String AuthorizeSubLink = "//*[text()='Authorize']";

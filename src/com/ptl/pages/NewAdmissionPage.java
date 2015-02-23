@@ -10,6 +10,10 @@ public class NewAdmissionPage {
 	
 	WebDriver driver;
 	
+	@FindBy(xpath = Constants.AdmissionTopLink)
+	WebElement AdmissionMenu;
+	@FindBy(xpath = Constants.NewAdmissionSubLink)
+	WebElement NewAdmissionSubMenu;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCategory)
 	WebElement InmateCatagory;
 	@FindBy(xpath = Constants.CreateAdmission_CourtWarant)
@@ -89,7 +93,10 @@ public class NewAdmissionPage {
 	
 	public void doCreateNewAdmition(){
 		
-		InmateCatagory.sendKeys("lady");
+		
+		AdmissionMenu.click();
+		NewAdmissionSubMenu.click();
+	/*	InmateCatagory.sendKeys("lady");
 		CourtWarant.sendKeys("colombo");
 		AgeAddmission.sendKeys("40");
 		AgeCatagory.sendKeys("adult");
@@ -99,7 +106,7 @@ public class NewAdmissionPage {
 		NameWarrent.sendKeys("Name As Warrent");
 		OccurenceClassificatio.sendKeys("FO");
 		Gender.sendKeys("male");
-		CurrentPositionInstitute.sendKeys("welikada");
+		CurrentPositionInstitute.sendKeys("welikada");*/
 		
 		
 		
