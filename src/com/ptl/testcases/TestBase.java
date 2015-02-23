@@ -53,11 +53,12 @@ public class TestBase {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("iNIT CONFIG");
 		
 
 	}
 
-	
+	@BeforeSuite
 	public void initDriver() {
 		if (driver == null) {
 			if (CONFIG.getProperty("browser").equalsIgnoreCase("firefox17")) {
@@ -125,6 +126,9 @@ public class TestBase {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+
+			System.out.println("iNIT drive");
+			
 
 		}
 	}
