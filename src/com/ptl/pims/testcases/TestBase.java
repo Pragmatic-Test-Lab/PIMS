@@ -170,7 +170,7 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
+			Assert.assertEquals(landingPage.getActualPageHeader().toLowerCase(), Constants.Home_PageHeaderText.toLowerCase(),
 					"Could not login!");
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
