@@ -1,15 +1,12 @@
 
 package com.ptl.pims.util;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
 public class Constants {
 
 	
-	//Registration Page:
+		//Registration Page:
 	
-	//Personal Details Tab
+		//Personal Details Tab
 		public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
 		public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 		public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
@@ -38,9 +35,9 @@ public class Constants {
 		public static final String InmateRegistration_Classifiaction_Calssification = "";
 		
 		// paths
-			public static String CONFIG_FILE_PATH = System.getProperty("user.dir") +
+		public static String CONFIG_FILE_PATH = System.getProperty("user.dir") +
 					 "\\src\\com\\ptl\\config\\config.properties";
-			public static String EXCEL_Path = System.getProperty("user.dir") +
+		public static String EXCEL_Path = System.getProperty("user.dir") +
 					 "\\src\\com\\ptl\\data\\TestData.xlsx";
 		
 		// Page Title
@@ -154,24 +151,28 @@ public class Constants {
 		public static final String PropertyManagement_NameSearchField = "(.//*[@id='w0-filters']//input)[3]";
 		public static final String PropertyManagement_OtherName1SearchField = "(.//*[@id='w0-filters']//input)[4]";
 		public static final String PropertyManagement_TableFirstLink = "(.//*[@id='w0']//td[7]//a)[1]";
-			//Private Property Tab
-			public static final String PropertyManagement_PrivatePropTab = "";
-			public static final String PropertyManagement_Private_Date = "";
-			public static final String PropertyManagement_Private_Item = "";
-			public static final String PropertyManagement_Private_Description = "";
-			public static final String PropertyManagement_Private_Quantity = "";
-			public static final String PropertyManagement_Private_Value = "";
-			//Prison Property Tab
-			public static final String PropertyManagement_PrisonPropTab = "";
-			public static final String PropertyManagement_Prison_Date = "";
-			public static final String PropertyManagement_Prison_Item = "";
-			public static final String PropertyManagement_Prison_Description = "";
-			public static final String PropertyManagement_Prison_Quantity = "";
-			public static final String PropertyManagement_Prison_Value = "";
+			
 		
-
-	
-
+		//Private Property Tab
+		public static final String PropertyManagement_PrivatePropTab = "";
+		public static final String PropertyManagement_Private_Date = "";
+		public static final String PropertyManagement_Private_Item = "";
+		public static final String PropertyManagement_Private_Description = "";
+		public static final String PropertyManagement_Private_Quantity = "";
+		public static final String PropertyManagement_Private_Value = "";
+		//Prison Property Tab
+		public static final String PropertyManagement_PrisonPropTab = "";
+		public static final String PropertyManagement_Prison_Date = "";
+		public static final String PropertyManagement_Prison_Item = "";
+		public static final String PropertyManagement_Prison_Description = "";
+		public static final String PropertyManagement_Prison_Quantity = "";
+		public static final String PropertyManagement_Prison_Value = "";
+		
+		
+		//Post Registration Page
+		public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
+		public static final String PostRegistration_PageTitleText = "Post Registration";
+		
 
 
 }
