@@ -26,9 +26,9 @@ public class VerifyPostRegistrationPageTitle extends TestBase{
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");
-		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();			
-		Assert.assertEquals(postRegPage.getActualPageTitle(), postRegPage.getExpectedPageTitle(), "Page Title is not correct");
-		
+		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();
+		APPLICATION_LOGS.debug("Going to Post Registration Page");
+		Assert.assertEquals(postRegPage.getActualPageTitle(), postRegPage.getExpectedPageTitle(), "Page Title is not correct");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}

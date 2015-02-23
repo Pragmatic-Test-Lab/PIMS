@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="146637" started-at="2015-02-23T06:22:29Z" finished-at="2015-02-23T06:24:55Z">
+  <suite name="Default suite" duration-ms="77273" started-at="2015-02-23T07:58:23Z" finished-at="2015-02-23T07:59:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="146637" started-at="2015-02-23T06:22:29Z" finished-at="2015-02-23T06:24:55Z">
-      <class name="com.ptl.pims.testcases.VerifyPostRegistrationPageTitle">
-        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.VerifyPostRegistrationPageTitle@49ec71f8]" name="initConfiguration" is-config="true" duration-ms="70" started-at="2015-02-23T11:52:19Z" finished-at="2015-02-23T11:52:19Z">
+    <test name="Default test" duration-ms="77273" started-at="2015-02-23T07:58:23Z" finished-at="2015-02-23T07:59:40Z">
+      <class name="com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab@74fe5c40]" name="initConfiguration" is-config="true" duration-ms="75" started-at="2015-02-23T13:28:15Z" finished-at="2015-02-23T13:28:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.VerifyPostRegistrationPageTitle@49ec71f8]" name="initDriver" is-config="true" duration-ms="9700" started-at="2015-02-23T11:52:19Z" finished-at="2015-02-23T11:52:29Z">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab@74fe5c40]" name="initDriver" is-config="true" duration-ms="8264" started-at="2015-02-23T13:28:15Z" finished-at="2015-02-23T13:28:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initDriver -->
-        <test-method status="PASS" signature="GoToAllocateLocationPage(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.VerifyPostRegistrationPageTitle@49ec71f8]" name="GoToAllocateLocationPage" duration-ms="146570" started-at="2015-02-23T11:52:29Z" data-provider="getVerificationData" finished-at="2015-02-23T11:54:55Z">
+        <test-method status="PASS" signature="GoToAllocateLocationPage(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab@74fe5c40]" name="GoToAllocateLocationPage" duration-ms="76969" started-at="2015-02-23T13:28:23Z" data-provider="getVerificationData" finished-at="2015-02-23T13:29:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Biometric=test, Other Name=Sugath, Registration Number=123334.0, Warrant Name=Manjula, Runmode=Yes}]]>
+                <![CDATA[{Runmode=Yes, Photo Left=, Is Orientation Program=, Photo Right=, Photo Front=}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GoToAllocateLocationPage -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.ptl.pims.testcases.VerifyPostRegistrationPageTitle@49ec71f8]" name="quitDriver" is-config="true" duration-ms="377" started-at="2015-02-23T11:54:55Z" finished-at="2015-02-23T11:54:56Z">
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab@74fe5c40]" name="quitDriver" is-config="true" duration-ms="503" started-at="2015-02-23T13:29:40Z" finished-at="2015-02-23T13:29:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-      </class> <!-- com.ptl.pims.testcases.VerifyPostRegistrationPageTitle -->
+      </class> <!-- com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

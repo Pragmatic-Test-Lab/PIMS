@@ -172,8 +172,59 @@ public class Constants {
 		//Post Registration Page
 		public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
 		public static final String PostRegistration_PageTitleText = "Post Registration";
+		public static final String PostRegistration_FirstUpdateIcon = "(.//a[@title='Update']/span)[1]";
 		
-
+		
+		
+		//Update Post Registration Page
+		public static final String UpdatePostRegistration_CheckBox = "//*[@id='admission-adm_is_attended_to_orientation_programe']";
+		public static final String UpdatePostRegistration_CurrentPrisonInstitute = "//*[@id='admission-adm_current_prison_institute_id']";
+		public static final String UpdatePostRegistration_PhotoRightBrowse = "//*[@id='admission-image_rhs']";
+		public static final String UpdatePostRegistration_PhotoFrontBrowse = "//*[@id='admission-image_front']";
+		public static final String UpdatePostRegistration_PhotoLeftBrowse = "//*[@id='admission-image_lhs']";		
+		public static final String UpdatePostRegistration_EducationalQualificationTab = "//a[text()='Educational Qualifications']";
+		public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
+		public static final String UpdatePostRegistration_EducationalQualificationAddNew = "(.//button[text()='Add New'])[1]";
+		public static final String UpdatePostRegistration_Institute = "//*[@id='educationalqualification-1-equ_institute']";
+		public static final String UpdatePostRegistration_QualificationType = "//*[@id='educationalqualification-1-equ_qulification_type_id']";
+		public static final String UpdatePostRegistration_Language = "//*[@id='educationalqualification-1-equ_language_id']";
+		public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
+		public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";		
+		public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
+		public static final String UpdatePostRegistration_Employer = "//*[@id='employment-0-emp_employer']";
+		public static final String UpdatePostRegistration_OrganizationalType = "//*[@id='employment-0-emp_organizational_type_id']";
+		public static final String UpdatePostRegistration_Position = "//*[@id='employment-0-emp_position']";
+		public static final String UpdatePostRegistration_DateFrom = "//*[@id='employment-0-emp_date_from']";
+		public static final String UpdatePostRegistration_DateTo = "//*[@id='employment-0-emp_date_to']";
+		public static final String UpdatePostRegistration_EmploymentAction = "//a[contains(@onclick,'removeemployment')]";
+		public static final String UpdatePostRegistration_FamilyTab = "//a[text()='Family Data']";		
+		public static final String UpdatePostRegistration_FamilyAddNew = "(.//button[text()='Add New'])[3]";
+		public static final String UpdatePostRegistration_Name = "//*[@id='familydata-1-fda_name']";
+		public static final String UpdatePostRegistration_Address1 = "//*[@id='familydata-1-fda_address_line1']";
+		public static final String UpdatePostRegistration_Address2 = "//*[@id='familydata-1-fda_address_line2']";
+		public static final String UpdatePostRegistration_Address3 = "//*[@id='familydata-1-fda_address_line3']";
+		public static final String UpdatePostRegistration_NIC = "//*[@id='familydata-1-fda_nic']";
+		public static final String UpdatePostRegistration_Age = "//*[@id='familydata-1-fda_age']";
+		public static final String UpdatePostRegistration_Relationship = "//*[@id='familydata-1-fda_relationship_id']";		
+		public static final String UpdatePostRegistration_Telephone = "//*[@id='familydata-1-fda_telephone']";
+		public static final String UpdatePostRegistration_Income = "//*[@id='familydata-1-fda_income']";
+		public static final String UpdatePostRegistration_FamilyAction = "//a[contains(@onclick,'removefamily')]";
+		public static final String UpdatePostRegistration_ChildTab = "//a[text()='Child Data']";
+		public static final String UpdatePostRegistration_ChildAddNew = "(.//button[text()='Add New'])[4]";
+		public static final String UpdatePostRegistration_ChildName = "//*[@id='childdata-1-cda_name']";
+		public static final String UpdatePostRegistration_ChildAddress1 = "//*[@id='childdata-1-cda_address_line1']";
+		public static final String UpdatePostRegistration_ChildAddress2 = "//*[@id='childdata-1-cda_address_line2']";
+		public static final String UpdatePostRegistration_ChildAddress3 = "//*[@id='childdata-1-cda_address_line3']";
+		public static final String UpdatePostRegistration_ChildAge = "//*[@id='childdata-1-cda_age']";
+		public static final String UpdatePostRegistration_ChildSchool = "//*[@id='childdata-1-cda_school']";
+		public static final String UpdatePostRegistration_ChildGrade = "//*[@id='childdata-1-cda_grade']";
+		public static final String UpdatePostRegistration_ChildSchoolAddress1 = "//*[@id='childdata-1-cda_school_address_line1']";
+		public static final String UpdatePostRegistration_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
+		public static final String UpdatePostRegistration_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
+		public static final String UpdatePostRegistration_ChildAction = "//a[contains(@onclick,'removechild')]";
+		
+		public static final String UpdatePostRegistration_Update = "//button[text()='Update']";
+		
 
 }
 

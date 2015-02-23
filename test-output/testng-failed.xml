@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ptl.pims.testcases.VerifyPostRegistrationPageTitle">
+      <class name="com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab">
         <methods>
-          <include name="initConfiguration"/>
           <include name="GoToAllocateLocationPage" invocation-numbers="0"/>
+          <include name="initConfiguration"/>
           <include name="initDriver"/>
           <include name="quitDriver"/>
         </methods>
-      </class> <!-- com.ptl.pims.testcases.VerifyPostRegistrationPageTitle -->
+      </class> <!-- com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
