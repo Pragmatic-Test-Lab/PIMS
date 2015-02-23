@@ -92,10 +92,11 @@ public class NewAdmissionPage {
 	}
 	
 	public void doCreateNewAdmition(){
-		
-		
+
 		AdmissionMenu.click();
 		NewAdmissionSubMenu.click();
+		
+		
 	/*	InmateCatagory.sendKeys("lady");
 		CourtWarant.sendKeys("colombo");
 		AgeAddmission.sendKeys("40");
