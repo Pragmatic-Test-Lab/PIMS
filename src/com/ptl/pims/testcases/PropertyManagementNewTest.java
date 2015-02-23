@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.LoginPage;
-import com.ptl.pims.pages.PropertyManagement;
+import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -20,7 +20,7 @@ import com.ptl.pims.util.TestUtil;
 public class PropertyManagementNewTest extends TestBase {
 	
 	HomePage landingPage = null;
-	PropertyManagement manageProperty = null;
+	PropertyManagementInmateSelectPage manageProperty = null;
 	
 	@BeforeSuite
 	public void init() {

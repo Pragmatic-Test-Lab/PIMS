@@ -120,45 +120,43 @@ public class Constants {
 	public static final String CreateAdmission_InfantsPreschoolTab = "//*[@id='w7']/li[5]/a";
 	public static final String CreateAdmission_HistoryTab = "//*[@id='w7']/li[6]/a";
 
-	// Allocate Location Page
-	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
+	
+	// Allocate Location Inmate Select Page
 	public static final String AllocateLocation_ExpectedHeader = "Allocate Location";
-	public static final String AllocateLocation_RegNoSearchField = "(.//*[@id='w0-filters']//input)[1]";
-	public static final String AllocateLocation_BiometricSearchField = "(.//*[@id='w0-filters']//input)[2]";
-	public static final String AllocateLocation_NameSearchField = "(.//*[@id='w0-filters']//input)[3]";
-	public static final String AllocateLocation_OtherName1SearchField = "(.//*[@id='w0-filters']//input)[4]";
-	public static final String AllocateLocation_LocationSearchField = "(.//*[@id='w0-filters']//input)[5]";
-	public static final String AllocateLocation_TableFirstInmate_RegNo = ".//*[@id='w0']//tr[1]/td[2]";
-	public static final String AllocateLocation_TableFirstInmate_Name = ".//*[@id='w0']//tr[1]/td[4]";
-	public static final String AllocateLocation_TableFirstInmate_Location = ".//*[@id='w0']//tr[1]/td[6]";
-	public static final String AllocateLocation_TableFirstLink = "(.//*[@id='w0']//td[7]//a)[1]";
+	
+	// Allocate Location Page
 	public static final String AllocateLocation_RegistrationNo = ".//*[@id='admission-adm_registration_no']";
 	public static final String AllocateLocation_InmateName = ".//*[@id='admission-adm_name_as_in_warrant']";
 	public static final String AllocateLocation_LocationDropdown = ".//*[@id='admission-adm_current_permenent_location_id']";
-	public static final String AllocateLocation_SaveLocation = ".//*[text()='Save']";
+	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
+	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
 
+	// Property Management Inmate Select Page
+	public static final String PropertyManagement_ExpectedHeader = "Property Management";
+	
 	// Property Management Page
-	public static final String PropertyManagement_Header = "";
-	public static final String PropertyManagement_ExpectedHeader = "";
-	public static final String PropertyManagement_RegNoSearchField = "(.//*[@id='w0-filters']//input)[1]";
-	public static final String PropertyManagement_BiometricSearchField = "(.//*[@id='w0-filters']//input)[2]";
-	public static final String PropertyManagement_NameSearchField = "(.//*[@id='w0-filters']//input)[3]";
-	public static final String PropertyManagement_OtherName1SearchField = "(.//*[@id='w0-filters']//input)[4]";
-	public static final String PropertyManagement_TableFirstLink = "(.//*[@id='w0']//td[7]//a)[1]";
 		// Private Property Tab
-		public static final String PropertyManagement_PrivatePropTab = "";
-		public static final String PropertyManagement_Private_Date = "";
-		public static final String PropertyManagement_Private_Item = "";
-		public static final String PropertyManagement_Private_Description = "";
-		public static final String PropertyManagement_Private_Quantity = "";
-		public static final String PropertyManagement_Private_Value = "";
+		public static final String PropertyManagement_PrivatePropTab = ".//a[text()='Private Properties']";
+		public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";		
+		public static final String PropertyManagement_PrivateTab_AllRows = ".//tr[contains(@id, 'private_property_row_')]";
+		public static final String PropertyManagement_PrivateTab_Date = "";
+		public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
+		public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
+		public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
+		public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
+		public static final String PropertyManagement_PrivateTab_RemoveRow = ".//*[@id='w4-tab0']//a[@title='Remove']";
 		// Prison Property Tab
-		public static final String PropertyManagement_PrisonPropTab = "";
-		public static final String PropertyManagement_Prison_Date = "";
-		public static final String PropertyManagement_Prison_Item = "";
-		public static final String PropertyManagement_Prison_Description = "";
-		public static final String PropertyManagement_Prison_Quantity = "";
-		public static final String PropertyManagement_Prison_Value = "";
+		public static final String PropertyManagement_PrisonPropTab = ".//a[text()='Prison Properties']";
+		public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
+		public static final String PropertyManagement_PrisonTab_AllRows = ".//tr[contains(@id, 'prison_property_row_')]";
+		public static final String PropertyManagement_PrisonTab_Date = "";
+		public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
+		public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
+		public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
+		public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
+
+	public static final String UpdatePropertyManagementButton = ".//button[text()='Update']";
+		
 
 	// Post Registration Page
 	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
@@ -170,5 +168,6 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//*[@title='Allocate Location'])[1]";
+
 
 }

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.pims.testcases.test;
 import com.ptl.pims.util.Constants;
 
 public class HomePage {
@@ -109,11 +108,11 @@ public class HomePage {
 		return Logout;
 	}
 
-	public PropertyManagement goToManageProperty() {
+	public PropertyManagementInmateSelectPage goToManageProperty() {
 
 		PropertyManagementLink.click();
-		PropertyManagement propertyManagement = PageFactory.initElements(
-				driver, PropertyManagement.class);
+		PropertyManagementInmateSelectPage propertyManagement = PageFactory.initElements(
+				driver, PropertyManagementInmateSelectPage.class);
 		return propertyManagement;
 	}
 }
