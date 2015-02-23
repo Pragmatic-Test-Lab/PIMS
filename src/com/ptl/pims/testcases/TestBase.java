@@ -129,7 +129,7 @@ public class TestBase {
 		}
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
@@ -171,10 +171,10 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
+
 			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
 					"Could not login!");
-//			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
-//					"Could not login!");
+
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;
