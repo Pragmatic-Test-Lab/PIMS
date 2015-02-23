@@ -63,8 +63,8 @@ public class Constants {
 		
 		// Home Page
 		public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
-		public static final String Home_PageHeaderText = "Prison Information Management System";
-		public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
+		public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
+		public static final String Home_RegistrationLink = "//*[text()='Registration ']";
 		public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
 		public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";	
 		public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
@@ -170,8 +170,13 @@ public class Constants {
 			public static final String PropertyManagement_Prison_Value = "";
 		
 
-	
-
+	//Inmate Search Pages
+			public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
+			public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
+			public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
+			public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
+			public static final String InmateSearch_TableFirstInmate = "(.//*[@title='Allocate Location'])[1]";
+			
 
 
 }

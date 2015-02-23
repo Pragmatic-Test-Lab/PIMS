@@ -129,7 +129,7 @@ public class TestBase {
 		}
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();

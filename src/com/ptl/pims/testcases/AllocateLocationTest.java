@@ -61,18 +61,9 @@ public class AllocateLocationTest extends TestBase {
 		//
 		//
 
-		// Saves First Inmates Registration Number, Name and Location
-		FInmate_RegNum = allocateLocationInmateSelect.getFInmateRegNo();
-		FInmate_Name = allocateLocationInmateSelect.getFInmateName();
-		FInmate_Location = allocateLocationInmateSelect.getFInmateLocation();
-
-		System.out.println("First Inmate : " + FInmate_RegNum + " -- " + FInmate_Name + " -- " + FInmate_Location);
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();	
-		
-		//checks Inmate details
-		boolean inmateDetailsValid = allocationPage.validateAllocateLocationPageData(FInmate_RegNum, FInmate_Name, FInmate_Location);
-		
-		Assert.assertTrue(inmateDetailsValid, "Inmate details in page are not Matching");
+
+		//Assert.assertTrue(inmateDetailsValid, "Inmate details in page are not Matching");
 		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
 
 	}
@@ -89,7 +80,7 @@ public class AllocateLocationTest extends TestBase {
 		
 		//check if Inmate Location has changed		
 		//gets changed Inmate
-		allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);		
+		//allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);		
 		//check location and compare
 		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");		
 		

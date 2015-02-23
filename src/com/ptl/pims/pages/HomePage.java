@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.pims.testcases.test;
 import com.ptl.pims.util.Constants;
 
 public class HomePage {
@@ -81,6 +82,7 @@ public class HomePage {
 
 	public AllocateLocationInmateSelectPage goToAllocateLocation() {
 
+		RegistrationLink.click();
 		AllocateLocationLink.click();
 
 		AllocateLocationInmateSelectPage allocateLocation = PageFactory
