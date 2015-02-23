@@ -1,15 +1,19 @@
-package com.ptl.pages;
+package com.ptl.pims.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.ptl.util.Constants;
+import com.ptl.pims.util.Constants;
 
 public class NewAdmissionPage {
 	
 	WebDriver driver;
 	
+	@FindBy(xpath = Constants.AdmissionTopLink)
+	WebElement AdmissionMenu;
+	@FindBy(xpath = Constants.NewAdmissionSubLink)
+	WebElement NewAdmissionSubMenu;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCategory)
 	WebElement InmateCatagory;
 	@FindBy(xpath = Constants.CreateAdmission_CourtWarant)
@@ -88,6 +92,24 @@ public class NewAdmissionPage {
 	}
 	
 	public void doCreateNewAdmition(){
+		
+		
+		AdmissionMenu.click();
+		NewAdmissionSubMenu.click();
+	/*	InmateCatagory.sendKeys("lady");
+		CourtWarant.sendKeys("colombo");
+		AgeAddmission.sendKeys("40");
+		AgeCatagory.sendKeys("adult");
+		DateAddmission.sendKeys("2015-01-28 13:30");
+		MealType.sendKeys("Diet");
+		BioMetric.sendKeys("Biometric");
+		NameWarrent.sendKeys("Name As Warrent");
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");
+		CurrentPositionInstitute.sendKeys("welikada");*/
+		
+		
+		
 		
 		
 	}

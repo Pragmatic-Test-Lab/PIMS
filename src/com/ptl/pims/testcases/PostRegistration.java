@@ -1,6 +1,6 @@
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
-import com.ptl.pages.HomePage;
+import com.ptl.pims.pages.HomePage;
 
 public class PostRegistration extends TestBase{
 	HomePage landingPage = null;

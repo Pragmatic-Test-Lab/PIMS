@@ -1,4 +1,4 @@
-package com.ptl.util;/*
+package com.ptl.pims.util;/*
  * COPYRIGHT (C) 2014 Pragmatic Test Labs (Private) Limited
  * Author : Niroshan de Silva
  * Date: 12/22/14 Time: 12:11 PM

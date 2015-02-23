@@ -1,4 +1,4 @@
-package com.ptl.util;
+package com.ptl.pims.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,5 +1,5 @@
 
-package com.ptl.testcases;
+package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
@@ -11,9 +11,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pages.HomePage;
-import com.ptl.pages.LoginPage;
-import com.ptl.util.TestUtil;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.util.TestUtil;
 
 public class AfterLogoutTest extends TestBase {
 	HomePage landingPage = null;
