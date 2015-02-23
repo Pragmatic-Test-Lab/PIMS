@@ -109,6 +109,7 @@ public class HomePage {
 
 	public PropertyManagementInmateSelectPage goToManageProperty() {
 
+		registrationMainLink.click();
 		PropertyManagementLink.click();
 		PropertyManagementInmateSelectPage propertyManagement = PageFactory.initElements(
 				driver, PropertyManagementInmateSelectPage.class);
