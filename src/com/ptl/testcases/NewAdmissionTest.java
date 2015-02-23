@@ -3,6 +3,7 @@ package com.ptl.testcases;
 import java.util.Hashtable;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -20,13 +21,13 @@ public class NewAdmissionTest extends TestBase{
 	HomePage landingPage = null;
 
 	@Test
-	public void enterInmateCalasificationTest() {
+	public void createNewAdmissionTest() throws InterruptedException {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
 		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		
-		
 		newAdmissionPage.doCreateNewAdmition();
 	}
+	
+	
 
 }
