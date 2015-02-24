@@ -170,8 +170,8 @@ public class Constants {
 		// Private Property Tab
 		public static final String PropertyManagement_PrivatePropTab = ".//a[text()='Private Properties']";
 		public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";		
-		public static final String PropertyManagement_PrivateTab_AllRows = ".//tr[contains(@id, 'private_property_row_')]";
-		public static final String PropertyManagement_PrivateTab_Date = "";
+		public static final String PropertyManagement_PrivateTab_AllRows = ".//*[contains(@id, 'private_property_row_')]";
+		public static final String PropertyManagement_PrivateTab_Date = ".//input[contains(@id, 'prp_date')]";
 		public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
 		public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
 		public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
@@ -180,8 +180,8 @@ public class Constants {
 		// Prison Property Tab
 		public static final String PropertyManagement_PrisonPropTab = ".//a[text()='Prison Properties']";
 		public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
-		public static final String PropertyManagement_PrisonTab_AllRows = ".//tr[contains(@id, 'prison_property_row_')]";
-		public static final String PropertyManagement_PrisonTab_Date = "";
+		public static final String PropertyManagement_PrisonTab_AllRows = ".//*[contains(@id, 'prison_property_row_')]";
+		public static final String PropertyManagement_PrisonTab_Date = ".//input[contains(@id, 'psp_date')]";
 		public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
 		public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
 		public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
@@ -199,7 +199,8 @@ public class Constants {
 	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
-	public static final String InmateSearch_TableFirstInmate = "(.//td//a)[1]";
+	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+
 
 
 
