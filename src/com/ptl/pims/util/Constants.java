@@ -199,7 +199,7 @@ public class Constants {
 	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
-	public static final String InmateSearch_TableFirstInmate = "(.//*[@title='Allocate Location'])[1]";
+	public static final String InmateSearch_TableFirstInmate = "(.//td//a)[1]";
 
 
 }
