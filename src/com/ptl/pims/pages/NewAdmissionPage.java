@@ -5,7 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+
+import com.ptl.pims.util.Constants;
+
 import com.ptl.pims.util.*;
+
 
 public class NewAdmissionPage {
 	

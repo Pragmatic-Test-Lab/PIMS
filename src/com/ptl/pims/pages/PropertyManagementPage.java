@@ -3,10 +3,12 @@ package com.ptl.pims.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.pims.util.Constants;
 
@@ -24,6 +26,8 @@ public class PropertyManagementPage {
 	@FindBy(xpath = Constants.PropertyManagement_PrisonTab_AddNew)
 	public WebElement PrisonTab_AddNew;
 
+	@FindBy(xpath = Constants.UpdatePropertyManagementButton)
+	public WebElement submitButton;
 
 	WebDriver driver;
 	
@@ -38,7 +42,7 @@ public class PropertyManagementPage {
 		Private_Tab.click();
 		
 		//gets No of available Properties
-		int NoOfInitialProperties = getPrisonPropertyRows().size();
+		int NoOfInitialProperties = getPrivatePropertyRows().size();
 		
 		String[] dates = date.split(",");
 		String[] items = item.split(",");
@@ -54,18 +58,18 @@ public class PropertyManagementPage {
 			PrivateTab_AddNew.click();
 			
 			//gets the last row(newly added row)
-			WebElement lastRow = getPrivatePropertyRows().get((NoOfInitialProperties-1) + i);
+			WebElement lastRow = getPrivatePropertyRows().get(NoOfInitialProperties + i);
 			
 			//add date
-			//lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Date)).sendKeys(arg0);
+			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Date)).sendKeys(dates[i] + Keys.ENTER);
 			//add item
 			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Item)).sendKeys(items[i]);
 			//add description
 			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Description)).sendKeys(descriptions[i]);
 			//add quantity
-			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Quantity)).sendKeys(quantities[1]);
+			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Quantity)).sendKeys(quantities[i]);
 			//add value
-			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Value)).sendKeys(quantities[1]);
+			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrivateTab_Value)).sendKeys(quantities[i]);
 
 		}		
 	}	
@@ -92,16 +96,16 @@ public class PropertyManagementPage {
 			PrisonTab_AddNew.click();
 			
 			//gets the last row(newly added row)
-			WebElement lastRow = getPrivatePropertyRows().get(NoOfInitialProperties + i);
+			WebElement lastRow = getPrisonPropertyRows().get(NoOfInitialProperties + i);
 			
 			//add date
-			//lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Date)).sendKeys(arg0);
+			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Date)).sendKeys(dates[i] + Keys.ENTER);
 			//add item
 			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Item)).sendKeys(items[i]);
 			//add description
 			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Description)).sendKeys(descriptions[i]);
 			//add quantity
-			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Quantity)).sendKeys(quantities[1]);
+			lastRow.findElement(By.xpath(Constants.PropertyManagement_PrisonTab_Quantity)).sendKeys(quantities[i]);
 
 		}
 		
@@ -117,6 +121,16 @@ public class PropertyManagementPage {
 	private List<WebElement> getPrisonPropertyRows(){
 		
 		return driver.findElements(By.xpath(Constants.PropertyManagement_PrisonTab_AllRows));
+	}
+	
+	//saves Changed property details
+	public PropertyManagementInmateSelectPage submitPropertyForm(){
+		
+		submitButton.click();
+		
+		PropertyManagementInmateSelectPage propertyManagementSelectPage = PageFactory
+				.initElements(driver, PropertyManagementInmateSelectPage.class);
+		return propertyManagementSelectPage;
 	}
 	
 	

@@ -102,12 +102,11 @@ public class InmateRegistration {
 		
 	}
 	
-	public void doAddCalsifiactionDetailsOfInmate(String Gender, String preConvictions, String classif){
-		
+
+	public void doAddClassifiactionDetailsOfInmate(String preConvictions, String classif){
 		//TODO : add method to search by reg number
 		editFirstInmate.click();
 		tab_classification.click();
-		gender.sendKeys(Gender);
 		previous_conviction.sendKeys(preConvictions);
 		classification.sendKeys(classif);		
 		updateButton.click();

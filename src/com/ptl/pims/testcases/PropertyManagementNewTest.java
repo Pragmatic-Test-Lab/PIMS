@@ -57,7 +57,7 @@ public class PropertyManagementNewTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData") 	//pims-663, pims-1083, pims-1087, pims-835     
 	public void addInmateProperty(Hashtable<String, String> data) {
 		
 		//add Inmate Property
@@ -68,7 +68,7 @@ public class PropertyManagementNewTest extends TestBase {
 		manageProperty.addPrisonProperties(data.get("Prison Date"), data.get("Prison Item"), 
 				data.get("Prison Description"), data.get("Prison Quantity"));
 			
-		//allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
+		//managePropertySelectInmate = 
 		
 		//APPLICATION_LOGS.debug("Changed Inmates Location");
 	
