@@ -12,6 +12,8 @@ public class PostRegistrationPage {
 	
 	@FindBy(xpath=Constants.PostRegistration_PageTitle)
 	WebElement pageTitle;
+	@FindBy(xpath=Constants.PostRegistration_SuccessMessage)
+	WebElement successMessage;
 	@FindBy(xpath=Constants.PostRegistration_FirstUpdateIcon)
 	WebElement firstUpdateIcon;	
 	
@@ -38,6 +40,18 @@ public class PostRegistrationPage {
 		UpdatePostRegistrationPage updatePostRegPage = PageFactory.initElements(driver, UpdatePostRegistrationPage.class);
 		return updatePostRegPage;
 		
+	}
+	
+	public String getActualSuccessMessage(){
+		String ActualSuccessMessage = successMessage.getText();
+		return ActualSuccessMessage;
+		
+	}
+	
+	
+	public String getExpectedSuccessMessage(){
+		String ExpectedSuccessMessage = Constants.PostRegistration_SuccessMessageText;
+		return ExpectedSuccessMessage;
 	}
 
 }
