@@ -63,10 +63,11 @@ public class PropertyManagementNewTest extends TestBase {
 		//add Inmate Property
 		manageProperty.addPrivateProperties(data.get("Private Date"), data.get("Private Item"), 
 				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
+	
 		
 		manageProperty.addPrisonProperties(data.get("Prison Date"), data.get("Prison Item"), 
 				data.get("Prison Description"), data.get("Prison Quantity"));
-		
+			
 		//allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
 		
 		//APPLICATION_LOGS.debug("Changed Inmates Location");
@@ -86,7 +87,7 @@ public class PropertyManagementNewTest extends TestBase {
 
 	@DataProvider
 	public Object[][] getAllocationData() {
-		return TestUtil.getTestData("Property Management Test", xls);
+		return TestUtil.getTestData("Property Management Add", xls);
 
 	}
 }

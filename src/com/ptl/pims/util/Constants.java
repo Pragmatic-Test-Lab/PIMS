@@ -23,8 +23,8 @@ public class Constants {
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[@id='w0']/div[2]/button";
 
-	public static final String InmateRegistration_personal_tab = "";
-	public static final String InmateRegistration_calssfication_tab = "";
+	public static final String InmateRegistration_personal_tab = "//*[@id='w29']/li[1]/a";
+	public static final String InmateRegistration_calssfication_tab = "//*[@id='w29']/li[2]/a";
 	public static final String InmateRegistration_Header = "";
 
 	public static final String InmateRegistration_Classifiaction_Gender = "";
@@ -69,7 +69,7 @@ public class Constants {
 	public static final String EditSubLink = "//*[text()='Edit']";
 	public static final String AuthorizeSubLink = "//*[text()='Authorize']";
 	public static final String RegistrationMainLink = "//*[text()='Registration ']";
-	public static final String RegistrationSubLink = "//*[text()='Registation']";
+	public static final String RegistrationSubLink = "//*[@id='w3']/li[1]/a";
 	public static final String AllocateLocationSubLink = "//*[text()='Alocate Location']";
 	public static final String PropertyManagementSubLink = "//*[text()='Property Magement']";
 	public static final String AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
@@ -201,6 +201,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//td//a)[1]";
+
 
 
 }
