@@ -148,6 +148,7 @@ public class Constants {
 			public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "//*[@id='infantsorpreschool-1-psc_date_of_birth']";
 			
 			public static final String CreateAdmission_HistoryTab = "//*[@id='w7']/li[6]/a";
+			public static final String Save_Admission = "//*[@id='w7']/li[6]/a";
 
 			
 			
