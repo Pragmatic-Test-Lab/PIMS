@@ -7,7 +7,7 @@ public class Constants {
 		//Registration Page:
 	
 		//Personal Details Tab
-		public static final String InmateRegistration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+		public static final String InmateRegistration_FirtstRow_EditButton = "(.//a[contains(@href,'registration/update')]/span)[1]";
 		public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 		public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
 		public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
@@ -23,7 +23,7 @@ public class Constants {
 		public static final String InmateRegistration_Personal_GSDivision = "//*[@id='admission-adm_gn_devision_id']";
 		public static final String InmateRegistration_Personal_City = "//*[@id='admission-adm_city_id']";
 		public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
-		public static final String InmateRegistration_Personal_Update = "//*[@id='w0']/div[2]/button";
+		public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
 		
 	
 		public static final String InmateRegistration_personal_tab = "";
