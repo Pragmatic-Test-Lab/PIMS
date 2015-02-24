@@ -231,6 +231,9 @@ public class Constants {
 
 	// Property Management Inmate Select Page
 	public static final String PropertyManagement_ExpectedHeader = "Property Management";
+	public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+	public static final String PropertyManagement_ExpectedSuccessMessagePart1 = "Saved";
+	public static final String PropertyManagement_ExpectedSuccessMessagePart2 = "successfully";
 	
 	// Property Management Page
 			// Private Property Tab
@@ -239,6 +242,7 @@ public class Constants {
 			public static final String PropertyManagement_PrivateTab_AllRows = ".//*[contains(@id, 'private_property_row_')]";
 			public static final String PropertyManagement_PrivateTab_Date = ".//input[contains(@id, 'prp_date')]";
 			public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
+			public static final String PropertyManagement_PrivateTab_SelectedItem = ".//select[contains(@id, 'prp_item_id')]//option[@selected='']";
 			public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
 			public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
 			public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
@@ -249,6 +253,7 @@ public class Constants {
 			public static final String PropertyManagement_PrisonTab_AllRows = ".//*[contains(@id, 'prison_property_row_')]";
 			public static final String PropertyManagement_PrisonTab_Date = ".//input[contains(@id, 'psp_date')]";
 			public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
+			public static final String PropertyManagement_PrisonTab_SelectedItem = ".//select[contains(@id, 'psp_item_id')]//option[@selected='']";
 			public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
 			public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
 			public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
