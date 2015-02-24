@@ -66,12 +66,12 @@ public class Constants {
 
 	// Top Menu Links
 	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
-	public static final String TopMenu_AdmissionTopLink = "//*[text()='Admission']";
+	public static final String TopMenu_AdmissionTopLink = "//*[text()='Admission ']";
 	public static final String TopMenu_NewAdmissionSubLink = "//*[text()='New Admission']";
 	public static final String TopMenu_EditSubLink = "//*[text()='Edit']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
 	public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
-	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registation']";
+	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
 	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
 	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Magement']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
@@ -191,8 +191,14 @@ public class Constants {
 	public static final String PropertyManagement_Prison_Quantity = "";
 	public static final String PropertyManagement_Prison_Value = "";
 
+
 	// Post Registration Page
+	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
+	public static final String PostRegistration_PageTitleText = "Post Registration";
+	public static final String PostRegistration_SuccessMessage = "//div[@class='alert alert-success']";
+	public static final String PostRegistration_SuccessMessageText = "Saved successfully";
 	public static final String PostRegistration_FirstUpdateIcon = "(.//a[@title='Update']/span)[1]";
+	
 
 	// Update Post Registration Page
 	public static final String UpdatePostRegistration_CheckBox = "//*[@id='admission-adm_is_attended_to_orientation_programe']";
@@ -201,11 +207,18 @@ public class Constants {
 	public static final String UpdatePostRegistration_PhotoFrontBrowse = "//*[@id='admission-image_front']";
 	public static final String UpdatePostRegistration_PhotoLeftBrowse = "//*[@id='admission-image_lhs']";
 	public static final String UpdatePostRegistration_EducationalQualificationTab = "//a[text()='Educational Qualifications']";
+	public static final String UpdatePostRegistration_EducationalTBody = "//*[@id='educational_qualification_grid']/tbody";
 	public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
 	public static final String UpdatePostRegistration_EducationalQualificationAddNew = "(.//button[text()='Add New'])[1]";
 	public static final String UpdatePostRegistration_Institute = "//*[@id='educationalqualification-1-equ_institute']";
+	public static final String UpdatePostRegistration_InstituteFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_InstituteLastPart = "-equ_institute']";
 	public static final String UpdatePostRegistration_QualificationType = "//*[@id='educationalqualification-1-equ_qulification_type_id']";
+	public static final String UpdatePostRegistration_QualificationTypeFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_QualificationTypeLastPart = "-equ_qulification_type_id']";
 	public static final String UpdatePostRegistration_Language = "//*[@id='educationalqualification-1-equ_language_id']";
+	public static final String UpdatePostRegistration_LanguageFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
 	public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";
 	public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
@@ -268,9 +281,7 @@ public class Constants {
 
 	public static final String UpdatePropertyManagementButton = ".//button[text()='Update']";
 
-	// Post Registration Page
-	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
-	public static final String PostRegistration_PageTitleText = "Post Registration";
+	
 
 	// Inmate Search Pages
 	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
@@ -278,5 +289,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//td//a)[1]";
+
+	
 
 }

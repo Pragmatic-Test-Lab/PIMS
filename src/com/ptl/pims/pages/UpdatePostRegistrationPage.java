@@ -1,5 +1,8 @@
 package com.ptl.pims.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,14 +27,22 @@ public class UpdatePostRegistrationPage {
 	WebElement photoLeft;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationTab)
 	WebElement educationalQualificationTab;
+	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalTBody)
+	WebElement education_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAddNew)
 	WebElement addNew;
 	@FindBy(xpath=Constants.UpdatePostRegistration_Institute)
 	WebElement institute;
+	String instituteFirstPart=Constants.UpdatePostRegistration_InstituteFirstPart;	
+	String instituteLastPart=Constants.UpdatePostRegistration_InstituteLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_QualificationType)
 	WebElement qualificationType;
+	String qualificationTypeFirstPart=Constants.UpdatePostRegistration_QualificationTypeFirstPart;
+	String qualificationTypeLastPart=Constants.UpdatePostRegistration_QualificationTypeLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_Language)
 	WebElement language;
+	String languageFirstPart = Constants.UpdatePostRegistration_LanguageFirstPart;
+	String languageLastPart=Constants.UpdatePostRegistration_LanguageLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAction)
 	WebElement educationAction;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentTab)
@@ -140,13 +151,22 @@ public class UpdatePostRegistrationPage {
 	}
 	
 	
-	public void EnterEducationalQualifications(String Institute, String QualificationType, String Language){
-		addNew.click();
-		institute.sendKeys(Institute);
-		qualificationType.sendKeys(QualificationType);
-		language.sendKeys(Language);
+	public void EnterEducationalQualifications(String Institutes, String QualificationTypes, String Languages){
 		
+		String[] Institute = Institutes.split(",");
+		String[] QualificationType = QualificationTypes.split(",");
+		String[] Language = Languages.split(",");		
 		
+		int dataRows = initialRowCount(education_tbody);
+		for (int i = 0; i < Institute.length; i++) {
+			addNew.click();
+			int newDataRow = dataRows + i;
+			String DataRowNumber = String.valueOf(newDataRow);
+			driver.findElement(By.xpath(instituteFirstPart+DataRowNumber+instituteLastPart)).sendKeys(Institute[i]);
+			driver.findElement(By.xpath(qualificationTypeFirstPart+DataRowNumber+qualificationTypeLastPart)).sendKeys(QualificationType[i]);
+			driver.findElement(By.xpath(languageFirstPart+DataRowNumber+languageLastPart)).sendKeys(Language[i]);
+			
+		}		
 	}
 	
 	
@@ -190,6 +210,14 @@ public class UpdatePostRegistrationPage {
 		schoolAddressLine1.sendKeys(SchoolAddressLine1);
 		schoolAddressLine2.sendKeys(SchoolAddressLine2);
 		schoolAddressLine3.sendKeys(SchoolAddressLine3);
+	}
+	
+	
+	public int initialRowCount(WebElement element){
+		List<WebElement> rows = element.findElements(By.tagName("tr"));		
+		int size = rows.size();
+		return size;
+		
 	}
 	
 	
