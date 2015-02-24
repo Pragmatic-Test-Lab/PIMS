@@ -5,20 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 
 public class LoginPage {
 
 	public WebDriver driver;
 
-	@FindBy(xpath = Constants.username)
+	@FindBy(xpath = Constants.Login_username)
 	public WebElement username;
-	@FindBy(xpath = Constants.password)
+	@FindBy(xpath = Constants.Login_password)
 	public WebElement password;
-	@FindBy(xpath = Constants.login)
+	@FindBy(xpath = Constants.Login_login)
 	public WebElement login;
-	@FindBy(xpath = Constants.LogOut)
+	@FindBy(xpath = Constants.TopMenu_LogOut)
 	public WebElement logOut;
 
 	public LoginPage(WebDriver dr) {

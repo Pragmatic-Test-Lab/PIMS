@@ -2,7 +2,6 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;

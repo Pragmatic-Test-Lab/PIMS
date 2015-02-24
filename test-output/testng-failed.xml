@@ -1,3 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab">
+        <methods>
+          <include name="GoToAllocateLocationPage" invocation-numbers="0"/>
+          <include name="initConfiguration"/>
+          <include name="initDriver"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- com.ptl.pims.testcases.VerifyUpdatePostRegistrationDefaultTab -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
+=======
 <<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -6,7 +23,7 @@
     <classes>
       <class name="com.ptl.pims.testcases.InmateRegistrationTest">
         <methods>
-          <include name="enterInmatePersonalDataTest" invocation-numbers="0"/>
+          <include name="enterInmateCalasificationTest" invocation-numbers="0"/>
           <include name="initConfiguration"/>
           <include name="initDriver"/>
         </methods>
@@ -14,6 +31,8 @@
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
+<<<<<<< HEAD
+=======
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -43,4 +62,6 @@
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
+>>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+>>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
 >>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
