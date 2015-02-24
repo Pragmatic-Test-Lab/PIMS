@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.LoginPage;
 import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
+import com.ptl.pims.pages.PropertyManagementPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -20,15 +21,9 @@ import com.ptl.pims.util.TestUtil;
 public class PropertyManagementNewTest extends TestBase {
 	
 	HomePage landingPage = null;
-	PropertyManagementInmateSelectPage manageProperty = null;
+	PropertyManagementInmateSelectPage managePropertySelectInmate = null;
+	PropertyManagementPage manageProperty = null;
 	
-	@BeforeSuite
-	public void init() {
-		initConfiguration();
-		APPLICATION_LOGS.debug("Configuration File initialized in Login Test");
-		initDriver();
-		APPLICATION_LOGS.debug("Browser initialized in Login Test");
-	}
 
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
@@ -37,11 +32,12 @@ public class PropertyManagementNewTest extends TestBase {
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 		
-		landingPage = returnToHomePage();		
+		landingPage = returnToHomePage();	
+		
 		APPLICATION_LOGS.debug("Going to Property Management Page");		
-		manageProperty = landingPage.goToManageProperty();
+		managePropertySelectInmate = landingPage.goToManageProperty();
 
-		Assert.assertEquals(manageProperty.getHeader(), Constants.PropertyManagement_ExpectedHeader, 
+		Assert.assertEquals(managePropertySelectInmate.getHeader(), Constants.PropertyManagement_ExpectedHeader, 
 				"Could not reach Property Management");
 
 		APPLICATION_LOGS.debug("Reached Property Management Page");
@@ -55,26 +51,42 @@ public class PropertyManagementNewTest extends TestBase {
 		// Use search if specific inmate is needed
 		//
 
-		// Saves First Inmates Registration Number, Name and Location
-//		FInmate_RegNum = manageProperty.getFInmateRegNo();
-//		FInmate_Name = manageProperty.getFInmateName();
-//		FInmate_Location = manageProperty.getFInmateLocation();
+		manageProperty = managePropertySelectInmate.clickFirstInmate();	
 
-		manageProperty.clickFirstInmate();	
-		
-		//checks Inmate details
-		//boolean inmateDetailsValid = manageProperty.validatemanagePropertyPageData(FInmate_RegNum, FInmate_Name, FInmate_Location);
-		
-		//Assert.assertTrue(inmateDetailsValid, "Inmate details in page are not Matching");
-		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
+		APPLICATION_LOGS.debug("Reached Inmates Property Management Page");
 
 	}
 	
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      
+	public void addInmateProperty(Hashtable<String, String> data) {
+		
+		//add Inmate Property
+		manageProperty.addPrivateProperties(data.get("Private Date"), data.get("Private Item"), 
+				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
+		
+		manageProperty.addPrisonProperties(data.get("Prison Date"), data.get("Prison Item"), 
+				data.get("Prison Description"), data.get("Prison Quantity"));
+		
+		//allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
+		
+		//APPLICATION_LOGS.debug("Changed Inmates Location");
+	
+		//gets changed Inmate
+		//allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(null, null, null);	
+		
+		//allocationPage = allocateLocationInmateSelect.clickFirstInmate();
+		
+		//check location and compare
+		//Assert.assertTrue(allocationPage.getCurrentLocation().equals(data.get("New Location")),
+				//"Location Changing has failed");		
+		
+		//APPLICATION_LOGS.debug("Changed Inmate location successfully");
 
+	} 
 
 	@DataProvider
 	public Object[][] getAllocationData() {
-		return TestUtil.getTestData("Allocate Location Test", xls);
+		return TestUtil.getTestData("Property Management Test", xls);
 
 	}
 }

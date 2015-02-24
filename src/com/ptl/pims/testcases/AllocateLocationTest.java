@@ -38,19 +38,21 @@ public class AllocateLocationTest extends TestBase {
 		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");
+		
 		allocateLocationInmateSelect = landingPage.goToAllocateLocation();
-		Assert.assertTrue(allocateLocationInmateSelect.getHeader().equalsIgnoreCase(Constants.AllocateLocation_ExpectedHeader),"Could not reach Allocate Location");
-		//Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
-			//	"Could not reach Allocate Location");
+		
+		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
+			"Could not reach Allocate Location");
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 	}
+	
 
-	@Test(dependsOnMethods = "GoToAllocateLocationPage")
+	@Test(dependsOnMethods = "GoToAllocateLocationPage")								//pims-921
 	public void clickInmateLink() {
 		
 		//
-		// Use search if specific inmate is needed
+		// Search if specific inmate is needed
 		//
 
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
@@ -60,22 +62,28 @@ public class AllocateLocationTest extends TestBase {
 	}
 	
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      //pims-993, pims-994
 	public void changeInmateLocation(Hashtable<String, String> data) {
 		
-		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");
+		Assert.assertTrue(!allocationPage.getCurrentLocation().equals(data.get("New Location")),
+				"Inmate already in " + allocationPage.getCurrentLocation() + ",Cannot change location");
+		
 		//change Inmate Location
-		allocationPage.changeLocation(data.get("New Location"));
+		allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
 		
 		APPLICATION_LOGS.debug("Changed Inmates Location");
-		
-		//check if Inmate Location has changed		
+	
 		//gets changed Inmate
-		//allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);	
+		//allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(null, null, null);	
+		
+		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
 		
 		//check location and compare
-		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");		
+		Assert.assertTrue(allocationPage.getCurrentLocation().equals(data.get("New Location")),
+				"Location Changing has failed");		
 		
+		APPLICATION_LOGS.debug("Changed Inmate location successfully");
+
 	}
 
 
