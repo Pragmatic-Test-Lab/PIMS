@@ -6,6 +6,8 @@ public class Constants {
 
 	// Personal Details Tab
 	public static final String InmateRegistration_FirtstRow_EditButton = "(.//a[contains(@href,'registration/update')]/span)[1]";
+	
+	//Update Registration
 	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
 	public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
@@ -45,7 +47,7 @@ public class Constants {
 	public static final String Login_password = "//*[@id='login-form-password']";
 	public static final String Login_login = "//*[@id='login-form']/button";
 
-	public static final String Login_PasswordError = "//*[@id='login-form']/div[2]/div";
+	public static final String Login_PasswordError = "//*[text()='Password']/following::div[1]";
 	public static final String Login_PasswordErrorText = "Invalid login or password";
 	public static final String Loginline2 = "//*[@id='login-form-login']";
 	public static final String Login_emptylogin = "";
@@ -105,7 +107,7 @@ public class Constants {
 	public static final String CreateAdmission_ImageLHSRemove = "";
 
 	public static final String CreateAdmission_InmateCourtDetailTab = "//*[@id='w7']/li[1]/a";
-	public static final String CreateAdmission_InmateCourtDetail_AddNew = "//*[@id='w7-tab0']/div/div[2]/button";
+	public static final String CreateAdmission_InmateCourtDetail_AddNew = "(.//button[text()='Add New'])[1]";
 	public static final String CreateAdmission_InmateCourtDetail_Court = "//*[@id='inmatecasedetails-1-icd_court_id']";
 	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "//*[@id='inmatecasedetails-1-icd_case_number']";
 	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "//*[@id='inmatecasedetails-1-icd_date_of_conviction']";
