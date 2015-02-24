@@ -52,12 +52,11 @@ public class TestBase {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}	
 		
 
 	}
 
-	
 	@BeforeSuite
 	public void initDriver() {
 		if (driver == null) {
@@ -125,12 +124,10 @@ public class TestBase {
 			APPLICATION_LOGS.debug("Browser initialized");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-
 		}
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
@@ -152,6 +149,7 @@ public class TestBase {
 
 	}
 
+
 	public TopMenu getTopMenu() {
 		if (topMenu == null) {
 			topMenu = PageFactory.initElements(driver, TopMenu.class);
@@ -171,8 +169,10 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText,
+
+			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
 					"Could not login!");
+
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;

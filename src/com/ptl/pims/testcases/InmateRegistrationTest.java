@@ -1,21 +1,25 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
+import com.ptl.pims.pages.InmateRegistrationSelectPage;
+import com.ptl.pims.pages.LoginPage;
 import com.ptl.pims.util.TestUtil;
 
 public class InmateRegistrationTest extends TestBase {
 
 	HomePage landingPage = null;
-
-
 
 	@Test(dataProvider = "getInmatePersonalData")   //PIM-1080
 	public void enterInmatePersonalDataTest(Hashtable<String, String> data) {
@@ -26,12 +30,14 @@ public class InmateRegistrationTest extends TestBase {
 		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-		InmateRegistration inmateRegistration  = landingPage.goToInmateRegistration();
+		InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
+		
+		InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
 		//String ActualHeader = inmateRegistration.getHeader();
 		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
 
-		//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
+			//Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 
@@ -42,7 +48,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
+/*	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Classification", xls) || data.get("Runmode").equals("No"))
@@ -53,8 +59,8 @@ public class InmateRegistrationTest extends TestBase {
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		InmateRegistration inmateRegistration  = landingPage.goToInmateRegistration();
 
-		//String ActualHeader = inmateRegistration.getHeader();
-		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
+		String ActualHeader = inmateRegistration.getHeader();
+		String ExpectedHeader = inmateRegistration.getExpectedHeader();
 
 		//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
 
@@ -63,7 +69,7 @@ public class InmateRegistrationTest extends TestBase {
 		inmateRegistration.doAddCalsifiactionDetailsOfInmate(data.get("gender"),data.get("preConvict"),data.get("classif")); 
 
 
-	}
+	}*/
 
 
 	@DataProvider
@@ -71,17 +77,12 @@ public class InmateRegistrationTest extends TestBase {
 		return TestUtil.getTestData("Inmate Registration-Personal", xls);
 
 	}
-
+/*
 	@DataProvider
 	public Object[][] getInmateClassificationData() {
 		return TestUtil.getTestData("Inmate Reg-Classification", xls);
 
-	}
-
-	@AfterSuite
-	public void quite(){
-		driver.quit();
-	}
+	}*/
 
 }
 

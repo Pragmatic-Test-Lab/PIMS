@@ -81,7 +81,7 @@ public class InmateRegistration {
 			String plicDiv){
 		
 		//TODO : add method to search by reg number
-		editFirstInmate.click();
+//		editFirstInmate.click();
 		tab_personal.click();
 		otherName1.sendKeys(othrName1);
 		otherName2.sendKeys(othrName2);

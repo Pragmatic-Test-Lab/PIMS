@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.ptl.pims.util.Constants;
 
 public class HomePage {
@@ -81,6 +80,7 @@ public class HomePage {
 
 	public AllocateLocationInmateSelectPage goToAllocateLocation() {
 
+		RegistrationLink.click();
 		AllocateLocationLink.click();
 
 		AllocateLocationInmateSelectPage allocateLocation = PageFactory
@@ -88,11 +88,11 @@ public class HomePage {
 		return allocateLocation;
 	}
 
-	public InmateRegistration goToInmateRegistration() {
+	public InmateRegistrationSelectPage goToInmateRegistration() {
 		registrationMainLink.click();
 		registrationSubLink.click();
-		InmateRegistration inmateRegistration = PageFactory.initElements(
-				driver, InmateRegistration.class);
+		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
+				driver, InmateRegistrationSelectPage.class);
 		return inmateRegistration;
 	}
 
@@ -107,11 +107,12 @@ public class HomePage {
 		return Logout;
 	}
 
-	public PropertyManagement goToManageProperty() {
+	public PropertyManagementInmateSelectPage goToManageProperty() {
 
+		registrationMainLink.click();
 		PropertyManagementLink.click();
-		PropertyManagement propertyManagement = PageFactory.initElements(
-				driver, PropertyManagement.class);
+		PropertyManagementInmateSelectPage propertyManagement = PageFactory.initElements(
+				driver, PropertyManagementInmateSelectPage.class);
 		return propertyManagement;
 	}
 }
