@@ -88,11 +88,11 @@ public class HomePage {
 		return allocateLocation;
 	}
 
-	public InmateRegistration goToInmateRegistration() {
+	public InmateRegistrationSelectPage goToInmateRegistration() {
 		registrationMainLink.click();
 		registrationSubLink.click();
-		InmateRegistration inmateRegistration = PageFactory.initElements(
-				driver, InmateRegistration.class);
+		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
+				driver, InmateRegistrationSelectPage.class);
 		return inmateRegistration;
 	}
 

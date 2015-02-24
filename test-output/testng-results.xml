@@ -1,3 +1,37 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="418447" started-at="2015-02-23T10:47:01Z" finished-at="2015-02-23T10:54:00Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="418447" started-at="2015-02-23T10:47:01Z" finished-at="2015-02-23T10:54:00Z">
+      <class name="com.ptl.pims.testcases.InmateRegistrationTest">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@fdc85a3]" name="initConfiguration" is-config="true" duration-ms="209" started-at="2015-02-23T16:16:45Z" finished-at="2015-02-23T16:16:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initConfiguration -->
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@fdc85a3]" name="initDriver" is-config="true" duration-ms="15740" started-at="2015-02-23T16:16:46Z" finished-at="2015-02-23T16:17:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@fdc85a3]" name="enterInmatePersonalDataTest" duration-ms="418324" started-at="2015-02-23T16:17:01Z" data-provider="getInmatePersonalData" finished-at="2015-02-23T16:24:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, CallName2=raja, District=Colombo, CallName1=Rajeshin, City=Kollupitiya, DS=Colombo, PostOffice=Kollupitiya, Country=Sri Lanka, GsDiv=Kollupitiya East , Province=Western Province, OtherName2=Rajur, OtherName1=Raj}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInmatePersonalDataTest -->
+      </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
 <testng-results skipped="2" failed="1" total="3" passed="0">
@@ -152,3 +186,4 @@ Caused by: java.net.ConnectException: Connection refused: connect
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
+>>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
