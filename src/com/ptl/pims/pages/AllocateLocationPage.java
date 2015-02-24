@@ -15,10 +15,12 @@ public class AllocateLocationPage {
 	public WebElement RegistrationNum;
 	@FindBy(xpath = Constants.AllocateLocation_InmateName)
 	public WebElement InmateName;
+	@FindBy(xpath = Constants.AllocateLocation_CurrentLocation)
+	public WebElement CurrentLocation;
 	@FindBy(xpath = Constants.AllocateLocation_LocationDropdown)
 	public WebElement LocationDropdown;
-	@FindBy(xpath = Constants.AllocateLocation_SaveLocation)
-	public WebElement SaveLocation;
+	@FindBy(xpath = Constants.AllocateLocation_SaveButton)
+	public WebElement SaveButton;
 
 	public AllocateLocationPage(WebDriver dr) {
 		driver = dr;
@@ -37,9 +39,14 @@ public class AllocateLocationPage {
 		
 		return true;
 	}
+	
+	public String getCurrentLocation(){
+		return CurrentLocation.getText();
+		
+	}
 
 	public void changeLocation(String newLocation) {
 		LocationDropdown.sendKeys(newLocation);
-		SaveLocation.click();
+		SaveButton.click();
 	}
 }

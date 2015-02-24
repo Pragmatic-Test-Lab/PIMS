@@ -52,11 +52,9 @@ public class AllocateLocationTest extends TestBase {
 		//
 		// Use search if specific inmate is needed
 		//
-		//
 
-		allocationPage = allocateLocationInmateSelect.clickFirstInmate();	
-
-		//Assert.assertTrue(inmateDetailsValid, "Inmate details in page are not Matching");
+		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
+		
 		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
 
 	}
@@ -73,7 +71,8 @@ public class AllocateLocationTest extends TestBase {
 		
 		//check if Inmate Location has changed		
 		//gets changed Inmate
-		//allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);		
+		//allocateLocationInmateSelect.doSearch(FInmate_RegNum, null, FInmate_Name, null, null);	
+		
 		//check location and compare
 		Assert.assertTrue(!FInmate_Location.equals(data.get("New Location")), "Inmate already in " + FInmate_Location + ",Cannot change location");		
 		

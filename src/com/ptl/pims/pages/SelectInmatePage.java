@@ -14,7 +14,7 @@ public abstract class SelectInmatePage {
 
 	
 	// Inmate Select Page Header
-	@FindBy(xpath = Constants.AllocateLocation_Header)
+	@FindBy(xpath = Constants.SelectInmate_Header)
 	public WebElement HeaderField;
 	// SearchFields
 	@FindBy(xpath = Constants.InmateSearch_RegNoSearchField)
@@ -47,14 +47,6 @@ public abstract class SelectInmatePage {
 		return (T)PageFactory.initElements(driver, this.getClass());
  
 	}
-	
 
-	
-/*	public int numberOfInmateRecordsInPage(){
-		
-		
-		
-		return 0;
-	}*/
 	
 }

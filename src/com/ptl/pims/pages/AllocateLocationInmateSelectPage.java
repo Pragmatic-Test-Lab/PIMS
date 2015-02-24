@@ -3,7 +3,6 @@ package com.ptl.pims.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class AllocateLocationInmateSelectPage extends SelectInmatePage{
 
 

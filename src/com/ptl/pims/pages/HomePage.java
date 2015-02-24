@@ -107,11 +107,11 @@ public class HomePage {
 		return Logout;
 	}
 
-	public PropertyManagement goToManageProperty() {
+	public PropertyManagementInmateSelectPage goToManageProperty() {
 
 		PropertyManagementLink.click();
-		PropertyManagement propertyManagement = PageFactory.initElements(
-				driver, PropertyManagement.class);
+		PropertyManagementInmateSelectPage propertyManagement = PageFactory.initElements(
+				driver, PropertyManagementInmateSelectPage.class);
 		return propertyManagement;
 	}
 }
