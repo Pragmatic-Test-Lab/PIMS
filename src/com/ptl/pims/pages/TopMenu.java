@@ -12,33 +12,33 @@ public class TopMenu {
 	
 	WebDriver driver;
 	
-	@FindBy(xpath=Constants.PIMSTopLink)
+	@FindBy(xpath=Constants.TopMenu_PIMSTopLink)
 	WebElement homePageTopLink;
-	@FindBy(xpath=Constants.AdmissionTopLink)
+	@FindBy(xpath=Constants.TopMenu_AdmissionTopLink)
 	WebElement admissionTopLink;
-	@FindBy(xpath = Constants.NewAdmissionSubLink)
+	@FindBy(xpath = Constants.TopMenu_NewAdmissionSubLink)
 	WebElement newAdmissionSubLink;
-	@FindBy(xpath=Constants.EditSubLink)
+	@FindBy(xpath=Constants.TopMenu_EditSubLink)
 	WebElement editSubLink;
-	@FindBy(xpath = Constants.AuthorizeSubLink)
+	@FindBy(xpath = Constants.TopMenu_AuthorizeSubLink)
 	WebElement authorizeSubLink;
-	@FindBy(xpath = Constants.RegistrationMainLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationMainLink)
 	WebElement registrationMainLink;
-	@FindBy(xpath = Constants.RegistrationSubLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationSubLink)
 	WebElement registrationSubLink;
-	@FindBy(xpath = Constants.AllocateLocationSubLink)
+	@FindBy(xpath = Constants.TopMenu_AllocateLocationSubLink)
 	WebElement allocateLocationSubLink;
-	@FindBy(xpath = Constants.PropertyManagementSubLink)
+	@FindBy(xpath = Constants.TopMenu_PropertyManagementSubLink)
 	WebElement propertyManagement;
-	@FindBy(xpath = Constants.AuthorizeRegistrationSubLink)
+	@FindBy(xpath = Constants.TopMenu_AuthorizeRegistrationSubLink)
 	WebElement authorizeRegSub;
-	@FindBy(xpath = Constants.PostRegistrationMainLink)
+	@FindBy(xpath = Constants.TopMenu_PostRegistrationMainLink)
 	WebElement postRegMain;
-	@FindBy(xpath = Constants.PostRegistrationSubLink)
+	@FindBy(xpath = Constants.TopMenu_PostRegistrationSubLink)
 	WebElement postRegSub;
-	@FindBy(xpath = Constants.AuthorizePostRegistrationSubLink)
+	@FindBy(xpath = Constants.TopMenu_AuthorizePostRegistrationSubLink)
 	WebElement authorizePost;
-	@FindBy(xpath = Constants.LogOut)
+	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
 	
 	

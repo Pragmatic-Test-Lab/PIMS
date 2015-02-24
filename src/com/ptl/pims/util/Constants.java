@@ -7,7 +7,7 @@ public class Constants {
 		//Registration Page:
 	
 		//Personal Details Tab
-		public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+		public static final String InmateRegistration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
 		public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 		public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
 		public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
@@ -44,16 +44,16 @@ public class Constants {
 		public static final String landingPageTitle = "Home";
 
 		// Login Page
-		public static final String username = "//*[@id='login-form-login']";
-		public static final String password = "//*[@id='login-form-password']";
-		public static final String login = "//*[@id='login-form']/button";
+		public static final String Login_username = "//*[@id='login-form-login']";
+		public static final String Login_password = "//*[@id='login-form-password']";
+		public static final String Login_login = "//*[@id='login-form']/button";
 
-		public static final String PasswordError = "//*[@id='login-form']/div[2]/div";
-		public static final String PasswordErrorText = "Invalid login or password";
+		public static final String Login_PasswordError = "//*[@id='login-form']/div[2]/div";
+		public static final String Login_PasswordErrorText = "Invalid login or password";
 		public static final String Loginline2 = "//*[@id='login-form-login']";
-		public static final String emptylogin = "";
-		public static final String passwordline2 = "//*[@id='login-form-password']";
-		public static final String emptyPassword = "";
+		public static final String Login_emptylogin = "";
+		public static final String Login_passwordline2 = "//*[@id='login-form-password']";
+		public static final String Login_emptyPassword = "";
 		
 		
 
@@ -69,20 +69,20 @@ public class Constants {
 		public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
 
 		// Top Menu Links
-		public static final String PIMSTopLink = "//a[text()='PIMS']";
-		public static final String AdmissionTopLink = "//*[text()='Admission']";
-		public static final String NewAdmissionSubLink = "//*[text()='New Admission']";
-		public static final String EditSubLink = "//*[text()='Edit']";
-		public static final String AuthorizeSubLink = "//*[text()='Authorize']";
-		public static final String RegistrationMainLink = "//*[text()='Registration ']";
-		public static final String RegistrationSubLink = "//*[text()='Registation']";
-		public static final String AllocateLocationSubLink = "//*[text()='Alocate Location']";
-		public static final String PropertyManagementSubLink = "//*[text()='Property Magement']";
-		public static final String AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
-		public static final String PostRegistrationMainLink = "//a[text()='Post Registration ']";
-		public static final String PostRegistrationSubLink = "//a[text()='Post Registration']";
-		public static final String AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";		
-		public static final String LogOut = "//*[text()='Logout (admin_wataraka)']";
+		public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
+		public static final String TopMenu_AdmissionTopLink = "//*[text()='Admission']";
+		public static final String TopMenu_NewAdmissionSubLink = "//*[text()='New Admission']";
+		public static final String TopMenu_EditSubLink = "//*[text()='Edit']";
+		public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
+		public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
+		public static final String TopMenu_RegistrationSubLink = "//*[text()='Registation']";
+		public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
+		public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Magement']";
+		public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
+		public static final String TopMenu_PostRegistrationMainLink = "//a[text()='Post Registration ']";
+		public static final String TopMenu_PostRegistrationSubLink = "//a[text()='Post Registration']";
+		public static final String TopMenu_AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";		
+		public static final String TopMenu_LogOut = "//*[text()='Logout (admin_wataraka)']";
 		// Logout (admin_wataraka)
 
 		// New Admission Page

@@ -10,9 +10,9 @@ public class NewAdmissionPage {
 	
 	WebDriver driver;
 	
-	@FindBy(xpath = Constants.AdmissionTopLink)
+	@FindBy(xpath = Constants.TopMenu_AdmissionTopLink)
 	WebElement AdmissionMenu;
-	@FindBy(xpath = Constants.NewAdmissionSubLink)
+	@FindBy(xpath = Constants.TopMenu_NewAdmissionSubLink)
 	WebElement NewAdmissionSubMenu;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCategory)
 	WebElement InmateCatagory;

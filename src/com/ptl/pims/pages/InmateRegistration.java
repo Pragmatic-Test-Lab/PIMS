@@ -10,7 +10,7 @@ public class InmateRegistration {
 	
 	WebDriver driver ;
 	
-	@FindBy(xpath = Constants.InmateRegistaration_FirtstRow_EditButton)
+	@FindBy(xpath = Constants.InmateRegistration_FirtstRow_EditButton)
 	public WebElement editFirstInmate;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
 	public WebElement updateButton;
