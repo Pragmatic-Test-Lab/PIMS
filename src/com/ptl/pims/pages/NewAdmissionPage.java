@@ -206,6 +206,7 @@ public class NewAdmissionPage {
 		
 		SaveInamteAdmissionButton.click();
 		
+		//TODO : Add verification for confirmation message
 		
 		
 	}
