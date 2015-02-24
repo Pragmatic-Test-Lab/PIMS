@@ -56,8 +56,6 @@ public class Constants {
 		public static final String Login_emptyPassword = "";
 		
 		
-
-		
 		// Home Page
 		public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
 		public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
