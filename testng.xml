@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PIMS Project">
+
+<listeners>
+    <listener class-name="listener.TestsListenerAdapter" />
+</listeners>
+<!-- <test name="User Login Test">
+    <classes>
+        <class name="com.ptl.testcases.LoginTest" ></class>  
+    </classes>
+</test> -->
+
+<test name="Login Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.LoginTest" ></class>  
+    </classes>
+</test>
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

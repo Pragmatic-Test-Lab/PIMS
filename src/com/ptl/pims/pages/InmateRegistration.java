@@ -10,7 +10,7 @@ public class InmateRegistration {
 	
 	WebDriver driver ;
 	
-	@FindBy(xpath = Constants.InmateRegistaration_FirtstRow_EditButton)
+	@FindBy(xpath = Constants.InmateRegistration_FirtstRow_EditButton)
 	public WebElement editFirstInmate;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
 	public WebElement updateButton;
@@ -102,12 +102,11 @@ public class InmateRegistration {
 		
 	}
 	
-	public void doAddClassifiactionDetailsOfInmate(String gender, String preConvictions, String classif){
-		
+
+	public void doAddClassifiactionDetailsOfInmate(String preConvictions, String classif){
 		//TODO : add method to search by reg number
 		editFirstInmate.click();
 		tab_classification.click();
-		this.gender.sendKeys(gender);
 		previous_conviction.sendKeys(preConvictions);
 		classification.sendKeys(classif);		
 		updateButton.click();

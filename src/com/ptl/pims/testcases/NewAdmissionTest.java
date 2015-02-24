@@ -19,6 +19,19 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.doCreateNewAdmition();
 	}
 	
+
 	
 
+	@Test
+	public void enterInmateCalasificationTest() throws InterruptedException {
+		NewAdmissionPage newAdmissionPage = new NewAdmissionPage(driver);
+		newAdmissionPage.doCreateNewAdmition();
+	}
+
+
+/*	@AfterSuite
+	public void quite(){
+		driver.quit();
+	}*/
+	
 }

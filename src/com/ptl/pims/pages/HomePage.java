@@ -28,26 +28,26 @@ public class HomePage {
 	@FindBy(xpath = Constants.Home_AllocateLocationLink)
 	WebElement AllocateLocationLink;
 
-	@FindBy(xpath = Constants.RegistrationMainLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationMainLink)
 	WebElement registrationMainLink;
-	@FindBy(xpath = Constants.RegistrationSubLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationSubLink)
 	WebElement registrationSubLink;
 
 	@FindBy(xpath = Constants.Home_PageHeader)
 	WebElement pageHeader;
 
-	@FindBy(xpath = Constants.PasswordError)
+	@FindBy(xpath = Constants.Login_PasswordError)
 	WebElement ErrorMessage2;
 
 	String loginline;
 	@FindBy(xpath = Constants.Loginline2)
 	WebElement loginline2;
-	String emptyLogin = Constants.emptylogin;
+	String emptyLogin = Constants.Login_emptylogin;
 
 	String passwordline;
-	@FindBy(xpath = Constants.passwordline2)
+	@FindBy(xpath = Constants.Login_passwordline2)
 	WebElement PasswordLine2;
-	String emptyPassword = Constants.emptyPassword;
+	String emptyPassword = Constants.Login_emptyPassword;
 
 	public HomePage(WebDriver dr) {
 		driver = dr;

@@ -5,7 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+
 import com.ptl.pims.util.Constants;
+
+import com.ptl.pims.util.*;
+
 
 public class NewAdmissionPage {
 	
@@ -15,7 +19,10 @@ public class NewAdmissionPage {
 	WebElement CreateAdmissionButton;
 	@FindBy(xpath = Constants.NewAdmissionHeder)
 	WebElement CreateAdmissionHeader;
-
+	@FindBy(xpath = Constants.TopMenu_AdmissionTopLink)
+	WebElement AdmissionMenu;
+	@FindBy(xpath = Constants.TopMenu_NewAdmissionSubLink)
+	WebElement NewAdmissionSubMenu;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCategory)
 	WebElement InmateCatagory;
 	@FindBy(xpath = Constants.CreateAdmission_CourtWarant)
@@ -127,13 +134,15 @@ public class NewAdmissionPage {
 	WebElement InmateInfantsPreschoolName;
 	@FindBy(xpath = Constants.CreateAdmission_InfantsPreschoolDateOfBirth)
 	WebElement InmateInfantsPreschoolDateOfBirth;
-	 
+	@FindBy(xpath = Constants.Save_Admission)
+	WebElement SaveInamteAdmissionButton;
 	
-	
-	
-	
+	 	
 	String ActualPage_Header;
 	String ExpectedPage_Header;
+	String RHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
+	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
+	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 	
 	
 	public NewAdmissionPage(WebDriver dr){
@@ -154,12 +163,12 @@ public class NewAdmissionPage {
 		OccurenceClassificatio.sendKeys("FO");
 		Gender.sendKeys("male");
 		//CurrentPositionInstitute.sendKeys("welikada");
-		Thread.sleep(5000);
-		ImageRHSBrowse.sendKeys("C:\\Users\\PTL\\Documents\\images\\Format_PNG.png");
-		Thread.sleep(5000);
-		ImageFrontBrowse.sendKeys("C:\\Users\\PTL\\Documents\\images\\Format_PNG.png");
-		Thread.sleep(5000);
-		ImageLHSBrowse.sendKeys("C:\\Users\\PTL\\Documents\\images\\Format_PNG.png");
+		Thread.sleep(3000);
+		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		Thread.sleep(3000);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		Thread.sleep(3000);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
 		
 		//Add court details
 		InmateAddNewCase.click();
@@ -201,6 +210,10 @@ public class NewAdmissionPage {
 		InmateInfantsPreschoolAddNew.click();
 		InmateInfantsPreschoolName.sendKeys("Name hi");
 		InmateInfantsPreschoolDateOfBirth.sendKeys("2015-02-25");
+		
+		SaveInamteAdmissionButton.click();
+		
+		//TODO : Add verification for confirmation message
 		
 		
 	}

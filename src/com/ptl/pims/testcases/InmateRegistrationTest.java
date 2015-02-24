@@ -68,7 +68,7 @@ public class InmateRegistrationTest extends TestBase {
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 
-		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("gender"),data.get("preConvict"),data.get("classif")); 
+		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("preConvict"),data.get("classif")); 
 
 
 	}
