@@ -6,8 +6,8 @@ public class Constants {
 
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
-	public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
-	public static final String InmateRegistration_FirtstRow_EditButton = "(.//a[contains(@href,'registration/update')]/span)[1]";
+	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
 	
 	//Update Registration
 
@@ -31,14 +31,30 @@ public class Constants {
 
 	//Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
-
-
 	public static final String InmateRegistration_Header = "";
-
-	public static final String InmateRegistration_Classifiaction_Gender = "";
 	public static final String InmateRegistration_Classification_Pervious_Conviction = "";
-	public static final String InmateRegistration_Classifiaction_Calssification = "";
-
+	public static final String InmateRegistration_Classifiaction_Calssification = "//*[@id='admission-adm_inmate_classification_id']";
+		
+	//Inmate characteristics tab
+	public static final String InmateRegistration_characteristics_tab ="//a[text()='Inmate Characteristic Details']";
+	public static final String InmateRegistration_Characteristic_nationality="//*[@id='admission-adm_nationality_id']";
+	public static final String InmateRegistration_Classifiaction_race="//*[@id='admission-adm_race_id']";
+	public static final String InmateRegistration_Classifiaction_marital="//*[@id='admission-adm_marital_status_id']";
+	public static final String InmateRegistration_Classifiaction_religion="//*[@id='admission-adm_religion_id']";
+	public static final String InmateRegistration_Classifiaction_NIC="//*[@id='admission-adm_nic']";
+	public static final String InmateRegistration_Classifiaction_birthdate="//*[@id='admission-adm_date_of_birth']";
+	public static final String InmateRegistration_Classifiaction_birthplace="//*[@id='admission-adm_birth_place']";
+	public static final String InmateRegistration_Classifiaction_passport="//*[@id='admission-adm_passport_no']";
+	
+	//Inmate identification tab
+	public static final String InmateRegistration_identification_tab ="//a[text()='Inmate Identification Details']";
+	
+	//Inmate case tab
+	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
+	
+	
+	
+	
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\config\\config.properties";
@@ -77,7 +93,7 @@ public class Constants {
 	public static final String TopMenu_EditSubLink = "//*[text()='Edit']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
 	public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
-	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registation']";
+	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
 	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
 	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Magement']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
