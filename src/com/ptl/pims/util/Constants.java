@@ -23,8 +23,8 @@ public class Constants {
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[@id='w0']/div[2]/button";
 
-	public static final String InmateRegistration_personal_tab = "//*[@id='w29']/li[1]/a";
-	public static final String InmateRegistration_calssfication_tab = "//*[@id='w29']/li[2]/a";
+	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
+	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
 	public static final String InmateRegistration_Header = "";
 
 	public static final String InmateRegistration_Classifiaction_Gender = "";

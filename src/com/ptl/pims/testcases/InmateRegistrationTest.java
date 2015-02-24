@@ -48,7 +48,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
-/*	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
+	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Classification", xls) || data.get("Runmode").equals("No"))
@@ -57,19 +57,21 @@ public class InmateRegistrationTest extends TestBase {
 		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-		InmateRegistration inmateRegistration  = landingPage.goToInmateRegistration();
+	InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
+		
+		InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
-		String ActualHeader = inmateRegistration.getHeader();
-		String ExpectedHeader = inmateRegistration.getExpectedHeader();
+		//String ActualHeader = inmateRegistration.getHeader();
+		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
 
 		//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 
-		inmateRegistration.doAddCalsifiactionDetailsOfInmate(data.get("gender"),data.get("preConvict"),data.get("classif")); 
+		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("gender"),data.get("preConvict"),data.get("classif")); 
 
 
-	}*/
+	}
 
 
 	@DataProvider
@@ -77,12 +79,12 @@ public class InmateRegistrationTest extends TestBase {
 		return TestUtil.getTestData("Inmate Registration-Personal", xls);
 
 	}
-/*
+
 	@DataProvider
 	public Object[][] getInmateClassificationData() {
 		return TestUtil.getTestData("Inmate Reg-Classification", xls);
 
-	}*/
+	}
 
 }
 
