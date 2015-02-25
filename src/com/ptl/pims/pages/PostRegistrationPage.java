@@ -14,8 +14,16 @@ public class PostRegistrationPage {
 	WebElement pageTitle;
 	@FindBy(xpath=Constants.PostRegistration_SuccessMessage)
 	WebElement successMessage;
+	@FindBy(xpath=Constants.PostRegistration_SearchByRegistrationNumber)
+	WebElement searchByRegNumber;
+	@FindBy(xpath=Constants.PostRegistration_SearchByBiometric)
+	WebElement searchByBiometric;
+	@FindBy(xpath=Constants.PostRegistration_SearchByWarrantName)
+	WebElement searchByWarrantName;
+	@FindBy(xpath=Constants.PostRegistration_SearchByOtherName)
+	WebElement searchByOtherName;
 	@FindBy(xpath=Constants.PostRegistration_FirstUpdateIcon)
-	WebElement firstUpdateIcon;	
+	WebElement firstUpdateIcon;
 	
 	
 	public PostRegistrationPage(WebDriver dr){
@@ -56,7 +64,10 @@ public class PostRegistrationPage {
 	
 	
 	public void doSearch(String RegistrationNUmber, String Biometric, String WarrantName, String OtherName){
-		
+		searchByRegNumber.sendKeys(RegistrationNUmber);
+		searchByBiometric.sendKeys(Biometric);
+		searchByWarrantName.sendKeys(WarrantName);
+		searchByOtherName.sendKeys(OtherName);
 	}
 
 }
