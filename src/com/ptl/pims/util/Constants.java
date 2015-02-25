@@ -111,7 +111,7 @@ public class Constants {
 	public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
 	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
 	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
-	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Magement']";
+	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Management']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
 	public static final String TopMenu_PostRegistrationMainLink = "//a[text()='Post Registration ']";
 	public static final String TopMenu_PostRegistrationSubLink = "//a[text()='Post Registration']";

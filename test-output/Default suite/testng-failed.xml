@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ptl.pims.testcases.InmateRegistrationTest">
+      <class name="com.ptl.pims.testcases.PropertyManagementNewTest">
         <methods>
-          <include name="enterInmateCalasificationTest"/>
-          <include name="enterInmatePersonalDataTest"/>
-          <include name="enterInmatecaseTest" invocation-numbers="0"/>
-          <include name="enterInmateCharacteristicTest"/>
+          <include name="clickInmateLink"/>
+          <include name="GoToAllocateLocationPage"/>
           <include name="initConfiguration"/>
-          <include name="quitDriver"/>
+          <include name="addInmateProperty"/>
+          <include name="validatePropertyAdd" invocation-numbers="0"/>
           <include name="initDriver"/>
-          <include name="enterInmateIdentificationTest"/>
+          <include name="getTopMenu"/>
         </methods>
-      </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
+      </class> <!-- com.ptl.pims.testcases.PropertyManagementNewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
