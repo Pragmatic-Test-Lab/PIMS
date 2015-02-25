@@ -63,8 +63,8 @@ public class PostRegistrationPage {
 	}
 	
 	
-	public void doSearch(String RegistrationNUmber, String Biometric, String WarrantName, String OtherName){
-		searchByRegNumber.sendKeys(RegistrationNUmber);
+	public void doSearch(String RegistrationNumber, String Biometric, String WarrantName, String OtherName){
+		searchByRegNumber.sendKeys(RegistrationNumber);
 		searchByBiometric.sendKeys(Biometric);
 		searchByWarrantName.sendKeys(WarrantName);
 		searchByOtherName.sendKeys(OtherName);
