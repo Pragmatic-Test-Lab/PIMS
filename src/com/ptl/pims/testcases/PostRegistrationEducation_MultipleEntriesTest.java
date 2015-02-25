@@ -32,8 +32,10 @@ public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 		UpdatePostRegistrationPage updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to Update Post Registration Page");
 		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
-		postRegPage = updatePostRegPage.ClickUpdateButton();		
-		Assert.assertEquals(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
+		postRegPage = updatePostRegPage.ClickUpdateButton();
+		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());
+		APPLICATION_LOGS.debug("Expected Message: "+ postRegPage.getExpectedSuccessMessage());
+		Assert.assertTrue(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}

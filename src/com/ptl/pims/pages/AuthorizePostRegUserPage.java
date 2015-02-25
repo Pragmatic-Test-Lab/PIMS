@@ -10,125 +10,122 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.pims.util.Constants;
 
-public class UpdatePostRegistrationPage {
+public class AuthorizePostRegUserPage {
 	
 	WebDriver driver;
 	
-	
-	@FindBy(xpath=Constants.UpdatePostRegistration_CheckBox)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_CheckBox)
 	WebElement checkBox;
-	@FindBy(xpath=Constants.UpdatePostRegistration_CurrentPrisonInstitute)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_CurrentPrisonInstitute)
 	WebElement curentPrisonInstitute;
-	@FindBy(xpath=Constants.UpdatePostRegistration_PhotoRightBrowse)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_PhotoRightBrowse)
 	WebElement photoRight;
-	@FindBy(xpath=Constants.UpdatePostRegistration_PhotoFrontBrowse)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_PhotoFrontBrowse)
 	WebElement photoFront;
-	@FindBy(xpath=Constants.UpdatePostRegistration_PhotoLeftBrowse)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_PhotoLeftBrowse)
 	WebElement photoLeft;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationTab)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EducationalQualificationTab)
 	WebElement educationalQualificationTab;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalTBody)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EducationalTBody)
 	WebElement education_tbody;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAddNew)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EducationalQualificationAddNew)
 	WebElement addNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Institute)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Institute)
 	WebElement institute;
-	String instituteFirstPart=Constants.UpdatePostRegistration_InstituteFirstPart;	
-	String instituteLastPart=Constants.UpdatePostRegistration_InstituteLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_QualificationType)
+	String instituteFirstPart=Constants.AuthorizePostRegUserPage_InstituteFirstPart;	
+	String instituteLastPart=Constants.AuthorizePostRegUserPage_InstituteLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_QualificationType)
 	WebElement qualificationType;
-	String qualificationTypeFirstPart=Constants.UpdatePostRegistration_QualificationTypeFirstPart;
-	String qualificationTypeLastPart=Constants.UpdatePostRegistration_QualificationTypeLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Language)
+	String qualificationTypeFirstPart=Constants.AuthorizePostRegUserPage_QualificationTypeFirstPart;
+	String qualificationTypeLastPart=Constants.AuthorizePostRegUserPage_QualificationTypeLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Language)
 	WebElement language;
-	String languageFirstPart = Constants.UpdatePostRegistration_LanguageFirstPart;
-	String languageLastPart=Constants.UpdatePostRegistration_LanguageLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAction)
+	String languageFirstPart = Constants.AuthorizePostRegUserPage_LanguageFirstPart;
+	String languageLastPart=Constants.AuthorizePostRegUserPage_LanguageLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EducationalQualificationAction)
 	WebElement educationAction;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentTab)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EmploymentTab)
 	WebElement employmentTab;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EmployerTBody)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EmployerTBody)
 	WebElement employer_tbody;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAddNew)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EmploymentAddNew)
 	WebElement employmentAddNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Employer)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Employer)
 	WebElement employer;
-	String employerFirstPart=Constants.UpdatePostRegistration_EmployerFirstPart;	
-	String employerLastPart=Constants.UpdatePostRegistration_EmployerLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_OrganizationalType)
+	String employerFirstPart=Constants.AuthorizePostRegUserPage_EmployerFirstPart;	
+	String employerLastPart=Constants.AuthorizePostRegUserPage_EmployerLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_OrganizationalType)
 	WebElement organizationalType;
-	String organizationalTypeFirstPart=Constants.UpdatePostRegistration_OrganizationalTypeFirstPart;	
-	String organizationalTypeLastPart=Constants.UpdatePostRegistration_OrganizationalTypeLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Position)
+	String organizationalTypeFirstPart=Constants.AuthorizePostRegUserPage_OrganizationalTypeFirstPart;	
+	String organizationalTypeLastPart=Constants.AuthorizePostRegUserPage_OrganizationalTypeLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Position)
 	WebElement position;
-	String positionFirstPart=Constants.UpdatePostRegistration_PositionFirstPart;	
-	String positionLastPart=Constants.UpdatePostRegistration_PositionLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_DateFrom)
+	String positionFirstPart=Constants.AuthorizePostRegUserPage_PositionFirstPart;	
+	String positionLastPart=Constants.AuthorizePostRegUserPage_PositionLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_DateFrom)
 	WebElement dateFrom;
-	String dateFromFirstPart=Constants.UpdatePostRegistration_DateFromFirstPart;	
-	String dateFromLastPart=Constants.UpdatePostRegistration_DateFromLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_DateTo)
+	String dateFromFirstPart=Constants.AuthorizePostRegUserPage_DateFromFirstPart;	
+	String dateFromLastPart=Constants.AuthorizePostRegUserPage_DateFromLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_DateTo)
 	WebElement dateTo;
-	String dateToFirstPart=Constants.UpdatePostRegistration_DateToFirstPart;	
-	String dateToLastPart=Constants.UpdatePostRegistration_DateToLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAction)
+	String dateToFirstPart=Constants.AuthorizePostRegUserPage_DateToFirstPart;	
+	String dateToLastPart=Constants.AuthorizePostRegUserPage_DateToLastPart;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_EmploymentAction)
 	WebElement employmentAction;	
-	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyTab)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_FamilyTab)
 	WebElement familyDataTab;
-	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyAddNew)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_FamilyAddNew)
 	WebElement familyAddNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Name)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Name)
 	WebElement name;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address1)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Address1)
 	WebElement addressLine1;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address2)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Address2)
 	WebElement addressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address3)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Address3)
 	WebElement addressLine3;
-	@FindBy(xpath=Constants.UpdatePostRegistration_NIC)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_NIC)
 	WebElement nic;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Age)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Age)
 	WebElement age;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Relationship)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Relationship)
 	WebElement relationship;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Telephone)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Telephone)
 	WebElement telephone;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Income)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Income)
 	WebElement income;
-	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyAction)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_FamilyAction)
 	WebElement familyAction;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildTab)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildTab)
 	WebElement childTab;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildName)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildName)
 	WebElement childName;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress1)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAddress1)
 	WebElement childAddressLine1;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress2)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAddress2)
 	WebElement childAddressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress3)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAddress3)
 	WebElement childAddressLine3;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAge)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAge)
 	WebElement childAge;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchool)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildSchool)
 	WebElement childSchool;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildGrade)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildGrade)
 	WebElement childGrade;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress1)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildSchoolAddress1)
 	WebElement schoolAddressLine1;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress2)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildSchoolAddress2)
 	WebElement schoolAddressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress3)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildSchoolAddress3)
 	WebElement schoolAddressLine3;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAction)
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAction)
 	WebElement childAction;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Update)
-	WebElement update;
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Authorize)
+	WebElement authorize;
 	
 	
-	
-	
-	public UpdatePostRegistrationPage(WebDriver dr){
-		driver = dr;
+	public AuthorizePostRegUserPage(WebDriver dr){
+		driver=dr;
 	}
 	
 	
@@ -288,10 +285,10 @@ public class UpdatePostRegistrationPage {
 	}
 	
 	
-	public PostRegistrationPage ClickUpdateButton(){
-		update.click();
-		PostRegistrationPage postRegPage = PageFactory.initElements(driver, PostRegistrationPage.class);
-		return postRegPage;
+	public PostRegistrationAuthorizePage ClickAuthorizeButton(){
+		authorize.click();
+		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
+		return postRegAuthorizePage;
 	}
 
 }
