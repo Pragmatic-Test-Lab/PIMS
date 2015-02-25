@@ -2,6 +2,7 @@ package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
 
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -10,6 +11,7 @@ import org.testng.annotations.Test;
 import com.ptl.pims.pages.AuthorizeRegistrationInmateSelectPage;
 import com.ptl.pims.pages.AuthorizeRegistrationPage;
 import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -43,7 +45,10 @@ public class AuthorizeRegistrationTest extends TestBase {
 	public void clickInmateLink(Hashtable<String, String> data) {
 
 		// Search if specific inmate is needed
-		// inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
+		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		String RegNumber = newAdmissionPage.getRegistrationNumber();
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(RegNumber,"","");
+		
 
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		
 		APPLICATION_LOGS.debug("Reached Inmates Authorize Registration Page");
