@@ -60,7 +60,15 @@ public class Constants {
 	
 	//Inmate case tab
 	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
-	
+	public static final String InmateRegistration_case_addnew =".//button[text()='Add New']";
+	public static final String InmateRegistration_case_isactive = "//*[@id='sentence-1-sen_is_active']";
+	public static final String InmateRegistration_case_fine = "//*[@id='sentence-1-sen_fine_charges']";
+	public static final String InmateRegistration_case_days = "//*[@id='sentence-1-sen_days']";
+	public static final String InmateRegistration_case_description = "//*[@id='sentence-1-sen_description']";
+	public static final String InmateRegistration_case_sentence = "//*[@id='sentence-1-sen_sentence_type_id']";
+	public static final String InmateRegistration_case_offdescription = "//*[@id='sentence-1-sen_discription_of_offence']";
+	public static final String InmateRegistration_case_offense ="//*[@id='sentence-1-sen_offence_id']";
+	public static final String InmateRegistration_case_casen = "//*[@id='sentence-1-sen_case_id']";
 	
 
 	// paths
@@ -314,5 +322,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	
+	
 
 }

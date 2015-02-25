@@ -6,10 +6,13 @@
       <class name="com.ptl.pims.testcases.InmateRegistrationTest">
         <methods>
           <include name="enterInmateCalasificationTest"/>
-          <include name="enterInmatePersonalDataTest" invocation-numbers="0"/>
+          <include name="enterInmatePersonalDataTest"/>
+          <include name="enterInmatecaseTest" invocation-numbers="0"/>
           <include name="enterInmateCharacteristicTest"/>
           <include name="initConfiguration"/>
+          <include name="quitDriver"/>
           <include name="initDriver"/>
+          <include name="enterInmateIdentificationTest"/>
         </methods>
       </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
     </classes>

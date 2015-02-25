@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Praveen\AppData\Local\Temp\testng-eclipse--653986920\testng-customsuite.xml</span>
+                    <span>C:\Users\Praveen\AppData\Local\Temp\testng-eclipse--1696214803\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,6 +117,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.ptl.pims.testcases.InmateRegistrationTest" hash-for-method="enterInmatePersonalDataTest({AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, Cal...)">enterInmatePersonalDataTest({AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, Cal...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.ptl.pims.testcases.InmateRegistrationTest" hash-for-method="enterInmatecaseTest({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory,...)">enterInmatecaseTest({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory,...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -169,12 +174,20 @@
                   <span class="parameters">({AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, CallName2=raja, District=Colombo, CallName1=Rajeshin, City=Kollupitiya, DS=Colombo, PostOffice=Kollupitiya, Country=Sri Lanka, GsDiv=Kollupitiya East , Province=Western Province, OtherName2=Rajur, OtherName1=Raj})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterInmatecaseTest({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory,...)">
+                  </a> <!-- enterInmatecaseTest({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory,...) -->
+                  <span class="method-name">enterInmatecaseTest</span>
+                  <span class="parameters">({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory, fine=3500.0, days=8})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Praveen\AppData\Local\Temp\testng-eclipse--653986920\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Praveen\AppData\Local\Temp\testng-eclipse--1696214803\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -223,28 +236,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'enterInmatePersonalDataTest')
 data.setCell(0, 2, 'com.ptl.pims.testcases.InmateRegistrationTest')
-data.setCell(0, 3, 49624);
+data.setCell(0, 3, 42117);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'enterInmateIdentificationTest')
+data.setCell(1, 1, 'enterInmateCharacteristicTest')
 data.setCell(1, 2, 'com.ptl.pims.testcases.InmateRegistrationTest')
-data.setCell(1, 3, 1861);
+data.setCell(1, 3, 1941);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'enterInmateCharacteristicTest')
+data.setCell(2, 1, 'enterInmateIdentificationTest')
 data.setCell(2, 2, 'com.ptl.pims.testcases.InmateRegistrationTest')
-data.setCell(2, 3, 1694);
+data.setCell(2, 3, 1616);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'enterInmateCalasificationTest')
+data.setCell(3, 1, 'enterInmatecaseTest')
 data.setCell(3, 2, 'com.ptl.pims.testcases.InmateRegistrationTest')
-data.setCell(3, 3, 551);
+data.setCell(3, 3, 1575);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'enterInmateCalasificationTest')
+data.setCell(4, 2, 'com.ptl.pims.testcases.InmateRegistrationTest')
+data.setCell(4, 3, 534);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 53 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -277,24 +294,32 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">initDriver</span>
-                <span class="method-start">89 ms</span>
+                <span class="method-start">81 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">enterInmatePersonalDataTest({AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, Cal...)</span>
-                <span class="method-start">11148 ms</span>
+                <span class="method-start">8259 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterInmateCalasificationTest({classif=Condem, Runmode=Yes})</span>
-                <span class="method-start">60794 ms</span>
+                <span class="method-start">50382 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterInmateCharacteristicTest({nationality=Sri Lankan, nic=921663456v, birthdate=24/03/1992, Runmode=Yes, marital=Married, birthpl...)</span>
-                <span class="method-start">61354 ms</span>
+                <span class="method-start">50925 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterInmateIdentificationTest({nose=Long, bodymark=Black Birthmark, eyesd=straight, Runmode=Yes, haird=black, hair=Long, face=Bear...)</span>
-                <span class="method-start">63057 ms</span>
+                <span class="method-start">52873 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterInmatecaseTest({casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory,...)</span>
+                <span class="method-start">54497 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">getTopMenu</span>
+                <span class="method-start">56102 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

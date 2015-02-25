@@ -97,6 +97,20 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
+
+	@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
+	public void enterInmatecaseTest(Hashtable<String, String> data) {
+
+		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Case", xls) || data.get("Runmode").equals("No"))
+			throw new SkipException("Skipping the test");
+
+		inmateRegistration.doAddcaseDetailsOfInmate(data.get("casen"),data.get("offense"),data.get("offdescription"),data.get("sentence"),
+				data.get("description"),data.get("days"), data.get("fine")); 
+
+	}
+
+
+
 	@DataProvider
 	public Object[][] getInmatePersonalData() {
 		return TestUtil.getTestData("Inmate Registration-Personal", xls);
@@ -121,6 +135,11 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
+	@DataProvider
+	public Object[][] getcaseData() {
+		return TestUtil.getTestData("Inmate Reg-Case", xls);
+
+	}
 
 }
 

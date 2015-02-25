@@ -128,11 +128,11 @@ public class TestBase {
 	}
 
 	@AfterSuite
-	public void quitDriver() {
-
-		driver.quit();
-		driver = null;
-	}
+//	public void quitDriver() {
+//
+//		driver.quit();
+//		driver = null;
+//	}
 
 
 	public TopMenu getTopMenu() {

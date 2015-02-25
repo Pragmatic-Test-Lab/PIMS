@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="55270" started-at="2015-02-25T04:41:14Z" finished-at="2015-02-25T04:42:09Z">
+  <suite name="Default suite" duration-ms="47861" started-at="2015-02-25T06:12:57Z" finished-at="2015-02-25T06:13:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="55270" started-at="2015-02-25T04:41:14Z" finished-at="2015-02-25T04:42:09Z">
+    <test name="Default test" duration-ms="47861" started-at="2015-02-25T06:12:57Z" finished-at="2015-02-25T06:13:45Z">
       <class name="com.ptl.pims.testcases.InmateRegistrationTest">
-        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="initConfiguration" is-config="true" duration-ms="89" started-at="2015-02-25T10:11:04Z" finished-at="2015-02-25T10:11:04Z">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="initConfiguration" is-config="true" duration-ms="81" started-at="2015-02-25T11:42:49Z" finished-at="2015-02-25T11:42:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="initDriver" is-config="true" duration-ms="9560" started-at="2015-02-25T10:11:04Z" finished-at="2015-02-25T10:11:14Z">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="initDriver" is-config="true" duration-ms="8130" started-at="2015-02-25T11:42:49Z" finished-at="2015-02-25T11:42:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initDriver -->
-        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmatePersonalDataTest" duration-ms="49624" started-at="2015-02-25T10:11:16Z" data-provider="getInmatePersonalData" finished-at="2015-02-25T10:12:05Z">
+        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="enterInmatePersonalDataTest" duration-ms="42117" started-at="2015-02-25T11:42:57Z" data-provider="getInmatePersonalData" finished-at="2015-02-25T11:43:39Z">
           <params>
             <param index="0">
               <value>
@@ -26,7 +26,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmatePersonalDataTest -->
-        <test-method status="PASS" signature="enterInmateCalasificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateCalasificationTest" duration-ms="551" started-at="2015-02-25T10:12:05Z" data-provider="getInmateClassificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmatePersonalDataTest" finished-at="2015-02-25T10:12:06Z">
+        <test-method status="PASS" signature="enterInmateCalasificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="enterInmateCalasificationTest" duration-ms="534" started-at="2015-02-25T11:43:39Z" data-provider="getInmateClassificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmatePersonalDataTest" finished-at="2015-02-25T11:43:40Z">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmateCalasificationTest -->
-        <test-method status="PASS" signature="enterInmateCharacteristicTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateCharacteristicTest" duration-ms="1694" started-at="2015-02-25T10:12:06Z" data-provider="getInmateCharacteristicData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCalasificationTest" finished-at="2015-02-25T10:12:07Z">
+        <test-method status="PASS" signature="enterInmateCharacteristicTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="enterInmateCharacteristicTest" duration-ms="1941" started-at="2015-02-25T11:43:40Z" data-provider="getInmateCharacteristicData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCalasificationTest" finished-at="2015-02-25T11:43:42Z">
           <params>
             <param index="0">
               <value>
@@ -48,7 +48,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmateCharacteristicTest -->
-        <test-method status="PASS" signature="enterInmateIdentificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateIdentificationTest" duration-ms="1861" started-at="2015-02-25T10:12:07Z" data-provider="getIdentificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCharacteristicTest" finished-at="2015-02-25T10:12:09Z">
+        <test-method status="PASS" signature="enterInmateIdentificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="enterInmateIdentificationTest" duration-ms="1616" started-at="2015-02-25T11:43:42Z" data-provider="getIdentificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCharacteristicTest" finished-at="2015-02-25T11:43:43Z">
           <params>
             <param index="0">
               <value>
@@ -59,6 +59,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmateIdentificationTest -->
+        <test-method status="PASS" signature="enterInmatecaseTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="enterInmatecaseTest" duration-ms="1575" started-at="2015-02-25T11:43:43Z" data-provider="getcaseData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateIdentificationTest" finished-at="2015-02-25T11:43:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{casen=1, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory, fine=3500.0, days=8}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInmatecaseTest -->
+        <test-method status="PASS" signature="getTopMenu()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1f6aa236]" name="getTopMenu" is-config="true" duration-ms="4" started-at="2015-02-25T11:43:45Z" finished-at="2015-02-25T11:43:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTopMenu -->
       </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

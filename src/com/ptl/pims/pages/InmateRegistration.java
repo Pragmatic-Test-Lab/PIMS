@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import com.ptl.pims.util.Constants;
 
 public class InmateRegistration {
-	
+
 	WebDriver driver ;
-	
+
 	@FindBy(xpath = Constants.InmateRegistration_FirtstRow_EditButton)
 	public WebElement editFirstInmate;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_Update)
@@ -24,7 +24,9 @@ public class InmateRegistration {
 	public WebElement tab_characteristic;
 	@FindBy(xpath = Constants.InmateRegistration_identification_tab)
 	public WebElement tab_identification;
-	
+	@FindBy(xpath = Constants.InmateRegistration_case_tab)
+	public WebElement tab_case;
+
 	//Personal details tab
 	@FindBy(xpath = Constants.InmateRegistration_Personal_OtherName1)
 	public WebElement otherName1;
@@ -56,14 +58,14 @@ public class InmateRegistration {
 	public WebElement city;
 	@FindBy(xpath = Constants.InmateRegistration_Personal_PoliceDivision)
 	public WebElement policeDivision;
-	
-	
+
+
 	//Classification details tab
 	@FindBy(xpath = Constants.InmateRegistration_Classification_Pervious_Conviction)
 	public WebElement previous_conviction;
 	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_Calssification)
 	public WebElement classification;
-	
+
 	//characteristic details tab
 	@FindBy(xpath = Constants.InmateRegistration_Characteristic_nationality)
 	public WebElement nationality;
@@ -81,8 +83,8 @@ public class InmateRegistration {
 	public WebElement birthplace;
 	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_passport)
 	public WebElement passport;
-	
-	
+
+
 	//identification details tab
 	@FindBy(xpath = Constants.InmateRegistration_identification_face)
 	public WebElement face;
@@ -100,31 +102,50 @@ public class InmateRegistration {
 	public WebElement nose;
 	@FindBy(xpath = Constants.InmateRegistration_identification_bodymark)
 	public WebElement bodymark;
+
+
+	//case details tab
+	@FindBy(xpath = Constants.InmateRegistration_case_addnew)
+	public WebElement add_new;
+	@FindBy(xpath = Constants.InmateRegistration_case_casen)
+	public WebElement casen;
+	@FindBy(xpath = Constants.InmateRegistration_case_offense)
+	public WebElement offense;
+	@FindBy(xpath = Constants.InmateRegistration_case_offdescription)
+	public WebElement offdescription;
+	@FindBy(xpath = Constants.InmateRegistration_case_sentence)
+	public WebElement sentence;
+	@FindBy(xpath = Constants.InmateRegistration_case_description)
+	public WebElement description;
+	@FindBy(xpath = Constants.InmateRegistration_case_days)
+	public WebElement days;
+	@FindBy(xpath = Constants.InmateRegistration_case_fine)
+	public WebElement fine;
+	@FindBy(xpath = Constants.InmateRegistration_case_isactive)
+	public WebElement isactive;
 	
-	
-	
-	
-	
-	
+
+
+
 	public InmateRegistration(WebDriver dr){		
 		driver = dr;
 	}
-	
+
 	public String getHeader(){		
 		return HeaderField.getText();
 	}
-	
+
 	public String getExpectedHeader(){
 		return ""; //Constants.InmateRegistration_ExpectedHeader;
 	}
-	
+
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 
 			String cllName2, String addLine1, String addLine2, String postOff, String postCode,
 			String cntry, String prvnce , String dstrct, String ds, String gsDiv, String cty,
 			String plicDiv){
-		
+
 		//TODO : add method to search by reg number
-//		editFirstInmate.click();
+		//		editFirstInmate.click();
 		tab_personal.click();
 		otherName1.sendKeys(othrName1);
 		otherName2.sendKeys(othrName2);
@@ -141,10 +162,10 @@ public class InmateRegistration {
 		gsDivision.sendKeys(gsDiv);
 		city.sendKeys(cty);
 		policeDivision.sendKeys(plicDiv);
-	//	updateButton.click();
-		
+		//	updateButton.click();
+
 	}
-	
+
 
 	public void doAddClassifiactionDetailsOfInmate(String classif){
 		//TODO : add method to search by reg number
@@ -152,12 +173,12 @@ public class InmateRegistration {
 		tab_classification.click();
 		classification.sendKeys(classif);		
 		//updateButton.click();
-		
+
 	}
-	
-	
+
+
 	public void doAddCharacteristicDetailsOfInmate(String Nationality, String Race, String Marital, String Religion, String nic, String DOB, String BirthPlace, String PassportNumber){
-		
+
 		tab_characteristic.click();
 		nationality.sendKeys(Nationality);
 		race.sendKeys(Race);
@@ -167,13 +188,13 @@ public class InmateRegistration {
 		birthdate.sendKeys(DOB);
 		birthplace.sendKeys(BirthPlace);
 		passport.sendKeys(PassportNumber);
-	//	updateButton.click();
-		
+		//	updateButton.click();
+
 	}
-	
+
 
 	public void doAddIdentificationDetailsOfInmate(String Face, String FaceD, String Hair, String HairD, String Eyes, String EyesD, String Nose, String BodyMark){
-		
+
 		tab_identification.click();
 		face.sendKeys(Face);
 		faced.sendKeys(FaceD);
@@ -183,10 +204,27 @@ public class InmateRegistration {
 		eyesd.sendKeys(EyesD);
 		nose.sendKeys(Nose);
 		bodymark.sendKeys(BodyMark);
+		//updateButton.click();
+
+	}
+
+
+	public void doAddcaseDetailsOfInmate(String Casen, String Offense, String OffDescription, String Sentence, String Description, String Days, String Fine){
+
+		tab_case.click();
+		add_new.click();
+		casen.sendKeys(Casen);
+		offense.sendKeys(Offense);
+		offdescription.sendKeys(OffDescription);
+		sentence.sendKeys(Sentence);
+		description.sendKeys(Description);
+		days.sendKeys(Days);
+		fine.sendKeys(Fine);
+		isactive.click();
 		updateButton.click();
-		
+
 	}
 
 	
-	
+
 }
