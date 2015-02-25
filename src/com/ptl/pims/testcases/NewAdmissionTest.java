@@ -35,7 +35,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.checkMealTypeIsSelectable();;
 	}
 	
-	@Test   // PIMS-1190
+	//@Test   // PIMS-1190
 	public void Test_checkAgeCatagoryIsAutoSelected() {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -43,7 +43,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.checkAgeCatagoryIsAutoSelected();
 	}
 	
-	@Test   // PIMS-19
+	//@Test   // PIMS-19
 	public void Test_checkRegistrationNumberFormtForUnConvictedInamtes() {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -51,7 +51,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.checkRegistrationNumberFormtForUnConvictedInamtes();
 	}
 	
-	@Test // PIMS-408
+	//@Test // PIMS-408
 	public void Test_checkInmateRegistrationNumberIsAutoGenarated(){
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -59,7 +59,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.checkInmateRegistrationNumberIsAutoGenarated();
 	}
 	
-	@Test // PIMS-869
+	//@Test // PIMS-869
 	public void Test_checkImateCatagoryIsSelectable(){
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -67,7 +67,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.checkImateCatagoryIsSelectable();
 	}
 	
-	@Test // PIMS-1198
+	//@Test // PIMS-1198
 	public void Test_checkUserCanUploadTheAllThreeImages() throws Exception{
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -77,7 +77,7 @@ public class NewAdmissionTest extends TestBase{
 	
 	
 	
-	//@Test
+	@Test
 	public void createNewAdmissionTest() throws InterruptedException {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();

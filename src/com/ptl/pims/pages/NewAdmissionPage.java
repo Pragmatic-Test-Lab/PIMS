@@ -260,7 +260,7 @@ public class NewAdmissionPage extends CommonMethods {
 	public void doCreateNewAdmition() throws InterruptedException{
 		
 		CreateAdmissionButton.click();
-     	InmateCatagory.sendKeys("Youth");
+     	InmateCatagory.sendKeys("Baby");
      	CourtWarant.sendKeys("Negombo");
      	AgeAddmission.sendKeys("20");
 		AgeCatagory.sendKeys("Youth");
@@ -333,6 +333,10 @@ public class NewAdmissionPage extends CommonMethods {
 		ExpectedPage_Header = Constants.NewAdmission_ExpectedPageHeader;
 		return ExpectedPage_Header;
 		
+	}
+	
+	public String getRegistrationNumber(){
+		return RegNumber.getText();
 	}
 
 }
