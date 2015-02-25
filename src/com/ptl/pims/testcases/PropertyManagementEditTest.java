@@ -49,7 +49,7 @@ public class PropertyManagementEditTest extends TestBase {
 		
 		//
 		// Search if specific inmate is needed
-		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
+		//allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(,data.get("Biometric") ,data.get("Name"));
 		//
 
 		manageProperty = managePropertySelectInmate.clickFirstInmate();	

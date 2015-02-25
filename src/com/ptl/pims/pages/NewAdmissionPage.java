@@ -196,7 +196,7 @@ public class NewAdmissionPage extends CommonMethods {
 	//PIMS-1190
 	public void checkAgeCatagoryIsAutoSelected(){		
 		CreateAdmissionButton.click();
-		InmateCatagory.sendKeys("Convicted");
+		InmateCatagory.sendKeys("Un-Convicted");
      	CourtWarant.sendKeys("Negombo");
 		AgeAddmission.sendKeys("20");
 		MealType.sendKeys("Diet");
