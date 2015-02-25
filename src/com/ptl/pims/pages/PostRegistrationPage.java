@@ -53,5 +53,10 @@ public class PostRegistrationPage {
 		String ExpectedSuccessMessage = Constants.PostRegistration_SuccessMessageText;
 		return ExpectedSuccessMessage;
 	}
+	
+	
+	public void doSearch(String RegistrationNUmber, String Biometric, String WarrantName, String OtherName){
+		
+	}
 
 }

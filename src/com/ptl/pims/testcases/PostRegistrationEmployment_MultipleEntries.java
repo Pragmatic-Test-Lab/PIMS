@@ -35,8 +35,10 @@ public class PostRegistrationEmployment_MultipleEntries extends TestBase {
 		APPLICATION_LOGS.debug("Go to the Employment tab");
 		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
 				data.get("Dates From"), data.get("Dates To"));
-		postRegPage = updatePostRegPage.ClickUpdateButton();		
-		Assert.assertEquals(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple employment entries");		
+		postRegPage = updatePostRegPage.ClickUpdateButton();
+		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());
+		APPLICATION_LOGS.debug("Expected Message: "+ postRegPage.getExpectedSuccessMessage());
+		Assert.assertTrue(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple employment entries");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}
