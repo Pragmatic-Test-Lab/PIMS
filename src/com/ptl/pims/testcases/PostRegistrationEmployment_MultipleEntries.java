@@ -13,11 +13,11 @@ import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.pages.UpdatePostRegistrationPage;
 import com.ptl.pims.util.TestUtil;
 
-public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
+public class PostRegistrationEmployment_MultipleEntries extends TestBase {
 	HomePage landingPage = null;
 	
 	
-	@Test(dataProvider = "getEducationMultipleEntriesData")
+	@Test(dataProvider = "getEmploymentMultipleEntriesData")
 	public void VerifyMultipleEntries(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
@@ -31,19 +31,24 @@ public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 		APPLICATION_LOGS.debug("Going to Post Registration Page");
 		UpdatePostRegistrationPage updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to Update Post Registration Page");
-		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
+		updatePostRegPage.gotoEmploymentTab();
+		APPLICATION_LOGS.debug("Go to the Employment tab");
+		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
+				data.get("Dates From"), data.get("Dates To"));
 		postRegPage = updatePostRegPage.ClickUpdateButton();		
-		Assert.assertEquals(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
+		Assert.assertEquals(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple employment entries");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}
 	
 	
 	@DataProvider
-	public Object[][] getEducationMultipleEntriesData() {
+	public Object[][] getEmploymentMultipleEntriesData() {
 		return TestUtil.getTestData("UpdatePostReg Test", xls);
 
 	}
+
+
 
 
 

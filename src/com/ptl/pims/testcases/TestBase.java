@@ -127,26 +127,11 @@ public class TestBase {
 		}
 	}
 
-	//@AfterSuite
+	@AfterSuite
 	public void quitDriver() {
 
 		driver.quit();
 		driver = null;
-
-		/*
-		 * try { if (isProcessRunging("chromedriver.exe (32 bit)") == true) {
-		 * Runtime.getRuntime().exec("taskkill /F /IM <chromedriver>.exe");
-		 * final String KILL = "taskkill /IM "; String processName =
-		 * "chromedriver.exe"; Runtime.getRuntime().exec(KILL + processName);
-		 * 
-		 * 
-		 * Thread.sleep(2000L); } } catch (Exception e) { e.printStackTrace(); }
-		 */
-		/*
-		 * if (isProcessRunging("chrome.exe") == true) {
-		 * killProcess("chrome.exe"); Thread.sleep(2000L); }
-		 */
-
 	}
 
 

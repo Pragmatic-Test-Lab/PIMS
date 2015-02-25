@@ -47,18 +47,30 @@ public class UpdatePostRegistrationPage {
 	WebElement educationAction;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentTab)
 	WebElement employmentTab;
+	@FindBy(xpath=Constants.UpdatePostRegistration_EmployerTBody)
+	WebElement employer_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAddNew)
 	WebElement employmentAddNew;
 	@FindBy(xpath=Constants.UpdatePostRegistration_Employer)
 	WebElement employer;
+	String employerFirstPart=Constants.UpdatePostRegistration_EmployerFirstPart;	
+	String employerLastPart=Constants.UpdatePostRegistration_EmployerLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_OrganizationalType)
 	WebElement organizationalType;
+	String organizationalTypeFirstPart=Constants.UpdatePostRegistration_OrganizationalTypeFirstPart;	
+	String organizationalTypeLastPart=Constants.UpdatePostRegistration_OrganizationalTypeLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_Position)
 	WebElement position;
+	String positionFirstPart=Constants.UpdatePostRegistration_PositionFirstPart;	
+	String positionLastPart=Constants.UpdatePostRegistration_PositionLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_DateFrom)
 	WebElement dateFrom;
+	String dateFromFirstPart=Constants.UpdatePostRegistration_DateFromFirstPart;	
+	String dateFromLastPart=Constants.UpdatePostRegistration_DateFromLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_DateTo)
 	WebElement dateTo;
+	String dateToFirstPart=Constants.UpdatePostRegistration_DateToFirstPart;	
+	String dateToLastPart=Constants.UpdatePostRegistration_DateToLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAction)
 	WebElement employmentAction;	
 	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyTab)
@@ -166,11 +178,53 @@ public class UpdatePostRegistrationPage {
 			driver.findElement(By.xpath(qualificationTypeFirstPart+DataRowNumber+qualificationTypeLastPart)).sendKeys(QualificationType[i]);
 			driver.findElement(By.xpath(languageFirstPart+DataRowNumber+languageLastPart)).sendKeys(Language[i]);
 			
-		}		
+		}
 	}
 	
 	
-	public void EnterEmploymentData(String Employer, String OrganizationalType, String Position, String DateFrom, String DateTo, String Action){
+	public void gotoEmploymentTab(){
+		employmentTab.click();
+	}
+	
+	
+	public String getActualEmploymnetTabStatus(){		
+		String ActualStatus = employmentTab.getAttribute("aria-expanded");
+		return ActualStatus;
+		
+	}	
+	
+	
+	public String getExpectedEmploymentTabStatus(){
+		String ExpectedStatus = Constants.UpdatePostRegistration_EmploymentTabStatus;
+		return ExpectedStatus;
+		
+	}
+	
+	
+	public void EnterEmploymentData(String Employers, String OrganizationalTypes, String Positions, String DatesFrom, String DatesTo){
+		
+
+		
+		String[] Employer = Employers.split(",");
+		String[] OrganizationalType = OrganizationalTypes.split(",");
+		String[] Position = Positions.split(",");
+		String[] DateFrom = DatesFrom.split(",");
+		String[] DateTo = DatesTo.split(",");
+		
+		int dataRows = initialRowCount(employer_tbody);
+		for (int i = 0; i < Employer.length; i++) {
+			employmentAddNew.click();
+			int newDataRow = dataRows + i;
+			String DataRowNumber = String.valueOf(newDataRow);
+			driver.findElement(By.xpath(employerFirstPart+DataRowNumber+employerLastPart)).sendKeys(Employer[i]);
+			driver.findElement(By.xpath(organizationalTypeFirstPart+DataRowNumber+organizationalTypeLastPart)).sendKeys(OrganizationalType[i]);
+			driver.findElement(By.xpath(positionFirstPart+DataRowNumber+positionLastPart)).sendKeys(Position[i]);
+			driver.findElement(By.xpath(dateFromFirstPart+DataRowNumber+dateFromLastPart)).sendKeys(DateFrom[i]);
+			driver.findElement(By.xpath(dateToFirstPart+DataRowNumber+dateToLastPart)).sendKeys(DateTo[i]);
+			
+		}
+	
+		
 		employer.sendKeys(Employer);
 		organizationalType.sendKeys(OrganizationalType);
 		position.sendKeys(Position);
