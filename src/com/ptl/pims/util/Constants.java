@@ -2,7 +2,9 @@ package com.ptl.pims.util;
 
 public class Constants {
 	// Registration Page:
-
+	public static final String InmateRegistration_AddedSuccessfullyMessage ="//div[@class='alert alert-success']";
+	public static final String InmateRegistration_ExpectedSuccessMessagePart1="Saved";
+	public static final String InmateRegistration_ExpectedSuccessMessagePart2="successfully";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";

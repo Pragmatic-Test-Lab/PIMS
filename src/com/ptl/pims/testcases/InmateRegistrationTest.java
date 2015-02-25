@@ -15,6 +15,7 @@ import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
 public class InmateRegistrationTest extends TestBase {
@@ -106,6 +107,14 @@ public class InmateRegistrationTest extends TestBase {
 
 		inmateRegistration.doAddcaseDetailsOfInmate(data.get("casen"),data.get("offense"),data.get("offdescription"),data.get("sentence"),
 				data.get("description"),data.get("days"), data.get("fine")); 
+		
+		inmateRegistrationSelect = inmateRegistration.clickButton();
+		
+		Assert.assertTrue(inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart1) && 
+				inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart2),
+				"Success Message not displayed correctly.");
+		
+		APPLICATION_LOGS.debug("Success Message received.");
 
 	}
 

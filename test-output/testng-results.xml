@@ -1,64 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="4" passed="3">
+<testng-results skipped="0" failed="1" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="161033" started-at="2015-02-25T06:53:58Z" finished-at="2015-02-25T06:56:39Z">
+  <suite name="Default suite" duration-ms="130745" started-at="2015-02-25T10:23:44Z" finished-at="2015-02-25T10:25:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="161033" started-at="2015-02-25T06:53:58Z" finished-at="2015-02-25T06:56:39Z">
-      <class name="com.ptl.pims.testcases.PropertyManagementNewTest">
-        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="initConfiguration" is-config="true" duration-ms="120" started-at="2015-02-25T12:23:46Z" finished-at="2015-02-25T12:23:46Z">
+    <test name="Default test" duration-ms="130745" started-at="2015-02-25T10:23:44Z" finished-at="2015-02-25T10:25:55Z">
+      <class name="com.ptl.pims.testcases.InmateRegistrationTest">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="initConfiguration" is-config="true" duration-ms="972" started-at="2015-02-25T15:53:08Z" finished-at="2015-02-25T15:53:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="initDriver" is-config="true" duration-ms="12241" started-at="2015-02-25T12:23:46Z" finished-at="2015-02-25T12:23:58Z">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="initDriver" is-config="true" duration-ms="35252" started-at="2015-02-25T15:53:09Z" finished-at="2015-02-25T15:53:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initDriver -->
-        <test-method status="PASS" signature="GoToAllocateLocationPage(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="GoToAllocateLocationPage" duration-ms="56461" started-at="2015-02-25T12:23:58Z" data-provider="getAllocationData" finished-at="2015-02-25T12:24:55Z">
+        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="enterInmatePersonalDataTest" duration-ms="90870" started-at="2015-02-25T15:53:45Z" data-provider="getInmatePersonalData" finished-at="2015-02-25T15:55:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Prison Item=shirt,shirt, Prison Quantity=3,2, Private Quantity=25,1, Private Item=Money,Phone, Prison Description=Green shirt,Blue shirt, Runmode=Yes, Prison Date=2015-03-12,'2015-03-19, Private Date=2015-03-16,2015-03-17, Private Value=1.200025E9, Private Description=In dollars,Nokia Phone}]]>
+                <![CDATA[{AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, CallName2=raja, District=Colombo, CallName1=Rajeshin, City=Kollupitiya, DS=Colombo, PostOffice=Kollupitiya, Country=Sri Lanka, GsDiv=Kollupitiya East , Province=Western Province, OtherName2=Rajur, OtherName1=Raj}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GoToAllocateLocationPage -->
-        <test-method status="PASS" signature="clickInmateLink()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="clickInmateLink" duration-ms="199" started-at="2015-02-25T12:24:55Z" depends-on-methods="com.ptl.pims.testcases.PropertyManagementNewTest.GoToAllocateLocationPage" finished-at="2015-02-25T12:24:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickInmateLink -->
-        <test-method status="PASS" signature="addInmateProperty(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="addInmateProperty" duration-ms="92157" started-at="2015-02-25T12:24:55Z" data-provider="getAllocationData" depends-on-methods="com.ptl.pims.testcases.PropertyManagementNewTest.clickInmateLink" finished-at="2015-02-25T12:26:27Z">
+        </test-method> <!-- enterInmatePersonalDataTest -->
+        <test-method status="PASS" signature="enterInmateCalasificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="enterInmateCalasificationTest" duration-ms="583" started-at="2015-02-25T15:55:16Z" data-provider="getInmateClassificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmatePersonalDataTest" finished-at="2015-02-25T15:55:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Prison Item=shirt,shirt, Prison Quantity=3,2, Private Quantity=25,1, Private Item=Money,Phone, Prison Description=Green shirt,Blue shirt, Runmode=Yes, Prison Date=2015-03-12,'2015-03-19, Private Date=2015-03-16,2015-03-17, Private Value=1.200025E9, Private Description=In dollars,Nokia Phone}]]>
+                <![CDATA[{classif=Condem, Runmode=Yes}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addInmateProperty -->
-        <test-method status="FAIL" signature="validatePropertyAdd(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="validatePropertyAdd" duration-ms="11991" started-at="2015-02-25T12:26:27Z" data-provider="getAllocationData" depends-on-methods="com.ptl.pims.testcases.PropertyManagementNewTest.addInmateProperty" finished-at="2015-02-25T12:26:39Z">
+        </test-method> <!-- enterInmateCalasificationTest -->
+        <test-method status="PASS" signature="enterInmateCharacteristicTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="enterInmateCharacteristicTest" duration-ms="3246" started-at="2015-02-25T15:55:16Z" data-provider="getInmateCharacteristicData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCalasificationTest" finished-at="2015-02-25T15:55:20Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Prison Item=shirt,shirt, Prison Quantity=3,2, Private Quantity=25,1, Private Item=Money,Phone, Prison Description=Green shirt,Blue shirt, Runmode=Yes, Prison Date=2015-03-12,'2015-03-19, Private Date=2015-03-16,2015-03-17, Private Value=1.200025E9, Private Description=In dollars,Nokia Phone}]]>
+                <![CDATA[{nationality=Sri Lankan, nic=921663456v, birthdate=24/03/1992, Runmode=Yes, marital=Married, birthplace=Kandy, race=Sinhala, religion=Buddhist, passport=24878788834}]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInmateCharacteristicTest -->
+        <test-method status="PASS" signature="enterInmateIdentificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="enterInmateIdentificationTest" duration-ms="1615" started-at="2015-02-25T15:55:20Z" data-provider="getIdentificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCharacteristicTest" finished-at="2015-02-25T15:55:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{nose=Long, bodymark=Black Birthmark, eyesd=straight, Runmode=Yes, haird=black, hair=Long, face=Beard, eyes=Black, faced=Long}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInmateIdentificationTest -->
+        <test-method status="FAIL" signature="enterInmatecaseTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="enterInmatecaseTest" duration-ms="33747" started-at="2015-02-25T15:55:21Z" data-provider="getcaseData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateIdentificationTest" finished-at="2015-02-25T15:55:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{casen=6786678678687, offense=Murder, offdescription=Double, Runmode=Yes, description=Hard, sentence=Compulsory, fine=3500.0, days=8}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Property Management data was not saved. expected [true] but found [false]]]>
+              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success']"}
+Command duration or timeout: 30.11 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'PTL-PC', ip: '192.168.1.36', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Session ID: 3f65f8fa-423a-4efb-b7e0-218499188a46
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=35.0.1}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Property Management data was not saved. expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at com.ptl.pims.testcases.PropertyManagementNewTest.validatePropertyAdd(PropertyManagementNewTest.java:108)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success']"}
+Command duration or timeout: 30.11 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'PTL-PC', ip: '192.168.1.36', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Session ID: 3f65f8fa-423a-4efb-b7e0-218499188a46
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=35.0.1}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:37)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.ptl.pims.pages.InmateRegistrationSelectPage.getInmateSuccessMessage(InmateRegistrationSelectPage.java:31)
+	at com.ptl.pims.testcases.InmateRegistrationTest.enterInmatecaseTest(InmateRegistrationTest.java:113)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -83,17 +127,24 @@
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class='alert alert-success']"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'PTL-PC', ip: '192.168.1.36', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Praveen/AppData/Local/Temp/anonymous8165718585111965097webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9641:26)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Praveen/AppData/Local/Temp/anonymous8165718585111965097webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:548:5)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatePropertyAdd -->
-        <test-method status="PASS" signature="getTopMenu()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@221b6417]" name="getTopMenu" is-config="true" duration-ms="0" started-at="2015-02-25T12:26:40Z" finished-at="2015-02-25T12:26:40Z">
+        </test-method> <!-- enterInmatecaseTest -->
+        <test-method status="PASS" signature="getTopMenu()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@4f5f0269]" name="getTopMenu" is-config="true" duration-ms="5" started-at="2015-02-25T15:55:55Z" finished-at="2015-02-25T15:55:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTopMenu -->
-      </class> <!-- com.ptl.pims.testcases.PropertyManagementNewTest -->
+      </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

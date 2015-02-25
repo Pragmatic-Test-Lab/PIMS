@@ -1,12 +1,5 @@
-25/02/2015 12:23:58 devpinoyLogger Browser initialized
-25/02/2015 12:23:58 devpinoyLogger Attempting login to system
-25/02/2015 12:24:53 devpinoyLogger Successfully logged in
-25/02/2015 12:24:53 devpinoyLogger Going to Home Page
-25/02/2015 12:24:53 devpinoyLogger Going to Top Menu
-25/02/2015 12:24:53 devpinoyLogger Going to Property Management Page
-25/02/2015 12:24:55 devpinoyLogger Reached Property Management Page
-25/02/2015 12:24:55 devpinoyLogger Reached Inmates Property Management Page
-25/02/2015 12:24:55 devpinoyLogger Adding inmate property details.
-25/02/2015 12:26:25 devpinoyLogger Saving new Property Details.
-25/02/2015 12:26:27 devpinoyLogger Success Message received.
-25/02/2015 12:26:27 devpinoyLogger Revisited Inmates Property Management Page
+25/02/2015 15:53:44 devpinoyLogger Browser initialized
+25/02/2015 15:53:45 devpinoyLogger Attempting login to system
+25/02/2015 15:54:45 devpinoyLogger Successfully logged in
+25/02/2015 15:54:45 devpinoyLogger Going to Inmate Registration Page
+25/02/2015 15:55:04 devpinoyLogger Reached Allocate Location Page
