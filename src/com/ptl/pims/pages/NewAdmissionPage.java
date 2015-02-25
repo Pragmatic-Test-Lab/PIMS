@@ -336,7 +336,7 @@ public class NewAdmissionPage extends CommonMethods {
 	}
 	
 	public String getRegistrationNumber(){
-		return "";
+		return RegNumber.getText();
 	}
 
 }
