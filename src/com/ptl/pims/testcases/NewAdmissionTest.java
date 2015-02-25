@@ -10,16 +10,16 @@ import com.ptl.pims.pages.TopMenu;
 public class NewAdmissionTest extends TestBase{
 
 	HomePage landingPage = null;
-
+/*
 	//@Test // PIMS-656
 	public void Test_doCreateNewAdmitionFor_ConvictedInmate(){
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
 		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 		newAdmissionPage.doCreateNewAdmitionFor_ConvictedInmate();
-	}
+	}*/
 	
-	//@Test   // PIMS-628
+	@Test   // PIMS-628
 	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate() {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -27,6 +27,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();
 	}
 	
+	/*
 	//@Test   // PIMS-898
 	public void Test_checkMealTypeIsSelectable() {
 		landingPage = returnToHomePage();		
@@ -93,11 +94,7 @@ public class NewAdmissionTest extends TestBase{
 		NewAdmissionPage newAdmissionPage = new NewAdmissionPage(driver);
 		newAdmissionPage.doCreateNewAdmition();
 	}
+*/
 
-
-/*	@AfterSuite
-	public void quite(){
-		driver.quit();
-	}*/
 	
 }
