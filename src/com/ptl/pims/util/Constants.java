@@ -322,9 +322,7 @@ public class Constants {
 	public static final String PropertyManagement_PrisonTab_QuantityFirstPart = ".//*[@id='prisonproperty-";
 	public static final String PropertyManagement_PrisonTab_QuantityLastPart = "-psp_quantity']";
 
-
-
-
+	
 	// Inmate Search Pages
 	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
 	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
@@ -332,6 +330,14 @@ public class Constants {
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
 	
+	
+	// Authorize Registration Page
+	public static final String AuthorizeRegistration_ExpectedHeader = "Registration Authorization";
+	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
+	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart1 = "Saved";
+	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart2 = "successfully";
+	public static final String AuthorizeRegistration_SuccessMessageText = "Saved \\w* successfully";
 	
 
 

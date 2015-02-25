@@ -76,27 +76,7 @@ public class PropertyManagementNewTest extends TestBase {
 		APPLICATION_LOGS.debug("Success Message received.");
 
 	}
-	
-	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData") 	//pims-1083, pims-1087
-	public void validatePropertyAdd(Hashtable<String, String> data) {
-		
-		// Search if specific inmate is needed
-		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
 
-		manageProperty = managePropertySelectInmate.clickFirstInmate();
-		APPLICATION_LOGS.debug("Revisited Inmates Property Management Page");
-		
-		boolean PrivatePropertySavedSuccessfully = manageProperty.isPrivatePropertyRecordsFound(data.get("Private Date"), data.get("Private Item"), 
-				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));		
-		boolean PrisonPropertySavedSuccessfully = manageProperty.isPrisonPropertyRecordsFound(data.get("Prison Date"), data.get("Prison Item"), 
-				data.get("Prison Description"), data.get("Prison Quantity"));
-		
-		Assert.assertTrue(PrivatePropertySavedSuccessfully && PrisonPropertySavedSuccessfully,
-				"Property Management data was not properly saved.");
-		
-		APPLICATION_LOGS.debug("Property Details have been saved successfully.");
-
-	} 
 
 	@DataProvider
 	public Object[][] getPropertyData() {
