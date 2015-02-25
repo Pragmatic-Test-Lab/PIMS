@@ -1,70 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results skipped="0" failed="0" total="3" passed="3">
-=======
-<testng-results skipped="0" failed="0" total="2" passed="2">
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="217567" started-at="2015-02-24T10:44:54Z" finished-at="2015-02-24T10:48:32Z">
-=======
-  <suite name="Default suite" duration-ms="165357" started-at="2015-02-24T08:38:47Z" finished-at="2015-02-24T08:41:32Z">
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+  <suite name="Default suite" duration-ms="55270" started-at="2015-02-25T04:41:14Z" finished-at="2015-02-25T04:42:09Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="217567" started-at="2015-02-24T10:44:54Z" finished-at="2015-02-24T10:48:32Z">
+    <test name="Default test" duration-ms="55270" started-at="2015-02-25T04:41:14Z" finished-at="2015-02-25T04:42:09Z">
       <class name="com.ptl.pims.testcases.InmateRegistrationTest">
-        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1a6fd390]" name="initConfiguration" is-config="true" duration-ms="111" started-at="2015-02-24T16:14:46Z" finished-at="2015-02-24T16:14:46Z">
+        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="initConfiguration" is-config="true" duration-ms="89" started-at="2015-02-25T10:11:04Z" finished-at="2015-02-25T10:11:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1a6fd390]" name="initDriver" is-config="true" duration-ms="8323" started-at="2015-02-24T16:14:46Z" finished-at="2015-02-24T16:14:54Z">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="initDriver" is-config="true" duration-ms="9560" started-at="2015-02-25T10:11:04Z" finished-at="2015-02-25T10:11:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initDriver -->
-        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1a6fd390]" name="enterInmatePersonalDataTest" duration-ms="215116" started-at="2015-02-24T16:14:54Z" data-provider="getInmatePersonalData" finished-at="2015-02-24T16:18:29Z">
+        <test-method status="PASS" signature="enterInmatePersonalDataTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmatePersonalDataTest" duration-ms="49624" started-at="2015-02-25T10:11:16Z" data-provider="getInmatePersonalData" finished-at="2015-02-25T10:12:05Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[{AddrLine2=colombo-03, AddrLine1=98,shoe place, Runmode=Yes, PoliceDiv=Peradeniya, PostCode=8.0, CallName2=raja, District=Colombo, CallName1=Rajeshin, City=Kollupitiya, DS=Colombo, PostOffice=Kollupitiya, Country=Sri Lanka, GsDiv=Kollupitiya East , Province=Western Province, OtherName2=Rajur, OtherName1=Raj}]]>
-=======
-    <test name="Default test" duration-ms="165357" started-at="2015-02-24T08:38:47Z" finished-at="2015-02-24T08:41:32Z">
-      <class name="com.ptl.pims.testcases.PropertyManagementNewTest">
-        <test-method status="PASS" signature="initConfiguration()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@29aaa31f]" name="initConfiguration" is-config="true" duration-ms="48" started-at="2015-02-24T14:08:41Z" finished-at="2015-02-24T14:08:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initConfiguration -->
-        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@29aaa31f]" name="initDriver" is-config="true" duration-ms="5343" started-at="2015-02-24T14:08:41Z" finished-at="2015-02-24T14:08:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initDriver -->
-        <test-method status="PASS" signature="GoToAllocateLocationPage(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@29aaa31f]" name="GoToAllocateLocationPage" duration-ms="58043" started-at="2015-02-24T14:08:47Z" data-provider="getAllocationData" finished-at="2015-02-24T14:09:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Prison Item=shirt,shirt, Prison Quantity=3,2, Private Quantity=25,1, Private Item=Money,Phone, Prison Description=Green shirt,Blue shirt, Runmode=Yes, Prison Date=2015-03-12,'2015-03-19, Private Date=2015-03-16,2015-03-17, Private Value=12000,25000, Private Description=In dollars,Nokia Phone}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GoToAllocateLocationPage -->
-        <test-method status="PASS" signature="validatePropertyAdd(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.PropertyManagementNewTest@29aaa31f]" name="validatePropertyAdd" duration-ms="107282" started-at="2015-02-24T14:09:45Z" data-provider="getAllocationData" depends-on-methods="com.ptl.pims.testcases.PropertyManagementNewTest.GoToAllocateLocationPage" finished-at="2015-02-24T14:11:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Prison Item=shirt,shirt, Prison Quantity=3,2, Private Quantity=25,1, Private Item=Money,Phone, Prison Description=Green shirt,Blue shirt, Runmode=Yes, Prison Date=2015-03-12,'2015-03-19, Private Date=2015-03-16,2015-03-17, Private Value=12000,25000, Private Description=In dollars,Nokia Phone}]]>
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- enterInmatePersonalDataTest -->
-        <test-method status="PASS" signature="enterInmateCalasificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1a6fd390]" name="enterInmateCalasificationTest" duration-ms="610" started-at="2015-02-24T16:18:29Z" data-provider="getInmateClassificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmatePersonalDataTest" finished-at="2015-02-24T16:18:30Z">
+        <test-method status="PASS" signature="enterInmateCalasificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateCalasificationTest" duration-ms="551" started-at="2015-02-25T10:12:05Z" data-provider="getInmateClassificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmatePersonalDataTest" finished-at="2015-02-25T10:12:06Z">
           <params>
             <param index="0">
               <value>
@@ -75,22 +37,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmateCalasificationTest -->
-        <test-method status="PASS" signature="enterInmateCharacteristicTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@1a6fd390]" name="enterInmateCharacteristicTest" duration-ms="1778" started-at="2015-02-24T16:18:30Z" data-provider="getInmateCharacteristicData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCalasificationTest" finished-at="2015-02-24T16:18:32Z">
+        <test-method status="PASS" signature="enterInmateCharacteristicTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateCharacteristicTest" duration-ms="1694" started-at="2015-02-25T10:12:06Z" data-provider="getInmateCharacteristicData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCalasificationTest" finished-at="2015-02-25T10:12:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{BirthPlace=Kandy, Marital=Married, nic=921663456v, Nationality=Sri Lankan, Runmode=Yes, PassportNumber=24878788834, DOB=24/03/1992, Religion=Buddhist, Race=Sinhala}]]>
+                <![CDATA[{nationality=Sri Lankan, nic=921663456v, birthdate=24/03/1992, Runmode=Yes, marital=Married, birthplace=Kandy, race=Sinhala, religion=Buddhist, passport=24878788834}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterInmateCharacteristicTest -->
+        <test-method status="PASS" signature="enterInmateIdentificationTest(java.util.Hashtable)[pri:0, instance:com.ptl.pims.testcases.InmateRegistrationTest@7018f3c0]" name="enterInmateIdentificationTest" duration-ms="1861" started-at="2015-02-25T10:12:07Z" data-provider="getIdentificationData" depends-on-methods="com.ptl.pims.testcases.InmateRegistrationTest.enterInmateCharacteristicTest" finished-at="2015-02-25T10:12:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{nose=Long, bodymark=Black Birthmark, eyesd=straight, Runmode=Yes, haird=black, hair=Long, face=Beard, eyes=Black, faced=Long}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterInmateIdentificationTest -->
       </class> <!-- com.ptl.pims.testcases.InmateRegistrationTest -->
-=======
-        </test-method> <!-- validatePropertyAdd -->
-      </class> <!-- com.ptl.pims.testcases.PropertyManagementNewTest -->
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

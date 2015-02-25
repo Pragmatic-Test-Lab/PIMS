@@ -47,6 +47,16 @@ public class Constants {
 	
 	//Inmate identification tab
 	public static final String InmateRegistration_identification_tab ="//a[text()='Inmate Identification Details']";
+	public static final String InmateRegistration_identification_face ="//*[@id='admission-adm_face_id']";
+	public static final String InmateRegistration_identification_faced ="//*[@id='admission-adm_face_description']";
+	public static final String InmateRegistration_identification_hair ="//*[@id='admission-adm_hair_id']";
+	public static final String InmateRegistration_identification_haird ="//*[@id='admission-adm_hair_description']";
+	public static final String InmateRegistration_identification_eyes ="//*[@id='admission-adm_eyes_id']";
+	public static final String InmateRegistration_identification_eyesd ="//*[@id='admission-adm_eyes_description']";
+	public static final String InmateRegistration_identification_nose ="//*[@id='admission-adm_norse_id']";
+	public static final String InmateRegistration_identification_nosed ="//*[@id='admission-adm_norse_description']";
+	public static final String InmateRegistration_identification_bodymark ="//*[@id='admission-adm_body_mark_1']";
+	
 	
 	//Inmate case tab
 	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";

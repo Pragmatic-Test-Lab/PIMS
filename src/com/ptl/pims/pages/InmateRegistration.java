@@ -22,6 +22,8 @@ public class InmateRegistration {
 	public WebElement tab_classification;
 	@FindBy(xpath = Constants.InmateRegistration_characteristics_tab)
 	public WebElement tab_characteristic;
+	@FindBy(xpath = Constants.InmateRegistration_identification_tab)
+	public WebElement tab_identification;
 	
 	//Personal details tab
 	@FindBy(xpath = Constants.InmateRegistration_Personal_OtherName1)
@@ -81,8 +83,23 @@ public class InmateRegistration {
 	public WebElement passport;
 	
 	
-	
-	
+	//identification details tab
+	@FindBy(xpath = Constants.InmateRegistration_identification_face)
+	public WebElement face;
+	@FindBy(xpath = Constants.InmateRegistration_identification_faced)
+	public WebElement faced;
+	@FindBy(xpath = Constants.InmateRegistration_identification_hair)
+	public WebElement hair;
+	@FindBy(xpath = Constants.InmateRegistration_identification_haird)
+	public WebElement haird;
+	@FindBy(xpath = Constants.InmateRegistration_identification_eyes)
+	public WebElement eyes;
+	@FindBy(xpath = Constants.InmateRegistration_identification_eyesd)
+	public WebElement eyesd;
+	@FindBy(xpath = Constants.InmateRegistration_identification_nose)
+	public WebElement nose;
+	@FindBy(xpath = Constants.InmateRegistration_identification_bodymark)
+	public WebElement bodymark;
 	
 	
 	
@@ -150,9 +167,26 @@ public class InmateRegistration {
 		birthdate.sendKeys(DOB);
 		birthplace.sendKeys(BirthPlace);
 		passport.sendKeys(PassportNumber);
+	//	updateButton.click();
+		
+	}
+	
+
+	public void doAddIdentificationDetailsOfInmate(String Face, String FaceD, String Hair, String HairD, String Eyes, String EyesD, String Nose, String BodyMark){
+		
+		tab_identification.click();
+		face.sendKeys(Face);
+		faced.sendKeys(FaceD);
+		hair.sendKeys(Hair);
+		haird.sendKeys(HairD);
+		eyes.sendKeys(Eyes);
+		eyesd.sendKeys(EyesD);
+		nose.sendKeys(Nose);
+		bodymark.sendKeys(BodyMark);
 		updateButton.click();
 		
 	}
+
 	
 	
 }

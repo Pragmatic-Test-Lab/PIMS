@@ -1,15 +1,5 @@
-<<<<<<< HEAD
-24/02/2015 16:14:54 devpinoyLogger Browser initialized
-24/02/2015 16:14:54 devpinoyLogger Attempting login to system
-24/02/2015 16:16:42 devpinoyLogger Successfully logged in
-24/02/2015 16:16:42 devpinoyLogger Going to Inmate Registration Page
-24/02/2015 16:18:21 devpinoyLogger Reached Allocate Location Page
-=======
-24/02/2015 14:08:47 devpinoyLogger Browser initialized
-24/02/2015 14:08:47 devpinoyLogger Attempting login to system
-24/02/2015 14:09:42 devpinoyLogger Successfully logged in
-24/02/2015 14:09:42 devpinoyLogger Going to Property Management Page
-24/02/2015 14:09:45 devpinoyLogger Reached Property Management Page
-24/02/2015 14:10:09 devpinoyLogger Revisited Inmates Property Management Page
-24/02/2015 14:11:32 devpinoyLogger Property Details have been saved successfully.
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+25/02/2015 10:11:14 devpinoyLogger Browser initialized
+25/02/2015 10:11:16 devpinoyLogger Attempting login to system
+25/02/2015 10:11:50 devpinoyLogger Successfully logged in
+25/02/2015 10:11:50 devpinoyLogger Going to Inmate Registration Page
+25/02/2015 10:11:53 devpinoyLogger Reached Allocate Location Page
