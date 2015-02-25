@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 import org.testng.Assert;
 import org.testng.SkipException;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.HomePage;
@@ -21,7 +22,7 @@ public class PropertyManagementEditTest extends TestBase {
 	PropertyManagementPage manageProperty = null;
 	
 
-	@Test(dataProvider = "getAllocationData")
+	@Test(dataProvider = "getPropertyData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)
@@ -43,11 +44,12 @@ public class PropertyManagementEditTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "GoToAllocateLocationPage")
-	public void clickInmateLink() {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData")
+	public void clickInmateLink(Hashtable<String, String> data) {
 		
 		//
-		// Use search if specific inmate is needed
+		// Search if specific inmate is needed
+		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
 		//
 
 		manageProperty = managePropertySelectInmate.clickFirstInmate();	
@@ -56,17 +58,17 @@ public class PropertyManagementEditTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData") 	//pims-663, pims-835, pims-997, pims-284     
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getPropertyData") 	//pims- 285  
 	public void editInmateProperty(Hashtable<String, String> data) {
 		
 		APPLICATION_LOGS.debug("Editing inmate property details.");
 		//edit Inmate Property
-		boolean privateEditSuccessfull = manageProperty.editPrivateProperties(data.get("Property No. to Edit"), data.get("Private Date"), data.get("Private Item"), 
+		boolean privateEditSuccessfull = manageProperty.editPrivateProperties(data.get("Private Property Position"), data.get("Private Date"), data.get("Private Item"), 
 				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
 	
 		Assert.assertTrue(privateEditSuccessfull, "given Private Property index exceeds found private property amount");
 
-		boolean prisonEditSuccessfull = manageProperty.editPrisonProperties(data.get("Property No. to Edit"), data.get("Prison Date"), data.get("Prison Item"), 
+		boolean prisonEditSuccessfull = manageProperty.editPrisonProperties(data.get("Prison Property Position"), data.get("Prison Date"), data.get("Prison Item"), 
 				data.get("Prison Description"), data.get("Prison Quantity"));
 		
 		Assert.assertTrue(prisonEditSuccessfull, "given Prison Property index exceeds found prison property amount");
@@ -83,5 +85,32 @@ public class PropertyManagementEditTest extends TestBase {
 		
 		APPLICATION_LOGS.debug("Success Message received.");
 
+	}
+	
+	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData") 	//pims-1012
+	public void validatePropertyEdit(Hashtable<String, String> data) {
+		
+		// Search if specific inmate is needed
+		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
+
+		manageProperty = managePropertySelectInmate.clickFirstInmate();
+		APPLICATION_LOGS.debug("Revisited Inmates Property Management Page");
+		
+		boolean PrivatePropertySavedSuccessfully = manageProperty.isPrivatePropertyRecordsFound(data.get("Private Date"), data.get("Private Item"), 
+				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));		
+		boolean PrisonPropertySavedSuccessfully = manageProperty.isPrisonPropertyRecordsFound(data.get("Prison Date"), data.get("Prison Item"), 
+				data.get("Prison Description"), data.get("Prison Quantity"));
+		
+		Assert.assertTrue(PrivatePropertySavedSuccessfully && PrisonPropertySavedSuccessfully,
+				"Property Management data was not edited properly.");
+		
+		APPLICATION_LOGS.debug("Property Details have been edited successfully.");
+
 	} 
+	
+	@DataProvider
+	public Object[][] getPropertyData() {
+		return TestUtil.getTestData("Property Management Edit", xls);
+
+	}
 }
