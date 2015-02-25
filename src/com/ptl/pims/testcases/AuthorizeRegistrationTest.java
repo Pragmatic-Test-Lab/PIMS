@@ -45,9 +45,9 @@ public class AuthorizeRegistrationTest extends TestBase {
 	public void clickInmateLink(Hashtable<String, String> data) {
 
 		// Search if specific inmate is needed
-		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
-		String RegNumber = newAdmissionPage.getRegistrationNumber();
-		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(RegNumber,"","");
+		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		//String RegNumber = newAdmissionPage.getRegistrationNumber();
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");
 		
 
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		

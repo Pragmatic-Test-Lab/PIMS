@@ -19,9 +19,9 @@ public class AuthorizeAdmissionTest extends TestBase {
 		TopMenu topMenu = getTopMenu();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = topMenu.gotoAuthorizeAdmissionPage();
 		
-		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
-		String RegNumber = newAdmissionPage.getRegistrationNumber();
-		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(RegNumber,"", "");
+		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		//String RegNumber = newAdmissionPage.getRegistrationNumber();
+		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(registrationNo,"", "");
 		
 		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch("","","");
 		AuthorizeAdmissionPage authorizeAdmissionPage =  authorizeAdmissionSelectPage.clickFirstInmate();

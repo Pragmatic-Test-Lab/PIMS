@@ -131,7 +131,7 @@ public class Constants {
 	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
 	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
 	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
-	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_age_category_id']";
+	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_registration_no']";
 	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
 	public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
 	public static final String CreateAdmission_Biometric = "//*[@id='admission-adm_biometric_id']";

@@ -35,10 +35,10 @@ public class InmateRegistrationTest extends TestBase {
 
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		inmateRegistrationSelect  = landingPage.goToInmateRegistration();
-		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
-		String RegNumber = newAdmissionPage.getRegistrationNumber();
+		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		//String RegNumber = newAdmissionPage.getRegistrationNumber();
 		
-		inmateRegistrationSelect = inmateRegistrationSelect.doSearch(RegNumber,data.get("Biometric") ,data.get("Name"));
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch(registrationNo,"" ,"");
 
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
