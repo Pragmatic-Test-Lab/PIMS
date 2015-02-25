@@ -1,15 +1,14 @@
 package com.ptl.pims.util;
 
 public class Constants {
-
 	// Registration Page:
 
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
-	public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
-	public static final String InmateRegistration_FirtstRow_EditButton = "(.//a[contains(@href,'registration/update')]/span)[1]";
-
-	// Update Registration
+	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
+	
+	//Update Registration
 
 	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
@@ -28,14 +27,49 @@ public class Constants {
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
 
-	// Inmate classification tab
+
+	//Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
-
 	public static final String InmateRegistration_Header = "";
-
-	public static final String InmateRegistration_Classifiaction_Gender = "";
 	public static final String InmateRegistration_Classification_Pervious_Conviction = "";
-	public static final String InmateRegistration_Classifiaction_Calssification = "";
+	public static final String InmateRegistration_Classifiaction_Calssification = "//*[@id='admission-adm_inmate_classification_id']";
+		
+	//Inmate characteristics tab
+	public static final String InmateRegistration_characteristics_tab ="//a[text()='Inmate Characteristic Details']";
+	public static final String InmateRegistration_Characteristic_nationality="//*[@id='admission-adm_nationality_id']";
+	public static final String InmateRegistration_Classifiaction_race="//*[@id='admission-adm_race_id']";
+	public static final String InmateRegistration_Classifiaction_marital="//*[@id='admission-adm_marital_status_id']";
+	public static final String InmateRegistration_Classifiaction_religion="//*[@id='admission-adm_religion_id']";
+	public static final String InmateRegistration_Classifiaction_NIC="//*[@id='admission-adm_nic']";
+	public static final String InmateRegistration_Classifiaction_birthdate="//*[@id='admission-adm_date_of_birth']";
+	public static final String InmateRegistration_Classifiaction_birthplace="//*[@id='admission-adm_birth_place']";
+	public static final String InmateRegistration_Classifiaction_passport="//*[@id='admission-adm_passport_no']";
+	
+	//Inmate identification tab
+	public static final String InmateRegistration_identification_tab ="//a[text()='Inmate Identification Details']";
+	public static final String InmateRegistration_identification_face ="//*[@id='admission-adm_face_id']";
+	public static final String InmateRegistration_identification_faced ="//*[@id='admission-adm_face_description']";
+	public static final String InmateRegistration_identification_hair ="//*[@id='admission-adm_hair_id']";
+	public static final String InmateRegistration_identification_haird ="//*[@id='admission-adm_hair_description']";
+	public static final String InmateRegistration_identification_eyes ="//*[@id='admission-adm_eyes_id']";
+	public static final String InmateRegistration_identification_eyesd ="//*[@id='admission-adm_eyes_description']";
+	public static final String InmateRegistration_identification_nose ="//*[@id='admission-adm_norse_id']";
+	public static final String InmateRegistration_identification_nosed ="//*[@id='admission-adm_norse_description']";
+	public static final String InmateRegistration_identification_bodymark ="//*[@id='admission-adm_body_mark_1']";
+	
+	
+	//Inmate case tab
+	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
+	public static final String InmateRegistration_case_addnew =".//button[text()='Add New']";
+	public static final String InmateRegistration_case_isactive = "//*[@id='sentence-1-sen_is_active']";
+	public static final String InmateRegistration_case_fine = "//*[@id='sentence-1-sen_fine_charges']";
+	public static final String InmateRegistration_case_days = "//*[@id='sentence-1-sen_days']";
+	public static final String InmateRegistration_case_description = "//*[@id='sentence-1-sen_description']";
+	public static final String InmateRegistration_case_sentence = "//*[@id='sentence-1-sen_sentence_type_id']";
+	public static final String InmateRegistration_case_offdescription = "//*[@id='sentence-1-sen_discription_of_offence']";
+	public static final String InmateRegistration_case_offense ="//*[@id='sentence-1-sen_offence_id']";
+	public static final String InmateRegistration_case_casen = "//*[@id='sentence-1-sen_case_id']";
+	
 
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")
@@ -199,12 +233,24 @@ public class Constants {
 	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
 	public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";
+	public static final String UpdatePostRegistration_EmployerTBody = "//*[@id='employment_grid']/tbody";
+	public static final String UpdatePostRegistration_EmploymentTabStatus = "true";
 	public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
 	public static final String UpdatePostRegistration_Employer = "//*[@id='employment-0-emp_employer']";
+	public static final String UpdatePostRegistration_EmployerFirstPart = "//*[@id='employment-";
+	public static final String UpdatePostRegistration_EmployerLastPart = "-emp_employer']";
 	public static final String UpdatePostRegistration_OrganizationalType = "//*[@id='employment-0-emp_organizational_type_id']";
+	public static final String UpdatePostRegistration_OrganizationalTypeFirstPart = "//*[@id='employment-";
+	public static final String UpdatePostRegistration_OrganizationalTypeLastPart = "-emp_organizational_type_id']";
 	public static final String UpdatePostRegistration_Position = "//*[@id='employment-0-emp_position']";
+	public static final String UpdatePostRegistration_PositionFirstPart = "//*[@id='employment-";
+	public static final String UpdatePostRegistration_PositionLastPart = "-emp_position']";
 	public static final String UpdatePostRegistration_DateFrom = "//*[@id='employment-0-emp_date_from']";
+	public static final String UpdatePostRegistration_DateFromFirstPart = "//*[@id='employment-";
+	public static final String UpdatePostRegistration_DateFromLastPart = "-emp_date_from']";
 	public static final String UpdatePostRegistration_DateTo = "//*[@id='employment-0-emp_date_to']";
+	public static final String UpdatePostRegistration_DateToFirstPart = "//*[@id='employment-";
+	public static final String UpdatePostRegistration_DateToLastPart = "-emp_date_to']";
 	public static final String UpdatePostRegistration_EmploymentAction = "//a[contains(@onclick,'removeemployment')]";
 	public static final String UpdatePostRegistration_FamilyTab = "//a[text()='Family Data']";
 	public static final String UpdatePostRegistration_FamilyAddNew = "(.//button[text()='Add New'])[3]";
@@ -285,6 +331,8 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	
+	
 
 
 }

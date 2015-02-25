@@ -18,7 +18,7 @@ public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
 	
 	
 	@Test(dataProvider = "getVerificationData")
-	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
+	public void TestUpdatePostRegistrationDefaultTab(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");

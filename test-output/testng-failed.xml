@@ -5,10 +5,13 @@
     <classes>
       <class name="com.ptl.pims.testcases.PropertyManagementNewTest">
         <methods>
-          <include name="GoToAllocateLocationPage" invocation-numbers="0"/>
+          <include name="clickInmateLink"/>
+          <include name="GoToAllocateLocationPage"/>
           <include name="initConfiguration"/>
-          <include name="validatePropertyAdd"/>
+          <include name="addInmateProperty"/>
+          <include name="validatePropertyAdd" invocation-numbers="0"/>
           <include name="initDriver"/>
+          <include name="getTopMenu"/>
         </methods>
       </class> <!-- com.ptl.pims.testcases.PropertyManagementNewTest -->
     </classes>

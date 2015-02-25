@@ -1,18 +1,11 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.ptl.pims.pages.HomePage;
-import com.ptl.pims.pages.LoginPage;
-import com.ptl.pims.pages.PostRegistrationPage;
 import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
 import com.ptl.pims.pages.PropertyManagementPage;
 import com.ptl.pims.pages.TopMenu;
