@@ -13,12 +13,12 @@ import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.pages.UpdatePostRegistrationPage;
 import com.ptl.pims.util.TestUtil;
 
-public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
+public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 	HomePage landingPage = null;
 	
 	
-	@Test(dataProvider = "getVerificationData")
-	public void TestUpdatePostRegistrationDefaultTab(Hashtable<String, String> data) {
+	@Test(dataProvider = "getEducationMultipleEntriesData")
+	public void VerifyMultipleEntries(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
@@ -30,18 +30,17 @@ public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
 		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to Post Registration Page");
 		UpdatePostRegistrationPage updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
-		APPLICATION_LOGS.debug("Going to Update Post Registration Page");		
-			
-		Assert.assertEquals(updatePostRegPage.getActualEducationalQualificationTabDefaultStatus(), 
-				updatePostRegPage.getExpectedEducationalQualificationTabDefaultStatus(), "Default Tab is not the Educational Qualification");
-		
+		APPLICATION_LOGS.debug("Going to Update Post Registration Page");
+		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
+		postRegPage = updatePostRegPage.ClickUpdateButton();		
+		Assert.assertEquals(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
 
-		APPLICATION_LOGS.debug("Educational Qualification tab is the default tab");
+		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}
 	
 	
 	@DataProvider
-	public Object[][] getVerificationData() {
+	public Object[][] getEducationMultipleEntriesData() {
 		return TestUtil.getTestData("UpdatePostReg Test", xls);
 
 	}

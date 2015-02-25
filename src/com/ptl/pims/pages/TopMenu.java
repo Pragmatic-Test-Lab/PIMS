@@ -86,6 +86,14 @@ public class TopMenu {
 		
 	}
 	
+	public PropertyManagementInmateSelectPage gotoManageProperty(){
+		registrationMainLink.click();
+		propertyManagement.click();
+		PropertyManagementInmateSelectPage managePropertySelectInmate = PageFactory.initElements(driver, PropertyManagementInmateSelectPage.class);
+		return managePropertySelectInmate;
+		
+	}
+	
 	public LoginPage doLogout(){
 		logOut.click();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);

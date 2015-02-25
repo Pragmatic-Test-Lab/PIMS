@@ -1,10 +1,12 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
+
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
 import com.ptl.pims.pages.PropertyManagementPage;
@@ -12,7 +14,8 @@ import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
-public class PropertyManagementNewTest extends TestBase {
+public class PropertyManagementEditTest extends TestBase {
+	
 	
 	HomePage landingPage = null;
 	PropertyManagementInmateSelectPage managePropertySelectInmate = null;
@@ -20,7 +23,7 @@ public class PropertyManagementNewTest extends TestBase {
 	
 
 	@Test(dataProvider = "getPropertyData")
-	public void GoToAllocateLocationPage(Hashtable<String, String> data) {		//pims-1193
+	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)
 				|| data.get("Runmode").equals("No"))
@@ -44,29 +47,36 @@ public class PropertyManagementNewTest extends TestBase {
 	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData")
 	public void clickInmateLink(Hashtable<String, String> data) {
 		
+		//
 		// Search if specific inmate is needed
 		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
+		//
 
 		manageProperty = managePropertySelectInmate.clickFirstInmate();	
 
 		APPLICATION_LOGS.debug("Reached Inmates Property Management Page");
+
 	}
 	
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getPropertyData") 	//pims- 285  
+	public void editInmateProperty(Hashtable<String, String> data) {
+		
+		APPLICATION_LOGS.debug("Editing inmate property details.");
+		//edit Inmate Property
+		boolean privateEditSuccessfull = manageProperty.editPrivateProperties(data.get("Private Property Position"), data.get("Private Date"), data.get("Private Item"), 
+				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getPropertyData") 	//pims-663, pims-835, pims-997, pims-284     
-	public void addInmateProperty(Hashtable<String, String> data) {
-		
-		APPLICATION_LOGS.debug("Adding inmate property details.");
-		
-		manageProperty.addPrivateProperties(data.get("Private Date"), data.get("Private Item"), 
-				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));	
+		Assert.assertTrue(privateEditSuccessfull, "given Private Property index exceeds found private property amount");
 
-		manageProperty.addPrisonProperties(data.get("Prison Date"), data.get("Prison Item"), 
+		boolean prisonEditSuccessfull = manageProperty.editPrisonProperties(data.get("Prison Property Position"), data.get("Prison Date"), data.get("Prison Item"), 
 				data.get("Prison Description"), data.get("Prison Quantity"));
-			
-		APPLICATION_LOGS.debug("Saving new Property Details.");
 		
+		Assert.assertTrue(prisonEditSuccessfull, "given Prison Property index exceeds found prison property amount");
+		
+		APPLICATION_LOGS.debug("Saving edited Property Details.");		
 		managePropertySelectInmate = manageProperty.submitPropertyForm();
+		
+		System.out.println(managePropertySelectInmate.getSuccessMessage());
 		
 		//checks if message contains words 'Saved' & 'successfully'
 		Assert.assertTrue(managePropertySelectInmate.getSuccessMessage().contains(Constants.PropertyManagement_ExpectedSuccessMessagePart1) && 
@@ -77,8 +87,8 @@ public class PropertyManagementNewTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData") 	//pims-1083, pims-1087
-	public void validatePropertyAdd(Hashtable<String, String> data) {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData") 	//pims-1012
+	public void validatePropertyEdit(Hashtable<String, String> data) {
 		
 		// Search if specific inmate is needed
 		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
@@ -92,15 +102,15 @@ public class PropertyManagementNewTest extends TestBase {
 				data.get("Prison Description"), data.get("Prison Quantity"));
 		
 		Assert.assertTrue(PrivatePropertySavedSuccessfully && PrisonPropertySavedSuccessfully,
-				"Property Management data was not properly saved.");
+				"Property Management data was not edited properly.");
 		
-		APPLICATION_LOGS.debug("Property Details have been saved successfully.");
+		APPLICATION_LOGS.debug("Property Details have been edited successfully.");
 
 	} 
-
+	
 	@DataProvider
 	public Object[][] getPropertyData() {
-		return TestUtil.getTestData("Property Management Add", xls);
+		return TestUtil.getTestData("Property Management Edit", xls);
 
 	}
 }

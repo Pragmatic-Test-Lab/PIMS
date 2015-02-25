@@ -48,11 +48,12 @@ public class AllocateLocationTest extends TestBase {
 	}
 	
 
-	@Test(dependsOnMethods = "GoToAllocateLocationPage")								//pims-921
-	public void clickInmateLink() {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getAllocationData")	//pims-921
+	public void clickInmateLink(Hashtable<String, String> data) {
 		
 		//
 		// Search if specific inmate is needed
+		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
 		//
 
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
