@@ -188,13 +188,13 @@ public class NewAdmissionPage extends CommonMethods {
 	}
 	
 	//PIMS-869
-		public void checkImateCatagoryIsSelectable(){		
+		public void checkImateCatagoryIsSelectable(){	
 			CreateAdmissionButton.click();
 		    Assert.assertTrue(InmateCatagory.getAttribute("disabled") == null, "Inmate Catgory Is Not Selectable");	
 		}
 	
 	//PIMS-1190
-	public void checkAgeCatagoryIsAutoSelected(){		
+	public void checkAgeCatagoryIsAutoSelected(){
 		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Un-Convicted");
      	CourtWarant.sendKeys("Negombo");
@@ -205,7 +205,7 @@ public class NewAdmissionPage extends CommonMethods {
 	}
 	
 	//PIMS-408
-	public void checkInmateRegistrationNumberIsAutoGenarated(){		
+	public void checkInmateRegistrationNumberIsAutoGenarated(){
 		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Convicted");
      	CourtWarant.sendKeys("Negombo");

@@ -72,7 +72,7 @@ public class TopMenu {
 	
 	public AuthorizeAdmissionSelectPage gotoAuthorizeAdmissionPage() {
 		admissionTopLink.click();
-		editSubLink.click();
+		authorizeSubLink.click();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
 		return authorizeAdmissionSelectPage;
 	}

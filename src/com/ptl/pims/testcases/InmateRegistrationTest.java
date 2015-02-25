@@ -15,6 +15,7 @@ import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
@@ -34,6 +35,10 @@ public class InmateRegistrationTest extends TestBase {
 
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		inmateRegistrationSelect  = landingPage.goToInmateRegistration();
+		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		String RegNumber = newAdmissionPage.getRegistrationNumber();
+		
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch(RegNumber,data.get("Biometric") ,data.get("Name"));
 
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
@@ -95,11 +100,13 @@ public class InmateRegistrationTest extends TestBase {
 
 		inmateRegistration.doAddIdentificationDetailsOfInmate(data.get("face"),data.get("faced"),data.get("hair"),data.get("haird"),
 				data.get("eyes"),data.get("eyesd"), data.get("nose"), data.get("bodymark")); 
+		
+		inmateRegistrationSelect = inmateRegistration.clickButton();
 
 	}
 
 
-	@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
+	/*@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
 	public void enterInmatecaseTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Case", xls) || data.get("Runmode").equals("No"))
@@ -116,7 +123,7 @@ public class InmateRegistrationTest extends TestBase {
 		
 		APPLICATION_LOGS.debug("Success Message received.");
 
-	}
+	}*/
 
 
 
