@@ -20,6 +20,8 @@ public class InmateRegistration {
 	public WebElement tab_personal;
 	@FindBy(xpath = Constants.InmateRegistration_calssfication_tab)
 	public WebElement tab_classification;
+	@FindBy(xpath = Constants.InmateRegistration_characteristics_tab)
+	public WebElement tab_characteristic;
 	
 	//Personal details tab
 	@FindBy(xpath = Constants.InmateRegistration_Personal_OtherName1)
@@ -55,12 +57,36 @@ public class InmateRegistration {
 	
 	
 	//Classification details tab
-	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_Gender)
-	public WebElement gender;
 	@FindBy(xpath = Constants.InmateRegistration_Classification_Pervious_Conviction)
 	public WebElement previous_conviction;
 	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_Calssification)
 	public WebElement classification;
+	
+	//characteristic details tab
+	@FindBy(xpath = Constants.InmateRegistration_Characteristic_nationality)
+	public WebElement nationality;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_race)
+	public WebElement race;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_marital)
+	public WebElement marital;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_religion)
+	public WebElement religion;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_NIC)
+	public WebElement NIC;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_birthdate)
+	public WebElement birthdate;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_birthplace)
+	public WebElement birthplace;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_passport)
+	public WebElement passport;
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	public InmateRegistration(WebDriver dr){		
@@ -98,17 +124,32 @@ public class InmateRegistration {
 		gsDivision.sendKeys(gsDiv);
 		city.sendKeys(cty);
 		policeDivision.sendKeys(plicDiv);
-		updateButton.click();
+	//	updateButton.click();
 		
 	}
 	
 
-	public void doAddClassifiactionDetailsOfInmate(String preConvictions, String classif){
+	public void doAddClassifiactionDetailsOfInmate(String classif){
 		//TODO : add method to search by reg number
-		editFirstInmate.click();
+		//editFirstInmate.click();
 		tab_classification.click();
-		previous_conviction.sendKeys(preConvictions);
 		classification.sendKeys(classif);		
+		//updateButton.click();
+		
+	}
+	
+	
+	public void doAddCharacteristicDetailsOfInmate(String Nationality, String Race, String Marital, String Religion, String nic, String DOB, String BirthPlace, String PassportNumber){
+		
+		tab_characteristic.click();
+		nationality.sendKeys(Nationality);
+		race.sendKeys(Race);
+		marital.sendKeys(Marital);
+		religion.sendKeys(Religion);
+		NIC.sendKeys(nic);
+		birthdate.sendKeys(DOB);
+		birthplace.sendKeys(BirthPlace);
+		passport.sendKeys(PassportNumber);
 		updateButton.click();
 		
 	}

@@ -20,6 +20,8 @@ import com.ptl.pims.util.TestUtil;
 public class InmateRegistrationTest extends TestBase {
 
 	HomePage landingPage = null;
+	InmateRegistrationSelectPage inmateRegistrationSelect  =null;
+	InmateRegistration inmateRegistration = null;
 
 	@Test(dataProvider = "getInmatePersonalData")   //PIM-1080
 	public void enterInmatePersonalDataTest(Hashtable<String, String> data) {
@@ -30,9 +32,9 @@ public class InmateRegistrationTest extends TestBase {
 		landingPage = returnToHomePage();
 
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-		InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
+		 inmateRegistrationSelect  = landingPage.goToInmateRegistration();
 		
-		InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
+	 inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
 		//String ActualHeader = inmateRegistration.getHeader();
 		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
@@ -48,31 +50,43 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "getInmateClassificationData")   //PIM-1082
+	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="enterInmatePersonalDataTest")   //PIM-1082
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Classification", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
+		//landingPage = returnToHomePage();
 
-		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-	InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
+		//APPLICATION_LOGS.debug("Going to Inmate Registration Page");
+	//InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
 		
-		InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
+	//InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
 		//String ActualHeader = inmateRegistration.getHeader();
 		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
 
 		//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
 
-		APPLICATION_LOGS.debug("Reached Allocate Location Page");
+	//	APPLICATION_LOGS.debug("Reached Allocate Location Page");
 
-		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("preConvict"),data.get("classif")); 
+		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("classif")); 
 
 
 	}
 
+	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="enterInmateCalasificationTest")   //PIM-1082
+	public void enterInmateCharacteristicTest(Hashtable<String, String> data) {
+
+		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Characteristic", xls) || data.get("Runmode").equals("No"))
+			throw new SkipException("Skipping the test");
+		
+		inmateRegistration.doAddCharacteristicDetailsOfInmate(data.get("nationality"),data.get("race"),data.get("marital"),data.get("religion"),
+				data.get("nic"),data.get("birthdate"), data.get("birthplace"), data.get("passport")); 
+	
+
+	
+	}
 
 	@DataProvider
 	public Object[][] getInmatePersonalData() {
@@ -83,6 +97,12 @@ public class InmateRegistrationTest extends TestBase {
 	@DataProvider
 	public Object[][] getInmateClassificationData() {
 		return TestUtil.getTestData("Inmate Reg-Classification", xls);
+
+	}
+
+	@DataProvider
+	public Object[][] getInmateCharacteristicData() {
+		return TestUtil.getTestData("Inmate Reg-Characteristic", xls);
 
 	}
 

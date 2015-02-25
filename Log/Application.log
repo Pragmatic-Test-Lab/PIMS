@@ -1,45 +1,15 @@
 <<<<<<< HEAD
-24/02/2015 09:30:09 devpinoyLogger Browser initialized
-24/02/2015 09:30:09 devpinoyLogger Attempting login to system
-24/02/2015 09:30:50 devpinoyLogger Successfully logged in
-24/02/2015 09:30:50 devpinoyLogger Going to Inmate Registration Page
-24/02/2015 09:31:14 devpinoyLogger Reached Allocate Location Page
-24/02/2015 09:32:33 devpinoyLogger User is already logged in, so do not want to go to the log in page
-24/02/2015 09:32:33 devpinoyLogger Navigated to Home page through the top menu
-24/02/2015 09:32:33 devpinoyLogger Going to Inmate Registration Page
-24/02/2015 09:32:53 devpinoyLogger Reached Allocate Location Page
+24/02/2015 16:14:54 devpinoyLogger Browser initialized
+24/02/2015 16:14:54 devpinoyLogger Attempting login to system
+24/02/2015 16:16:42 devpinoyLogger Successfully logged in
+24/02/2015 16:16:42 devpinoyLogger Going to Inmate Registration Page
+24/02/2015 16:18:21 devpinoyLogger Reached Allocate Location Page
 =======
-<<<<<<< HEAD
-23/02/2015 11:52:29 devpinoyLogger Browser initialized
-23/02/2015 11:52:29 devpinoyLogger Attempting login to system
-23/02/2015 11:54:54 devpinoyLogger Successfully logged in
-23/02/2015 11:54:54 devpinoyLogger Going to Home Page
-23/02/2015 11:54:54 devpinoyLogger Going to Top Menu
-23/02/2015 11:54:55 devpinoyLogger Reached Post Registration Page
-=======
-<<<<<<< HEAD
-23/02/2015 16:17:01 devpinoyLogger Browser initialized
-23/02/2015 16:17:02 devpinoyLogger Attempting login to system
-23/02/2015 16:21:43 devpinoyLogger Successfully logged in
-23/02/2015 16:21:43 devpinoyLogger Going to Inmate Registration Page
-23/02/2015 16:23:26 devpinoyLogger Reached Allocate Location Page
-=======
-<<<<<<< HEAD
-23/02/2015 11:38:52 devpinoyLogger Configuration File initialized in Login Test
-23/02/2015 11:39:10 devpinoyLogger Browser initialized
-23/02/2015 11:39:10 devpinoyLogger Browser initialized in Login Test
-23/02/2015 11:39:10 devpinoyLogger Attempting login to system
-23/02/2015 11:41:42 devpinoyLogger Successfully logged in
-23/02/2015 11:41:42 devpinoyLogger Going to Allocate Location Page
-=======
-23/02/2015 11:10:00 devpinoyLogger Configuration File initialized in Login Test
-23/02/2015 11:10:05 devpinoyLogger Browser initialized
-23/02/2015 11:10:06 devpinoyLogger Browser initialized in Login Test
-23/02/2015 11:10:06 devpinoyLogger Attempting login to system
-23/02/2015 11:11:07 devpinoyLogger Successfully logged in
-23/02/2015 11:11:07 devpinoyLogger Going to Allocate Location Page
-23/02/2015 11:11:43 devpinoyLogger Reached Allocate Location Page
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
->>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git
+24/02/2015 14:08:47 devpinoyLogger Browser initialized
+24/02/2015 14:08:47 devpinoyLogger Attempting login to system
+24/02/2015 14:09:42 devpinoyLogger Successfully logged in
+24/02/2015 14:09:42 devpinoyLogger Going to Property Management Page
+24/02/2015 14:09:45 devpinoyLogger Reached Property Management Page
+24/02/2015 14:10:09 devpinoyLogger Revisited Inmates Property Management Page
+24/02/2015 14:11:32 devpinoyLogger Property Details have been saved successfully.
 >>>>>>> branch 'master' of https://github.com/Pragmatic-Test-Lab/PIMS.git

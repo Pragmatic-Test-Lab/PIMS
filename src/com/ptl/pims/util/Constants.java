@@ -1,15 +1,14 @@
 package com.ptl.pims.util;
 
 public class Constants {
-
 	// Registration Page:
 
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
-	public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
-	public static final String InmateRegistration_FirtstRow_EditButton = "(.//a[contains(@href,'registration/update')]/span)[1]";
-
-	// Update Registration
+	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
+	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
+	
+	//Update Registration
 
 	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
@@ -28,14 +27,31 @@ public class Constants {
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
 
-	// Inmate classification tab
+
+	//Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
-
 	public static final String InmateRegistration_Header = "";
-
-	public static final String InmateRegistration_Classifiaction_Gender = "";
 	public static final String InmateRegistration_Classification_Pervious_Conviction = "";
-	public static final String InmateRegistration_Classifiaction_Calssification = "";
+	public static final String InmateRegistration_Classifiaction_Calssification = "//*[@id='admission-adm_inmate_classification_id']";
+		
+	//Inmate characteristics tab
+	public static final String InmateRegistration_characteristics_tab ="//a[text()='Inmate Characteristic Details']";
+	public static final String InmateRegistration_Characteristic_nationality="//*[@id='admission-adm_nationality_id']";
+	public static final String InmateRegistration_Classifiaction_race="//*[@id='admission-adm_race_id']";
+	public static final String InmateRegistration_Classifiaction_marital="//*[@id='admission-adm_marital_status_id']";
+	public static final String InmateRegistration_Classifiaction_religion="//*[@id='admission-adm_religion_id']";
+	public static final String InmateRegistration_Classifiaction_NIC="//*[@id='admission-adm_nic']";
+	public static final String InmateRegistration_Classifiaction_birthdate="//*[@id='admission-adm_date_of_birth']";
+	public static final String InmateRegistration_Classifiaction_birthplace="//*[@id='admission-adm_birth_place']";
+	public static final String InmateRegistration_Classifiaction_passport="//*[@id='admission-adm_passport_no']";
+	
+	//Inmate identification tab
+	public static final String InmateRegistration_identification_tab ="//a[text()='Inmate Identification Details']";
+	
+	//Inmate case tab
+	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
+	
+	
 
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")
@@ -250,29 +266,35 @@ public class Constants {
 	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
 	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
 
-	// Property Management Inmate Select Page
-	public static final String PropertyManagement_ExpectedHeader = "Property Management";
 
-	// Property Management Page
-	// Private Property Tab
-	public static final String PropertyManagement_PrivatePropTab = ".//a[text()='Private Properties']";
-	public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";
-	public static final String PropertyManagement_PrivateTab_AllRows = ".//*[contains(@id, 'private_property_row_')]";
-	public static final String PropertyManagement_PrivateTab_Date = ".//input[contains(@id, 'prp_date')]";
-	public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
-	public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
-	public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
-	public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
-	public static final String PropertyManagement_PrivateTab_RemoveRow = ".//*[@id='w4-tab0']//a[@title='Remove']";
-	// Prison Property Tab
-	public static final String PropertyManagement_PrisonPropTab = ".//a[text()='Prison Properties']";
-	public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
-	public static final String PropertyManagement_PrisonTab_AllRows = ".//*[contains(@id, 'prison_property_row_')]";
-	public static final String PropertyManagement_PrisonTab_Date = ".//input[contains(@id, 'psp_date')]";
-	public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
-	public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
-	public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
-	public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
+	// Property Management Inmate Select Page
+		public static final String PropertyManagement_ExpectedHeader = "Property Management";
+		public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+		public static final String PropertyManagement_ExpectedSuccessMessagePart1 = "Saved";
+		public static final String PropertyManagement_ExpectedSuccessMessagePart2 = "successfully";
+		
+		// Property Management Page
+				// Private Property Tab
+				public static final String PropertyManagement_PrivatePropTab = ".//a[text()='Private Properties']";
+				public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";		
+				public static final String PropertyManagement_PrivateTab_AllRows = ".//*[contains(@id, 'private_property_row_')]";
+				public static final String PropertyManagement_PrivateTab_Date = ".//input[contains(@id, 'prp_date')]";
+				public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
+				public static final String PropertyManagement_PrivateTab_SelectedItem = ".//select[contains(@id, 'prp_item_id')]//option[@selected='']";
+				public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
+				public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
+				public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
+				public static final String PropertyManagement_PrivateTab_RemoveRow = ".//*[@id='w4-tab0']//a[@title='Remove']";
+				// Prison Property Tab
+				public static final String PropertyManagement_PrisonPropTab = ".//a[text()='Prison Properties']";
+				public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
+				public static final String PropertyManagement_PrisonTab_AllRows = ".//*[contains(@id, 'prison_property_row_')]";
+				public static final String PropertyManagement_PrisonTab_Date = ".//input[contains(@id, 'psp_date')]";
+				public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
+				public static final String PropertyManagement_PrisonTab_SelectedItem = ".//select[contains(@id, 'psp_item_id')]//option[@selected='']";
+				public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
+				public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
+				public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
 
 	public static final String UpdatePropertyManagementButton = ".//button[text()='Update']";
 
