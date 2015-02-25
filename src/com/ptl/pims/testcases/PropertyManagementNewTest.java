@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.PostRegistrationPage;
 import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
 import com.ptl.pims.pages.PropertyManagementPage;
 import com.ptl.pims.pages.TopMenu;
@@ -32,10 +33,13 @@ public class PropertyManagementNewTest extends TestBase {
 				|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 		
-		landingPage = returnToHomePage();	
+		landingPage = returnToHomePage();
+		APPLICATION_LOGS.debug("Going to Home Page");
+		TopMenu topMenu = getTopMenu();
+		APPLICATION_LOGS.debug("Going to Top Menu");
 		
 		APPLICATION_LOGS.debug("Going to Property Management Page");		
-		managePropertySelectInmate = landingPage.goToManageProperty();
+		managePropertySelectInmate = topMenu.gotoManageProperty();
 
 		Assert.assertEquals(managePropertySelectInmate.getHeader(), Constants.PropertyManagement_ExpectedHeader, 
 				"Could not reach Property Management");
@@ -57,31 +61,54 @@ public class PropertyManagementNewTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      
+	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData") 	//pims-663, pims-835, pims-997, pims-284     
 	public void addInmateProperty(Hashtable<String, String> data) {
 		
+		APPLICATION_LOGS.debug("Adding inmate property details.");
 		//add Inmate Property
 		manageProperty.addPrivateProperties(data.get("Private Date"), data.get("Private Item"), 
 				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
 	
-		
+
 		manageProperty.addPrisonProperties(data.get("Prison Date"), data.get("Prison Item"), 
 				data.get("Prison Description"), data.get("Prison Quantity"));
-			
-		//allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
 		
-		//APPLICATION_LOGS.debug("Changed Inmates Location");
+		
+		APPLICATION_LOGS.debug("Saving new Property Details.");
+		
+		managePropertySelectInmate = manageProperty.submitPropertyForm();
+		
+		System.out.println(managePropertySelectInmate.getSuccessMessage());
+		
+		//checks if message contains words 'Saved' & 'successfully'
+		Assert.assertTrue(managePropertySelectInmate.getSuccessMessage().contains(Constants.PropertyManagement_ExpectedSuccessMessagePart1) && 
+				managePropertySelectInmate.getSuccessMessage().contains(Constants.PropertyManagement_ExpectedSuccessMessagePart2),
+				"Success Message not displayed correctly.");
+		
+		APPLICATION_LOGS.debug("Success Message received.");
+
+	} 
 	
-		//gets changed Inmate
-		//allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(null, null, null);	
+	@Test(dependsOnMethods = "addInmateProperty", dataProvider = "getAllocationData") 	//pims-1083, pims-1087
+	public void validatePropertyAdd(Hashtable<String, String> data) {
 		
-		//allocationPage = allocateLocationInmateSelect.clickFirstInmate();
+		//
+		// Use search if specific inmate is needed
+		//
+
+		manageProperty = managePropertySelectInmate.clickFirstInmate();
+		APPLICATION_LOGS.debug("Revisited Inmates Property Management Page");
 		
-		//check location and compare
-		//Assert.assertTrue(allocationPage.getCurrentLocation().equals(data.get("New Location")),
-				//"Location Changing has failed");		
+		boolean PrivatePropertySavedSuccessfully = manageProperty.isPrivatePropertyRecordsFound(data.get("Private Date"), data.get("Private Item"), 
+				data.get("Private Description"), data.get("Private Quantity"), data.get("Private Value"));
 		
-		//APPLICATION_LOGS.debug("Changed Inmate location successfully");
+		boolean PrisonPropertySavedSuccessfully = manageProperty.isPrisonPropertyRecordsFound(data.get("Prison Date"), data.get("Prison Item"), 
+				data.get("Prison Description"), data.get("Prison Quantity"));
+		
+		Assert.assertTrue(PrivatePropertySavedSuccessfully && PrisonPropertySavedSuccessfully,
+				"Property Management data was not saved.");
+		
+		APPLICATION_LOGS.debug("Property Details have been saved successfully.");
 
 	} 
 

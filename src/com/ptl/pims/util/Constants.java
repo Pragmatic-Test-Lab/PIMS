@@ -1,7 +1,6 @@
 package com.ptl.pims.util;
 
 public class Constants {
-
 	// Registration Page:
 
 	// Personal Details Tab
@@ -53,8 +52,7 @@ public class Constants {
 	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
 	
 	
-	
-	
+
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\config\\config.properties";
@@ -88,7 +86,7 @@ public class Constants {
 
 	// Top Menu Links
 	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
-	public static final String TopMenu_AdmissionTopLink = "//*[text()='Admission']";
+	public static final String TopMenu_AdmissionTopLink = "//*[text()='Admission ']";
 	public static final String TopMenu_NewAdmissionSubLink = "//*[text()='New Admission']";
 	public static final String TopMenu_EditSubLink = "//*[text()='Edit']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
@@ -189,31 +187,11 @@ public class Constants {
 	public static final String AllocateLocation_LocationDropdown = ".//*[@id='admission-adm_current_permenent_location_id']";
 	public static final String AllocateLocation_SaveLocation = ".//*[text()='Save']";
 
-	// Property Management Page
-	public static final String PropertyManagement_Header = "";
-	public static final String PropertyManagement_ExpectedHeader = "";
-	public static final String PropertyManagement_RegNoSearchField = "(.//*[@id='w0-filters']//input)[1]";
-	public static final String PropertyManagement_BiometricSearchField = "(.//*[@id='w0-filters']//input)[2]";
-	public static final String PropertyManagement_NameSearchField = "(.//*[@id='w0-filters']//input)[3]";
-	public static final String PropertyManagement_OtherName1SearchField = "(.//*[@id='w0-filters']//input)[4]";
-	public static final String PropertyManagement_TableFirstLink = "(.//*[@id='w0']//td[7]//a)[1]";
-
-	// Private Property Tab
-	public static final String PropertyManagement_PrivatePropTab = "";
-	public static final String PropertyManagement_Private_Date = "";
-	public static final String PropertyManagement_Private_Item = "";
-	public static final String PropertyManagement_Private_Description = "";
-	public static final String PropertyManagement_Private_Quantity = "";
-	public static final String PropertyManagement_Private_Value = "";
-	// Prison Property Tab
-	public static final String PropertyManagement_PrisonPropTab = "";
-	public static final String PropertyManagement_Prison_Date = "";
-	public static final String PropertyManagement_Prison_Item = "";
-	public static final String PropertyManagement_Prison_Description = "";
-	public static final String PropertyManagement_Prison_Quantity = "";
-	public static final String PropertyManagement_Prison_Value = "";
-
 	// Post Registration Page
+	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
+	public static final String PostRegistration_PageTitleText = "Post Registration";
+	public static final String PostRegistration_SuccessMessage = "//div[@class='alert alert-success']";
+	public static final String PostRegistration_SuccessMessageText = "Saved successfully";
 	public static final String PostRegistration_FirstUpdateIcon = "(.//a[@title='Update']/span)[1]";
 
 	// Update Post Registration Page
@@ -223,11 +201,18 @@ public class Constants {
 	public static final String UpdatePostRegistration_PhotoFrontBrowse = "//*[@id='admission-image_front']";
 	public static final String UpdatePostRegistration_PhotoLeftBrowse = "//*[@id='admission-image_lhs']";
 	public static final String UpdatePostRegistration_EducationalQualificationTab = "//a[text()='Educational Qualifications']";
+	public static final String UpdatePostRegistration_EducationalTBody = "//*[@id='educational_qualification_grid']/tbody";
 	public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
 	public static final String UpdatePostRegistration_EducationalQualificationAddNew = "(.//button[text()='Add New'])[1]";
 	public static final String UpdatePostRegistration_Institute = "//*[@id='educationalqualification-1-equ_institute']";
+	public static final String UpdatePostRegistration_InstituteFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_InstituteLastPart = "-equ_institute']";
 	public static final String UpdatePostRegistration_QualificationType = "//*[@id='educationalqualification-1-equ_qulification_type_id']";
+	public static final String UpdatePostRegistration_QualificationTypeFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_QualificationTypeLastPart = "-equ_qulification_type_id']";
 	public static final String UpdatePostRegistration_Language = "//*[@id='educationalqualification-1-equ_language_id']";
+	public static final String UpdatePostRegistration_LanguageFirstPart = "//*[@id='educationalqualification-";
+	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
 	public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";
 	public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
@@ -269,37 +254,43 @@ public class Constants {
 	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
 	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
 
-	// Property Management Page
-	// Private Property Tab
-	public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";
-	public static final String PropertyManagement_PrivateTab_AllRows = ".//tr[contains(@id, 'private_property_row_')]";
-	public static final String PropertyManagement_PrivateTab_Date = "";
-	public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
-	public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
-	public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
-	public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
-	public static final String PropertyManagement_PrivateTab_RemoveRow = ".//*[@id='w4-tab0']//a[@title='Remove']";
-	// Prison Property Tab
-	public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
-	public static final String PropertyManagement_PrisonTab_AllRows = ".//tr[contains(@id, 'prison_property_row_')]";
-	public static final String PropertyManagement_PrisonTab_Date = "";
-	public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
-	public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
-	public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
-	public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
+
+	// Property Management Inmate Select Page
+		public static final String PropertyManagement_ExpectedHeader = "Property Management";
+		public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+		public static final String PropertyManagement_ExpectedSuccessMessagePart1 = "Saved";
+		public static final String PropertyManagement_ExpectedSuccessMessagePart2 = "successfully";
+		
+		// Property Management Page
+				// Private Property Tab
+				public static final String PropertyManagement_PrivatePropTab = ".//a[text()='Private Properties']";
+				public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";		
+				public static final String PropertyManagement_PrivateTab_AllRows = ".//*[contains(@id, 'private_property_row_')]";
+				public static final String PropertyManagement_PrivateTab_Date = ".//input[contains(@id, 'prp_date')]";
+				public static final String PropertyManagement_PrivateTab_Item = ".//select[contains(@id, 'prp_item_id')]";
+				public static final String PropertyManagement_PrivateTab_SelectedItem = ".//select[contains(@id, 'prp_item_id')]//option[@selected='']";
+				public static final String PropertyManagement_PrivateTab_Description = ".//input[contains(@id, 'prp_description')]";
+				public static final String PropertyManagement_PrivateTab_Quantity = ".//input[contains(@id, 'prp_quantity')]";
+				public static final String PropertyManagement_PrivateTab_Value = ".//input[contains(@id, 'prp_value')]";
+				public static final String PropertyManagement_PrivateTab_RemoveRow = ".//*[@id='w4-tab0']//a[@title='Remove']";
+				// Prison Property Tab
+				public static final String PropertyManagement_PrisonPropTab = ".//a[text()='Prison Properties']";
+				public static final String PropertyManagement_PrisonTab_AddNew = ".//*[@onclick='addprison_propertyRow();']";
+				public static final String PropertyManagement_PrisonTab_AllRows = ".//*[contains(@id, 'prison_property_row_')]";
+				public static final String PropertyManagement_PrisonTab_Date = ".//input[contains(@id, 'psp_date')]";
+				public static final String PropertyManagement_PrisonTab_Item = ".//select[contains(@id, 'psp_item_id')]";
+				public static final String PropertyManagement_PrisonTab_SelectedItem = ".//select[contains(@id, 'psp_item_id')]//option[@selected='']";
+				public static final String PropertyManagement_PrisonTab_Description = ".//input[contains(@id, 'psp_description')]";
+				public static final String PropertyManagement_PrisonTab_Quantity = ".//input[contains(@id, 'psp_quantity')]";
+				public static final String PropertyManagement_PrisonTab_RemoveRow = ".//*[@id='w4-tab1']//a[@title='Remove']";
 
 	public static final String UpdatePropertyManagementButton = ".//button[text()='Update']";
-
-	// Post Registration Page
-	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
-	public static final String PostRegistration_PageTitleText = "Post Registration";
 
 	// Inmate Search Pages
 	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
 	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
 	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
 	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
-	public static final String InmateSearch_TableFirstInmate = "(.//td//a)[1]";
-
+	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
 
 }
