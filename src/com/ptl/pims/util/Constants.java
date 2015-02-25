@@ -153,7 +153,7 @@ public class Constants {
 
 	public static final String CreateAdmission_HealthConditionTab = "//a[text() = 'Health Condition']";
 	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[2]";
-	public static final String CreateAdmission_HealthCondition_MedicalAttention = "//*[@id='healthcondition-1-hco_is_medical_attention_needed']";
+	public static final String CreateAdmission_HealthCondition_MedicalAttention = "(.//input[contains(@name, 'hco_is_medical_attention_needed')])[2]";
 	public static final String CreateAdmission_HealthCondition_Pregnant = "//*[@id='healthcondition-1-hco_is_pregnant']";
 	public static final String CreateAdmission_HealthCondition_Remarks = "//*[@id='healthcondition-1-hco_remarks']";
 	public static final String CreateAdmission_HealthCondition_ForPreschool = "//*[@id='healthcondition-1-hco_is_medical_attention_needed_for__preschool']";
