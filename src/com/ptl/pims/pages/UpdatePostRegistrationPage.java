@@ -172,11 +172,18 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(education_tbody);
 		for (int i = 0; i < Institute.length; i++) {
 			addNew.click();
-			int newDataRow = dataRows + i;
+			int newDataRow = dataRows + i - 1;
 			String DataRowNumber = String.valueOf(newDataRow);
-			driver.findElement(By.xpath(instituteFirstPart+DataRowNumber+instituteLastPart)).sendKeys(Institute[i]);
-			driver.findElement(By.xpath(qualificationTypeFirstPart+DataRowNumber+qualificationTypeLastPart)).sendKeys(QualificationType[i]);
-			driver.findElement(By.xpath(languageFirstPart+DataRowNumber+languageLastPart)).sendKeys(Language[i]);
+			try {
+				Thread.sleep(3000);
+				driver.findElement(By.xpath(instituteFirstPart+DataRowNumber+instituteLastPart)).sendKeys(Institute[i]);
+				driver.findElement(By.xpath(qualificationTypeFirstPart+DataRowNumber+qualificationTypeLastPart)).sendKeys(QualificationType[i]);
+				driver.findElement(By.xpath(languageFirstPart+DataRowNumber+languageLastPart)).sendKeys(Language[i]);
+				
+			} catch (Throwable t) {
+				// TODO Auto-generated catch block
+				t.printStackTrace();
+			}
 			
 		}
 	}
@@ -201,10 +208,8 @@ public class UpdatePostRegistrationPage {
 	}
 	
 	
-	public void EnterEmploymentData(String Employers, String OrganizationalTypes, String Positions, String DatesFrom, String DatesTo){
-		
+	public void EnterEmploymentData(String Employers, String OrganizationalTypes, String Positions, String DatesFrom, String DatesTo){		
 
-		
 		String[] Employer = Employers.split(",");
 		String[] OrganizationalType = OrganizationalTypes.split(",");
 		String[] Position = Positions.split(",");
@@ -214,13 +219,21 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(employer_tbody);
 		for (int i = 0; i < Employer.length; i++) {
 			employmentAddNew.click();
-			int newDataRow = dataRows + i;
+			int newDataRow = dataRows + i - 1;
 			String DataRowNumber = String.valueOf(newDataRow);
-			driver.findElement(By.xpath(employerFirstPart+DataRowNumber+employerLastPart)).sendKeys(Employer[i]);
-			driver.findElement(By.xpath(organizationalTypeFirstPart+DataRowNumber+organizationalTypeLastPart)).sendKeys(OrganizationalType[i]);
-			driver.findElement(By.xpath(positionFirstPart+DataRowNumber+positionLastPart)).sendKeys(Position[i]);
-			driver.findElement(By.xpath(dateFromFirstPart+DataRowNumber+dateFromLastPart)).sendKeys(DateFrom[i]);
-			driver.findElement(By.xpath(dateToFirstPart+DataRowNumber+dateToLastPart)).sendKeys(DateTo[i]);
+			
+			try {
+				Thread.sleep(3000);
+				driver.findElement(By.xpath(employerFirstPart+DataRowNumber+employerLastPart)).sendKeys(Employer[i]);
+				driver.findElement(By.xpath(organizationalTypeFirstPart+DataRowNumber+organizationalTypeLastPart)).sendKeys(OrganizationalType[i]);
+				driver.findElement(By.xpath(positionFirstPart+DataRowNumber+positionLastPart)).sendKeys(Position[i]);
+				driver.findElement(By.xpath(dateFromFirstPart+DataRowNumber+dateFromLastPart)).sendKeys(DateFrom[i]);
+				driver.findElement(By.xpath(dateToFirstPart+DataRowNumber+dateToLastPart)).sendKeys(DateTo[i]);
+			} catch (Throwable t) {
+				// TODO Auto-generated catch block
+				t.printStackTrace();
+			}
+			
 			
 		}
 	

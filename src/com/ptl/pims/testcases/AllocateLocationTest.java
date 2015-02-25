@@ -2,6 +2,7 @@ package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
 
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.BeforeSuite;
@@ -12,6 +13,7 @@ import com.ptl.pims.pages.AllocateLocationInmateSelectPage;
 import com.ptl.pims.pages.AllocateLocationPage;
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -53,7 +55,9 @@ public class AllocateLocationTest extends TestBase {
 		
 		//
 		// Search if specific inmate is needed
-		// allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(data.get("RegNo"),data.get("Biometric") ,data.get("Name"));
+		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		String RegNumber = newAdmissionPage.getRegistrationNumber();
+		 allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(RegNumber,data.get("Biometric") ,data.get("Name"));
 		//
 
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
