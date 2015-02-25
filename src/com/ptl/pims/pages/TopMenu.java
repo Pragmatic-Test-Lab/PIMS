@@ -37,7 +37,7 @@ public class TopMenu {
 	@FindBy(xpath = Constants.TopMenu_PostRegistrationSubLink)
 	WebElement postRegSub;
 	@FindBy(xpath = Constants.TopMenu_AuthorizePostRegistrationSubLink)
-	WebElement authorizePost;
+	WebElement postRegAuthorizeSub;
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
 	
@@ -85,6 +85,16 @@ public class TopMenu {
 		return postRegPage;
 		
 	}
+	
+	
+	public PostRegistrationAuthorizePage gotoPostRegistrationAuthorizePage(){
+		postRegMain.click();
+		postRegAuthorizeSub.click();
+		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
+		return postRegAuthorizePage;
+		
+	}
+	
 	
 	public PropertyManagementInmateSelectPage gotoManageProperty(){
 		registrationMainLink.click();
