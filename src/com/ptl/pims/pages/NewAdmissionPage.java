@@ -1,17 +1,16 @@
 package com.ptl.pims.pages;
 
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-
-import com.ptl.pims.util.Constants;
 
 import com.ptl.pims.util.*;
 
-
-public class NewAdmissionPage {
+public class NewAdmissionPage extends CommonMethods {
 	
 	WebDriver driver;
 	
@@ -134,8 +133,10 @@ public class NewAdmissionPage {
 	WebElement InmateInfantsPreschoolName;
 	@FindBy(xpath = Constants.CreateAdmission_InfantsPreschoolDateOfBirth)
 	WebElement InmateInfantsPreschoolDateOfBirth;
-	@FindBy(xpath = Constants.Save_Admission)
+	@FindBy(xpath = Constants.Create_Admission)
 	WebElement SaveInamteAdmissionButton;
+	@FindBy(xpath = "//*[text() = 'Name bhu huh']")
+	WebElement SaveConfirmMessage;
 	
 	 	
 	String ActualPage_Header;
@@ -143,26 +144,132 @@ public class NewAdmissionPage {
 	String RHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
-	
+	String Name_As_Warrent = "Nimal Pathirana";
+	String Expected_Message  = "Created "+ Name_As_Warrent + " successfully";
 	
 	public NewAdmissionPage(WebDriver dr){
 		driver = dr;
 	}
 	
+	//PIMS-656
+	public void doCreateNewAdmitionFor_ConvictedInmate(){		
+		CreateAdmissionButton.click();
+     	InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+     	AgeAddmission.sendKeys("20");
+		AgeCatagory.sendKeys("Youth");
+		MealType.sendKeys("Diet");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");	
+		SaveInamteAdmissionButton.click();
+        Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
+	}
+
+	//PIMS-628
+	public void doCreateNewAdmitionFor_Un_ConvictedInmate(){		
+		CreateAdmissionButton.click();
+	 	InmateCatagory.sendKeys("Un-Convicted");
+	 	CourtWarant.sendKeys("Negombo");
+	 	AgeAddmission.sendKeys("20");
+		AgeCatagory.sendKeys("Youth");
+		MealType.sendKeys("Diet");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");	
+		SaveInamteAdmissionButton.click();
+	    Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
+	}
+
+	//PIMS-898
+	public void checkMealTypeIsSelectable(){		
+		CreateAdmissionButton.click();
+	    Assert.assertTrue(MealType.getAttribute("disabled") == null, "Meal Type Is Not Selectable");	
+	}
+	
+	//PIMS-869
+		public void checkImateCatagoryIsSelectable(){		
+			CreateAdmissionButton.click();
+		    Assert.assertTrue(InmateCatagory.getAttribute("disabled") == null, "Inmate Catgory Is Not Selectable");	
+		}
+	
+	//PIMS-1190
+	public void checkAgeCatagoryIsAutoSelected(){		
+		CreateAdmissionButton.click();
+		InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+		AgeAddmission.sendKeys("20");
+		MealType.sendKeys("Diet");
+		Select select = (Select) AgeCatagory ;
+	    Assert.assertTrue( select.getFirstSelectedOption().getText() == "Youth" , "Age catagory should be Youth");	
+	}
+	
+	//PIMS-408
+	public void checkInmateRegistrationNumberIsAutoGenarated(){		
+		CreateAdmissionButton.click();
+		InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+		MealType.sendKeys("Diet");
+	    Assert.assertTrue(RegNumber.getText()!= "", "Registration numbe should be auto genarated");	
+	}
+	
+	//PIMS-19
+	public void checkRegistrationNumberFormtForUnConvictedInamtes(){		
+		CreateAdmissionButton.click();
+		InmateCatagory.sendKeys("Un-Convicted");
+     	CourtWarant.sendKeys("Negombo");
+     	String actualRegNumber = RegNumber.getText();
+     	String serialNumberPerYear = actualRegNumber.substring(0,4);
+     	String prisionInstitute = actualRegNumber.substring(6,7);
+     	String courtCode = actualRegNumber.substring(9,11);
+     	String yearOfAddmission = actualRegNumber.substring(13,16);
+     	Assert.assertTrue(serialNumberPerYear.matches("^(\\d{5})$"),"Wrong Serial number format");
+     	Assert.assertTrue(prisionInstitute.matches("^(\\d{2})$"),"Wrong prisin institute number format");
+     	Assert.assertTrue(courtCode.contentEquals("NHC") ,"Wrong court code format");
+     	Assert.assertEquals(yearOfAddmission.contentEquals("2015"), "Worg year code");
+     
+	}
+	
+	//PIMS-1198
+	public void checkUserCanUploadTheAllThreeImages() throws InterruptedException{	
+		CreateAdmissionButton.click();
+		InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+		MealType.sendKeys("Diet");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Thread.sleep(3000);
+		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		Thread.sleep(3000);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		Thread.sleep(3000);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
+		//Verify RHS Image is available
+		Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[1]")),"RHS image not uploaded");
+		//Verify Front Image is available
+		Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[2]")) ,"Front image not uploaded");
+		//Verify LHS Image is available
+		Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[3]")),"LHS image not uploaded");
+		SaveInamteAdmissionButton.click();
+        Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
+		
+	}
+	
+	
+	
 	public void doCreateNewAdmition() throws InterruptedException{
 		
 		CreateAdmissionButton.click();
-     	InmateCatagory.sendKeys("Child");
-     	CourtWarant.sendKeys("Colombo");
+     	InmateCatagory.sendKeys("Youth");
+     	CourtWarant.sendKeys("Negombo");
      	AgeAddmission.sendKeys("20");
 		AgeCatagory.sendKeys("Youth");
 		//DateAddmission.sendKeys("2015-01-28 13:30");
 		MealType.sendKeys("Diet");
 		BioMetric.sendKeys("Biometric Content");
-		NameWarrent.sendKeys("Name As Warrent");
+		NameWarrent.sendKeys(Name_As_Warrent);
 		OccurenceClassificatio.sendKeys("FO");
 		Gender.sendKeys("male");
-		//CurrentPositionInstitute.sendKeys("welikada");
 		Thread.sleep(3000);
 		ImageRHSBrowse.sendKeys(RHS_Image_Path);
 		Thread.sleep(3000);
@@ -186,7 +293,7 @@ public class NewAdmissionPage {
 		InmateHealthConditionOfPreSchool.sendKeys("Health of school");
 		InmateHealthConditionDrugsAddNew.click();
 		InmateHealthConditionManageDrugs_Drugs.sendKeys("Other");
-		InmateHealthConditionPhysicalAddNew.clear();
+		InmateHealthConditionPhysicalAddNew.click();
 		InmateHealthConditionPhysicalObservation.sendKeys("Cough");
 		
 		//Inmate Complaint
@@ -212,11 +319,10 @@ public class NewAdmissionPage {
 		InmateInfantsPreschoolDateOfBirth.sendKeys("2015-02-25");
 		
 		SaveInamteAdmissionButton.click();
-		
-		//TODO : Add verification for confirmation message
-		
-		
+        Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
 	}
+	
+	
 	
 	public String getActualPageTitle(){
 	    ActualPage_Header = CreateAdmissionHeader.getText();
