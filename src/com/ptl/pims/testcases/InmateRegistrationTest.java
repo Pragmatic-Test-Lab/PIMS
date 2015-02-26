@@ -102,16 +102,8 @@ public class InmateRegistrationTest extends TestBase {
 				data.get("eyes"),data.get("eyesd"), data.get("nose"), data.get("bodymark")); 
 		inmateRegistrationSelect = inmateRegistration.clickButton();
 
-		Assert.assertTrue(inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart1) && 
-				inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart2),
-				"Success Message not displayed correctly.");
-		
-		APPLICATION_LOGS.debug("Success Message received.");
-
-
-		Assert.assertTrue(inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart1) && 
-				inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart2),
-				"Success Message not displayed correctly.");
+		Assert.assertTrue(inmateRegistrationSelect.getSuccessMessage().matches(Constants.InmateRegistration_SuccessMessageText),
+				"Success Message not displayed");
 		
 		APPLICATION_LOGS.debug("Success Message received.");
 	}

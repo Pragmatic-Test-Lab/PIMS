@@ -2,9 +2,7 @@ package com.ptl.pims.util;
 
 public class Constants {
 	// Registration Page:
-	public static final String InmateRegistration_AddedSuccessfullyMessage ="//div[@class='alert alert-success']";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart1="Saved";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart2="successfully";
+	public static final String InmateRegistration_SuccessMessageText = "Saved \\w* successfully";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
@@ -122,6 +120,8 @@ public class Constants {
 	public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
 	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;
 	public static final String NewAdmission_ExpectedPageHeader = "Create Admission";
+	public static final String CreateAdmission_SuccessMessage = "";
+
 
 	// Create Admission Page
 	public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
@@ -421,6 +421,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	public static final String InmateSearchPage_SuccessMessage = ".//div[@class='alert alert-success']";
 	
 	
 	// Authorize Registration Page

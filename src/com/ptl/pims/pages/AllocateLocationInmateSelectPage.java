@@ -9,8 +9,6 @@ import com.ptl.pims.util.Constants;
 
 public class AllocateLocationInmateSelectPage extends SelectInmatePage{
 
-	@FindBy(xpath = Constants.AllocateLocation_AddedSuccessfullyMessage)
-	public WebElement SuccessMessage;
 
 	public AllocateLocationInmateSelectPage(WebDriver dr) {
 		driver = dr;
@@ -26,10 +24,6 @@ public class AllocateLocationInmateSelectPage extends SelectInmatePage{
 		return allocateLocation;
 	}
 
-	public String getSuccessMessage() {
-
-		return SuccessMessage.getText();
-	}
 
 
 }
