@@ -135,7 +135,8 @@ public class NewAdmissionPage extends CommonMethods {
 	WebElement InmateInfantsPreschoolDateOfBirth;
 	@FindBy(xpath = Constants.Create_Admission)
 	WebElement SaveInamteAdmissionButton;
-	@FindBy(xpath = "//*[text() = 'Name bhu huh']")
+	
+	@FindBy(xpath = "//*[text() = 'Nimal Pathirana']")
 	WebElement SaveConfirmMessage;
 	
 	 	
@@ -292,7 +293,7 @@ public class NewAdmissionPage extends CommonMethods {
 		
 		//Add Health Condition
 		InmateHealthConditionTab.click();
-		InmateHealthConditionAddNew.click();
+	//	InmateHealthConditionAddNew.click();
 		InmateHealthConditionMedicalAttention.click();
 		InmateHealthConditionPregnant.click();
 		InmateHealthConditionRemarks.sendKeys("Health Conditions Remarks");
