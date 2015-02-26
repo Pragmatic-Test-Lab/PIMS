@@ -22,10 +22,10 @@ public class AuthorizeRegistrationTest extends TestBase {
 	AuthorizeRegistrationInmateSelectPage inmateAuthorizeSelect  =null;
 	AuthorizeRegistrationPage inmateAuthorize = null;
 
-	@Test(dataProvider = "getAuthorizationData")   
-	public void GoToAuthorizeRegistration(Hashtable<String, String> data) {
+	@Test()   
+	public void GoToAuthorizeRegistration() {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Authorize Registration Test", xls) || data.get("Runmode").equals("No"))
+		if(!TestUtil.isTestCaseRunmodeYes("Authorize Registration Test", xls) )
 			throw new SkipException("Skipping the test");
 
 		landingPage = returnToHomePage();
@@ -41,13 +41,13 @@ public class AuthorizeRegistrationTest extends TestBase {
 			APPLICATION_LOGS.debug("Reached Authorize Registration Page");
 	}
 
-	@Test(dataProvider = "getAuthorizationData",dependsOnMethods="GoToAuthorizeRegistration")  
-	public void clickInmateLink(Hashtable<String, String> data) {
+	@Test(dependsOnMethods="GoToAuthorizeRegistration")  
+	public void clickInmateLink() {
 
 		// Search if specific inmate is needed
 		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
 		//String RegNumber = newAdmissionPage.getRegistrationNumber();
-		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch("T/10041/2015","","");
 		
 
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		
@@ -55,8 +55,8 @@ public class AuthorizeRegistrationTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAuthorizationData")      //pims-1196
-	public void AuthorizeInmate(Hashtable<String, String> data) {
+	@Test(dependsOnMethods = "clickInmateLink")      //pims-1196
+	public void AuthorizeInmate() {
 		
 		inmateAuthorizeSelect = inmateAuthorize.authorizeInmate();	
 				
@@ -69,10 +69,5 @@ public class AuthorizeRegistrationTest extends TestBase {
 	}
 
 	
-	@DataProvider
-	public Object[][] getAuthorizationData() {
-		return TestUtil.getTestData("Authorize Registration", xls);
-
-	}
-
+	
 }
