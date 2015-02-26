@@ -15,6 +15,36 @@
         <class name="com.ptl.pims.testcases.LoginTest" ></class>  
     </classes>
 </test>
+<test name="Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.NewAdmissionTest" ></class>  
+    </classes>
+</test>
+<test name="Authorize Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
+    </classes>
+</test>
+<test name="Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
+    </classes>
+</test>
+<test name="Authorize Registration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.AuthorizeRegistrationTest" ></class>  
+    </classes>
+</test>
+<test name="Post-Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
+    </classes>
+</test>
+<test name="Authorize Post-Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
+    </classes>
+</test>
 </suite>
 
 
