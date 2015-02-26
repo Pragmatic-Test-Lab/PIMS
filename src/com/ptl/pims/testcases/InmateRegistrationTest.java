@@ -38,7 +38,7 @@ public class InmateRegistrationTest extends TestBase {
 		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
 		//String RegNumber = newAdmissionPage.getRegistrationNumber();
 		
-		inmateRegistrationSelect = inmateRegistrationSelect.doSearch(registrationNo,"" ,"");
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("T/20000/2015","" ,"");
 
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
@@ -100,13 +100,18 @@ public class InmateRegistrationTest extends TestBase {
 
 		inmateRegistration.doAddIdentificationDetailsOfInmate(data.get("face"),data.get("faced"),data.get("hair"),data.get("haird"),
 				data.get("eyes"),data.get("eyesd"), data.get("nose"), data.get("bodymark")); 
-		
 		inmateRegistrationSelect = inmateRegistration.clickButton();
+		
 
+		Assert.assertTrue(inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart1) && 
+				inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart2),
+				"Success Message not displayed correctly.");
+		
+		APPLICATION_LOGS.debug("Success Message received.");
 	}
 
 
-	/*@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
+/*	@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
 	public void enterInmatecaseTest(Hashtable<String, String> data) {
 
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Case", xls) || data.get("Runmode").equals("No"))
@@ -116,12 +121,8 @@ public class InmateRegistrationTest extends TestBase {
 				data.get("description"),data.get("days"), data.get("fine")); 
 		
 		inmateRegistrationSelect = inmateRegistration.clickButton();
+
 		
-		Assert.assertTrue(inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart1) && 
-				inmateRegistrationSelect.getInmateSuccessMessage().contains(Constants.InmateRegistration_ExpectedSuccessMessagePart2),
-				"Success Message not displayed correctly.");
-		
-		APPLICATION_LOGS.debug("Success Message received.");
 
 	}*/
 
