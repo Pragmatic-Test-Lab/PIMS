@@ -379,8 +379,7 @@ public class Constants {
 	// Property Management Inmate Select Page
 	public static final String PropertyManagement_ExpectedHeader = "Property Management";
 	public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String PropertyManagement_ExpectedSuccessMessagePart1 = "Saved";
-	public static final String PropertyManagement_ExpectedSuccessMessagePart2 = "successfully";
+	public static final String PropertyManagement_SuccessMessageText = "Saved \\w* successfully";
 	
 	// Property Management Page
 	// Property Data Fields	
@@ -427,8 +426,6 @@ public class Constants {
 	public static final String AuthorizeRegistration_ExpectedHeader = "Registration Authorization";
 	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart1 = "Saved";
-	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart2 = "successfully";
 	public static final String AuthorizeRegistration_SuccessMessageText = "Saved \\w* successfully";
 	
 

@@ -221,14 +221,11 @@ public class PropertyManagementPage {
 
 
 	//edits Private Property found in 'PropertyPosition' position
-	public boolean editPrivateProperties(String PropertyPosition, String date, String item, String description, String quantity, String value) {
+	public void editPrivateProperties(String PropertyPosition, String date, String item, String description, String quantity, String value) {
 		
 		// click Private Property Tab
 		Private_Tab.click();
 		int positionToEdit = Integer.parseInt(PropertyPosition);
-
-		if (initialRowCount(Private_TabTableBody) < positionToEdit)
-			return false;
 		
 		WebElement Datefield = driver.findElement(By.xpath(privateDateFirstPart + positionToEdit + privateDateLastPart));
 		WebElement Itemfield = driver.findElement(By.xpath(privateItemFirstPart + positionToEdit + privateSelectedItemLastPart));
@@ -252,7 +249,6 @@ public class PropertyManagementPage {
 		clearElement(Valuefield);
 		Valuefield.sendKeys(value);
 
-		return true;
 	}
 	
 	public void clearElement(WebElement element){		
@@ -261,15 +257,12 @@ public class PropertyManagementPage {
 	}
 
 	//edits Prison Property found in 'PropertyPosition' position
-	public boolean editPrisonProperties(String PropertyPosition, String date, String item, String description, String quantity) {
+	public void editPrisonProperties(String PropertyPosition, String date, String item, String description, String quantity) {
 		
 		// click Prison Property Tab
 		Prison_Tab.click();
 		int positionToEdit = Integer.parseInt(PropertyPosition);
 
-		if (initialRowCount(Prison_TabTableBody) < positionToEdit)
-			return false;
-		
 		WebElement Datefield = driver.findElement(By.xpath(prisonDateFirstPart + positionToEdit + prisonDateLastPart));
 		WebElement Itemfield = driver.findElement(By.xpath(prisonItemFirstPart + positionToEdit + prisonSelectedItemLastPart));
 		WebElement Descriptionfield = driver.findElement(By.xpath(prisonDescriptionFirstPart + positionToEdit + prisonDescriptionLastPart));
@@ -288,8 +281,14 @@ public class PropertyManagementPage {
 		clearElement(Quantityfield);
 		Quantityfield.sendKeys(quantity);
 
+	}
+	
+	public boolean IsEditIndexWithinNoOfRows(String tab, int editIndex){
+		if (tab.equals("PRISON") && editIndex>initialRowCount(Prison_Tab)) 
+			return false;
+		if (tab.equals("PRIVATE") && editIndex>initialRowCount(Private_Tab)) 
+			return false;	
 		return true;
-		
 	}
 
 }
