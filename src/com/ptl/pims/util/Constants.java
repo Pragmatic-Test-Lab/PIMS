@@ -2,9 +2,7 @@ package com.ptl.pims.util;
 
 public class Constants {
 	// Registration Page:
-	public static final String InmateRegistration_AddedSuccessfullyMessage ="//div[@class='alert alert-success']";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart1="Saved";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart2="successfully";
+	public static final String InmateRegistration_SuccessMessageText = "Saved \\w* successfully";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
@@ -97,9 +95,6 @@ public class Constants {
 	// Home Page
 	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
 	public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
-	public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
-	public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
-	public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";
 	public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
 	public static final String Home_PageHeaderText2 = "Login";
 	public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
@@ -112,7 +107,7 @@ public class Constants {
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
 	public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
 	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
-	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
+	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Allocate Location']";
 	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Management']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
 	public static final String TopMenu_PostRegistrationMainLink = "//a[text()='Post Registration ']";
@@ -123,14 +118,17 @@ public class Constants {
 
 	// New Admission Page
 	public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
-	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;//"html/body/div[2]/div/div/h1";
+	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;
 	public static final String NewAdmission_ExpectedPageHeader = "Create Admission";
+	public static final String CreateAdmission_SuccessMessage = "";
+
 
 	// Create Admission Page
 	public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
 	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
 	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
 	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
+	public static final String CreateAdmission_Youth_AgeCategory = ".//select[@id='admission-adm_age_category_id']//option[@selected='5']";
 	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_registration_no']";
 	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
 	public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
@@ -375,6 +373,8 @@ public class Constants {
 	// Allocate Location Page
 	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
 	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
+	public static final String AllocateLocation_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+	public static final String AllocateLocation_SuccessMessageText = "Assigned Location for \\w* successfully";
 
 	// Property Management Inmate Select Page
 	public static final String PropertyManagement_ExpectedHeader = "Property Management";
@@ -386,6 +386,7 @@ public class Constants {
 	public static final String PropertyManagement_PrivateTab_TBody = ".//*[@id='private_property_grid']/tbody";
 	public static final String PropertyManagement_PrisonTab_TBody = ".//*[@id='prison_property_grid']/tbody";
 	public static final String PropertyManagement_UpdateButton = ".//button[text()='Update']";
+
 	// Private Property Tab
 	public static final String PropertyManagement_PrivateTab = ".//a[text()='Private Properties']";
 	public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";
@@ -420,6 +421,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	public static final String InmateSearchPage_SuccessMessage = ".//div[@class='alert alert-success']";
 	
 	
 	// Authorize Registration Page

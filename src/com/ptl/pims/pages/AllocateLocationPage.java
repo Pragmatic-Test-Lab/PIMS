@@ -27,17 +27,11 @@ public class AllocateLocationPage {
 		driver = dr;
 	}
 	
-	public boolean validateAllocateLocationPageData(String RegNo, String Name,
-			String Location) {
+	public boolean validateInmateData(String RegNo, String Name) {
 
 		if (!RegNo.equals(RegistrationNum.getText()) || !Name.equals(InmateName.getText()))
 			return false;
-		
-		if (!(LocationDropdown.getText().equals("Select...") && Location == null)) {
-			if (!Location.equals(LocationDropdown.getText()))
-			return false;
-		}	
-		
+
 		return true;
 	}
 	

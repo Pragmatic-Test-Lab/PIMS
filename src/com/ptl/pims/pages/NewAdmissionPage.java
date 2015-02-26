@@ -11,9 +11,8 @@ import org.testng.Assert;
 
 import com.ptl.pims.util.*;
 
-public class NewAdmissionPage extends CommonMethods {
-	
-	WebDriver driver;
+public class NewAdmissionPage extends SelectInmatePage {
+
 	
 	@FindBy(xpath = Constants.CreateAdmissionButton)
 	WebElement CreateAdmissionButton;

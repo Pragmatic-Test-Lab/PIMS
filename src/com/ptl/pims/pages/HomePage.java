@@ -11,22 +11,12 @@ public class HomePage {
 	WebDriver driver;
 
 	String ActualPageHeader;
-
-	@FindBy(xpath = Constants.Home_RegistrationLink)
-	WebElement RegistrationLink;
-
-	@FindBy(xpath = Constants.Home_PropertyManagementLink)
-	WebElement PropertyManagementLink;
-
 	@FindBy(xpath = Constants.Home_PageHeader2)
 	WebElement pageHeader2;
 
 	String ActualPageHeader2;
 	@FindBy(xpath = Constants.LogOutLink)
 	WebElement LogoutLink;
-
-	@FindBy(xpath = Constants.Home_AllocateLocationLink)
-	WebElement AllocateLocationLink;
 
 	@FindBy(xpath = Constants.TopMenu_RegistrationMainLink)
 	WebElement registrationMainLink;
@@ -78,15 +68,6 @@ public class HomePage {
 		return ActualPageHeader = pageHeader.getText();
 	}
 
-	public AllocateLocationInmateSelectPage goToAllocateLocation() {
-
-		RegistrationLink.click();
-		AllocateLocationLink.click();
-
-		AllocateLocationInmateSelectPage allocateLocation = PageFactory
-				.initElements(driver, AllocateLocationInmateSelectPage.class);
-		return allocateLocation;
-	}
 
 	public InmateRegistrationSelectPage goToInmateRegistration() {
 		registrationMainLink.click();
@@ -107,12 +88,4 @@ public class HomePage {
 		return Logout;
 	}
 
-	public PropertyManagementInmateSelectPage goToManageProperty() {
-
-		registrationMainLink.click();
-		PropertyManagementLink.click();
-		PropertyManagementInmateSelectPage propertyManagement = PageFactory.initElements(
-				driver, PropertyManagementInmateSelectPage.class);
-		return propertyManagement;
-	}
 }
