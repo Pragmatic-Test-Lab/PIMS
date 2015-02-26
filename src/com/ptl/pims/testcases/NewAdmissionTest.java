@@ -11,7 +11,7 @@ import com.ptl.pims.pages.TopMenu;
 public class NewAdmissionTest extends TestBase{
 
 	HomePage landingPage = null;
-
+/*
 	@Test // PIMS-656
 	public void Test_doCreateNewAdmitionFor_ConvictedInmate(){
 		landingPage = returnToHomePage();		
@@ -22,7 +22,7 @@ public class NewAdmissionTest extends TestBase{
 		creAdmissionPage.doCreateNewAdmitionFor_ConvictedInmate();
 		registrationNo = creAdmissionPage.getRegistrationNumber();
 		creAdmissionPage.doAdmission();
-	}
+	}*/
 	
 	@Test   // PIMS-628
 	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate() {
@@ -35,7 +35,7 @@ public class NewAdmissionTest extends TestBase{
 		registrationNo = creAdmissionPage.getRegistrationNumber();
 		creAdmissionPage.doAdmission();
 	}
-	
+	/*
 	//@Test   
 	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate_WithSubHeadings() throws Exception {
 		landingPage = returnToHomePage();		
@@ -113,7 +113,7 @@ public class NewAdmissionTest extends TestBase{
 		createNewAdmissionPage.checkUserCanUploadTheAllThreeImages();
 		registrationNo = createNewAdmissionPage.getRegistrationNumber();
 		createNewAdmissionPage.doAdmission();
-	}
+	}*/
 	
 	/*
 	@Test

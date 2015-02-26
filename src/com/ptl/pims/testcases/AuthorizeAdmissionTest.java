@@ -15,7 +15,7 @@ public class AuthorizeAdmissionTest extends TestBase {
 		TopMenu topMenu = getTopMenu();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = topMenu.gotoAuthorizeAdmissionPage();
 
-		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch("10008/10/CBS/2015","", "");	
+		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(registrationNo,"", "");	
 		AuthorizeAdmissionPage authorizeAdmissionPage =  authorizeAdmissionSelectPage.clickFirstInmate();
 		authorizeAdmissionPage.doAuthorizeAdmission();
 	}
