@@ -24,46 +24,30 @@ public class AllocateLocationTest extends TestBase {
 	
 	AllocateLocationInmateSelectPage allocateLocationInmateSelect = null;
 	AllocateLocationPage allocationPage;
-	HomePage landingPage;
-	
-	String FInmate_RegNum;
-	String FInmate_Name;
-	String FInmate_Location;
-
 
 	@Test(dataProvider = "getAllocationData")
 	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
 
-		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls)
-				|| data.get("Runmode").equals("No"))
+		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
-
-		APPLICATION_LOGS.debug("Going to Allocate Location Page");
+		HomePage landingPage = returnToHomePage();
+		TopMenu topMenu = getTopMenu();
+		APPLICATION_LOGS.debug("Going to Allocate Location Page");		
+		allocateLocationInmateSelect = topMenu.goToAllocateLocation();
 		
-		allocateLocationInmateSelect = landingPage.goToAllocateLocation();
-		
-		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader ,
-			"Could not reach Allocate Location");
-
-		APPLICATION_LOGS.debug("Reached Allocate Location Page");
+		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader, "Could not reach Allocate Location");
 	}
 	
 
-	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getAllocationData")	//pims-921
-	public void clickInmateLink(Hashtable<String, String> data) {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage")	//pims-921
+	public void clickInmateLink() {
 		
-		//
-		// Search if specific inmate is needed
-		CreateNewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, CreateNewAdmissionPage.class);
-		String RegNumber = newAdmissionPage.getRegistrationNumber();
-		 allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(RegNumber,data.get("Biometric") ,data.get("Name"));
-		//
+		allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(registrationNo,"","");
 
-		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
-		
+		allocationPage = allocateLocationInmateSelect.clickFirstInmate();		
 		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
+		//Assert.assertTrue(allocationPage.validateInmateData(registrationNo, ""), "Inmate data is invalid");
 
 	}
 	
@@ -71,25 +55,13 @@ public class AllocateLocationTest extends TestBase {
 	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      //pims-993, pims-994
 	public void changeInmateLocation(Hashtable<String, String> data) {
 		
-		Assert.assertTrue(!allocationPage.getCurrentLocation().equals(data.get("New Location")),
-				"Inmate already in " + allocationPage.getCurrentLocation() + ",Cannot change location");
+		Assert.assertTrue(!allocationPage.getCurrentLocation().equals(data.get("New Location")),"Cannot proceed. Inmate already in " + allocationPage.getCurrentLocation());
 		
-		//change Inmate Location
+		//Change Inmate Location
 		allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
-		
-		APPLICATION_LOGS.debug("Changed Inmates Location");
-	
-		//gets changed Inmate
-		//allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(null, null, null);	
-		
-		allocationPage = allocateLocationInmateSelect.clickFirstInmate();
-		
-		//check location and compare
-		Assert.assertTrue(allocationPage.getCurrentLocation().equals(data.get("New Location")),
-				"Location Changing has failed");		
-		
-		APPLICATION_LOGS.debug("Changed Inmate location successfully");
 
+		Assert.assertTrue(allocateLocationInmateSelect.getSuccessMessage().matches(Constants.AllocateLocation_SuccessMessageText),	"Location Changing has failed");		
+		APPLICATION_LOGS.debug("Changed Inmate location successfully");
 	}
 
 

@@ -31,13 +31,8 @@ public class AuthorizeRegistrationTest extends TestBase {
 		TopMenu topMenu = getTopMenu();
 
 		inmateAuthorizeSelect = topMenu.gotoAuthorizeRegistrationPage(); 
-		Assert.assertEquals(inmateAuthorizeSelect.getHeader(), Constants.AuthorizeRegistration_ExpectedHeader ,	"Could not reach Authorize Registration Page");
-	}
-	
-
-	@Test(dependsOnMethods="GoToAuthorizeRegistration")  
-	public void clickInmateLink() {
-
+		Assert.assertTrue(inmateAuthorizeSelect.getHeader().equalsIgnoreCase(Constants.AuthorizeRegistration_ExpectedHeader),"Could not reach Authorize Registration Page");
+		
 		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");	
 
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		
@@ -45,7 +40,7 @@ public class AuthorizeRegistrationTest extends TestBase {
 	}
 	
 	
-	@Test(dependsOnMethods = "clickInmateLink")      //pims-1196
+	@Test(dependsOnMethods = "GoToAuthorizeRegistration")      //pims-1196
 	public void AuthorizeInmate(Hashtable<String, String> data) {
 		
 		inmateAuthorizeSelect = inmateAuthorize.authorizeInmate();	
