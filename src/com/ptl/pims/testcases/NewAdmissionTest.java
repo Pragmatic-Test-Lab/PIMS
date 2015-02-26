@@ -2,6 +2,7 @@ package com.ptl.pims.testcases;
 
 import org.testng.annotations.Test;
 
+import com.ptl.pims.pages.CreateNewAdmissionPage;
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
@@ -25,10 +26,23 @@ public class NewAdmissionTest extends TestBase{
 		TopMenu topMenu = getTopMenu();
 		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 	
-		newAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();		
-		registrationNo = newAdmissionPage.getRegistrationNumber();
-		newAdmissionPage.doAdmission();
+		CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		creAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();
+		registrationNo = creAdmissionPage.getRegistrationNumber();
+		creAdmissionPage.doAdmission();
 	}
+	
+	//@Test   
+	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate_WithSubHeadings() throws Exception {
+		landingPage = returnToHomePage();		
+		TopMenu topMenu = getTopMenu();
+		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
+	    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		createNewAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings();
+		registrationNo = createNewAdmissionPage.getRegistrationNumber();
+		createNewAdmissionPage.doAdmission();
+	}
+	
 	
 	/*
 	//@Test   // PIMS-898
@@ -98,6 +112,8 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.doCreateNewAdmition();
 	}
 */
+	
+	
 
 	
 }
