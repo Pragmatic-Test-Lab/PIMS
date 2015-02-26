@@ -266,7 +266,7 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	
 	public void doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings() throws InterruptedException{
 		
-		CreateAdmissionButton.click();
+		//CreateAdmissionButton.click();
      	InmateCatagory.sendKeys("Baby");
      	CourtWarant.sendKeys("Negombo");
      	AgeAddmission.sendKeys("20");

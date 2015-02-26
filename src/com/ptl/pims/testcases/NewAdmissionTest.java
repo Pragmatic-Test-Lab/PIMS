@@ -20,7 +20,7 @@ public class NewAdmissionTest extends TestBase{
 		newAdmissionPage.doCreateNewAdmitionFor_ConvictedInmate();
 	}*/
 	
-	@Test   // PIMS-628
+	//@Test   // PIMS-628
 	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate() {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
@@ -32,7 +32,7 @@ public class NewAdmissionTest extends TestBase{
 		creAdmissionPage.doAdmission();
 	}
 	
-	//@Test   
+	@Test   
 	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate_WithSubHeadings() throws Exception {
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();

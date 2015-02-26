@@ -33,7 +33,7 @@ public class PostRegistrationTest extends TestBase{
 		APPLICATION_LOGS.debug("Going to the Post Registration Page");
 		//NewAdmissionPage newAdmissionPg = PageFactory.initElements(driver, NewAdmissionPage.class);
 		//String RegNumber = newAdmissionPg.getRegistrationNumber();
-		postRegPage.doSearch(registrationNo, "", "", "");
+		postRegPage.doSearch("20000/20/CSC/2015", "", "", "");
 		APPLICATION_LOGS.debug("Search an inmate");
 		postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Reached Update Post Registration User Page");	
