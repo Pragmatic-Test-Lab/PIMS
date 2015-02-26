@@ -20,7 +20,7 @@ public class AuthorizeAdmissionPage {
 	
 	
 	//PIMS-1194
-	public void doAuthorizeAdmission() throws InterruptedException{
+	public void doAuthorizeAdmission(){
 
 		AuthorizeInamteAdmissionButton.click();
         //Assert.assertTrue(EditConfirmMessage.isDisplayed()== true, "Adimssion Eidt Failed");	

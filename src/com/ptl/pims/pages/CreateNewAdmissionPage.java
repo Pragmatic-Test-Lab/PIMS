@@ -168,9 +168,11 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	}
 
 	//PIMS-628
-	public void doCreateNewAdmitionFor_Un_ConvictedInmate(){		
-	 	InmateCatagory.sendKeys("Un-Convicted");
-	 	CourtWarant.sendKeys("Colombo");
+	public void doCreateNewAdmitionFor_Un_ConvictedInmate(){	
+//	 	InmateCatagory.sendKeys("Un-Convicted");
+//	 	CourtWarant.sendKeys("Colombo");
+	 	InmateCatagory.sendKeys("Child");
+	 	CourtWarant.sendKeys("Negombo");
 	 	AgeAddmission.sendKeys("20");
 		AgeCatagory.sendKeys("Youth");
 		MealType.sendKeys("Diet");
@@ -328,8 +330,11 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	}
 	
 	public String getRegistrationNumber(){
-		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {}
 		String RegistrationNumber = RegNumber.getAttribute("value");
+		System.out.println("Inmate Registration Number : " + RegistrationNumber);
 		return RegistrationNumber;
 	}
 
