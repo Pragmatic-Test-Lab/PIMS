@@ -25,7 +25,7 @@ public class NewAdmissionTest extends TestBase{
 		TopMenu topMenu = getTopMenu();
 		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 		
-		registrationNo = newAdmissionPage.getRegistrationNumber();
+	//	registrationNo = newAdmissionPage.getRegistrationNumber();
 		
 		newAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();
 	}
