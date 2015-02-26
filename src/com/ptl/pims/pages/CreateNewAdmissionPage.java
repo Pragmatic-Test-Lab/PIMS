@@ -29,6 +29,8 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	WebElement AgeAddmission;
 	@FindBy(xpath = Constants.CreateAdmission_AgeCategory)
 	WebElement AgeCatagory;
+	@FindBy(xpath = Constants.CreateAdmission_Youth_AgeCategory)
+	WebElement SelectedAgeCatagoryAsYoth;
 	@FindBy(xpath = Constants.CreateAdmission_RegistrationNumber)
 	WebElement RegNumber;
 	@FindBy(xpath = Constants.CreateAdmission_DateAdmission)
@@ -245,39 +247,33 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	
 	//PIMS-898
 	public void checkMealTypeIsSelectable(){		
-		CreateAdmissionButton.click();
 	    Assert.assertTrue(MealType.getAttribute("disabled") == null, "Meal Type Is Not Selectable");	
 	}
 	
 	//PIMS-869
 	public void checkImateCatagoryIsSelectable(){	
-			CreateAdmissionButton.click();
 		    Assert.assertTrue(InmateCatagory.getAttribute("disabled") == null, "Inmate Catgory Is Not Selectable");	
 		}
 	
 	//PIMS-1190
 	public void checkAgeCatagoryIsAutoSelected(){
-		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Un-Convicted");
      	CourtWarant.sendKeys("Negombo");
 		AgeAddmission.sendKeys("20");
 		MealType.sendKeys("Diet");
-		Select select = (Select) AgeCatagory ;
-	    Assert.assertTrue( select.getFirstSelectedOption().getText() == "Youth" , "Age catagory should be Youth");	
+	    Assert.assertTrue(SelectedAgeCatagoryAsYoth.getText()=="Youth" , "Age catagory should be Youth");	
 	}
 	
 	//PIMS-408
 	public void checkInmateRegistrationNumberIsAutoGenarated(){
-		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Convicted");
      	CourtWarant.sendKeys("Negombo");
 		MealType.sendKeys("Diet");
-	    //Assert.assertTrue(RegNumber.getText()!= "", "Registration numbe should be auto genarated");	
+	    Assert.assertTrue(RegNumber.getText()!= "", "Registration numbe should be auto genarated");	
 	}
 	
 	//PIMS-19
 	public void checkRegistrationNumberFormtForUnConvictedInamtes(){		
-		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Un-Convicted");
      	CourtWarant.sendKeys("Negombo");
      	String actualRegNumber = RegNumber.getText();
@@ -294,7 +290,6 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		
 	//PIMS-1198
 	public void checkUserCanUploadTheAllThreeImages() throws InterruptedException{	
-		CreateAdmissionButton.click();
 		InmateCatagory.sendKeys("Convicted");
      	CourtWarant.sendKeys("Negombo");
 		MealType.sendKeys("Diet");
@@ -312,8 +307,8 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[2]")) ,"Front image not uploaded");
 		//Verify LHS Image is available
 		Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[3]")),"LHS image not uploaded");
-		SaveInamteAdmissionButton.click();
-        Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
+	/*	SaveInamteAdmissionButton.click();
+        Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	*/
 		
 	}
 
