@@ -38,7 +38,7 @@ public class InmateRegistrationTest extends TestBase {
 		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
 		//String RegNumber = newAdmissionPage.getRegistrationNumber();
 		
-		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("T/20000/2015","" ,"");
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("T/10005/2015","" ,"");
 
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 
