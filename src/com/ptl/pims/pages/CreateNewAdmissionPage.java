@@ -1,24 +1,20 @@
 package com.ptl.pims.pages;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.ptl.pims.util.*;
+import com.ptl.pims.util.Constants;
 
-public class NewAdmissionPage extends CommonMethods {
-	
+public class CreateNewAdmissionPage extends CommonMethods {
+
 	WebDriver driver;
 	
 	@FindBy(xpath = Constants.CreateAdmissionButton)
 	WebElement CreateAdmissionButton;
-	
-/*	
 	@FindBy(xpath = Constants.NewAdmissionHeder)
 	WebElement CreateAdmissionHeader;
 	@FindBy(xpath = Constants.TopMenu_AdmissionTopLink)
@@ -151,7 +147,9 @@ public class NewAdmissionPage extends CommonMethods {
 	String Name_As_Warrent = "Nimal Pathirana";
 	String Expected_Message  = "Created "+ Name_As_Warrent + " successfully";
 	
-	
+	public CreateNewAdmissionPage(WebDriver dr){
+		driver = dr;
+	}
 	
 	//PIMS-656
 	public void doCreateNewAdmitionFor_ConvictedInmate(){		
@@ -266,7 +264,7 @@ public class NewAdmissionPage extends CommonMethods {
 	
 	
 	
-	public void doCreateNewAdmition() throws InterruptedException{
+	public void doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings() throws InterruptedException{
 		
 		CreateAdmissionButton.click();
      	InmateCatagory.sendKeys("Baby");
@@ -348,18 +346,6 @@ public class NewAdmissionPage extends CommonMethods {
 		
 		String RegistrationNumber = RegNumber.getAttribute("value");
 		return RegistrationNumber;
-	}*/
-	
-	public NewAdmissionPage(WebDriver dr){
-		driver = dr;
-	}
-	
-	public CreateNewAdmissionPage getCreateAdmissionPage(){
-		
-		CreateAdmissionButton.click();
-		CreateNewAdmissionPage createNewAdmissionPage = PageFactory.initElements(driver, CreateNewAdmissionPage.class);
-		return createNewAdmissionPage;
-		
 	}
 
 }

@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.ptl.pims.pages.AllocateLocationInmateSelectPage;
 import com.ptl.pims.pages.AllocateLocationPage;
+import com.ptl.pims.pages.CreateNewAdmissionPage;
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.LoginPage;
 import com.ptl.pims.pages.NewAdmissionPage;
@@ -55,7 +56,7 @@ public class AllocateLocationTest extends TestBase {
 		
 		//
 		// Search if specific inmate is needed
-		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
+		CreateNewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, CreateNewAdmissionPage.class);
 		String RegNumber = newAdmissionPage.getRegistrationNumber();
 		 allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(RegNumber,data.get("Biometric") ,data.get("Name"));
 		//
