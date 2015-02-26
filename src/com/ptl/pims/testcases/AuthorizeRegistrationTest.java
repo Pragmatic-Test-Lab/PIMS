@@ -18,56 +18,41 @@ import com.ptl.pims.util.TestUtil;
 
 public class AuthorizeRegistrationTest extends TestBase {
 	
-	HomePage landingPage = null;
-	AuthorizeRegistrationInmateSelectPage inmateAuthorizeSelect  =null;
-	AuthorizeRegistrationPage inmateAuthorize = null;
+	AuthorizeRegistrationInmateSelectPage inmateAuthorizeSelect;
+	AuthorizeRegistrationPage inmateAuthorize;
 
-	@Test()   
+	@Test
 	public void GoToAuthorizeRegistration() {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Authorize Registration Test", xls) )
+		if(!TestUtil.isTestCaseRunmodeYes("Authorize Registration Test", xls))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
-		APPLICATION_LOGS.debug("Going to Home Page");
+		HomePage landingPage = returnToHomePage();
 		TopMenu topMenu = getTopMenu();
-		APPLICATION_LOGS.debug("Going to Top Menu");
 
 		inmateAuthorizeSelect = topMenu.gotoAuthorizeRegistrationPage(); 
-
-		Assert.assertEquals(inmateAuthorizeSelect.getHeader(), Constants.AuthorizeRegistration_ExpectedHeader ,
-				"Could not reach Authorize Registration Page");
-
-			APPLICATION_LOGS.debug("Reached Authorize Registration Page");
+		Assert.assertEquals(inmateAuthorizeSelect.getHeader(), Constants.AuthorizeRegistration_ExpectedHeader ,	"Could not reach Authorize Registration Page");
 	}
+	
 
 	@Test(dependsOnMethods="GoToAuthorizeRegistration")  
 	public void clickInmateLink() {
 
-		// Search if specific inmate is needed
-		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
-		//String RegNumber = newAdmissionPage.getRegistrationNumber();
-		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch("T/10041/2015","","");
-		
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");	
 
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		
-		APPLICATION_LOGS.debug("Reached Inmates Authorize Registration Page");
-
+		APPLICATION_LOGS.debug("Reached Inmates Authorization Page");
 	}
 	
+	
 	@Test(dependsOnMethods = "clickInmateLink")      //pims-1196
-	public void AuthorizeInmate() {
+	public void AuthorizeInmate(Hashtable<String, String> data) {
 		
 		inmateAuthorizeSelect = inmateAuthorize.authorizeInmate();	
 				
-		//check Success Message
-		Assert.assertTrue(inmateAuthorizeSelect.getSuccessMessage().matches(Constants.AuthorizeRegistration_SuccessMessageText),
-				"Unable to authorize inmate");			
-		
+		Assert.assertTrue(inmateAuthorizeSelect.getSuccessMessage().matches(Constants.AuthorizeRegistration_SuccessMessageText), "Unable to authorize inmate");			
 		APPLICATION_LOGS.debug("Changed Inmate location successfully");
-
 	}
 
-	
-	
+
 }

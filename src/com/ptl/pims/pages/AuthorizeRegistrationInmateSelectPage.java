@@ -21,8 +21,7 @@ public class AuthorizeRegistrationInmateSelectPage extends SelectInmatePage {
 		
 		firstInmateLink.click();
 		
-		AuthorizeRegistrationPage allocateLocation = PageFactory
-				.initElements(driver, AuthorizeRegistrationPage.class);
+		AuthorizeRegistrationPage allocateLocation = PageFactory.initElements(driver, AuthorizeRegistrationPage.class);
 		return allocateLocation;
 	}
 
