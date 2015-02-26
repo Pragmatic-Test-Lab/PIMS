@@ -301,7 +301,7 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		NameWarrent.sendKeys(Name_As_Warrent);
 		OccurenceClassificatio.sendKeys("FO");
 		Thread.sleep(3000);
-		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		ImageRHSBrowse.sendKeys(RHS_Image_Path); 
 		Thread.sleep(3000);
 		ImageFrontBrowse.sendKeys(Front_Image_Path);
 		Thread.sleep(3000);
