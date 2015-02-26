@@ -135,7 +135,8 @@ public class NewAdmissionPage extends CommonMethods {
 	WebElement InmateInfantsPreschoolDateOfBirth;
 	@FindBy(xpath = Constants.Create_Admission)
 	WebElement SaveInamteAdmissionButton;
-	@FindBy(xpath = "//*[text() = 'Name bhu huh']")
+	
+	@FindBy(xpath = "//*[text() = 'Nimal Pathirana']")
 	WebElement SaveConfirmMessage;
 	
 	 	
@@ -178,7 +179,7 @@ public class NewAdmissionPage extends CommonMethods {
 		NameWarrent.sendKeys(Name_As_Warrent);
 		OccurenceClassificatio.sendKeys("FO");
 		Gender.sendKeys("male");	
-		SaveInamteAdmissionButton.click();
+		//SaveInamteAdmissionButton.click();
 	    //Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
 	}
 
@@ -230,6 +231,12 @@ public class NewAdmissionPage extends CommonMethods {
      	Assert.assertEquals(yearOfAddmission.contentEquals("2015"), "Worg year code");
      
 	}
+	
+	
+	public void doAdmission() {
+		SaveInamteAdmissionButton.click();
+	}
+	
 	
 	//PIMS-1198
 	public void checkUserCanUploadTheAllThreeImages() throws InterruptedException{	
@@ -286,7 +293,7 @@ public class NewAdmissionPage extends CommonMethods {
 		
 		//Add Health Condition
 		InmateHealthConditionTab.click();
-		InmateHealthConditionAddNew.click();
+	//	InmateHealthConditionAddNew.click();
 		InmateHealthConditionMedicalAttention.click();
 		InmateHealthConditionPregnant.click();
 		InmateHealthConditionRemarks.sendKeys("Health Conditions Remarks");
@@ -322,7 +329,7 @@ public class NewAdmissionPage extends CommonMethods {
 		SaveInamteAdmissionButton.click();
         Assert.assertTrue(SaveConfirmMessage.isDisplayed()== true, "Adimssion Failed");	
 	}
-	
+
 	
 	
 	public String getActualPageTitle(){
@@ -337,7 +344,8 @@ public class NewAdmissionPage extends CommonMethods {
 	}
 	
 	public String getRegistrationNumber(){
-		String RegistrationNumber = RegNumber.getText();
+		
+		String RegistrationNumber = RegNumber.getAttribute("value");
 		return RegistrationNumber;
 	}
 

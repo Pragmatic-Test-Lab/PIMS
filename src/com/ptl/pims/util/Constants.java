@@ -148,44 +148,44 @@ public class Constants {
 
 	public static final String CreateAdmission_InmateCourtDetailTab = "//a[text() = 'Court Detail']" ; //"//*[@id='w7']/li[1]/a";
 	public static final String CreateAdmission_InmateCourtDetail_AddNew = "(.//button[text()='Add New'])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_Court = "//*[@id='inmatecasedetails-1-icd_court_id']";
-	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "//*[@id='inmatecasedetails-1-icd_case_number']";
-	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "//*[@id='inmatecasedetails-1-icd_date_of_conviction']";
+	public static final String CreateAdmission_InmateCourtDetail_Court = "(//select[contains(@name, 'icd_court_id')])[1]";
+	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "(//input[contains(@name, 'icd_case_number')])[1]";
+	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "(//input[contains(@name, 'icd_date_of_conviction')])[1]";
 	public static final String CreateAdmission_InmateCourtDetail_Action = "";
 
 	public static final String CreateAdmission_HealthConditionTab = "//a[text() = 'Health Condition']";
-	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[2]";
+	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[1]";
 	public static final String CreateAdmission_HealthCondition_MedicalAttention = "(.//input[contains(@name, 'hco_is_medical_attention_needed')])[2]";
-	public static final String CreateAdmission_HealthCondition_Pregnant = "//*[@id='healthcondition-1-hco_is_pregnant']";
-	public static final String CreateAdmission_HealthCondition_Remarks = "//*[@id='healthcondition-1-hco_remarks']";
-	public static final String CreateAdmission_HealthCondition_ForPreschool = "//*[@id='healthcondition-1-hco_is_medical_attention_needed_for__preschool']";
-	public static final String CreateAdmission_HealthCondition_OfPreschool = "//*[@id='healthcondition-1-hco_helth_condition_of_preschool']";
+	public static final String CreateAdmission_HealthCondition_Pregnant = "(//input[contains(@name, 'hco_is_pregnant')])[2]";
+	public static final String CreateAdmission_HealthCondition_Remarks = "//input[contains(@name, 'hco_remarks')]";
+	public static final String CreateAdmission_HealthCondition_ForPreschool = "(.//input[contains(@name, 'hco_is_medical_attention_needed')])[4]";
+	public static final String CreateAdmission_HealthCondition_OfPreschool = "//input[contains(@name, 'hco_helth_condition_of_preschool')]";
 	public static final String CreateAdmission_HealthCondition_Action = "//*[@id='health_condition_row_1']/td[8]/a/span";
 
-	public static final String CreateAdmission_HealthCondition_ManageDrugs_AddNew = "(//button[text() ='Add New'])[3]";
-	public static final String CreateAdmission_HealthCondition_ManageDrugs_Drug = "//*[@id='helthconditiondrugused-1-hdu_drugs_id']";
+	public static final String CreateAdmission_HealthCondition_ManageDrugs_AddNew = "(//button[text() ='Add New'])[2]";
+	public static final String CreateAdmission_HealthCondition_ManageDrugs_Drug = "(//select[contains(@name, 'hdu_drugs_id')])[1]";
 
-	public static final String CreateAdmission_HealthCondition_ManagePhysical_AddNew = "(//button[text() ='Add New'])[4]";
-	public static final String CreateAdmission_HealthCondition_ManagePhysical_Observation = "//*[@id='helthconditionphysicalobservation-1-hpo_physical_observation_id']";
+	public static final String CreateAdmission_HealthCondition_ManagePhysical_AddNew = "(//button[text() ='Add New'])[3]";
+	public static final String CreateAdmission_HealthCondition_ManagePhysical_Observation = "(//select[contains(@name, 'hpo_physical_observation_id')])[1]";
 
 	public static final String CreateAdmission_InmateComplainTab = "//a[text() = 'Inmate Complaint']";
-	public static final String CreateAdmission_InmateComplainNew = "(//button[text() ='Add New'])[5]";
-	public static final String CreateAdmission_InmateComplainDate = "//*[@id='inmatecomplain-1-ico_date']";
-	public static final String CreateAdmission_InmateComplain_TypeOfComplaint = "//*[@id='inmatecomplain-1-ico_type_of_compain_id']";
-	public static final String CreateAdmission_InmateComplain_Description = "//*[@id='inmatecomplain-1-ico_description']";
+	public static final String CreateAdmission_InmateComplainNew = "(//button[text() ='Add New'])[4]";
+	public static final String CreateAdmission_InmateComplainDate = "(//input[contains(@name, 'ico_date')])[1]";
+	public static final String CreateAdmission_InmateComplain_TypeOfComplaint = "(//select[contains(@name, 'ico_type_of_compain_id')])[1]";
+	public static final String CreateAdmission_InmateComplain_Description = "(//input[contains(@name, 'ico_description')])[1]";
 
 	public static final String CreateAdmission_PrivateProperties_Tab = "//a[text() = 'Private Properties']";
-	public static final String CreateAdmission_PrivateProperties_AddNew = "(//button[text() ='Add New'])[6]";
-	public static final String CreateAdmission_PrivateProperties_Date = "//*[@id='privateproperty-1-prp_date']";
-	public static final String CreateAdmission_PrivateProperties_Item = "//*[@id='privateproperty-1-prp_item_id']";
-	public static final String CreateAdmission_PrivateProperties_Description = "//*[@id='privateproperty-1-prp_description']";
-	public static final String CreateAdmission_PrivateProperties_Quantity = "//*[@id='privateproperty-1-prp_quantity']";
-	public static final String CreateAdmission_PrivateProperties_Value = "//*[@id='privateproperty-1-prp_value']";
+	public static final String CreateAdmission_PrivateProperties_AddNew = "(//button[text() ='Add New'])[5]";
+	public static final String CreateAdmission_PrivateProperties_Date = "(//input[contains(@name, 'prp_date')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Item = "(//select[contains(@name, 'prp_item_id')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Description = "(//input[contains(@name, 'prp_description')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Quantity = "(//input[contains(@name, 'prp_quantity')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Value = "(//input[contains(@name, 'prp_value')])[1]";
 
 	public static final String CreateAdmission_InfantsPreschoolTab = "//a[text() = 'Infants Or Preschoolers']";
-	public static final String CreateAdmission_InfantsPreschoolAddNew = "(//button[text() ='Add New'])[7]";
-	public static final String CreateAdmission_InfantsPreschoolName = "//*[@id='infantsorpreschool-1-psc_name']";
-	public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "//*[@id='infantsorpreschool-1-psc_date_of_birth']";
+	public static final String CreateAdmission_InfantsPreschoolAddNew = "(//button[text() ='Add New'])[6]";
+	public static final String CreateAdmission_InfantsPreschoolName = "(//input[contains(@name, 'psc_name')])[1]";
+	public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "(//input[contains(@name, 'psc_date_of_birth')])[1]";
 
 	public static final String CreateAdmission_HistoryTab = "//a[text() = 'History']";
 	public static final String Create_Admission = "//button[text() = 'Create']";
@@ -417,9 +417,9 @@ public class Constants {
 	
 	// Inmate Search Pages
 	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
-	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
-	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
-	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
+	public static final String InmateSearch_RegNoSearchField = ".//*[contains(@name,'Search[adm_registration_no]')]";
+	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
+	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
 	
 	
