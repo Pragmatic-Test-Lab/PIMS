@@ -1,13 +1,15 @@
 package com.ptl.pims.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
 
-public class EditAdmissionPage {
+public class EditAdmissionPage extends CommonMethods{
 	
 	WebDriver driver;
 		
@@ -40,6 +42,10 @@ public class EditAdmissionPage {
 	String Updated_Name_As_Warrent = "Nimal Pathirana Updated";
 	String Expected_Message  = "Saved "+ Updated_Name_As_Warrent + " successfully";
 	
+	//Verify the images
+	By rhs_image_alert_by = By.xpath(Constants.EditAdmission_RHS_Image_Alert_Text);
+	By front_image_alert_by = By.xpath(Constants.EditAdmission_Front_Image_Alert_Text);
+	By lhs_image_alert_by = By.xpath(Constants.EditAdmission_LHS_Image_Alert_Text);
 	
 	public EditAdmissionPage(WebDriver dr){
 		driver = dr;
@@ -63,5 +69,28 @@ public class EditAdmissionPage {
         Assert.assertTrue(EditConfirmMessage.isDisplayed()== true, "Adimssion Eidt Failed");	
 	}
 	
-	
+	public boolean getRHSImageBox() throws Exception{
+		try{
+			boolean result = checkElementIsPresent(driver,rhs_image_alert_by);
+			return result;
+		}catch(Exception ex){
+			throw ex;
+		}
+	}
+	public boolean getFrontImageBox() throws Exception{
+		try{
+			boolean result = checkElementIsPresent(driver,front_image_alert_by);
+			return result;
+		}catch(Exception ex){
+			throw ex;
+		}
+	}
+	public boolean getLHSImageBox() throws Exception{
+		try{
+			boolean result = checkElementIsPresent(driver,lhs_image_alert_by);
+			return result;
+		}catch(Exception ex){
+			throw ex;
+		}
+	}
 }

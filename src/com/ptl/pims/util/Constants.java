@@ -1,5 +1,8 @@
 package com.ptl.pims.util;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
+
 public class Constants {
 	// Registration Page:
 	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
@@ -188,7 +191,16 @@ public class Constants {
 	public static final String Update_Admission_UpdateButton = "//button[text() = 'Update']";
 	public static final String Authorize_Admission = "//button[text() = 'Authorize']";
 	
+	//Edit Admission Page
+	//Verify RHS Image is available
+	public static final String EditAdmission_RHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[1]";
+	//Verify Front Image is available
+	public static final String EditAdmission_Front_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[2]";
+	//Verify LHS Image is available
+	public static final String EditAdmission_LHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[3]";
 	
+	
+
 
 	// Allocate Location Page
 	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
