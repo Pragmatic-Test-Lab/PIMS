@@ -42,6 +42,20 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 	
+	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-389
+	public void checkInmateFrontImage() {
+		
+		Assert.assertTrue(inmateRegistration.IsFrontPhotoAvailable(), "Front Photo Not Found");
+
+	}
+	
+	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-630, PIMS-631, PIMS-632
+	public void enterInmateImages() {
+		
+		inmateRegistration.doAddInmatePhotos();
+
+	}
+	
 	@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
 	public void enterInmatePersonalData(Hashtable<String, String> data) {
 

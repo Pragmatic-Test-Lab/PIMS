@@ -3,6 +3,15 @@ package com.ptl.pims.util;
 public class Constants {
 	// Registration Page:
 	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
+	public static final String InmateRegistration_FrontImage = "";
+	public static final String InmateRegistration_RHSImage = "";
+	public static final String InmateRegistration_LHSImage = "";
+	public static final String InmateRegistration_ImageRHSBrowse = "";
+	public static final String InmateRegistration_ImageRHSRemove = "";
+	public static final String InmateRegistration_ImageFrontBrowse = "";
+	public static final String InmateRegistration_ImageFrontRemove = "";
+	public static final String InmateRegistration_ImageLHSBrowse = "";
+	public static final String InmateRegistration_ImageLHSRemove = "";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
@@ -187,6 +196,9 @@ public class Constants {
 	public static final String Update_Admission = "//button[text() = 'Update']";
 	public static final String Authorize_Admission = "//button[text() = 'Authorize']";
 	
+	//Edit Admission Page
+	public static final String EditAdmission_SuccessMessageText = "Saved .* successfully";
+
 
 	// Allocate Location Page
 	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
@@ -426,6 +438,7 @@ public class Constants {
 	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
 	public static final String AuthorizeRegistration_SuccessMessageText = "Saved .* successfully";
+
 	
 
 
