@@ -69,14 +69,6 @@ public class HomePage {
 	}
 
 
-	public InmateRegistrationSelectPage goToInmateRegistration() {
-		registrationMainLink.click();
-		registrationSubLink.click();
-		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
-				driver, InmateRegistrationSelectPage.class);
-		return inmateRegistration;
-	}
-
 	public String getActualPageHeader2() {
 		return ActualPageHeader = pageHeader2.getText();
 	}
