@@ -9,7 +9,7 @@ import com.ptl.pims.util.Constants;
 
 public class AuthorizeRegistrationPage {
 
-	// Allocate Location Page
+	//Authorize Registration Page
 	@FindBy(xpath = Constants.AuthorizeRegistration_AuthorizeButton)
 	public WebElement authorizeButton;
 	

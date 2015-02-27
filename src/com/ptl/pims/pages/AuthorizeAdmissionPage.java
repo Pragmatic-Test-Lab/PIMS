@@ -23,7 +23,6 @@ public class AuthorizeAdmissionPage {
 	public void doAuthorizeAdmission(){
 
 		AuthorizeInamteAdmissionButton.click();
-        //Assert.assertTrue(EditConfirmMessage.isDisplayed()== true, "Adimssion Eidt Failed");	
 	}
 	
 }

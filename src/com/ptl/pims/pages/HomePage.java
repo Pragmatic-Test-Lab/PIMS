@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 
 public class HomePage {
@@ -76,6 +78,7 @@ public class HomePage {
 	public LoginPage gotoLogout() {
 		LogoutLink.click();
 		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);
+		TestBase.isLoggedIn = false;
 		System.out.println("Logout done");
 		return Logout;
 	}

@@ -1,11 +1,9 @@
 package com.ptl.pims.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
@@ -128,8 +126,7 @@ public class InmateRegistration {
 	public WebElement isactive;
 	
 
-
-
+	
 	public InmateRegistration(WebDriver dr){		
 		driver = dr;
 	}
@@ -138,17 +135,12 @@ public class InmateRegistration {
 		return HeaderField.getText();
 	}
 
-	public String getExpectedHeader(){
-		return ""; //Constants.InmateRegistration_ExpectedHeader;
-	}
 
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 
 			String cllName2, String addLine1, String addLine2, String postOff, String postCode,
 			String cntry, String prvnce , String dstrct, String ds, String gsDiv, String cty,
 			String plicDiv){
 
-		//TODO : add method to search by reg number
-		//		editFirstInmate.click();
 		tab_personal.click();
 		otherName1.sendKeys(othrName1);
 		otherName2.sendKeys(othrName2);
@@ -165,17 +157,14 @@ public class InmateRegistration {
 		gsDivision.sendKeys(gsDiv);
 		city.sendKeys(cty);
 		policeDivision.sendKeys(plicDiv);
-		//	updateButton.click();
 
 	}
 
 
 	public void doAddClassifiactionDetailsOfInmate(String classif){
-		//TODO : add method to search by reg number
-		//editFirstInmate.click();
+
 		tab_classification.click();
 		classification.sendKeys(classif);		
-		//updateButton.click();
 
 	}
 
@@ -191,7 +180,6 @@ public class InmateRegistration {
 		birthdate.sendKeys(DOB);
 		birthplace.sendKeys(BirthPlace);
 		passport.sendKeys(PassportNumber);
-		//	updateButton.click();
 
 	}
 
@@ -207,7 +195,6 @@ public class InmateRegistration {
 		eyesd.sendKeys(EyesD);
 		nose.sendKeys(Nose);
 		bodymark.sendKeys(BodyMark);
-		//updateButton.click();
 
 	}
 
@@ -225,12 +212,12 @@ public class InmateRegistration {
 		fine.sendKeys(Fine);
 		isactive.click();
 		
-
 	}
 	
 
 
 	public InmateRegistrationSelectPage clickButton() {
+		
 		updateButton.click();
 		
 		InmateRegistrationSelectPage InmateRegistrationSelectPage = PageFactory

@@ -15,11 +15,9 @@ import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
 public class PropertyManagementEditTest extends TestBase {
-	
-	
-	HomePage landingPage = null;
-	PropertyManagementInmateSelectPage managePropertySelectInmate = null;
-	PropertyManagementPage manageProperty = null;
+
+	PropertyManagementInmateSelectPage managePropertySelectInmate;
+	PropertyManagementPage manageProperty;
 	
 
 	@Test(dataProvider = "getPropertyData")
@@ -28,7 +26,7 @@ public class PropertyManagementEditTest extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)	|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 		
-		landingPage = returnToHomePage();
+		HomePage landingPage = returnToHomePage();
 		TopMenu topMenu = getTopMenu();
 		
 		APPLICATION_LOGS.debug("Going to Property Management Page");	
@@ -65,7 +63,7 @@ public class PropertyManagementEditTest extends TestBase {
 		managePropertySelectInmate = manageProperty.submitPropertyForm();
 				
 		Assert.assertTrue(managePropertySelectInmate.getSuccessMessage().matches(Constants.PropertyManagement_SuccessMessageText),
-				"Success Message not displayed correctly.");		
+				"Success Message not displayed.");		
 
 	}
 

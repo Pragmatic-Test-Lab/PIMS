@@ -1,7 +1,6 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
@@ -15,11 +14,7 @@ import com.ptl.pims.util.TestUtil;
 
 
 public class LoginTest extends TestBase {
-	HomePage landingPage = null;
 
-	
-	
-	
 	@Test(dataProvider = "getLoginData")
 	public void loginTest(Hashtable<String, String> data) {
 
@@ -29,13 +24,13 @@ public class LoginTest extends TestBase {
 		driver.get(CONFIG.getProperty("BASE_URL"));		
 		LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 		
-		landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
+		HomePage landingPage = lp.doLogin(data.get("Username"),data.get("Password"));
 		
 		Assert.assertEquals(landingPage.getActualPageHeader(), Constants.Home_PageHeaderText, "Could not login!");
 		
 		isLoggedIn=true;
 		APPLICATION_LOGS.debug("logged in");
-		//landingPage.gotoProfile();
+
 		APPLICATION_LOGS.debug("In Home page");
 	
 	}

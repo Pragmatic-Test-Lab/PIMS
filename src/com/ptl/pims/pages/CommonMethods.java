@@ -1,7 +1,6 @@
 package com.ptl.pims.pages;
 
 import java.util.NoSuchElementException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
