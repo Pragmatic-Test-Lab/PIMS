@@ -33,7 +33,7 @@ public class EditAdmissionPage {
 	@FindBy(xpath = Constants.CreateAdmission_OccurenceClassification)
 	WebElement OccurenceClassificatio;
 	
-	@FindBy(xpath = Constants.Update_Admission)
+	@FindBy(xpath = Constants.Update_Admission_UpdateButton)
 	WebElement UpdateInamteAdmissionButton;
 	@FindBy(xpath = "//*[text() = 'Nimal Pathirana Updated']")
 	WebElement EditConfirmMessage;
