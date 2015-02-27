@@ -1,17 +1,12 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.ptl.pims.pages.AuthorizeRegistrationInmateSelectPage;
 import com.ptl.pims.pages.AuthorizeRegistrationPage;
 import com.ptl.pims.pages.HomePage;
-import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -33,9 +28,9 @@ public class AuthorizeRegistrationTest extends TestBase {
 		inmateAuthorizeSelect = topMenu.gotoAuthorizeRegistrationPage(); 
 		Assert.assertTrue(inmateAuthorizeSelect.getHeader().equalsIgnoreCase(Constants.AuthorizeRegistration_ExpectedHeader),"Could not reach Authorize Registration Page");
 		
-		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");	
-
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"","");
 		inmateAuthorize = inmateAuthorizeSelect.clickFirstInmate();		
+		
 		APPLICATION_LOGS.debug("Reached Inmates Authorization Page");
 	}
 	

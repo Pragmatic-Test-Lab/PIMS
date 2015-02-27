@@ -14,9 +14,8 @@ import com.ptl.pims.util.TestUtil;
 
 public class PropertyManagementNewTest extends TestBase {
 	
-	HomePage landingPage = null;
-	PropertyManagementInmateSelectPage managePropertySelectInmate = null;
-	PropertyManagementPage manageProperty = null;
+	PropertyManagementInmateSelectPage managePropertySelectInmate;
+	PropertyManagementPage manageProperty;
 	
 
 	@Test(dataProvider = "getPropertyData")
@@ -25,21 +24,20 @@ public class PropertyManagementNewTest extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)	|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 		
-		landingPage = returnToHomePage();
+		HomePage landingPage = returnToHomePage();
 		TopMenu topMenu = getTopMenu();
 		
 		APPLICATION_LOGS.debug("Going to Property Management Page");		
 		managePropertySelectInmate = topMenu.gotoManageProperty();
-		Assert.assertEquals(managePropertySelectInmate.getHeader(), Constants.PropertyManagement_ExpectedHeader, 				"Could not reach Property Management");
+		Assert.assertEquals(managePropertySelectInmate.getHeader(), Constants.PropertyManagement_ExpectedHeader, "Could not reach Property Management");
 	}
 	
 	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData")
 	public void clickInmateLink(Hashtable<String, String> data) {
 		
-		//managePropertySelectInmate = managePropertySelectInmate.doSearch(data.get("RegNo"),"", "");
+		managePropertySelectInmate = managePropertySelectInmate.doSearch(registrationNo,"", "");
 
-		manageProperty = managePropertySelectInmate.clickFirstInmate();	
-
+		manageProperty = managePropertySelectInmate.clickFirstInmate();
 		APPLICATION_LOGS.debug("Reached Inmates Property Management Page");
 	}
 	

@@ -16,7 +16,7 @@ public class AdmissionEditTest extends TestBase{
 		landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
 		EditAdmissionSelectPage editAdmissionSelectPage = topMenu.gotoEditAdmissionPage();
-		editAdmissionSelectPage = editAdmissionSelectPage.doSearch("","","");
+		editAdmissionSelectPage = editAdmissionSelectPage.doSearch(registrationNo,"","");
 		EditAdmissionPage editAdmissionPage =  editAdmissionSelectPage.clickFirstInmate();
 		editAdmissionPage.doEditAdmition();
 	}

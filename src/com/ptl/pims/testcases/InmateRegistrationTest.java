@@ -16,113 +16,102 @@ import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.LoginPage;
 import com.ptl.pims.pages.NewAdmissionPage;
+import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
 public class InmateRegistrationTest extends TestBase {
 
-	HomePage landingPage = null;
-	InmateRegistrationSelectPage inmateRegistrationSelect  =null;
-	InmateRegistration inmateRegistration = null;
+	InmateRegistrationSelectPage inmateRegistrationSelect;
+	InmateRegistration inmateRegistration;
 
-	@Test(dataProvider = "getInmatePersonalData")   //PIM-1080
-	public void enterInmatePersonalDataTest(Hashtable<String, String> data) {
+	@Test  //PIMS-1080
+	public void goInmateRegistrationPage() {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration-Personal", xls) || data.get("Runmode").equals("No"))
+		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration Test", xls))
 			throw new SkipException("Skipping the test");
-
-		landingPage = returnToHomePage();
-
-		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-		inmateRegistrationSelect  = landingPage.goToInmateRegistration();
-		//NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
-		//String RegNumber = newAdmissionPage.getRegistrationNumber();
 		
-		inmateRegistrationSelect = inmateRegistrationSelect.doSearch(registrationNo,"" ,"");
-
+		HomePage landingPage = returnToHomePage();
+		TopMenu topMenu = getTopMenu();
+		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
+		inmateRegistrationSelect  = topMenu.goToInmateRegistration();
+		
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("B/00001/10/CSC/2015","" ,"");
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
-
-		//String ActualHeader = inmateRegistration.getHeader();
-		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
-
-		//Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
-
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
 
+	}
+	
+	@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
+	public void enterInmatePersonalData(Hashtable<String, String> data) {
+
+		if(data.get("Runmode").equals("No"))
+			throw new SkipException("Skipping the test");
+		
+		APPLICATION_LOGS.debug("Adding Personal Data");
 		inmateRegistration.doAddPersonalDetailsOfInmate(data.get("OtherName1"),data.get("OtherName2"), 
 				data.get("CallName1"), data.get("CallName2"),data.get("AddrLine1"), data.get("AddrLine2"), 
 				data.get("PostOffice"),data.get("PostCode"), data.get("Country"),	data.get("Province"), 
 				data.get("District"),data.get("DS"), data.get("GsDiv"), data.get("City"),data.get("PoliceDiv"));
+		
+	}	
+	
 
-	}
-
-	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="enterInmatePersonalDataTest")   //PIM-1082
+	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Classification", xls) || data.get("Runmode").equals("No"))
+		if(data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		//landingPage = returnToHomePage();
-
-		//APPLICATION_LOGS.debug("Going to Inmate Registration Page");
-		//InmateRegistrationSelectPage inmateRegistrationSelect  = landingPage.goToInmateRegistration();
-
-		//InmateRegistration inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
-
-		//String ActualHeader = inmateRegistration.getHeader();
-		//String ExpectedHeader = inmateRegistration.getExpectedHeader();
-
-		//	Assert.assertTrue(ActualHeader.equalsIgnoreCase(ExpectedHeader), "Could not reach Registration");
-
-		//	APPLICATION_LOGS.debug("Reached Allocate Location Page");
-
+		APPLICATION_LOGS.debug("Adding Classification Data");
 		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("classif")); 
-
-
 	}
 
-	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="enterInmateCalasificationTest")   
+	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082
 	public void enterInmateCharacteristicTest(Hashtable<String, String> data) {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Characteristic", xls) || data.get("Runmode").equals("No"))
+		if(data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
+		APPLICATION_LOGS.debug("Adding Characteristics Data");
 		inmateRegistration.doAddCharacteristicDetailsOfInmate(data.get("nationality"),data.get("race"),data.get("marital"),data.get("religion"),
 				data.get("nic"),data.get("birthdate"), data.get("birthplace"), data.get("passport")); 
 
 	}
 
-	@Test(dataProvider = "getIdentificationData",dependsOnMethods="enterInmateCharacteristicTest")   
+	@Test(dataProvider = "getIdentificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1083
 	public void enterInmateIdentificationTest(Hashtable<String, String> data) {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Identification", xls) || data.get("Runmode").equals("No"))
+		if(data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
-
+		
+		APPLICATION_LOGS.debug("Adding Identification Data");
 		inmateRegistration.doAddIdentificationDetailsOfInmate(data.get("face"),data.get("faced"),data.get("hair"),data.get("haird"),
 				data.get("eyes"),data.get("eyesd"), data.get("nose"), data.get("bodymark")); 
-		inmateRegistrationSelect = inmateRegistration.clickButton();
 
-		Assert.assertTrue(inmateRegistrationSelect.getSuccessMessage().matches(Constants.InmateRegistration_SuccessMessageText),
-				"Success Message not displayed");
-		
-		APPLICATION_LOGS.debug("Success Message received.");
 	}
 
 
-/*	@Test(dataProvider = "getcaseData",dependsOnMethods="enterInmateIdentificationTest")   
+	//@Test(dataProvider = "getcaseData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1085
 	public void enterInmatecaseTest(Hashtable<String, String> data) {
 
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Reg-Case", xls) || data.get("Runmode").equals("No"))
+		if(data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
+		APPLICATION_LOGS.debug("Adding Inmate Case Data");
 		inmateRegistration.doAddcaseDetailsOfInmate(data.get("casen"),data.get("offense"),data.get("offdescription"),data.get("sentence"),
-				data.get("description"),data.get("days"), data.get("fine")); 
-		
+				data.get("description"),data.get("days"), data.get("fine")); 		
+
+	}
+	
+	@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-990,PIMS-49
+	public void submitRegistrationData() {
+	
 		inmateRegistrationSelect = inmateRegistration.clickButton();
-
 		
+		Assert.assertTrue(inmateRegistrationSelect.getSuccessMessage().matches(Constants.InmateRegistration_SuccessMessageText), "Registration of Inmate has failed");		
 
-	}*/
+	}
 
 
 

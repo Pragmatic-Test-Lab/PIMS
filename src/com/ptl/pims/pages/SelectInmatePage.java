@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.pims.util.Constants;
 
 
-
 public abstract class SelectInmatePage {
 
 	

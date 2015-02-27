@@ -2,14 +2,12 @@ package com.ptl.pims.util;
 
 public class Constants {
 	// Registration Page:
-	public static final String InmateRegistration_SuccessMessageText = "Saved \\w* successfully";
+	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
-	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
 	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
 	
 	//Update Registration
-
 	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
 	public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
@@ -26,8 +24,7 @@ public class Constants {
 	public static final String InmateRegistration_Personal_City = "//*[@id='admission-adm_city_id']";
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
-
-
+	
 	//Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
 	public static final String InmateRegistration_Header = "";
@@ -376,12 +373,12 @@ public class Constants {
 	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
 	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
 	public static final String AllocateLocation_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String AllocateLocation_SuccessMessageText = "Assigned Location for \\w* successfully";
+	public static final String AllocateLocation_SuccessMessageText = "Assigned Location for .* successfully";
 
 	// Property Management Inmate Select Page
 	public static final String PropertyManagement_ExpectedHeader = "Property Management";
 	public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String PropertyManagement_SuccessMessageText = "Saved \\w* successfully";
+	public static final String PropertyManagement_SuccessMessageText = "Saved .* successfully";
 	
 	// Property Management Page
 	// Property Data Fields	
@@ -430,7 +427,7 @@ public class Constants {
 	public static final String AuthorizeRegistration_ExpectedHeader = "Registration Authorization";
 	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String AuthorizeRegistration_SuccessMessageText = "Saved \\w* successfully";
+	public static final String AuthorizeRegistration_SuccessMessageText = "Saved .* successfully";
 	
 
 

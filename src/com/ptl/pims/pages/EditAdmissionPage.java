@@ -47,7 +47,7 @@ public class EditAdmissionPage {
 	
 	
 	//PIMS-1194
-	public void doEditAdmition() throws InterruptedException{
+	public void doEditAdmition(){
 		
      	InmateCatagory.sendKeys("Child");
      	CourtWarant.sendKeys("Colombo");
