@@ -71,15 +71,18 @@ public class Constants {
 	//Inmate case tab
 	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
 	public static final String InmateRegistration_case_addnew =".//button[text()='Add New']";
-	public static final String InmateRegistration_case_isactive = "//*[@id='sentence-1-sen_is_active']";
-	public static final String InmateRegistration_case_fine = "//*[@id='sentence-1-sen_fine_charges']";
-	public static final String InmateRegistration_case_days = "//*[@id='sentence-1-sen_days']";
-	public static final String InmateRegistration_case_description = "//*[@id='sentence-1-sen_description']";
-	public static final String InmateRegistration_case_sentence = "//*[@id='sentence-1-sen_sentence_type_id']";
-	public static final String InmateRegistration_case_offdescription = "//*[@id='sentence-1-sen_discription_of_offence']";
-	public static final String InmateRegistration_case_offense ="//*[@id='sentence-1-sen_offence_id']";
-	public static final String InmateRegistration_case_casen = "//*[@id='sentence-1-sen_case_id']";
-	
+	public static final String InmateRegistration_CaseDetailsTable =".//*[@id='sentence_grid']/tbody";
+	public static final String InmateRegistration_CaseFieldsCommonFirstPart =".//*[@id='sentence-";
+	public static final String InmateRegistration_CaseNo_LastPart ="-sen_case_id']";
+	public static final String InmateRegistration_Offence_LastPart ="-sen_offence_id']";
+	public static final String InmateRegistration_OffenceDescription_LastPart ="-sen_discription_of_offence']";
+	public static final String InmateRegistration_SentenceType_LastPart ="-sen_sentence_type_id']";
+	public static final String InmateRegistration_Description_LastPart ="-sen_description']";
+	public static final String InmateRegistration_Years_LastPart ="-sen_years']";
+	public static final String InmateRegistration_Months_LastPart ="-sen_months']";
+	public static final String InmateRegistration_Days_LastPart ="-sen_days']";
+	public static final String InmateRegistration_FineCharges_LastPart ="-sen_fine_charges']";
+	public static final String InmateRegistration_IsActive_LastPart ="-sen_is_active']";
 
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")

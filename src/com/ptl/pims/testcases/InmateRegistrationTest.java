@@ -1,21 +1,13 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
-import com.ptl.pims.pages.LoginPage;
-import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -42,14 +34,14 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 	
-	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-389
+	@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-389
 	public void checkInmateFrontImage() {
 		
 		Assert.assertTrue(inmateRegistration.IsFrontPhotoAvailable(), "Front Photo Not Found");
 
 	}
 	
-	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-630, PIMS-631, PIMS-632
+	@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-630, PIMS-631, PIMS-632
 	public void enterInmateImages() {
 		
 		inmateRegistration.doAddInmatePhotos();
@@ -114,11 +106,11 @@ public class InmateRegistrationTest extends TestBase {
 
 		APPLICATION_LOGS.debug("Adding Inmate Case Data");
 		inmateRegistration.doAddcaseDetailsOfInmate(data.get("casen"),data.get("offense"),data.get("offdescription"),data.get("sentence"),
-				data.get("description"),data.get("days"), data.get("fine")); 		
+				data.get("description"),data.get("days"), data.get("months"),data.get("years"), data.get("fine")); 		
 
 	}
 	
-	@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-990,PIMS-49
+	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-990,PIMS-49
 	public void submitRegistrationData() {
 	
 		inmateRegistrationSelect = inmateRegistration.clickButton();

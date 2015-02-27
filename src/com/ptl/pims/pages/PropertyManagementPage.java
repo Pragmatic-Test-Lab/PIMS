@@ -1,13 +1,10 @@
 package com.ptl.pims.pages;
 
-import java.util.Arrays;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -134,92 +131,8 @@ public class PropertyManagementPage {
 				.initElements(driver, PropertyManagementInmateSelectPage.class);
 		return propertyManagementSelectPage;
 	}
-	
-	//checks if saved private property records contain passed property details
-	public boolean isPrivatePropertyRecordsFound(String date, String item, String description, String quantity, String value){
-		
-		//click Private Property Tab
-		Private_Tab.click();
-
-		String[] dates = date.split(",");
-		String[] items = item.split(",");
-		String[] descriptions = description.split(",");
-		String[] quantities = quantity.split(",");
-		String[] values = value.split(",");		
-
-		int dataRows = initialRowCount(Private_TabTableBody);
-		
-		//creates a boolean value for each search
-		boolean propertyFound[] =new boolean[dates.length];
-		Arrays.fill(propertyFound, false);		
-
-		for (int i = 0; i < dataRows; i++) {
-
-			String savedDate = driver.findElement(By.xpath(privateDateFirstPart + i + privateDateLastPart)).getAttribute("value");
-			String selectedItem = driver.findElement(By.xpath(privateItemFirstPart + i + privateSelectedItemLastPart)).getText();
-			String savedDescription = driver.findElement(By.xpath(privateDescriptionFirstPart + i + privateDescriptionLastPart)).getAttribute("value");
-			String savedQuantity = driver.findElement(By.xpath(privateQuantityFirstPart + i	+ privateQuantityLastPart)).getAttribute("value");
-			String savedValue = driver.findElement(By.xpath(privateValueFirstPart + i + privateValueLastPart)).getAttribute("value");
-
-			for (int j = 0; j < dates.length; j++) {
-				if (savedDate.equals(dates[j]) && selectedItem.equals(items[j]) && savedDescription.equals(descriptions[j])
-					&& savedQuantity.equals(quantities[j]) )
-					if(savedValue.equals(values[j]) || savedValue.equals(values[j] + ".00"))
-					propertyFound[j] = true;
-			}}
-
-		for (boolean result : propertyFound) {
-			if (!result) {
-				//returns false even if one of the properties were not found
-				return false;
-			}}
-
-		return true;
-	}
 
 	
-	//checks if saved prison property records contain passed property details
-	public boolean isPrisonPropertyRecordsFound(String date, String item, String description, String quantity){
-		
-		// click Prison Property Tab
-		Prison_Tab.click();
-
-		String[] dates = date.split(",");
-		String[] items = item.split(",");
-		String[] descriptions = description.split(",");
-		String[] quantities = quantity.split(",");
-
-		int dataRows = initialRowCount(Prison_TabTableBody);
-
-		// creates a boolean value for each search
-		boolean propertyFound[] = new boolean[dates.length];
-		Arrays.fill(propertyFound, false);
-
-		for (int i = 0; i < dataRows; i++) {
-
-			String savedDate = driver.findElement(By.xpath(prisonDateFirstPart + i + prisonDateLastPart)).getAttribute("value");
-			String selectedItem = driver.findElement(By.xpath(prisonItemFirstPart + i + prisonSelectedItemLastPart)).getText();
-			String savedDescription = driver.findElement(By.xpath(prisonDescriptionFirstPart + i + prisonDescriptionLastPart)).getAttribute("value");
-			String savedQuantity = driver.findElement(By.xpath(prisonQuantityFirstPart + i + prisonQuantityLastPart)).getAttribute("value");
-
-
-			for (int j = 0; j < dates.length; j++) {
-				if (savedDate.equals(dates[j]) && selectedItem.equals(items[j]) && savedDescription.equals(descriptions[j]) && savedQuantity.equals(quantities[j]))
-					propertyFound[j] = true;
-			}
-		}
-
-		for (boolean result : propertyFound) {
-			if (!result) {
-				// returns false even if one of the properties were not found
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-
 	//edits Private Property found in 'PropertyPosition' position
 	public void editPrivateProperties(String PropertyPosition, String date, String item, String description, String quantity, String value) {
 		

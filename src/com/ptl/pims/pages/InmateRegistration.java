@@ -1,6 +1,9 @@
 package com.ptl.pims.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -110,22 +113,21 @@ public class InmateRegistration extends CommonMethods{
 	//case details tab
 	@FindBy(xpath = Constants.InmateRegistration_case_addnew)
 	public WebElement add_new;
-	@FindBy(xpath = Constants.InmateRegistration_case_casen)
-	public WebElement casen;
-	@FindBy(xpath = Constants.InmateRegistration_case_offense)
-	public WebElement offense;
-	@FindBy(xpath = Constants.InmateRegistration_case_offdescription)
-	public WebElement offdescription;
-	@FindBy(xpath = Constants.InmateRegistration_case_sentence)
-	public WebElement sentence;
-	@FindBy(xpath = Constants.InmateRegistration_case_description)
-	public WebElement description;
-	@FindBy(xpath = Constants.InmateRegistration_case_days)
-	public WebElement days;
-	@FindBy(xpath = Constants.InmateRegistration_case_fine)
-	public WebElement fine;
-	@FindBy(xpath = Constants.InmateRegistration_case_isactive)
-	public WebElement isactive;
+	@FindBy(xpath = Constants.InmateRegistration_CaseDetailsTable)
+	public WebElement Case_TabTableBody;
+	
+	private String caseFieldsCommonFirstPart = Constants.InmateRegistration_CaseFieldsCommonFirstPart;
+	private String caseNo_LastPart = Constants.InmateRegistration_CaseNo_LastPart;
+	private String offence_LastPart = Constants.InmateRegistration_Offence_LastPart;
+	private String offenceDescription_LastPart = Constants.InmateRegistration_OffenceDescription_LastPart;
+	private String sentenceType_LastPart = Constants.InmateRegistration_SentenceType_LastPart;
+	private String description_LastPart = Constants.InmateRegistration_Description_LastPart;
+	private String years_LastPart = Constants.InmateRegistration_Years_LastPart;
+	private String months_LastPart = Constants.InmateRegistration_Months_LastPart;
+	private String days_LastPart = Constants.InmateRegistration_Days_LastPart;
+	private String fineCharges_LastPart = Constants.InmateRegistration_FineCharges_LastPart;
+	private String isActive_LastPart = Constants.InmateRegistration_IsActive_LastPart;
+
 	
 	//Image Upload
 	@FindBy(xpath = Constants.InmateRegistration_RHSImage)
@@ -247,22 +249,51 @@ public class InmateRegistration extends CommonMethods{
 	}
 
 
-	public void doAddcaseDetailsOfInmate(String Casen, String Offense, String OffDescription, String Sentence, String Description, String Days, String Fine){
+	public void doAddcaseDetailsOfInmate(String CaseNo, String Offense, String OffDescription, String Sentence, String Description, String Day, String Month, 
+			String Year, String Fine){
 
 		tab_case.click();
-		add_new.click();
-		casen.sendKeys(Casen);
-		offense.sendKeys(Offense);
-		offdescription.sendKeys(OffDescription);
-		sentence.sendKeys(Sentence);
-		description.sendKeys(Description);
-		days.sendKeys(Days);
-		fine.sendKeys(Fine);
-		isactive.click();
 		
+		String[] CaseNos = CaseNo.split(",");
+		String[] Offenses = Offense.split(",");
+		String[] OffDescriptions = OffDescription.split(",");
+		String[] Sentences = Sentence.split(",");
+		String[] Descriptions = Description.split(",");		
+		String[] Years = Year.split(",");		
+		String[] Months = Month.split(",");		
+		String[] Days = Day.split(",");		
+		String[] Fines = Fine.split(",");		
+
+		int dataRows = initialRowCount(Case_TabTableBody);
+		
+		for(int i=0; i< CaseNos.length; i++){
+
+			add_new.click();			
+			int newDataRow = dataRows + i;	
+			
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + caseNo_LastPart)).sendKeys(CaseNos[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + offence_LastPart)).sendKeys(Offenses[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + offenceDescription_LastPart)).sendKeys(OffDescriptions[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + sentenceType_LastPart)).sendKeys(Sentences[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + description_LastPart)).sendKeys(Descriptions[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + years_LastPart)).sendKeys(Years[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + months_LastPart)).sendKeys(Months[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + days_LastPart)).sendKeys(Days[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + fineCharges_LastPart)).sendKeys(Fines[i]);
+			
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + isActive_LastPart)).click();
+			
+		}	
+
 	}
 	
 
+
+	private int initialRowCount(WebElement element) {
+		List<WebElement> rows = element.findElements(By.tagName("tr"));		
+		int size = rows.size();
+		return size;
+	}
 
 	public InmateRegistrationSelectPage clickButton() {
 		
