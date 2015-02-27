@@ -202,8 +202,8 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	public void doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings() throws Exception{
 		
 		try{
-			InmateCatagory.sendKeys("Un-Convicted");
-		 	CourtWarant.sendKeys("Colombo");
+			InmateCatagory.sendKeys("Child");
+	     	CourtWarant.sendKeys("Negombo");
 	     	AgeAddmission.sendKeys("20");
 			MealType.sendKeys("Diet");
 			BioMetric.sendKeys("Biometric Content");
@@ -301,16 +301,46 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		}
 	}
 	
-	
 	//PIMS-1190
-	public void checkAgeCatagoryIsAutoSelected(){
-		InmateCatagory.sendKeys("Un-Convicted");
-     	CourtWarant.sendKeys("Negombo");
-		AgeAddmission.sendKeys("20");
-		MealType.sendKeys("Diet");
-	    Assert.assertTrue(SelectedAgeCatagoryAsYoth.getText()=="Youth" , "Age catagory should be Youth");	
+	public String checkAgeCatagoryIsAutoSelected() throws Exception{	
+		try{
+			InmateCatagory.sendKeys("Un-Convicted");
+	     	CourtWarant.sendKeys("Negombo");
+			AgeAddmission.sendKeys("20");
+			MealType.sendKeys("Diet");
+			String selectedOption = new Select(driver.findElement(By.xpath(Constants.CreateAdmission_AgeCategory))).getFirstSelectedOption().getText();
+			return selectedOption;
+		}catch(Exception ex){
+			throw ex;
+		}
+		
+	 
 	}
 	
+	//PIMS-1198
+	public void checkUserCanUploadTheAllThreeImages() throws Exception{	
+			
+			try{
+				InmateCatagory.sendKeys("Child");
+		     	CourtWarant.sendKeys("Negombo");
+		     	AgeAddmission.sendKeys("25");
+				MealType.sendKeys("Diet");
+				NameWarrent.sendKeys(Name_As_Warrent);
+				OccurenceClassificatio.sendKeys("FO");
+				Thread.sleep(3000);
+				ImageRHSBrowse.sendKeys(RHS_Image_Path); 
+				Thread.sleep(3000);
+				ImageFrontBrowse.sendKeys(Front_Image_Path);
+				Thread.sleep(3000);
+				ImageLHSBrowse.sendKeys(LHS_Image_Path);
+			} catch(Exception ex){
+				
+				throw ex;
+			}
+			
+		}
+
+		
 	//PIMS-19
 	public void checkRegistrationNumberFormtForUnConvictedInamtes(){		
 		InmateCatagory.sendKeys("Un-Convicted");
@@ -327,35 +357,6 @@ public class CreateNewAdmissionPage extends CommonMethods {
      
 	}
 		
-	//PIMS-1198
-	public void checkUserCanUploadTheAllThreeImages() throws Exception{	
-		
-		try{
-			InmateCatagory.sendKeys("Convicted");
-	     	CourtWarant.sendKeys("Negombo");
-			MealType.sendKeys("Diet");
-			NameWarrent.sendKeys(Name_As_Warrent);
-			OccurenceClassificatio.sendKeys("FO");
-			Thread.sleep(3000);
-			ImageRHSBrowse.sendKeys(RHS_Image_Path); 
-			Thread.sleep(3000);
-			ImageFrontBrowse.sendKeys(Front_Image_Path);
-			Thread.sleep(3000);
-			ImageLHSBrowse.sendKeys(LHS_Image_Path);
-			//Verify RHS Image is available
-			Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[1]")),"RHS image not uploaded");
-			//Verify Front Image is available
-			Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[2]")) ,"Front image not uploaded");
-			//Verify LHS Image is available
-			Assert.assertTrue(checkElementIsPresent(driver, By.xpath("(//img[@alt='Format PNG.png'])[3]")),"LHS image not uploaded");
-		} catch(Exception ex){
-			
-			throw ex;
-		}
-		
-	}
-
-
 	public NewAdmissionPage doAdmission() throws Exception {
 		try{
 			SaveInamteAdmissionButton.click();

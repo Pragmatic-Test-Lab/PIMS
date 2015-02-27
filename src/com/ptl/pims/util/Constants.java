@@ -206,7 +206,14 @@ public class Constants {
 	
 	//Edit Admission Page
 	public static final String EditAdmission_SuccessMessageText = "Saved .* successfully";
-
+	//Verify RHS Image is available
+	public static final String EditAdmission_RHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[1]";
+	//Verify Front Image is available
+	public static final String EditAdmission_Front_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[2]";
+	//Verify LHS Image is available
+	public static final String EditAdmission_LHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[3]";
+	
+		
 	// Allocate Location Page
 	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
 	public static final String AllocateLocation_ExpectedHeader = "Allocate Location";
