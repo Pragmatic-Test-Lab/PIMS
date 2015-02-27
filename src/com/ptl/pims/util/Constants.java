@@ -4,15 +4,18 @@ package com.ptl.pims.util;
 public class Constants {
 	// Registration Page:
 	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
-	public static final String InmateRegistration_FrontImage = "";
-	public static final String InmateRegistration_RHSImage = "";
-	public static final String InmateRegistration_LHSImage = "";
-	public static final String InmateRegistration_ImageRHSBrowse = "";
-	public static final String InmateRegistration_ImageRHSRemove = "";
-	public static final String InmateRegistration_ImageFrontBrowse = "";
-	public static final String InmateRegistration_ImageFrontRemove = "";
-	public static final String InmateRegistration_ImageLHSBrowse = "";
-	public static final String InmateRegistration_ImageLHSRemove = "";
+	public static final String InmateRegistration_FrontImage = ".//img[@title='Front Image']";
+	public static final String InmateRegistration_RHSImage = ".//img[@title='Right Hand Side Image']";
+	public static final String InmateRegistration_LHSImage = ".//img[@title='Left Hand Side Image']";
+	public static final String InmateRegistration_DefaultFrontImage = "/PIMS3/web/../uploads/defaults/front.jpg";
+	public static final String InmateRegistration_DefaultRHSImage = "/PIMS3/web/../uploads/defaults/right.jpg";
+	public static final String InmateRegistration_DefaultLHSImage = "/PIMS3/web/../uploads/defaults/left.jpg";
+	public static final String InmateRegistration_ImageRHSBrowse = ".//*[@id='admission-image_rhs']";
+	public static final String InmateRegistration_ImageRHSRemove = ".//div[@class='form-group field-admission-image_rhs']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageFrontBrowse = ".//*[@id='admission-image_front']";
+	public static final String InmateRegistration_ImageFrontRemove = ".//div[@class='form-group field-admission-image_front']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageLHSBrowse = ".//*[@id='admission-image_lhs']";
+	public static final String InmateRegistration_ImageLHSRemove = ".//div[@class='form-group field-admission-image_lhs']/descendant::div[@class='close fileinput-remove']";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";

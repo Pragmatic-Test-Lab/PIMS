@@ -128,14 +128,20 @@ public class InmateRegistration extends CommonMethods{
 	public WebElement isactive;
 	
 	//Image Upload
+	@FindBy(xpath = Constants.InmateRegistration_RHSImage)
+	WebElement ImageRHS;
 	@FindBy(xpath = Constants.InmateRegistration_ImageRHSBrowse)
 	WebElement ImageRHSBrowse;
 	@FindBy(xpath = Constants.InmateRegistration_ImageRHSRemove)
 	WebElement ImageRHSRemove;
+	@FindBy(xpath = Constants.InmateRegistration_FrontImage)
+	WebElement ImageFront;
 	@FindBy(xpath = Constants.InmateRegistration_ImageFrontBrowse)
 	WebElement ImageFrontBrowse;
 	@FindBy(xpath = Constants.InmateRegistration_ImageFrontRemove)
 	WebElement ImageFrontRemove;
+	@FindBy(xpath = Constants.InmateRegistration_LHSImage)
+	WebElement ImageLHS;
 	@FindBy(xpath = Constants.InmateRegistration_ImageLHSBrowse)
 	WebElement ImageLHSBrowse;
 	@FindBy(xpath = Constants.InmateRegistration_ImageLHSRemove)
@@ -156,12 +162,9 @@ public class InmateRegistration extends CommonMethods{
 	//adds/edits inmate photos
 	public void doAddInmatePhotos(){
 
-		//check if images are present and remove before upload	
-	 	if(checkElementIsPresent(driver, By.xpath(Constants.InmateRegistration_FrontImage))) 
+		//removing present images
 		ImageFrontRemove.click();
-		if(checkElementIsPresent(driver, By.xpath(Constants.InmateRegistration_RHSImage))) 
 		ImageRHSRemove.click();
-		if(checkElementIsPresent(driver, By.xpath(Constants.InmateRegistration_LHSImage))) 
 		ImageLHSRemove.click();		
 		
 		//adding new photos
@@ -175,7 +178,7 @@ public class InmateRegistration extends CommonMethods{
 	//checks if front photo uploaded in admission is available in registration
 	public boolean IsFrontPhotoAvailable(){
 
-		if(checkElementIsPresent(driver, By.xpath(Constants.InmateRegistration_FrontImage)))
+		if(!ImageFront.getAttribute("src").equals(Constants.InmateRegistration_DefaultFrontImage))
 			return true;
 
 		return false;
