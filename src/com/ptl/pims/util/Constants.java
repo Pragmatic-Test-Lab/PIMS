@@ -120,7 +120,8 @@ public class Constants {
 	public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
 	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;
 	public static final String NewAdmission_ExpectedPageHeader = "Create Admission";
-	public static final String CreateAdmission_SuccessMessage = "";
+	public static final String CreateAdmission_Allert = "//*[@class='alert alert-success']";
+	public static final String CreateAdmission_SuccessMessageText = "Created .* successfully";
 
 
 	// Create Admission Page
@@ -186,9 +187,10 @@ public class Constants {
 	public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "(//input[contains(@name, 'psc_date_of_birth')])[1]";
 
 	public static final String CreateAdmission_HistoryTab = "//a[text() = 'History']";
-	public static final String Create_Admission = "//button[text() = 'Create']";
-	public static final String Update_Admission = "//button[text() = 'Update']";
+	public static final String Create_Admission_CreateButton = "//button[text() = 'Create']";
+	public static final String Update_Admission_UpdateButton = "//button[text() = 'Update']";
 	public static final String Authorize_Admission = "//button[text() = 'Authorize']";
+	
 	
 
 	// Allocate Location Page
