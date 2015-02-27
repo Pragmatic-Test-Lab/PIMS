@@ -40,7 +40,7 @@ public class AllocateLocationTest extends TestBase {
 
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();		
 		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
-		//Assert.assertTrue(allocationPage.validateInmateData(registrationNo, ""), "Inmate data is invalid");
+		Assert.assertTrue(allocationPage.validateInmateData(registrationNo, null), "Inmate data is invalid");
 
 	}
 	

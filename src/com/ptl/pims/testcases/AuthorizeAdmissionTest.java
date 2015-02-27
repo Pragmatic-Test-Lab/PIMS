@@ -17,7 +17,8 @@ public class AuthorizeAdmissionTest extends TestBase {
 
 		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(registrationNo,"", "");	
 		AuthorizeAdmissionPage authorizeAdmissionPage =  authorizeAdmissionSelectPage.clickFirstInmate();
-		authorizeAdmissionPage.doAuthorizeAdmission();
+		
+		authorizeAdmissionSelectPage = authorizeAdmissionPage.doAuthorizeAdmission();
 	}
 	
 }

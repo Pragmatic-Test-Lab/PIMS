@@ -29,7 +29,7 @@ public class AllocateLocationPage {
 	
 	public boolean validateInmateData(String RegNo, String Name) {
 
-		if (!RegNo.equals(RegistrationNum.getText()) || !Name.equals(InmateName.getText()))
+		if ((!RegNo.equals(RegistrationNum.getText()) && !RegNo.equals("")) || (!Name.equals(InmateName.getText()) && !Name.equals("")))
 			return false;
 
 		return true;

@@ -1,11 +1,21 @@
 package com.ptl.pims.util;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class Constants {
 	// Registration Page:
 	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
+	public static final String InmateRegistration_FrontImage = ".//img[@title='Front Image']";
+	public static final String InmateRegistration_RHSImage = ".//img[@title='Right Hand Side Image']";
+	public static final String InmateRegistration_LHSImage = ".//img[@title='Left Hand Side Image']";
+	public static final String InmateRegistration_DefaultFrontImage = "/PIMS3/web/../uploads/defaults/front.jpg";
+	public static final String InmateRegistration_DefaultRHSImage = "/PIMS3/web/../uploads/defaults/right.jpg";
+	public static final String InmateRegistration_DefaultLHSImage = "/PIMS3/web/../uploads/defaults/left.jpg";
+	public static final String InmateRegistration_ImageRHSBrowse = ".//*[@id='admission-image_rhs']";
+	public static final String InmateRegistration_ImageRHSRemove = ".//div[@class='form-group field-admission-image_rhs']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageFrontBrowse = ".//*[@id='admission-image_front']";
+	public static final String InmateRegistration_ImageFrontRemove = ".//div[@class='form-group field-admission-image_front']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageLHSBrowse = ".//*[@id='admission-image_lhs']";
+	public static final String InmateRegistration_ImageLHSRemove = ".//div[@class='form-group field-admission-image_lhs']/descendant::div[@class='close fileinput-remove']";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
 	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
@@ -192,6 +202,7 @@ public class Constants {
 	public static final String Authorize_Admission = "//button[text() = 'Authorize']";
 	
 	//Edit Admission Page
+	public static final String EditAdmission_SuccessMessageText = "Saved .* successfully";
 	//Verify RHS Image is available
 	public static final String EditAdmission_RHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[1]";
 	//Verify Front Image is available
@@ -199,9 +210,7 @@ public class Constants {
 	//Verify LHS Image is available
 	public static final String EditAdmission_LHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[3]";
 	
-	
-
-
+		
 	// Allocate Location Page
 	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
 	public static final String AllocateLocation_ExpectedHeader = "Allocate Location";

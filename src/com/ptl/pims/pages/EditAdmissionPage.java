@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
@@ -53,7 +54,7 @@ public class EditAdmissionPage extends CommonMethods{
 	
 	
 	//PIMS-1194
-	public void doEditAdmition(){
+	public EditAdmissionSelectPage doEditAdmition(){
 		
      	InmateCatagory.sendKeys("Child");
      	CourtWarant.sendKeys("Colombo");
@@ -66,7 +67,9 @@ public class EditAdmissionPage extends CommonMethods{
 		OccurenceClassificatio.sendKeys("RC");
 		
 		UpdateInamteAdmissionButton.click();
-        Assert.assertTrue(EditConfirmMessage.isDisplayed()== true, "Adimssion Eidt Failed");	
+		
+		EditAdmissionSelectPage editAdmissionSelectPage = PageFactory.initElements(driver, EditAdmissionSelectPage.class);
+		return editAdmissionSelectPage;	
 	}
 	
 	public boolean getRHSImageBox() throws Exception{

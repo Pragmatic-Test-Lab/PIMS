@@ -1,13 +1,15 @@
 package com.ptl.pims.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
-public class InmateRegistration {
+public class InmateRegistration extends CommonMethods{
 
 	WebDriver driver ;
 
@@ -125,7 +127,29 @@ public class InmateRegistration {
 	@FindBy(xpath = Constants.InmateRegistration_case_isactive)
 	public WebElement isactive;
 	
-
+	//Image Upload
+	@FindBy(xpath = Constants.InmateRegistration_RHSImage)
+	WebElement ImageRHS;
+	@FindBy(xpath = Constants.InmateRegistration_ImageRHSBrowse)
+	WebElement ImageRHSBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageRHSRemove)
+	WebElement ImageRHSRemove;
+	@FindBy(xpath = Constants.InmateRegistration_FrontImage)
+	WebElement ImageFront;
+	@FindBy(xpath = Constants.InmateRegistration_ImageFrontBrowse)
+	WebElement ImageFrontBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageFrontRemove)
+	WebElement ImageFrontRemove;
+	@FindBy(xpath = Constants.InmateRegistration_LHSImage)
+	WebElement ImageLHS;
+	@FindBy(xpath = Constants.InmateRegistration_ImageLHSBrowse)
+	WebElement ImageLHSBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageLHSRemove)
+	WebElement ImageLHSRemove;
+	
+	String RHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
+	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
+	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
 	
 	public InmateRegistration(WebDriver dr){		
 		driver = dr;
@@ -135,6 +159,30 @@ public class InmateRegistration {
 		return HeaderField.getText();
 	}
 
+	//adds/edits inmate photos
+	public void doAddInmatePhotos(){
+
+		//removing present images
+		ImageFrontRemove.click();
+		ImageRHSRemove.click();
+		ImageLHSRemove.click();		
+		
+		//adding new photos
+		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
+
+
+	}
+	
+	//checks if front photo uploaded in admission is available in registration
+	public boolean IsFrontPhotoAvailable(){
+
+		if(!ImageFront.getAttribute("src").equals(Constants.InmateRegistration_DefaultFrontImage))
+			return true;
+
+		return false;
+	}
 
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 
 			String cllName2, String addLine1, String addLine2, String postOff, String postCode,

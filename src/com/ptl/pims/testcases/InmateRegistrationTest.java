@@ -36,9 +36,23 @@ public class InmateRegistrationTest extends TestBase {
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		inmateRegistrationSelect  = topMenu.goToInmateRegistration();
 		
-		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("B/00001/10/CSC/2015","" ,"");
+		inmateRegistrationSelect = inmateRegistrationSelect.doSearch("10045/10/CBS/2015","" ,"");
 		inmateRegistration = inmateRegistrationSelect.clickFirstInmate(); 
 		APPLICATION_LOGS.debug("Reached Allocate Location Page");
+
+	}
+	
+	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-389
+	public void checkInmateFrontImage() {
+		
+		Assert.assertTrue(inmateRegistration.IsFrontPhotoAvailable(), "Front Photo Not Found");
+
+	}
+	
+	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-630, PIMS-631, PIMS-632
+	public void enterInmateImages() {
+		
+		inmateRegistration.doAddInmatePhotos();
 
 	}
 	
