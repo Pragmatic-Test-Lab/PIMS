@@ -35,8 +35,8 @@ public class PropertyManagementEditTest extends TestBase {
 		
 	}
 	
-	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData")
-	public void clickInmateLink(Hashtable<String, String> data) {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage")
+	public void clickInmateLink() {
 		
 		managePropertySelectInmate = managePropertySelectInmate.doSearch(registrationNo,"" ,"");
 
