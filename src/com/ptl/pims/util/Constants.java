@@ -235,7 +235,7 @@ public class Constants {
 	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
 	public static final String PostRegistration_PageTitleText = "Post Registration";
 	public static final String PostRegistration_SuccessMessage = "//div[@class='alert alert-success']";
-	public static final String PostRegistration_SuccessMessageText = "Saved successfully";
+	public static final String PostRegistration_SuccessMessageText = "Saved .* successfully";
 	public static final String PostRegistration_SearchByRegistrationNumber = "//input[contains(@name,'adm_registration_no')]";
 	public static final String PostRegistration_SearchByBiometric = "//input[contains(@name,'adm_biometric_id')]";
 	public static final String PostRegistration_SearchByWarrantName = "//input[contains(@name,'adm_name_as_in_warrant')]";
@@ -312,16 +312,10 @@ public class Constants {
 	
 	
 	//Post Registration Authorize
-	public static final String PostRegAuthorize_PageTitle = "//h1[text()='Post Registration']";
 	public static final String PostRegAuthorize_PageTitleText = "Post Registration Authorize";
-	public static final String PostRegAuthorize_SuccessMessage = "//div[@class='alert alert-success']";
 	public static final String PostRegAuthorize_SuccessMessageText = "Saved successfully";
-	public static final String PostRegAuthorize_SearchBy_RegistrationNumber = "//input[@name='PostRegistrationAuthorizationSearch[adm_registration_no]']";
-	public static final String PostRegAuthorize_SearchBy_Biometric = "//input[@name='PostRegistrationAuthorizationSearch[adm_biometric_id]']";
-	public static final String PostRegAuthorize_SearchBy_WarrantName = "//input[@name='PostRegistrationAuthorizationSearch[adm_name_as_in_warrant]']";
 	public static final String PostRegAuthorize_SearchBy_OtherName = "//input[@name='PostRegistrationAuthorizationSearch[adm_other_name1]']";
 	public static final String PostRegAuthorize_SearchBy_OrientationDate = "//input[@name='PostRegistrationAuthorizationSearch[adm_date_of_orientation]']";
-	public static final String PostRegAuthorize_FirstAuthorizationIcon = "(.//a[@title='Authorize This Person']/span)[1]";
 	
 	
 	//Authorize Post Registration User page
@@ -439,7 +433,7 @@ public class Constants {
 
 	
 	// Inmate Search Pages
-	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
+	public static final String SelectInmate_Header = ".//*[@class='breadcrumb']/following::h1";
 	public static final String InmateSearch_RegNoSearchField = ".//*[contains(@name,'Search[adm_registration_no]')]";
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
