@@ -31,16 +31,13 @@ public class UpdatePostRegistrationPage {
 	WebElement education_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAddNew)
 	WebElement addNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Institute)
-	WebElement institute;
+
 	String instituteFirstPart=Constants.UpdatePostRegistration_InstituteFirstPart;	
 	String instituteLastPart=Constants.UpdatePostRegistration_InstituteLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_QualificationType)
-	WebElement qualificationType;
+
 	String qualificationTypeFirstPart=Constants.UpdatePostRegistration_QualificationTypeFirstPart;
 	String qualificationTypeLastPart=Constants.UpdatePostRegistration_QualificationTypeLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Language)
-	WebElement language;
+
 	String languageFirstPart = Constants.UpdatePostRegistration_LanguageFirstPart;
 	String languageLastPart=Constants.UpdatePostRegistration_LanguageLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAction)
@@ -51,24 +48,19 @@ public class UpdatePostRegistrationPage {
 	WebElement employer_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAddNew)
 	WebElement employmentAddNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Employer)
-	WebElement employer;
+
 	String employerFirstPart=Constants.UpdatePostRegistration_EmployerFirstPart;	
 	String employerLastPart=Constants.UpdatePostRegistration_EmployerLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_OrganizationalType)
-	WebElement organizationalType;
+
 	String organizationalTypeFirstPart=Constants.UpdatePostRegistration_OrganizationalTypeFirstPart;	
 	String organizationalTypeLastPart=Constants.UpdatePostRegistration_OrganizationalTypeLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Position)
-	WebElement position;
+
 	String positionFirstPart=Constants.UpdatePostRegistration_PositionFirstPart;	
 	String positionLastPart=Constants.UpdatePostRegistration_PositionLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_DateFrom)
-	WebElement dateFrom;
+
 	String dateFromFirstPart=Constants.UpdatePostRegistration_DateFromFirstPart;	
 	String dateFromLastPart=Constants.UpdatePostRegistration_DateFromLastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_DateTo)
-	WebElement dateTo;
+
 	String dateToFirstPart=Constants.UpdatePostRegistration_DateToFirstPart;	
 	String dateToLastPart=Constants.UpdatePostRegistration_DateToLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAction)
@@ -143,13 +135,7 @@ public class UpdatePostRegistrationPage {
 		return ActualDefaultStatus;
 		
 	}	
-	
-	
-	public String getExpectedEducationalQualificationTabDefaultStatus(){
-		String ExpectedDefaultStatus = Constants.UpdatePostRegistration_EducationalQualificationTabStatus;
-		return ExpectedDefaultStatus;
-		
-	}
+
 	
 	
 	public void EnterGeneralData(String OrientationProgram, String CurrentPrison, String PhotoRight, String PhotoFront, String PhotoLeft){
@@ -232,19 +218,8 @@ public class UpdatePostRegistrationPage {
 			} catch (Throwable t) {
 				// TODO Auto-generated catch block
 				t.printStackTrace();
-			}
-			
-			
-		}
-	
-		
-		employer.sendKeys(Employer);
-		organizationalType.sendKeys(OrganizationalType);
-		position.sendKeys(Position);
-		dateFrom.sendKeys(DateFrom);
-		dateTo.sendKeys(DateTo);
-		
-		
+			}	
+		}		
 	}
 	
 	

@@ -11,6 +11,7 @@ import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.PostRegistrationPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.pages.UpdatePostRegistrationPage;
+import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
 public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
@@ -33,7 +34,7 @@ public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
 		APPLICATION_LOGS.debug("Going to Update Post Registration Page");		
 			
 		Assert.assertEquals(updatePostRegPage.getActualEducationalQualificationTabDefaultStatus(), 
-				updatePostRegPage.getExpectedEducationalQualificationTabDefaultStatus(), "Default Tab is not the Educational Qualification");
+				Constants.UpdatePostRegistration_EducationalQualificationTabStatus, "Default Tab is not the Educational Qualification");
 		
 
 		APPLICATION_LOGS.debug("Educational Qualification tab is the default tab");
