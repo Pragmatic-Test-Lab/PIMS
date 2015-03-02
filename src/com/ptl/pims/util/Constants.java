@@ -453,6 +453,16 @@ public class Constants {
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
 	public static final String AuthorizeRegistration_SuccessMessageText = "Saved .* successfully";
 	
+	
+	//Calendar Popup
+	public static final String CalendarInputField = "//input[contains(@placeholder,'Select date')]";
+	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
+	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
+	public static final String CalendarPopup_MonthYearText_LastPart = "'])[2]";
+	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";	
+	public static final String CalendarPopup_DateText_FirstPart = "//td[text()='";
+	public static final String CalendarPopup_DateText_LastPart = "']";
+	
 
 
 }
