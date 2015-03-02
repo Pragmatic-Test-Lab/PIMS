@@ -1,6 +1,7 @@
 package com.ptl.pims.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -388,6 +389,55 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		String RegistrationNumber = RegNumber.getAttribute("value");
 		System.out.println("Inmate Registration Number : " + RegistrationNumber);
 		return RegistrationNumber;
+	}
+	
+	
+	public String getExpectedAutoSelectedAgeCategory(String AdmissionAge){		
+		AgeAddmission.clear();
+		AgeAddmission.sendKeys(AdmissionAge);
+		AgeAddmission.sendKeys(Keys.TAB);
+		
+		int AgeAtAdmission=0;
+		String ExpectedAgeCategory;
+		try {
+			Thread.sleep(2000);
+			String EnteredAge = AgeAddmission.getAttribute("value");
+			AgeAtAdmission = Integer.parseInt(EnteredAge);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		if(AgeAtAdmission<6){
+			ExpectedAgeCategory = "Preschool";
+		} else if(AgeAtAdmission>5 && AgeAtAdmission<17){
+			ExpectedAgeCategory = "Juvenile";
+		} else if(AgeAtAdmission>16 && AgeAtAdmission<23){
+			ExpectedAgeCategory = "Youth";
+		} else {
+			ExpectedAgeCategory = "Adult";
+		}
+		
+		return ExpectedAgeCategory;
+		
+	}
+	
+	
+	public String getActualAutoSelectedAgeCategory(){
+		String ActualAgeCategory = AgeCatagory.getAttribute("value");
+		
+		if(ActualAgeCategory.equals("1")){
+			ActualAgeCategory = "Adult";
+		} else if(ActualAgeCategory.equals("3")){
+			ActualAgeCategory = "Youth";
+		}  else if(ActualAgeCategory.equals("4")){
+			ActualAgeCategory = "Juvenile";
+		} else{
+			ActualAgeCategory = "Preschool";
+		}
+		
+		return ActualAgeCategory;
 	}
 
 }

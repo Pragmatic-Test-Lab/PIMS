@@ -10,15 +10,18 @@ import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.TestUtil;
 
 public class PostRegistrationTest extends TestBase{
+	
+	HomePage landingPage = null;
 		
 	
 	@Test(dataProvider = "getPostRegistrationData")
 	public void SearchAnInmate(Hashtable<String, String> data) {
+		
 
 		if (!TestUtil.isTestCaseRunmodeYes("PostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		HomePage landingPage = returnToHomePage();
+		landingPage = returnToHomePage();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");

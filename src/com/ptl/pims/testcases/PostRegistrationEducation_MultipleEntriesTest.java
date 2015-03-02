@@ -14,6 +14,8 @@ import com.ptl.pims.pages.UpdatePostRegistrationPage;
 import com.ptl.pims.util.TestUtil;
 
 public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
+	
+	HomePage landingPage = null;
 
 	@Test(dataProvider = "getEducationMultipleEntriesData")
 	public void VerifyMultipleEntries(Hashtable<String, String> data) {
@@ -21,7 +23,7 @@ public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		HomePage landingPage = returnToHomePage();
+		landingPage = returnToHomePage();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");
