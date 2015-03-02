@@ -39,7 +39,7 @@ HomePage landingPage = null;
 		postRegPage = updatePostRegPage.ClickUpdateButton();
 		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());
 		APPLICATION_LOGS.debug("Expected Message: "+ postRegPage.getExpectedSuccessMessage());
-		Assert.assertTrue(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple child entries");		
+		Assert.assertTrue(postRegPage.getActualSuccessMessage().matches(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}
