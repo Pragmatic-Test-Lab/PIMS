@@ -52,8 +52,7 @@ public class PostRegistrationPage {
 	
 	public String getActualSuccessMessage(){
 		String ActualSuccessMessage = successMessage.getText();
-		return ActualSuccessMessage;
-		
+		return ActualSuccessMessage;		
 	}
 	
 	

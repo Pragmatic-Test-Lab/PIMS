@@ -38,7 +38,7 @@ HomePage landingPage = null;
 		postRegPage = updatePostRegPage.ClickUpdateButton();
 		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());
 		APPLICATION_LOGS.debug("Expected Message: "+ postRegPage.getExpectedSuccessMessage());
-		Assert.assertTrue(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple employment entries");		
+		Assert.assertTrue(postRegPage.getActualSuccessMessage().matches(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple employment entries");	
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}

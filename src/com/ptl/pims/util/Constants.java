@@ -235,7 +235,7 @@ public class Constants {
 	public static final String PostRegistration_PageTitle = "//h1[text()='Post Registration']";
 	public static final String PostRegistration_PageTitleText = "Post Registration";
 	public static final String PostRegistration_SuccessMessage = "//div[@class='alert alert-success']";
-	public static final String PostRegistration_SuccessMessageText = "Saved successfully";
+	public static final String PostRegistration_SuccessMessageText = "Saved .* successfully";
 	public static final String PostRegistration_SearchByRegistrationNumber = "//input[contains(@name,'adm_registration_no')]";
 	public static final String PostRegistration_SearchByBiometric = "//input[contains(@name,'adm_biometric_id')]";
 	public static final String PostRegistration_SearchByWarrantName = "//input[contains(@name,'adm_name_as_in_warrant')]";
@@ -252,33 +252,25 @@ public class Constants {
 	public static final String UpdatePostRegistration_EducationalTBody = "//*[@id='educational_qualification_grid']/tbody";
 	public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
 	public static final String UpdatePostRegistration_EducationalQualificationAddNew = "(.//button[text()='Add New'])[1]";
-	public static final String UpdatePostRegistration_Institute = "//*[@id='educationalqualification-1-equ_institute']";
 	public static final String UpdatePostRegistration_InstituteFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_InstituteLastPart = "-equ_institute']";
-	public static final String UpdatePostRegistration_QualificationType = "//*[@id='educationalqualification-1-equ_qulification_type_id']";
 	public static final String UpdatePostRegistration_QualificationTypeFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_QualificationTypeLastPart = "-equ_qulification_type_id']";
-	public static final String UpdatePostRegistration_Language = "//*[@id='educationalqualification-1-equ_language_id']";
 	public static final String UpdatePostRegistration_LanguageFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
 	public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";
 	public static final String UpdatePostRegistration_EmployerTBody = "//*[@id='employment_grid']/tbody";
 	public static final String UpdatePostRegistration_EmploymentTabStatus = "true";
-		public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
-	public static final String UpdatePostRegistration_Employer = "//*[@id='employment-0-emp_employer']";
+	public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
 	public static final String UpdatePostRegistration_EmployerFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_EmployerLastPart = "-emp_employer']";
-	public static final String UpdatePostRegistration_OrganizationalType = "//*[@id='employment-0-emp_organizational_type_id']";
 	public static final String UpdatePostRegistration_OrganizationalTypeFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_OrganizationalTypeLastPart = "-emp_organizational_type_id']";
-	public static final String UpdatePostRegistration_Position = "//*[@id='employment-0-emp_position']";
 	public static final String UpdatePostRegistration_PositionFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_PositionLastPart = "-emp_position']";
-	public static final String UpdatePostRegistration_DateFrom = "//*[@id='employment-0-emp_date_from']";
 	public static final String UpdatePostRegistration_DateFromFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_DateFromLastPart = "-emp_date_from']";
-	public static final String UpdatePostRegistration_DateTo = "//*[@id='employment-0-emp_date_to']";
 	public static final String UpdatePostRegistration_DateToFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_DateToLastPart = "-emp_date_to']";
 	public static final String UpdatePostRegistration_EmploymentAction = "//a[contains(@onclick,'removeemployment')]";
@@ -295,25 +287,14 @@ public class Constants {
 	public static final String UpdatePostRegistration_Income = "//*[@id='familydata-1-fda_income']";
 	public static final String UpdatePostRegistration_FamilyAction = "//a[contains(@onclick,'removefamily')]";
 	public static final String UpdatePostRegistration_ChildTab = "//a[text()='Child Data']";
-	public static final String UpdatePostRegistration_ChildTabStatus = "true";
 	public static final String UpdatePostRegistration_ChildAddNew = "(.//button[text()='Add New'])[4]";
 	public static final String UpdatePostRegistration_ChildName = "//*[@id='childdata-1-cda_name']";
-	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
 	public static final String UpdatePostRegistration_ChildAddress1 = "//*[@id='childdata-1-cda_address_line1']";
 	public static final String UpdatePostRegistration_ChildAddress2 = "//*[@id='childdata-1-cda_address_line2']";
 	public static final String UpdatePostRegistration_ChildAddress3 = "//*[@id='childdata-1-cda_address_line3']";
-	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
 	public static final String UpdatePostRegistration_ChildAge = "//*[@id='childdata-1-cda_age']";
-	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
 	public static final String UpdatePostRegistration_ChildSchool = "//*[@id='childdata-1-cda_school']";
-	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
 	public static final String UpdatePostRegistration_ChildGrade = "//*[@id='childdata-1-cda_grade']";
-	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
 	public static final String UpdatePostRegistration_ChildSchoolAddress1 = "//*[@id='childdata-1-cda_school_address_line1']";
 	public static final String UpdatePostRegistration_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
 	public static final String UpdatePostRegistration_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
@@ -323,16 +304,10 @@ public class Constants {
 	
 	
 	//Post Registration Authorize
-	public static final String PostRegAuthorize_PageTitle = "//h1[text()='Post Registration']";
 	public static final String PostRegAuthorize_PageTitleText = "Post Registration Authorize";
-	public static final String PostRegAuthorize_SuccessMessage = "//div[@class='alert alert-success']";
 	public static final String PostRegAuthorize_SuccessMessageText = "Saved successfully";
-	public static final String PostRegAuthorize_SearchBy_RegistrationNumber = "//input[@name='PostRegistrationAuthorizationSearch[adm_registration_no]']";
-	public static final String PostRegAuthorize_SearchBy_Biometric = "//input[@name='PostRegistrationAuthorizationSearch[adm_biometric_id]']";
-	public static final String PostRegAuthorize_SearchBy_WarrantName = "//input[@name='PostRegistrationAuthorizationSearch[adm_name_as_in_warrant]']";
 	public static final String PostRegAuthorize_SearchBy_OtherName = "//input[@name='PostRegistrationAuthorizationSearch[adm_other_name1]']";
 	public static final String PostRegAuthorize_SearchBy_OrientationDate = "//input[@name='PostRegistrationAuthorizationSearch[adm_date_of_orientation]']";
-	public static final String PostRegAuthorize_FirstAuthorizationIcon = "(.//a[@title='Authorize This Person']/span)[1]";
 	
 	
 	//Authorize Post Registration User page
@@ -401,7 +376,18 @@ public class Constants {
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
 	public static final String AuthorizePostRegUserPage_ChildAction = "//a[contains(@onclick,'removechild')]";
-
+	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
+	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
+	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
+	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
+	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
+	public static final String UpdatePostRegistration_ChildTabStatus = "true";
+	
 	public static final String AuthorizePostRegUserPage_Authorize = "//button[text()='Authorize']";
 		
 	// Allocate Location Page
@@ -450,7 +436,7 @@ public class Constants {
 
 	
 	// Inmate Search Pages
-	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
+	public static final String SelectInmate_Header = ".//*[@class='breadcrumb']/following::h1";
 	public static final String InmateSearch_RegNoSearchField = ".//*[contains(@name,'Search[adm_registration_no]')]";
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
@@ -463,6 +449,16 @@ public class Constants {
 	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
 	public static final String AuthorizeRegistration_SuccessMessageText = "Saved .* successfully";
+	
+	
+	//Calendar Popup
+	public static final String CalendarInputField = "//input[contains(@placeholder,'Select date')]";
+	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
+	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
+	public static final String CalendarPopup_MonthYearText_LastPart = "'])[2]";
+	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";	
+	public static final String CalendarPopup_DateText_FirstPart = "//td[text()='";
+	public static final String CalendarPopup_DateText_LastPart = "']";
 	
 
 

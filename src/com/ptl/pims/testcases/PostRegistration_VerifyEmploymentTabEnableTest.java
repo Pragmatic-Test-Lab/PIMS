@@ -9,13 +9,11 @@ import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.pages.UpdatePostRegistrationPage;
 
 public class PostRegistration_VerifyEmploymentTabEnableTest extends TestBase {
-	HomePage landingPage = null;
-	
-	
+
 	@Test
 	public void VerifyEmploymentTabEnable() {
 		
-		landingPage = returnToHomePage();
+		HomePage landingPage = returnToHomePage();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");
