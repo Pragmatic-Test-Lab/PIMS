@@ -32,8 +32,8 @@ public class PropertyManagementNewTest extends TestBase {
 		Assert.assertEquals(managePropertySelectInmate.getHeader(), Constants.PropertyManagement_ExpectedHeader, "Could not reach Property Management");
 	}
 	
-	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getPropertyData")
-	public void clickInmateLink(Hashtable<String, String> data) {
+	@Test(dependsOnMethods = "GoToAllocateLocationPage")
+	public void clickInmateLink() {
 		
 		managePropertySelectInmate = managePropertySelectInmate.doSearch(registrationNo,"", "");
 

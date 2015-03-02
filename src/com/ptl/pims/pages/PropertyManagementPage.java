@@ -62,6 +62,8 @@ public class PropertyManagementPage {
 	//adds private property details
 	public void addPrivateProperties(String date, String item, String description, String quantity, String value){
 		
+		CalendarPopup dateSelecter = new CalendarPopup(driver);
+		
 		//click Private Property Tab
 		Private_Tab.click();
 
@@ -79,7 +81,7 @@ public class PropertyManagementPage {
 			
 			int newDataRow = dataRows + i;	
 			
-			driver.findElement(By.xpath(privateDateFirstPart + newDataRow + privateDateLastPart)).sendKeys(dates[i] + Keys.ENTER);
+			dateSelecter.selectDate(driver.findElement(By.xpath(privateDateFirstPart + newDataRow + privateDateLastPart)), dates[i]);
 			driver.findElement(By.xpath(privateItemFirstPart + newDataRow + privateItemLastPart)).sendKeys(items[i]);
 			driver.findElement(By.xpath(privateDescriptionFirstPart + newDataRow + privateDescriptionLastPart)).sendKeys(descriptions[i]);
 			driver.findElement(By.xpath(privateQuantityFirstPart + newDataRow + privateQuantityLastPart)).sendKeys(quantities[i]);
@@ -91,6 +93,8 @@ public class PropertyManagementPage {
 	//adds prison property details
 	public void addPrisonProperties(String date, String item, String description, String quantity){
 
+		CalendarPopup dateSelecter = new CalendarPopup(driver);
+		
 		//click Prison Property Tab
 		Prison_Tab.click();
 
@@ -99,26 +103,26 @@ public class PropertyManagementPage {
 		String[] descriptions = description.split(",");
 		String[] quantities = quantity.split(",");
 
-		int dataRows = initialRowCount(Prison_TabTableBody);
+		int dataRows = initialRowCount(Prison_TabTableBody) - 1;
 		
 		for(int i=0; i< dates.length; i++){
 
 			PrisonTab_AddNew.click();
 			
 			int newDataRow = dataRows + i;	
-			
-			driver.findElement(By.xpath(prisonDateFirstPart + newDataRow + prisonDateLastPart)).sendKeys(dates[i] + Keys.ENTER);
+
+			dateSelecter.selectDate(driver.findElement(By.xpath(prisonDateFirstPart + newDataRow + prisonDateLastPart)), dates[i]);
 			driver.findElement(By.xpath(prisonItemFirstPart + newDataRow + prisonItemLastPart)).sendKeys(items[i]);
 			driver.findElement(By.xpath(prisonDescriptionFirstPart + newDataRow + prisonDescriptionLastPart)).sendKeys(descriptions[i]);
 			driver.findElement(By.xpath(prisonQuantityFirstPart + newDataRow + prisonQuantityLastPart)).sendKeys(quantities[i]);
 			
 		}		
 	}
-	
+
 	
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));		
-		int size = rows.size() - 1;
+		int size = rows.size();
 		return size;
 	}
 
@@ -136,6 +140,8 @@ public class PropertyManagementPage {
 	//edits Private Property found in 'PropertyPosition' position
 	public void editPrivateProperties(String PropertyPosition, String date, String item, String description, String quantity, String value) {
 		
+		CalendarPopup dateSelecter = new CalendarPopup(driver);
+		
 		// click Private Property Tab
 		Private_Tab.click();
 		int positionToEdit = Integer.parseInt(PropertyPosition);
@@ -148,7 +154,7 @@ public class PropertyManagementPage {
 
 		// editing data
 		clearElement(Datefield);
-		Datefield.sendKeys(date + Keys.ENTER);
+		dateSelecter.selectDate(Datefield, date);
 		
 		clearElement(Itemfield);
 		Itemfield.sendKeys(item);
@@ -172,6 +178,8 @@ public class PropertyManagementPage {
 	//edits Prison Property found in 'PropertyPosition' position
 	public void editPrisonProperties(String PropertyPosition, String date, String item, String description, String quantity) {
 		
+		CalendarPopup dateSelecter = new CalendarPopup(driver);
+		
 		// click Prison Property Tab
 		Prison_Tab.click();
 		int positionToEdit = Integer.parseInt(PropertyPosition);
@@ -183,7 +191,7 @@ public class PropertyManagementPage {
 
 		// editing data
 		clearElement(Datefield);
-		Datefield.sendKeys(date + Keys.ENTER);
+		dateSelecter.selectDate(Datefield, date);
 		
 		clearElement(Itemfield);
 		Itemfield.sendKeys(item);
@@ -197,9 +205,9 @@ public class PropertyManagementPage {
 	}
 	
 	public boolean IsEditIndexWithinNoOfRows(String tab, int editIndex){
-		if (tab.equals("PRISON") && editIndex>initialRowCount(Prison_Tab)) 
+		if (tab.equals("PRISON") && editIndex> initialRowCount(Prison_TabTableBody) - 1) 
 			return false;
-		if (tab.equals("PRIVATE") && editIndex>initialRowCount(Private_Tab)) 
+		if (tab.equals("PRIVATE") && editIndex>initialRowCount(Private_TabTableBody)) 
 			return false;	
 		return true;
 	}

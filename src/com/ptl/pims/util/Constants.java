@@ -252,13 +252,10 @@ public class Constants {
 	public static final String UpdatePostRegistration_EducationalTBody = "//*[@id='educational_qualification_grid']/tbody";
 	public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
 	public static final String UpdatePostRegistration_EducationalQualificationAddNew = "(.//button[text()='Add New'])[1]";
-	public static final String UpdatePostRegistration_Institute = "//*[@id='educationalqualification-1-equ_institute']";
 	public static final String UpdatePostRegistration_InstituteFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_InstituteLastPart = "-equ_institute']";
-	public static final String UpdatePostRegistration_QualificationType = "//*[@id='educationalqualification-1-equ_qulification_type_id']";
 	public static final String UpdatePostRegistration_QualificationTypeFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_QualificationTypeLastPart = "-equ_qulification_type_id']";
-	public static final String UpdatePostRegistration_Language = "//*[@id='educationalqualification-1-equ_language_id']";
 	public static final String UpdatePostRegistration_LanguageFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
@@ -266,19 +263,14 @@ public class Constants {
 	public static final String UpdatePostRegistration_EmployerTBody = "//*[@id='employment_grid']/tbody";
 	public static final String UpdatePostRegistration_EmploymentTabStatus = "true";
 	public static final String UpdatePostRegistration_EmploymentAddNew = "(.//button[text()='Add New'])[2]";
-	public static final String UpdatePostRegistration_Employer = "//*[@id='employment-0-emp_employer']";
 	public static final String UpdatePostRegistration_EmployerFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_EmployerLastPart = "-emp_employer']";
-	public static final String UpdatePostRegistration_OrganizationalType = "//*[@id='employment-0-emp_organizational_type_id']";
 	public static final String UpdatePostRegistration_OrganizationalTypeFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_OrganizationalTypeLastPart = "-emp_organizational_type_id']";
-	public static final String UpdatePostRegistration_Position = "//*[@id='employment-0-emp_position']";
 	public static final String UpdatePostRegistration_PositionFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_PositionLastPart = "-emp_position']";
-	public static final String UpdatePostRegistration_DateFrom = "//*[@id='employment-0-emp_date_from']";
 	public static final String UpdatePostRegistration_DateFromFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_DateFromLastPart = "-emp_date_from']";
-	public static final String UpdatePostRegistration_DateTo = "//*[@id='employment-0-emp_date_to']";
 	public static final String UpdatePostRegistration_DateToFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_DateToLastPart = "-emp_date_to']";
 	public static final String UpdatePostRegistration_EmploymentAction = "//a[contains(@onclick,'removeemployment')]";
@@ -384,7 +376,18 @@ public class Constants {
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
 	public static final String AuthorizePostRegUserPage_ChildAction = "//a[contains(@onclick,'removechild')]";
-
+	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
+	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
+	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
+	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
+	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
+	public static final String UpdatePostRegistration_ChildTabStatus = "true";
+	
 	public static final String AuthorizePostRegUserPage_Authorize = "//button[text()='Authorize']";
 		
 	// Allocate Location Page
@@ -449,12 +452,11 @@ public class Constants {
 	
 	
 	//Calendar Popup
-	public static final String CalendarInputField = "//input[contains(@placeholder,'Select date')]";
 	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
 	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
-	public static final String CalendarPopup_MonthYearText_LastPart = "'])[2]";
+	public static final String CalendarPopup_MonthYearText_LastPart = "'])";
 	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";	
-	public static final String CalendarPopup_DateText_FirstPart = "//td[text()='";
+	public static final String CalendarPopup_DateText_FirstPart = "//td[@class='day'][text()='";
 	public static final String CalendarPopup_DateText_LastPart = "']";
 	
 
