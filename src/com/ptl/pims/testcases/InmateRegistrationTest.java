@@ -48,7 +48,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 	
-	@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
+	//@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
 	public void enterInmatePersonalData(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -63,7 +63,7 @@ public class InmateRegistrationTest extends TestBase {
 	}	
 	
 
-	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
+//	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -73,7 +73,7 @@ public class InmateRegistrationTest extends TestBase {
 		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("classif")); 
 	}
 
-	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082
+//	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082
 	public void enterInmateCharacteristicTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -85,7 +85,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "getIdentificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1083
+//	@Test(dataProvider = "getIdentificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1083
 	public void enterInmateIdentificationTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
