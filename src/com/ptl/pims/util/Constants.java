@@ -441,12 +441,11 @@ public class Constants {
 	
 	
 	//Calendar Popup
-	public static final String CalendarInputField = "//input[contains(@placeholder,'Select date')]";
 	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
 	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
-	public static final String CalendarPopup_MonthYearText_LastPart = "'])[2]";
+	public static final String CalendarPopup_MonthYearText_LastPart = "'])";
 	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";	
-	public static final String CalendarPopup_DateText_FirstPart = "//td[text()='";
+	public static final String CalendarPopup_DateText_FirstPart = "//td[@class='day'][text()='";
 	public static final String CalendarPopup_DateText_LastPart = "']";
 	
 
