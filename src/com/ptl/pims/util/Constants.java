@@ -376,7 +376,18 @@ public class Constants {
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
 	public static final String AuthorizePostRegUserPage_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
 	public static final String AuthorizePostRegUserPage_ChildAction = "//a[contains(@onclick,'removechild')]";
-
+	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
+	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
+	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
+	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
+	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
+	public static final String UpdatePostRegistration_ChildTabStatus = "true";
+	
 	public static final String AuthorizePostRegUserPage_Authorize = "//button[text()='Authorize']";
 		
 	// Allocate Location Page

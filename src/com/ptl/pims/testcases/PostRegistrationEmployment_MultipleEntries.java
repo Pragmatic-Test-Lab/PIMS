@@ -14,7 +14,7 @@ import com.ptl.pims.pages.UpdatePostRegistrationPage;
 import com.ptl.pims.util.TestUtil;
 
 public class PostRegistrationEmployment_MultipleEntries extends TestBase {
-	HomePage landingPage = null;
+HomePage landingPage = null;
 	
 	
 	@Test(dataProvider = "getEmploymentMultipleEntriesData")
