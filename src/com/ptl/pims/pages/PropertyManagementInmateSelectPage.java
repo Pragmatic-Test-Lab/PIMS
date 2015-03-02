@@ -26,8 +26,7 @@ public class PropertyManagementInmateSelectPage extends SelectInmatePage {
 		return propertyManagement;
 	}
 	
-	public String getSuccessMessage() {
-		
+	public String getSuccessMessage() {		
 		return SuccessMessage.getText();
 	}
 

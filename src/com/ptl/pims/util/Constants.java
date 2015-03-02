@@ -1,17 +1,26 @@
 package com.ptl.pims.util;
 
+
 public class Constants {
 	// Registration Page:
-	public static final String InmateRegistration_AddedSuccessfullyMessage ="//div[@class='alert alert-success']";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart1="Saved";
-	public static final String InmateRegistration_ExpectedSuccessMessagePart2="successfully";
+	public static final String InmateRegistration_SuccessMessageText = "Saved .* successfully";
+	public static final String InmateRegistration_FrontImage = ".//img[@title='Front Image']";
+	public static final String InmateRegistration_RHSImage = ".//img[@title='Right Hand Side Image']";
+	public static final String InmateRegistration_LHSImage = ".//img[@title='Left Hand Side Image']";
+	public static final String InmateRegistration_DefaultFrontImage = "/PIMS3/web/../uploads/defaults/front.jpg";
+	public static final String InmateRegistration_DefaultRHSImage = "/PIMS3/web/../uploads/defaults/right.jpg";
+	public static final String InmateRegistration_DefaultLHSImage = "/PIMS3/web/../uploads/defaults/left.jpg";
+	public static final String InmateRegistration_ImageRHSBrowse = ".//*[@id='admission-image_rhs']";
+	public static final String InmateRegistration_ImageRHSRemove = ".//div[@class='form-group field-admission-image_rhs']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageFrontBrowse = ".//*[@id='admission-image_front']";
+	public static final String InmateRegistration_ImageFrontRemove = ".//div[@class='form-group field-admission-image_front']/descendant::div[@class='close fileinput-remove']";
+	public static final String InmateRegistration_ImageLHSBrowse = ".//*[@id='admission-image_lhs']";
+	public static final String InmateRegistration_ImageLHSRemove = ".//div[@class='form-group field-admission-image_lhs']/descendant::div[@class='close fileinput-remove']";
 	// Personal Details Tab
 	public static final String InmateRegistration_personal_tab = ".//a[text()='Personal']";
-	//public static final String InmateRegistaration_FirtstRow_EditButton = "//*[@id='w0']/table/tbody/tr[1]/td[7]/a/span";
 	public static final String InmateRegistration_FirtstRow_EditButton = "//button[text()='Update']";
 	
 	//Update Registration
-
 	public static final String InmateRegistration_Personal_OtherName1 = "//*[@id='admission-adm_other_name1']";
 	public static final String InmateRegistration_Personal_OtherName2 = "//*[@id='admission-adm_other_name2']";
 	public static final String InmateRegistration_Personal_CallName1 = "//*[@id='admission-adm_call_name1']";
@@ -28,8 +37,7 @@ public class Constants {
 	public static final String InmateRegistration_Personal_City = "//*[@id='admission-adm_city_id']";
 	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
 	public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
-
-
+	
 	//Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
 	public static final String InmateRegistration_Header = "";
@@ -63,15 +71,18 @@ public class Constants {
 	//Inmate case tab
 	public static final String InmateRegistration_case_tab ="//a[text()='Inmate Case Details']";
 	public static final String InmateRegistration_case_addnew =".//button[text()='Add New']";
-	public static final String InmateRegistration_case_isactive = "//*[@id='sentence-1-sen_is_active']";
-	public static final String InmateRegistration_case_fine = "//*[@id='sentence-1-sen_fine_charges']";
-	public static final String InmateRegistration_case_days = "//*[@id='sentence-1-sen_days']";
-	public static final String InmateRegistration_case_description = "//*[@id='sentence-1-sen_description']";
-	public static final String InmateRegistration_case_sentence = "//*[@id='sentence-1-sen_sentence_type_id']";
-	public static final String InmateRegistration_case_offdescription = "//*[@id='sentence-1-sen_discription_of_offence']";
-	public static final String InmateRegistration_case_offense ="//*[@id='sentence-1-sen_offence_id']";
-	public static final String InmateRegistration_case_casen = "//*[@id='sentence-1-sen_case_id']";
-	
+	public static final String InmateRegistration_CaseDetailsTable =".//*[@id='sentence_grid']/tbody";
+	public static final String InmateRegistration_CaseFieldsCommonFirstPart =".//*[@id='sentence-";
+	public static final String InmateRegistration_CaseNo_LastPart ="-sen_case_id']";
+	public static final String InmateRegistration_Offence_LastPart ="-sen_offence_id']";
+	public static final String InmateRegistration_OffenceDescription_LastPart ="-sen_discription_of_offence']";
+	public static final String InmateRegistration_SentenceType_LastPart ="-sen_sentence_type_id']";
+	public static final String InmateRegistration_Description_LastPart ="-sen_description']";
+	public static final String InmateRegistration_Years_LastPart ="-sen_years']";
+	public static final String InmateRegistration_Months_LastPart ="-sen_months']";
+	public static final String InmateRegistration_Days_LastPart ="-sen_days']";
+	public static final String InmateRegistration_FineCharges_LastPart ="-sen_fine_charges']";
+	public static final String InmateRegistration_IsActive_LastPart ="-sen_is_active']";
 
 	// paths
 	public static String CONFIG_FILE_PATH = System.getProperty("user.dir")
@@ -97,9 +108,6 @@ public class Constants {
 	// Home Page
 	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
 	public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
-	public static final String Home_RegistrationLink = ".//*[@id='w1']/li[2]/a";
-	public static final String Home_AllocateLocationLink = ".//*[text()='Allocate Location']";
-	public static final String Home_PropertyManagementLink = ".//*[text()='Property Management']";
 	public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
 	public static final String Home_PageHeaderText2 = "Login";
 	public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
@@ -112,7 +120,7 @@ public class Constants {
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
 	public static final String TopMenu_RegistrationMainLink = "//*[text()='Registration ']";
 	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
-	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Alocate Location']";
+	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Allocate Location']";
 	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Management']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
 	public static final String TopMenu_PostRegistrationMainLink = "//a[text()='Post Registration ']";
@@ -123,15 +131,19 @@ public class Constants {
 
 	// New Admission Page
 	public static final String CreateAdmissionButton = "//a[text() = 'Create Admission']";
-	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;//"html/body/div[2]/div/div/h1";
+	public static final String NewAdmissionHeder = "(//*[text() = 'Create Admission'])[3]" ;
 	public static final String NewAdmission_ExpectedPageHeader = "Create Admission";
+	public static final String CreateAdmission_Allert = "//*[@class='alert alert-success']";
+	public static final String CreateAdmission_SuccessMessageText = "Created .* successfully";
+
 
 	// Create Admission Page
 	public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
 	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
 	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
 	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
-	public static final String CreateAdmission_RegistrationNumber = ".//*[@id='admission-adm_registration_no']";
+	public static final String CreateAdmission_Youth_AgeCategory = ".//select[@id='admission-adm_age_category_id']//option[@selected='5']";
+	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_registration_no']";
 	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
 	public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
 	public static final String CreateAdmission_Biometric = "//*[@id='admission-adm_biometric_id']";
@@ -148,51 +160,60 @@ public class Constants {
 
 	public static final String CreateAdmission_InmateCourtDetailTab = "//a[text() = 'Court Detail']" ; //"//*[@id='w7']/li[1]/a";
 	public static final String CreateAdmission_InmateCourtDetail_AddNew = "(.//button[text()='Add New'])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_Court = "//*[@id='inmatecasedetails-1-icd_court_id']";
-	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "//*[@id='inmatecasedetails-1-icd_case_number']";
-	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "//*[@id='inmatecasedetails-1-icd_date_of_conviction']";
+	public static final String CreateAdmission_InmateCourtDetail_Court = "(//select[contains(@name, 'icd_court_id')])[1]";
+	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "(//input[contains(@name, 'icd_case_number')])[1]";
+	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "(//input[contains(@name, 'icd_date_of_conviction')])[1]";
 	public static final String CreateAdmission_InmateCourtDetail_Action = "";
 
 	public static final String CreateAdmission_HealthConditionTab = "//a[text() = 'Health Condition']";
-	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[2]";
+	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[1]";
 	public static final String CreateAdmission_HealthCondition_MedicalAttention = "(.//input[contains(@name, 'hco_is_medical_attention_needed')])[2]";
-	public static final String CreateAdmission_HealthCondition_Pregnant = "//*[@id='healthcondition-1-hco_is_pregnant']";
-	public static final String CreateAdmission_HealthCondition_Remarks = "//*[@id='healthcondition-1-hco_remarks']";
-	public static final String CreateAdmission_HealthCondition_ForPreschool = "//*[@id='healthcondition-1-hco_is_medical_attention_needed_for__preschool']";
-	public static final String CreateAdmission_HealthCondition_OfPreschool = "//*[@id='healthcondition-1-hco_helth_condition_of_preschool']";
+	public static final String CreateAdmission_HealthCondition_Pregnant = "(//input[contains(@name, 'hco_is_pregnant')])[2]";
+	public static final String CreateAdmission_HealthCondition_Remarks = "//input[contains(@name, 'hco_remarks')]";
+	public static final String CreateAdmission_HealthCondition_ForPreschool = "(.//input[contains(@name, 'hco_is_medical_attention_needed')])[4]";
+	public static final String CreateAdmission_HealthCondition_OfPreschool = "//input[contains(@name, 'hco_helth_condition_of_preschool')]";
 	public static final String CreateAdmission_HealthCondition_Action = "//*[@id='health_condition_row_1']/td[8]/a/span";
 
-	public static final String CreateAdmission_HealthCondition_ManageDrugs_AddNew = "(//button[text() ='Add New'])[3]";
-	public static final String CreateAdmission_HealthCondition_ManageDrugs_Drug = "//*[@id='helthconditiondrugused-1-hdu_drugs_id']";
+	public static final String CreateAdmission_HealthCondition_ManageDrugs_AddNew = "(//button[text() ='Add New'])[2]";
+	public static final String CreateAdmission_HealthCondition_ManageDrugs_Drug = "(//select[contains(@name, 'hdu_drugs_id')])[1]";
 
-	public static final String CreateAdmission_HealthCondition_ManagePhysical_AddNew = "(//button[text() ='Add New'])[4]";
-	public static final String CreateAdmission_HealthCondition_ManagePhysical_Observation = "//*[@id='helthconditionphysicalobservation-1-hpo_physical_observation_id']";
+	public static final String CreateAdmission_HealthCondition_ManagePhysical_AddNew = "(//button[text() ='Add New'])[3]";
+	public static final String CreateAdmission_HealthCondition_ManagePhysical_Observation = "(//select[contains(@name, 'hpo_physical_observation_id')])[1]";
 
 	public static final String CreateAdmission_InmateComplainTab = "//a[text() = 'Inmate Complaint']";
-	public static final String CreateAdmission_InmateComplainNew = "(//button[text() ='Add New'])[5]";
-	public static final String CreateAdmission_InmateComplainDate = "//*[@id='inmatecomplain-1-ico_date']";
-	public static final String CreateAdmission_InmateComplain_TypeOfComplaint = "//*[@id='inmatecomplain-1-ico_type_of_compain_id']";
-	public static final String CreateAdmission_InmateComplain_Description = "//*[@id='inmatecomplain-1-ico_description']";
+	public static final String CreateAdmission_InmateComplainNew = "(//button[text() ='Add New'])[4]";
+	public static final String CreateAdmission_InmateComplainDate = "(//input[contains(@name, 'ico_date')])[1]";
+	public static final String CreateAdmission_InmateComplain_TypeOfComplaint = "(//select[contains(@name, 'ico_type_of_compain_id')])[1]";
+	public static final String CreateAdmission_InmateComplain_Description = "(//input[contains(@name, 'ico_description')])[1]";
 
 	public static final String CreateAdmission_PrivateProperties_Tab = "//a[text() = 'Private Properties']";
-	public static final String CreateAdmission_PrivateProperties_AddNew = "(//button[text() ='Add New'])[6]";
-	public static final String CreateAdmission_PrivateProperties_Date = "//*[@id='privateproperty-1-prp_date']";
-	public static final String CreateAdmission_PrivateProperties_Item = "//*[@id='privateproperty-1-prp_item_id']";
-	public static final String CreateAdmission_PrivateProperties_Description = "//*[@id='privateproperty-1-prp_description']";
-	public static final String CreateAdmission_PrivateProperties_Quantity = "//*[@id='privateproperty-1-prp_quantity']";
-	public static final String CreateAdmission_PrivateProperties_Value = "//*[@id='privateproperty-1-prp_value']";
+	public static final String CreateAdmission_PrivateProperties_AddNew = "(//button[text() ='Add New'])[5]";
+	public static final String CreateAdmission_PrivateProperties_Date = "(//input[contains(@name, 'prp_date')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Item = "(//select[contains(@name, 'prp_item_id')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Description = "(//input[contains(@name, 'prp_description')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Quantity = "(//input[contains(@name, 'prp_quantity')])[1]";
+	public static final String CreateAdmission_PrivateProperties_Value = "(//input[contains(@name, 'prp_value')])[1]";
 
 	public static final String CreateAdmission_InfantsPreschoolTab = "//a[text() = 'Infants Or Preschoolers']";
-	public static final String CreateAdmission_InfantsPreschoolAddNew = "(//button[text() ='Add New'])[7]";
-	public static final String CreateAdmission_InfantsPreschoolName = "//*[@id='infantsorpreschool-1-psc_name']";
-	public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "//*[@id='infantsorpreschool-1-psc_date_of_birth']";
+	public static final String CreateAdmission_InfantsPreschoolAddNew = "(//button[text() ='Add New'])[6]";
+	public static final String CreateAdmission_InfantsPreschoolName = "(//input[contains(@name, 'psc_name')])[1]";
+	public static final String CreateAdmission_InfantsPreschoolDateOfBirth = "(//input[contains(@name, 'psc_date_of_birth')])[1]";
 
 	public static final String CreateAdmission_HistoryTab = "//a[text() = 'History']";
-	public static final String Create_Admission = "//button[text() = 'Create']";
-	public static final String Update_Admission = "//button[text() = 'Update']";
+	public static final String Create_Admission_CreateButton = "//button[text() = 'Create']";
+	public static final String Update_Admission_UpdateButton = "//button[text() = 'Update']";
 	public static final String Authorize_Admission = "//button[text() = 'Authorize']";
 	
-
+	//Edit Admission Page
+	public static final String EditAdmission_SuccessMessageText = "Saved .* successfully";
+	//Verify RHS Image is available
+	public static final String EditAdmission_RHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[1]";
+	//Verify Front Image is available
+	public static final String EditAdmission_Front_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[2]";
+	//Verify LHS Image is available
+	public static final String EditAdmission_LHS_Image_Alert_Text = "(//img[@alt='Format PNG.png'])[3]";
+	
+		
 	// Allocate Location Page
 	public static final String AllocateLocation_Header = ".//div[contains(@class, 'admission-index')]/h1";
 	public static final String AllocateLocation_ExpectedHeader = "Allocate Location";
@@ -375,18 +396,20 @@ public class Constants {
 	// Allocate Location Page
 	public static final String AllocateLocation_CurrentLocation = ".//select[@id='admission-adm_current_permenent_location_id']//option[@selected='']";
 	public static final String AllocateLocation_SaveButton = ".//*[text()='Save']";
+	public static final String AllocateLocation_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
+	public static final String AllocateLocation_SuccessMessageText = "Assigned Location for .* successfully";
 
 	// Property Management Inmate Select Page
 	public static final String PropertyManagement_ExpectedHeader = "Property Management";
 	public static final String PropertyManagement_AddedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String PropertyManagement_ExpectedSuccessMessagePart1 = "Saved";
-	public static final String PropertyManagement_ExpectedSuccessMessagePart2 = "successfully";
+	public static final String PropertyManagement_SuccessMessageText = "Saved .* successfully";
 	
 	// Property Management Page
 	// Property Data Fields	
 	public static final String PropertyManagement_PrivateTab_TBody = ".//*[@id='private_property_grid']/tbody";
 	public static final String PropertyManagement_PrisonTab_TBody = ".//*[@id='prison_property_grid']/tbody";
 	public static final String PropertyManagement_UpdateButton = ".//button[text()='Update']";
+
 	// Private Property Tab
 	public static final String PropertyManagement_PrivateTab = ".//a[text()='Private Properties']";
 	public static final String PropertyManagement_PrivateTab_AddNew = ".//*[@onclick='addprivate_propertyRow();']";
@@ -417,19 +440,18 @@ public class Constants {
 	
 	// Inmate Search Pages
 	public static final String SelectInmate_Header = ".//div[contains(@class, 'admission-index')]/h1";
-	public static final String InmateSearch_RegNoSearchField = ".//*[@name='AdmissionSearch[adm_registration_no]']";
-	public static final String InmateSearch_BiometricSearchField = ".//*[@name='AdmissionSearch[adm_biometric_id]']";
-	public static final String InmateSearch_NameSearchField = ".//*[@name='AdmissionSearch[adm_name_as_in_warrant]']";
+	public static final String InmateSearch_RegNoSearchField = ".//*[contains(@name,'Search[adm_registration_no]')]";
+	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
+	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	public static final String InmateSearchPage_SuccessMessage = ".//div[@class='alert alert-success']";
 	
 	
 	// Authorize Registration Page
 	public static final String AuthorizeRegistration_ExpectedHeader = "Registration Authorization";
 	public static final String AuthorizeRegistration_AuthorizeButton = ".//button[text()='Authorize']";
 	public static final String AuthorizeRegistration_AuthorizedSuccessfullyMessage = ".//div[@class='alert alert-success']";
-	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart1 = "Saved";
-	public static final String AuthorizeRegistration_ExpectedSuccessMessagePart2 = "successfully";
-	public static final String AuthorizeRegistration_SuccessMessageText = "Saved \\w* successfully";
+	public static final String AuthorizeRegistration_SuccessMessageText = "Saved .* successfully";
 	
 
 

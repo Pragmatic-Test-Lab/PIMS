@@ -112,6 +112,25 @@ public class TopMenu {
 		return authorizeInmateSelectPage;
 	}
 	
+
+	public AllocateLocationInmateSelectPage goToAllocateLocation() {
+		registrationMainLink.click();
+		allocateLocationSubLink.click();
+		AllocateLocationInmateSelectPage allocateLocation = PageFactory
+				.initElements(driver, AllocateLocationInmateSelectPage.class);
+		return allocateLocation;
+	}
+	
+
+
+	public InmateRegistrationSelectPage goToInmateRegistration() {
+		registrationMainLink.click();
+		registrationSubLink.click();
+		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
+				driver, InmateRegistrationSelectPage.class);
+		return inmateRegistration;
+	}
+	
 	public LoginPage doLogout(){
 		logOut.click();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);

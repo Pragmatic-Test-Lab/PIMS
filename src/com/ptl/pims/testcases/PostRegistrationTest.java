@@ -31,9 +31,8 @@ public class PostRegistrationTest extends TestBase{
 		APPLICATION_LOGS.debug("Going to Top Menu");
 		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to the Post Registration Page");
-		NewAdmissionPage newAdmissionPg = PageFactory.initElements(driver, NewAdmissionPage.class);
-		String RegNumber = newAdmissionPg.getRegistrationNumber();
-		postRegPage.doSearch(RegNumber, data.get("Biometric"), data.get("Warrant Name"), data.get("Other Name"));
+
+		postRegPage.doSearch(registrationNo, "", "", "");
 		APPLICATION_LOGS.debug("Search an inmate");
 		postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Reached Update Post Registration User Page");	

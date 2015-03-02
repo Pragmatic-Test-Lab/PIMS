@@ -3,6 +3,7 @@ package com.ptl.pims.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
@@ -20,10 +21,11 @@ public class AuthorizeAdmissionPage {
 	
 	
 	//PIMS-1194
-	public void doAuthorizeAdmission() throws InterruptedException{
+	public AuthorizeAdmissionSelectPage doAuthorizeAdmission(){
 
 		AuthorizeInamteAdmissionButton.click();
-        //Assert.assertTrue(EditConfirmMessage.isDisplayed()== true, "Adimssion Eidt Failed");	
+		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
+		return authorizeAdmissionSelectPage;
 	}
 	
 }

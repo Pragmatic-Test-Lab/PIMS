@@ -37,14 +37,10 @@
 </test>
 <test name="Post-Registeration Test">
     <classes>
-        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
+        <class name="com.ptl.pims.testcases.PostRegistrationTest" ></class>  
     </classes>
 </test>
-<test name="Authorize Post-Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
-    </classes>
-</test>
+
 </suite>
 
 

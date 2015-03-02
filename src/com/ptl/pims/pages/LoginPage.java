@@ -17,21 +17,18 @@ public class LoginPage {
 	public WebElement password;
 	@FindBy(xpath = Constants.Login_login)
 	public WebElement login;
-	@FindBy(xpath = Constants.TopMenu_LogOut)
-	public WebElement logOut;
 
 	public LoginPage(WebDriver dr) {
 		driver = dr;
 	}
 
 	public HomePage doLogin(String uName, String pWord) {
+		
 		username.sendKeys(uName);
 		password.sendKeys(pWord);
 		login.click();
-		// validate login - successful
-
+		
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-
 		return homePage;
 	}
 

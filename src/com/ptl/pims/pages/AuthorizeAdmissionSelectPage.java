@@ -5,8 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AuthorizeAdmissionSelectPage extends SelectInmatePage{
 
-	WebDriver driver;
-	
+
 	public AuthorizeAdmissionSelectPage(WebDriver dr) {
 		driver = dr;
 	}

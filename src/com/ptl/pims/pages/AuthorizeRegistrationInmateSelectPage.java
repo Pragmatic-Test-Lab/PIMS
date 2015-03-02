@@ -9,9 +9,6 @@ import com.ptl.pims.util.Constants;
 
 public class AuthorizeRegistrationInmateSelectPage extends SelectInmatePage {
 
-	@FindBy(xpath = Constants.AuthorizeRegistration_AuthorizedSuccessfullyMessage)
-	public WebElement SuccessMessage;
-	
 	public AuthorizeRegistrationInmateSelectPage(WebDriver dr) {
 		driver = dr;
 	}
@@ -21,15 +18,10 @@ public class AuthorizeRegistrationInmateSelectPage extends SelectInmatePage {
 		
 		firstInmateLink.click();
 		
-		AuthorizeRegistrationPage allocateLocation = PageFactory
-				.initElements(driver, AuthorizeRegistrationPage.class);
+		AuthorizeRegistrationPage allocateLocation = PageFactory.initElements(driver, AuthorizeRegistrationPage.class);
 		return allocateLocation;
 	}
 
-	public String getSuccessMessage() {
-		
-		return SuccessMessage.getText();
-	}
 
 	
 }

@@ -1,13 +1,18 @@
 package com.ptl.pims.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
-public class InmateRegistration {
+public class InmateRegistration extends CommonMethods{
 
 	WebDriver driver ;
 
@@ -108,26 +113,46 @@ public class InmateRegistration {
 	//case details tab
 	@FindBy(xpath = Constants.InmateRegistration_case_addnew)
 	public WebElement add_new;
-	@FindBy(xpath = Constants.InmateRegistration_case_casen)
-	public WebElement casen;
-	@FindBy(xpath = Constants.InmateRegistration_case_offense)
-	public WebElement offense;
-	@FindBy(xpath = Constants.InmateRegistration_case_offdescription)
-	public WebElement offdescription;
-	@FindBy(xpath = Constants.InmateRegistration_case_sentence)
-	public WebElement sentence;
-	@FindBy(xpath = Constants.InmateRegistration_case_description)
-	public WebElement description;
-	@FindBy(xpath = Constants.InmateRegistration_case_days)
-	public WebElement days;
-	@FindBy(xpath = Constants.InmateRegistration_case_fine)
-	public WebElement fine;
-	@FindBy(xpath = Constants.InmateRegistration_case_isactive)
-	public WebElement isactive;
+	@FindBy(xpath = Constants.InmateRegistration_CaseDetailsTable)
+	public WebElement Case_TabTableBody;
 	
+	private String caseFieldsCommonFirstPart = Constants.InmateRegistration_CaseFieldsCommonFirstPart;
+	private String caseNo_LastPart = Constants.InmateRegistration_CaseNo_LastPart;
+	private String offence_LastPart = Constants.InmateRegistration_Offence_LastPart;
+	private String offenceDescription_LastPart = Constants.InmateRegistration_OffenceDescription_LastPart;
+	private String sentenceType_LastPart = Constants.InmateRegistration_SentenceType_LastPart;
+	private String description_LastPart = Constants.InmateRegistration_Description_LastPart;
+	private String years_LastPart = Constants.InmateRegistration_Years_LastPart;
+	private String months_LastPart = Constants.InmateRegistration_Months_LastPart;
+	private String days_LastPart = Constants.InmateRegistration_Days_LastPart;
+	private String fineCharges_LastPart = Constants.InmateRegistration_FineCharges_LastPart;
+	private String isActive_LastPart = Constants.InmateRegistration_IsActive_LastPart;
 
-
-
+	
+	//Image Upload
+	@FindBy(xpath = Constants.InmateRegistration_RHSImage)
+	WebElement ImageRHS;
+	@FindBy(xpath = Constants.InmateRegistration_ImageRHSBrowse)
+	WebElement ImageRHSBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageRHSRemove)
+	WebElement ImageRHSRemove;
+	@FindBy(xpath = Constants.InmateRegistration_FrontImage)
+	WebElement ImageFront;
+	@FindBy(xpath = Constants.InmateRegistration_ImageFrontBrowse)
+	WebElement ImageFrontBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageFrontRemove)
+	WebElement ImageFrontRemove;
+	@FindBy(xpath = Constants.InmateRegistration_LHSImage)
+	WebElement ImageLHS;
+	@FindBy(xpath = Constants.InmateRegistration_ImageLHSBrowse)
+	WebElement ImageLHSBrowse;
+	@FindBy(xpath = Constants.InmateRegistration_ImageLHSRemove)
+	WebElement ImageLHSRemove;
+	
+	String RHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
+	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
+	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Register_Format_JPG.jpg";
+	
 	public InmateRegistration(WebDriver dr){		
 		driver = dr;
 	}
@@ -136,8 +161,29 @@ public class InmateRegistration {
 		return HeaderField.getText();
 	}
 
-	public String getExpectedHeader(){
-		return ""; //Constants.InmateRegistration_ExpectedHeader;
+	//adds/edits inmate photos
+	public void doAddInmatePhotos(){
+
+		//removing present images
+		ImageFrontRemove.click();
+		ImageRHSRemove.click();
+		ImageLHSRemove.click();		
+		
+		//adding new photos
+		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
+
+
+	}
+	
+	//checks if front photo uploaded in admission is available in registration
+	public boolean IsFrontPhotoAvailable(){
+
+		if(!ImageFront.getAttribute("src").equals(Constants.InmateRegistration_DefaultFrontImage))
+			return true;
+
+		return false;
 	}
 
 	public void doAddPersonalDetailsOfInmate(String othrName1, String othrName2, String cllName1, 
@@ -145,8 +191,6 @@ public class InmateRegistration {
 			String cntry, String prvnce , String dstrct, String ds, String gsDiv, String cty,
 			String plicDiv){
 
-		//TODO : add method to search by reg number
-		//		editFirstInmate.click();
 		tab_personal.click();
 		otherName1.sendKeys(othrName1);
 		otherName2.sendKeys(othrName2);
@@ -163,17 +207,14 @@ public class InmateRegistration {
 		gsDivision.sendKeys(gsDiv);
 		city.sendKeys(cty);
 		policeDivision.sendKeys(plicDiv);
-		//	updateButton.click();
 
 	}
 
 
 	public void doAddClassifiactionDetailsOfInmate(String classif){
-		//TODO : add method to search by reg number
-		//editFirstInmate.click();
+
 		tab_classification.click();
 		classification.sendKeys(classif);		
-		//updateButton.click();
 
 	}
 
@@ -189,7 +230,6 @@ public class InmateRegistration {
 		birthdate.sendKeys(DOB);
 		birthplace.sendKeys(BirthPlace);
 		passport.sendKeys(PassportNumber);
-		//	updateButton.click();
 
 	}
 
@@ -205,28 +245,58 @@ public class InmateRegistration {
 		eyesd.sendKeys(EyesD);
 		nose.sendKeys(Nose);
 		bodymark.sendKeys(BodyMark);
-		//updateButton.click();
 
 	}
 
 
-	public void doAddcaseDetailsOfInmate(String Casen, String Offense, String OffDescription, String Sentence, String Description, String Days, String Fine){
+	public void doAddcaseDetailsOfInmate(String CaseNo, String Offense, String OffDescription, String Sentence, String Description, String Day, String Month, 
+			String Year, String Fine){
 
 		tab_case.click();
-		add_new.click();
-		casen.sendKeys(Casen);
-		offense.sendKeys(Offense);
-		offdescription.sendKeys(OffDescription);
-		sentence.sendKeys(Sentence);
-		description.sendKeys(Description);
-		days.sendKeys(Days);
-		fine.sendKeys(Fine);
-		isactive.click();
 		
+		String[] CaseNos = CaseNo.split(",");
+		String[] Offenses = Offense.split(",");
+		String[] OffDescriptions = OffDescription.split(",");
+		String[] Sentences = Sentence.split(",");
+		String[] Descriptions = Description.split(",");		
+		String[] Years = Year.split(",");		
+		String[] Months = Month.split(",");		
+		String[] Days = Day.split(",");		
+		String[] Fines = Fine.split(",");		
 
+		int dataRows = initialRowCount(Case_TabTableBody);
+		
+		for(int i=0; i< CaseNos.length; i++){
+
+			add_new.click();			
+			int newDataRow = dataRows + i;	
+			
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + caseNo_LastPart)).sendKeys(CaseNos[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + offence_LastPart)).sendKeys(Offenses[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + offenceDescription_LastPart)).sendKeys(OffDescriptions[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + sentenceType_LastPart)).sendKeys(Sentences[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + description_LastPart)).sendKeys(Descriptions[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + years_LastPart)).sendKeys(Years[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + months_LastPart)).sendKeys(Months[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + days_LastPart)).sendKeys(Days[i]);
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + fineCharges_LastPart)).sendKeys(Fines[i]);
+			
+			driver.findElement(By.xpath(caseFieldsCommonFirstPart + newDataRow + isActive_LastPart)).click();
+			
+		}	
+
+	}
+	
+
+
+	private int initialRowCount(WebElement element) {
+		List<WebElement> rows = element.findElements(By.tagName("tr"));		
+		int size = rows.size();
+		return size;
 	}
 
 	public InmateRegistrationSelectPage clickButton() {
+		
 		updateButton.click();
 		
 		InmateRegistrationSelectPage InmateRegistrationSelectPage = PageFactory
