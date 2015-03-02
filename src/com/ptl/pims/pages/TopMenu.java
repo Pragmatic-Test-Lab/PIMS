@@ -130,6 +130,14 @@ public class TopMenu {
 				driver, InmateRegistrationSelectPage.class);
 		return inmateRegistration;
 	}
+
+	public PostRegistrationAuthorizePage gotoAuthorizePostRegistration() {
+		postRegMain.click();
+		postRegAuthorizeSub.click();
+		PostRegistrationAuthorizePage postRegistration = PageFactory.initElements(
+				driver, PostRegistrationAuthorizePage.class);
+		return postRegistration;
+	}
 	
 	public LoginPage doLogout(){
 		logOut.click();
@@ -138,6 +146,7 @@ public class TopMenu {
 		return loginPage;
 		
 	}
+
 
 	
 

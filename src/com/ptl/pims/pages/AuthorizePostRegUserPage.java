@@ -1,8 +1,5 @@
 package com.ptl.pims.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +10,24 @@ import com.ptl.pims.util.Constants;
 public class AuthorizePostRegUserPage {
 	
 	WebDriver driver;
+
+	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Authorize)
+	WebElement authorize;
+	
+	
+	public AuthorizePostRegUserPage(WebDriver dr){
+		driver=dr;
+	}
+	
+	
+	
+	public PostRegistrationAuthorizePage ClickAuthorizeButton(){
+		authorize.click();
+		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
+		return postRegAuthorizePage;
+	}
+	
+/*	 
 	
 	@FindBy(xpath=Constants.AuthorizePostRegUserPage_CheckBox)
 	WebElement checkBox;
@@ -120,15 +135,9 @@ public class AuthorizePostRegUserPage {
 	WebElement schoolAddressLine3;
 	@FindBy(xpath=Constants.AuthorizePostRegUserPage_ChildAction)
 	WebElement childAction;
-	@FindBy(xpath=Constants.AuthorizePostRegUserPage_Authorize)
-	WebElement authorize;
-	
-	
-	public AuthorizePostRegUserPage(WebDriver dr){
-		driver=dr;
-	}
-	
-	
+ 
+ 
+ 
 	public String getActualEducationalQualificationTabDefaultStatus(){
 		String ActualDefaultStatus = "";
 		
@@ -283,12 +292,6 @@ public class AuthorizePostRegUserPage {
 		return size;
 		
 	}
-	
-	
-	public PostRegistrationAuthorizePage ClickAuthorizeButton(){
-		authorize.click();
-		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
-		return postRegAuthorizePage;
-	}
+*/
 
 }

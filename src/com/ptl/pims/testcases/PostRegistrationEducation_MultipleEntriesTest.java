@@ -14,16 +14,14 @@ import com.ptl.pims.pages.UpdatePostRegistrationPage;
 import com.ptl.pims.util.TestUtil;
 
 public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
-	HomePage landingPage = null;
-	
-	
+
 	@Test(dataProvider = "getEducationMultipleEntriesData")
 	public void VerifyMultipleEntries(Hashtable<String, String> data) {
 
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
+		HomePage landingPage = returnToHomePage();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");
@@ -35,7 +33,7 @@ public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 		postRegPage = updatePostRegPage.ClickUpdateButton();
 		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());
 		APPLICATION_LOGS.debug("Expected Message: "+ postRegPage.getExpectedSuccessMessage());
-		Assert.assertTrue(postRegPage.getActualSuccessMessage().contains(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
+		Assert.assertTrue(postRegPage.getActualSuccessMessage().matches(postRegPage.getExpectedSuccessMessage()), "Unable to add multiple education entries");		
 
 		APPLICATION_LOGS.debug("Reached Post Registration Page");
 	}

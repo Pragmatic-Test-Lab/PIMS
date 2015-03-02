@@ -37,7 +37,12 @@
 </test>
 <test name="Post-Registeration Test">
     <classes>
-        <class name="com.ptl.pims.testcases.PostRegistrationTest" ></class>  
+        <class name="com.ptl.pims.testcases.PostRegistrationEducation_MultipleEntriesTest" ></class>  
+    </classes>
+</test>
+<test name="Post-Registeration Authorization">
+    <classes>
+        <class name="com.ptl.pims.testcases.AuthorizePostRegistration" ></class>  
     </classes>
 </test>
 
