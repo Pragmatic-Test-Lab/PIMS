@@ -23,7 +23,6 @@ public class AuthorizeAdmissionTest extends TestBase {
 		String RegNumber = newAdmissionPage.getRegistrationNumber();
 		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(RegNumber,"", "");
 		
-		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch("","","");
 		AuthorizeAdmissionPage authorizeAdmissionPage =  authorizeAdmissionSelectPage.clickFirstInmate();
 		authorizeAdmissionPage.doAuthorizeAdmission();
 		
