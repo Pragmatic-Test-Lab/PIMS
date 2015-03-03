@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
-public class CreateNewAdmissionPage extends CommonMethods {
+public class CreateAdmissionPage extends CommonMethods {
 
 	WebDriver driver;
 	
@@ -149,7 +149,7 @@ public class CreateNewAdmissionPage extends CommonMethods {
 
 	
 	
-	public CreateNewAdmissionPage(WebDriver dr){
+	public CreateAdmissionPage(WebDriver dr){
 		driver = dr;
 	}
 	

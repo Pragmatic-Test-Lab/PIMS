@@ -3,7 +3,7 @@ package com.ptl.pims.testcases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ptl.pims.pages.CreateNewAdmissionPage;
+import com.ptl.pims.pages.CreateAdmissionPage;
 import com.ptl.pims.pages.EditAdmissionPage;
 import com.ptl.pims.pages.EditAdmissionSelectPage;
 import com.ptl.pims.pages.HomePage;
@@ -25,7 +25,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Baby","Negombo","7","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
@@ -43,7 +43,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Child","Negombo","15","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
@@ -61,7 +61,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Youth","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
@@ -79,7 +79,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
@@ -97,7 +97,7 @@ public class CreateNewAdmissionTest extends TestBase{
 				landingPage = returnToHomePage();		
 				TopMenu topMenu = getTopMenu();
 				NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-				CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+				CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 				registrationNo = creAdmissionPage.getRegistrationNumber();
 				newAdmissionPage = creAdmissionPage.doAdmission();	
@@ -115,7 +115,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			createNewAdmissionPage.doCreateNewAdmitionWithSubHeadings("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male",
 					RHS_Image_Path,Front_Image_Path, LHS_Image_Path,"Colombo","CASE001","2015-02-24",
 					true,"Health Conditions Remarks",true,"Health of school","Other", "Cough",
@@ -135,7 +135,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    Assert.assertTrue(createNewAdmissionPage.checkMealTypeIsSelectable(), "Meal Type Is Not Selectable");
 		    APPLICATION_LOGS.debug("Meal Type Is Selectable");
 		}catch (Exception ex){
@@ -151,7 +151,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			
 		    Assert.assertTrue(createNewAdmissionPage.checkIsInmateRegistrationNumberIsAutoGenarated(), "Faild - Autogenarating of Registration number");
 		    APPLICATION_LOGS.debug("Registraion number succssfully autogenarated");
@@ -166,7 +166,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			createNewAdmissionPage.checkImateCatagoryIsSelectable();
 			Assert.assertTrue(createNewAdmissionPage.checkImateCatagoryIsSelectable(), "Inmate Catagory Is Not Selectable");
 		    APPLICATION_LOGS.debug("Inamte Catagory Is Selectable");
@@ -181,7 +181,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
-		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			String selectedOption = createNewAdmissionPage.checkAgeCatagoryIsAutoSelected();
 			Assert.assertTrue(selectedOption.equalsIgnoreCase("Youth"),"Age catagory doesn't match with the age you entered");
 			APPLICATION_LOGS.debug("Age catagory matched with the age you provided");
@@ -197,7 +197,7 @@ public class CreateNewAdmissionTest extends TestBase{
 			TopMenu topMenu = getTopMenu();
 			//Create Inmate with images
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		    creAdmissionPage.checkUserCanUploadTheAllThreeImages();
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	

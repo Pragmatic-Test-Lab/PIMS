@@ -7,7 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pims.pages.CreateNewAdmissionPage;
+import com.ptl.pims.pages.CreateAdmissionPage;
 import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
@@ -31,7 +31,7 @@ public class CreateAdmissionTest extends TestBase {
 			APPLICATION_LOGS.debug("Going to Top Menu");
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 			APPLICATION_LOGS.debug("Going to the New Admission Page");
-			CreateNewAdmissionPage createAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			CreateAdmissionPage createAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			APPLICATION_LOGS.debug("Going to the Create Admission Page");
 			
 			
