@@ -15,52 +15,36 @@ import com.ptl.pims.util.Constants;
 public class CreateNewAdmissionTest extends TestBase{
 
 	HomePage landingPage = null;
+	String RHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
+	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
+	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 
-    
 	//@Test 
-	public void Test_doCreateNewAdmitionFor_ChildInmate(){
+	public void Test_doCreateNewAdmitionFor_Baby_Inmate_With_Required_Fields(){
 		try{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-		    creAdmissionPage.doCreateNewAdmitionFor_ChildInmate();
+		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Baby","Negombo","7","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
-			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
-			APPLICATION_LOGS.debug("Child type inmate successfully created");
-		}catch(Exception ex){
-			APPLICATION_LOGS.debug(ex.getMessage());
-		}
-		
-	}
-		
-	//@Test // PIMS-656
-	public void Test_doCreateNewAdmitionFor_ConvictedInmate(){
-		try{
-			landingPage = returnToHomePage();		
-			TopMenu topMenu = getTopMenu();
-			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();		
-			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-			creAdmissionPage.doCreateNewAdmitionFor_ConvictedInmate();
-			registrationNo = creAdmissionPage.getRegistrationNumber();
-			newAdmissionPage = creAdmissionPage.doAdmission();	
-			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
-			APPLICATION_LOGS.debug("Child type inmate successfully created");
+			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create baby type inmate");		
+			APPLICATION_LOGS.debug("Baby type inmate successfully created");
 		}catch(Exception ex){
 			APPLICATION_LOGS.debug(ex.getMessage());
 		}
 		
 	}
 	
-	//@Test   // PIMS-628
-	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate() {
+	//@Test 
+	public void Test_doCreateNewAdmitionFor_Child_Inmate_With_Required_Fields(){
 		try{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
-			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
+			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-			creAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();
+		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Child","Negombo","15","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
 			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
@@ -68,25 +52,83 @@ public class CreateNewAdmissionTest extends TestBase{
 		}catch(Exception ex){
 			APPLICATION_LOGS.debug(ex.getMessage());
 		}
-	}
+		
+	} 
 	
+	//@Test 
+	public void Test_doCreateNewAdmitionFor_Youth_Inmate_With_Required_Fields(){
+		try{
+			landingPage = returnToHomePage();		
+			TopMenu topMenu = getTopMenu();
+			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
+			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Youth","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
+			registrationNo = creAdmissionPage.getRegistrationNumber();
+			newAdmissionPage = creAdmissionPage.doAdmission();	
+			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create youth type inmate");		
+			APPLICATION_LOGS.debug("Youth type inmate successfully created");
+		}catch(Exception ex){
+			APPLICATION_LOGS.debug(ex.getMessage());
+		}
+		
+	} 
+	
+	//@Test 
+	public void Test_doCreateNewAdmitionFor_Convicted_Inmate_With_Required_Fields(){
+		try{
+			landingPage = returnToHomePage();		
+			TopMenu topMenu = getTopMenu();
+			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
+			CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
+			registrationNo = creAdmissionPage.getRegistrationNumber();
+			newAdmissionPage = creAdmissionPage.doAdmission();	
+			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create convicted type inmate");		
+			APPLICATION_LOGS.debug("Convicted type inmate successfully created");
+		}catch(Exception ex){
+			APPLICATION_LOGS.debug(ex.getMessage());
+		}
+		
+	} 
+	
+	//@Test 
+	public void Test_doCreateNewAdmitionFor_Un_Convicted_Inmate_With_Required_Fields(){
+			try{
+				landingPage = returnToHomePage();		
+				TopMenu topMenu = getTopMenu();
+				NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
+				CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
+				registrationNo = creAdmissionPage.getRegistrationNumber();
+				newAdmissionPage = creAdmissionPage.doAdmission();	
+				Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create Un-convicted type inmate");		
+				APPLICATION_LOGS.debug("Un-Convicted type inmate successfully created");
+			}catch(Exception ex){
+				APPLICATION_LOGS.debug(ex.getMessage());
+			}
+			
+		} 
+		
 	//@Test   
-	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate_WithSubHeadings(){
+	public void Test_doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings(){
 		try{
 			landingPage = returnToHomePage();		
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-			createNewAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings();
+			createNewAdmissionPage.doCreateNewAdmitionWithSubHeadings("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male",
+					RHS_Image_Path,Front_Image_Path, LHS_Image_Path,"Colombo","CASE001","2015-02-24",
+					true,"Health Conditions Remarks",true,"Health of school","Other", "Cough",
+					"2015-02-10","Health","Descriptios","2015-02-18","Other","Descriptions","1","200.89","Name hi","2015-02-25");
 			registrationNo = createNewAdmissionPage.getRegistrationNumber();
 	        newAdmissionPage = createNewAdmissionPage.doAdmission();	
-	        Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
-			APPLICATION_LOGS.debug("Child type inmate successfully created");
+	        Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create Un-Convicted type inmate with all the sub headings");		
+			APPLICATION_LOGS.debug("Un-Convicted type inmate successfully created with all the sub headings");
 		}catch(Exception ex){
 			APPLICATION_LOGS.debug(ex.getMessage());
 		}
 	}
-
+	
 	//@Test   // PIMS-898  
 	public void Test_checkMealTypeIsSelectable() {
 		try{
@@ -196,5 +238,77 @@ public class CreateNewAdmissionTest extends TestBase{
 	}*/
 	
 
+	//---------------------Previous codes-------------------------To be Deleted----------------------
+	
+	/*//@Test 
+		public void Test_doCreateNewAdmitionFor_ChildInmate(){
+			try{
+				landingPage = returnToHomePage();		
+				TopMenu topMenu = getTopMenu();
+				NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
+				CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			    creAdmissionPage.doCreateNewAdmitionFor_ChildInmate();
+				registrationNo = creAdmissionPage.getRegistrationNumber();
+				newAdmissionPage = creAdmissionPage.doAdmission();	
+				Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
+				APPLICATION_LOGS.debug("Child type inmate successfully created");
+			}catch(Exception ex){
+				APPLICATION_LOGS.debug(ex.getMessage());
+			}
+			
+		}
+			
+		//@Test // PIMS-656
+		public void Test_doCreateNewAdmitionFor_ConvictedInmate(){
+			try{
+				landingPage = returnToHomePage();		
+				TopMenu topMenu = getTopMenu();
+				NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();		
+				CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+				creAdmissionPage.doCreateNewAdmitionFor_ConvictedInmate();
+				registrationNo = creAdmissionPage.getRegistrationNumber();
+				newAdmissionPage = creAdmissionPage.doAdmission();	
+				Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
+				APPLICATION_LOGS.debug("Child type inmate successfully created");
+			}catch(Exception ex){
+				APPLICATION_LOGS.debug(ex.getMessage());
+			}
+			
+		}
+		
+		//@Test   // PIMS-628
+		public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate() {
+			try{
+				landingPage = returnToHomePage();		
+				TopMenu topMenu = getTopMenu();
+				NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
+				CreateNewAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+				creAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate();
+				registrationNo = creAdmissionPage.getRegistrationNumber();
+				newAdmissionPage = creAdmissionPage.doAdmission();	
+				Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
+				APPLICATION_LOGS.debug("Child type inmate successfully created");
+			}catch(Exception ex){
+				APPLICATION_LOGS.debug(ex.getMessage());
+			}
+		}
+		
+		//@Test   
+	public void Test_doCreateNewAdmitionFor_Non_ConvictedInmate_WithSubHeadings(){
+		try{
+			landingPage = returnToHomePage();		
+			TopMenu topMenu = getTopMenu();
+			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
+		    CreateNewAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
+			createNewAdmissionPage.doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings();
+			registrationNo = createNewAdmissionPage.getRegistrationNumber();
+	        newAdmissionPage = createNewAdmissionPage.doAdmission();	
+	        Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create child type inmate");		
+			APPLICATION_LOGS.debug("Child type inmate successfully created");
+		}catch(Exception ex){
+			APPLICATION_LOGS.debug(ex.getMessage());
+		}
+	}
+		*/
 	
 }
