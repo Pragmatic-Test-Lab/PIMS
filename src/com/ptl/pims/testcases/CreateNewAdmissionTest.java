@@ -37,7 +37,7 @@ public class CreateNewAdmissionTest extends TestBase{
 		
 	}
 	
-	//@Test 
+	@Test 
 	public void Test_doCreateNewAdmitionFor_Child_Inmate_With_Required_Fields(){
 		try{
 			landingPage = returnToHomePage();		

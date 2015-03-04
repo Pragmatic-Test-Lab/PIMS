@@ -17,7 +17,7 @@
 </test>
 <test name="Admission Test">
     <classes>
-        <class name="com.ptl.pims.testcases.NewAdmissionTest" ></class>  
+        <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
     </classes>
 </test>
 <test name="Authorize Admission Test">
