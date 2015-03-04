@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
-public class CreateNewAdmissionPage extends CommonMethods {
+public class CreateAdmissionPage extends CommonMethods {
 
 	WebDriver driver;
 	
@@ -145,202 +145,150 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	String Front_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 	String LHS_Image_Path = System.getProperty("user.dir")+ "\\src\\images\\Format_PNG.png";
 	
-	String Name_As_Warrent = "Nimal Pathirana";
+	String Name_As_Warrent = "Nimal pathirana";
 
 	
-	public CreateNewAdmissionPage(WebDriver dr){
+	
+	public CreateAdmissionPage(WebDriver dr){
 		driver = dr;
 	}
-
-	public void doCreateNewAdmitionFor_ChildInmate() throws Exception{	
-		try{			
-			InmateCatagory.sendKeys("Child");
-	     	CourtWarant.sendKeys("Negombo");
-	     	AgeAddmission.sendKeys("25");
-			MealType.sendKeys("Diet");
-			BioMetric.sendKeys("Test Biometric");
-			NameWarrent.sendKeys(Name_As_Warrent);
-			OccurenceClassificatio.sendKeys("FO");
-			Gender.sendKeys("male");	
-		}
-		catch(Exception ex){
-			throw ex;		
-		}
-	}
-		
-	//PIMS-656
-	public void doCreateNewAdmitionFor_ConvictedInmate() throws Exception{		
-     	try{
-     		InmateCatagory.sendKeys("Convicted");
-         	CourtWarant.sendKeys("Negombo");
-         	AgeAddmission.sendKeys("25");
-    		MealType.sendKeys("Diet");
-    		BioMetric.sendKeys("Test Biometric");
-    		NameWarrent.sendKeys(Name_As_Warrent);
-    		OccurenceClassificatio.sendKeys("FO");
-    		Gender.sendKeys("male");	
-     	}
-     	catch(Exception ex){
-     		throw ex;
-     	}			
+	
+	//Create any type of inmate with required fields
+	public void doCreateNewAdmissionWithRequiredFileds(String inmateCatagory, String court, String age, String meal, 
+			String biometric,String nameAsWarrent, String classification, String gender) throws Exception{
+		InmateCatagory.sendKeys(inmateCatagory);
+     	CourtWarant.sendKeys(court);
+     	AgeAddmission.sendKeys(age);
+		MealType.sendKeys(meal);
+		BioMetric.sendKeys(biometric);
+		NameWarrent.sendKeys(nameAsWarrent);
+		OccurenceClassificatio.sendKeys(classification);
+		Gender.sendKeys(gender);	
 	}
 
-	//PIMS-628
-	public void doCreateNewAdmitionFor_Un_ConvictedInmate() throws Exception{	
-	 	try{
-	 		InmateCatagory.sendKeys("Un-Convicted");
-		 	CourtWarant.sendKeys("Colombo");
-		 	AgeAddmission.sendKeys("20");
-			MealType.sendKeys("Diet");
-			NameWarrent.sendKeys(Name_As_Warrent);
-			OccurenceClassificatio.sendKeys("FO");
-			Gender.sendKeys("male");
-	 	}catch(Exception ex){
-	 		throw ex;
-	 	}
-	
-	}
-	
-	public void doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings() throws Exception{
+	//Create any type of inmate with all sub headings fields
+	public void doCreateNewAdmitionWithSubHeadings(String inmateCatagory, String court, String age, String meal, String biometric,
+			String nameAsWarrent, String classification, String gender, String RHS_Image,String Front_Image, String LHS_Image,
+			String caseCourt, String caseNo, String caseDate,
+			boolean isPregnant, String hlthRemarks, boolean isFroPreSchool, String ofPreSchool,String drug, String observation,
+			String complaintDate, String complainType, String complainDescription, 
+			String ppDate, String ppItem, String ppDes, String ppQuantity, String ppVlue,
+			String infantsPreschoolName, String InfantsPreschoolDob) throws Exception{
 		
-		try{
-			InmateCatagory.sendKeys("Child");
-	     	CourtWarant.sendKeys("Negombo");
-	     	AgeAddmission.sendKeys("20");
-			MealType.sendKeys("Diet");
-			BioMetric.sendKeys("Biometric Content");
-			NameWarrent.sendKeys(Name_As_Warrent);
-			OccurenceClassificatio.sendKeys("FO");
-			Gender.sendKeys("male");
-			Thread.sleep(3000);
-			ImageRHSBrowse.sendKeys(RHS_Image_Path);
-			Thread.sleep(3000);
-			ImageFrontBrowse.sendKeys(Front_Image_Path);
-			Thread.sleep(3000);
-			ImageLHSBrowse.sendKeys(LHS_Image_Path);
-			
-			//Add court details
-			InmateAddNewCase.click();
-			InmateCaseDetailsCourt.sendKeys("Colombo");
-			InmateCaseDetailsCaseNumber.sendKeys("CASE001");
-			InmateCaseDetailsDateConviction.sendKeys("2015-02-24");
-			
-			//Add Health Condition
-			InmateHealthConditionTab.click();
-			InmateHealthConditionMedicalAttention.click();
+		InmateCatagory.sendKeys(inmateCatagory);
+     	CourtWarant.sendKeys(court);
+     	AgeAddmission.sendKeys(age);
+		MealType.sendKeys(meal);
+		BioMetric.sendKeys(biometric);
+		NameWarrent.sendKeys(nameAsWarrent);
+		OccurenceClassificatio.sendKeys(classification);
+		Gender.sendKeys(gender);
+		Thread.sleep(3000);
+		ImageRHSBrowse.sendKeys(RHS_Image);
+		Thread.sleep(3000);
+		ImageFrontBrowse.sendKeys(Front_Image);
+		Thread.sleep(3000);
+		ImageLHSBrowse.sendKeys(LHS_Image);
+		
+		//Add court details
+		InmateAddNewCase.click();
+		InmateCaseDetailsCourt.sendKeys(caseCourt);
+		InmateCaseDetailsCaseNumber.sendKeys(caseNo);
+		InmateCaseDetailsDateConviction.sendKeys(caseDate);
+		
+		//Add Health Condition
+		InmateHealthConditionTab.click();
+		InmateHealthConditionMedicalAttention.click();
+		if(isPregnant){
 			InmateHealthConditionPregnant.click();
-			InmateHealthConditionRemarks.sendKeys("Health Conditions Remarks");
-			InmateHealthConditionForPreSchool.click();
-			InmateHealthConditionOfPreSchool.sendKeys("Health of school");
-			InmateHealthConditionDrugsAddNew.click();
-			InmateHealthConditionManageDrugs_Drugs.sendKeys("Other");
-			InmateHealthConditionPhysicalAddNew.click();
-			InmateHealthConditionPhysicalObservation.sendKeys("Cough");
-			
-			//Inmate Complaint
-			InmateComplainTab.click();
-			InmateComplainAddNew.click();
-			InmateComplainDate.sendKeys("2015-02-10");
-			InmateComplainType.sendKeys("Health");
-			InmateComplainDescription.sendKeys("Descriptios");
-			
-			//Inmate Private Properties
-			InmatePrivatePropertiesTab.click();
-			InmatePrivatePropertiesAddNew.click();
-			InmatePrivatePropertiesDate.sendKeys("2015-02-18");
-			InmatePrivatePropertiesItem.sendKeys("Other");
-			InmatePrivatePropertiesDesciption.sendKeys("Descriptions");
-			InmatePrivatePropertiesQuantity.sendKeys("1");
-			InmatePrivatePropertiesValue.sendKeys("200.89");
-			
-			//InfantsPreschoolTab.
-			InmateInfantsPreschoolTab.click();
-			InmateInfantsPreschoolAddNew.click();
-			InmateInfantsPreschoolName.sendKeys("Name hi");
-			InmateInfantsPreschoolDateOfBirth.sendKeys("2015-02-25");
-		}catch(Exception ex){
-			throw ex;
 		}
+		InmateHealthConditionRemarks.sendKeys(hlthRemarks);
+		if(isFroPreSchool){
+			InmateHealthConditionForPreSchool.click();
+		}
+		InmateHealthConditionOfPreSchool.sendKeys(ofPreSchool);
+		
+		InmateHealthConditionDrugsAddNew.click();
+		InmateHealthConditionManageDrugs_Drugs.sendKeys(drug);
+		
+		InmateHealthConditionPhysicalAddNew.click();
+		InmateHealthConditionPhysicalObservation.sendKeys(observation);
+		
+		//Inmate Complaint
+		InmateComplainTab.click();
+		InmateComplainAddNew.click();
+		InmateComplainDate.sendKeys(complaintDate);
+		InmateComplainType.sendKeys(complainType);
+		InmateComplainDescription.sendKeys(complainDescription);
+		
+		//Inmate Private Properties
+		InmatePrivatePropertiesTab.click();
+		InmatePrivatePropertiesAddNew.click();
+		InmatePrivatePropertiesDate.sendKeys(ppDate);
+		InmatePrivatePropertiesItem.sendKeys(ppItem);
+		InmatePrivatePropertiesDesciption.sendKeys(ppDes);
+		InmatePrivatePropertiesQuantity.sendKeys(ppQuantity);
+		InmatePrivatePropertiesValue.sendKeys(ppVlue);
+		
+		//InfantsPreschoolTab.
+		InmateInfantsPreschoolTab.click();
+		InmateInfantsPreschoolAddNew.click();
+		InmateInfantsPreschoolName.sendKeys(infantsPreschoolName);
+		InmateInfantsPreschoolDateOfBirth.sendKeys(InfantsPreschoolDob);
 	}
 	
 	//PIMS-898
 	public boolean checkMealTypeIsSelectable()throws Exception{
-		try{
-			if(MealType.getAttribute("disabled") == null)
-				return true;
-			else 
-				return false;
-		}catch (Exception ex){
-			throw ex;
-		}
-			
+		if(MealType.getAttribute("disabled") == null)
+			return true;
+		else 
+			return false;
 	}
 	
 	//PIMS-869
 	public boolean checkImateCatagoryIsSelectable() throws Exception{		
-		try{
-			if(InmateCatagory.getAttribute("disabled") == null)
-				return true;
-			else
-				return false;	    
-		}catch(Exception ex){
-			throw ex;
-		}
+		if(InmateCatagory.getAttribute("disabled") == null)
+			return true;
+		else
+			return false;	    
 	}
 	
 	//PIMS-408
 	public boolean checkIsInmateRegistrationNumberIsAutoGenarated() throws Exception{
-		try{
-			InmateCatagory.sendKeys("Convicted");
-	     	CourtWarant.sendKeys("Negombo");
-			MealType.sendKeys("Diet");
-			if(RegNumber.getText()!= "")
-				return  true;
-			else
-				return false;
-		}catch(Exception ex){
-			throw ex;
-		}
+		InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+		MealType.sendKeys("Diet");
+		if(RegNumber.getText()!= "")
+			return  true;
+		else
+			return false;
 	}
 	
 	//PIMS-1190
 	public String checkAgeCatagoryIsAutoSelected() throws Exception{	
-		try{
-			InmateCatagory.sendKeys("Un-Convicted");
-	     	CourtWarant.sendKeys("Negombo");
-			AgeAddmission.sendKeys("20");
-			MealType.sendKeys("Diet");
-			String selectedOption = new Select(driver.findElement(By.xpath(Constants.CreateAdmission_AgeCategory))).getFirstSelectedOption().getText();
-			return selectedOption;
-		}catch(Exception ex){
-			throw ex;
-		}
-		
-	 
+		InmateCatagory.sendKeys("Un-Convicted");
+     	CourtWarant.sendKeys("Negombo");
+		AgeAddmission.sendKeys("20");
+		MealType.sendKeys("Diet");
+		String selectedOption = new Select(driver.findElement(By.xpath(Constants.CreateAdmission_AgeCategory))).getFirstSelectedOption().getText();
+		return selectedOption;
 	}
 	
 	//PIMS-1198
 	public void checkUserCanUploadTheAllThreeImages() throws Exception{	
-			
-			try{
-				InmateCatagory.sendKeys("Child");
-		     	CourtWarant.sendKeys("Negombo");
-		     	AgeAddmission.sendKeys("25");
-				MealType.sendKeys("Diet");
-				NameWarrent.sendKeys(Name_As_Warrent);
-				OccurenceClassificatio.sendKeys("FO");
-				Thread.sleep(3000);
-				ImageRHSBrowse.sendKeys(RHS_Image_Path); 
-				Thread.sleep(3000);
-				ImageFrontBrowse.sendKeys(Front_Image_Path);
-				Thread.sleep(3000);
-				ImageLHSBrowse.sendKeys(LHS_Image_Path);
-			} catch(Exception ex){
-				
-				throw ex;
-			}
-			
-		}
+		InmateCatagory.sendKeys("Child");
+     	CourtWarant.sendKeys("Negombo");
+     	AgeAddmission.sendKeys("25");
+		MealType.sendKeys("Diet");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Thread.sleep(3000);
+		ImageRHSBrowse.sendKeys(RHS_Image_Path); 
+		Thread.sleep(3000);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		Thread.sleep(3000);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
+	}
 
 		
 	//PIMS-19
@@ -360,15 +308,9 @@ public class CreateNewAdmissionPage extends CommonMethods {
 	}
 		
 	public NewAdmissionPage doAdmission() throws Exception {
-		try{
 			SaveInamteAdmissionButton.click();
 			NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver,NewAdmissionPage.class);
 			return newAdmissionPage;
-		}
-		catch(Exception ex){
-			 throw ex;
-		}
-		
 	}
 
 	public String getActualPageTitle(){
@@ -439,5 +381,99 @@ public class CreateNewAdmissionPage extends CommonMethods {
 		
 		return ActualAgeCategory;
 	}
+	
+	
+	//-------------------Previous code--To Be Deleted----------------------------
+	/*
+	public void doCreateNewAdmitionFor_ChildInmate()throws Exception{				
+		InmateCatagory.sendKeys("Child");
+     	CourtWarant.sendKeys("Negombo");
+     	AgeAddmission.sendKeys("25");
+		MealType.sendKeys("Diet");
+		BioMetric.sendKeys("Test Biometric");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");	
+	}
+		
+	//PIMS-656
+	public void doCreateNewAdmitionFor_ConvictedInmate() throws Exception{		
+ 		InmateCatagory.sendKeys("Convicted");
+     	CourtWarant.sendKeys("Negombo");
+     	AgeAddmission.sendKeys("25");
+		MealType.sendKeys("Diet");
+		BioMetric.sendKeys("Test Biometric");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");				
+	}
+
+	//PIMS-628
+	public void doCreateNewAdmitionFor_Un_ConvictedInmate() throws Exception{	
+ 		InmateCatagory.sendKeys("Un-Convicted");
+	 	CourtWarant.sendKeys("Colombo");
+	 	AgeAddmission.sendKeys("20");
+		MealType.sendKeys("Diet");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");
+	}
+	public void doCreateNewAdmitionFor_Un_ConvictedInmate_WithSubHeadings() throws Exception{
+		InmateCatagory.sendKeys("Child");
+     	CourtWarant.sendKeys("Negombo");
+     	AgeAddmission.sendKeys("20");
+		MealType.sendKeys("Diet");
+		BioMetric.sendKeys("Biometric Content");
+		NameWarrent.sendKeys(Name_As_Warrent);
+		OccurenceClassificatio.sendKeys("FO");
+		Gender.sendKeys("male");
+		Thread.sleep(3000);
+		ImageRHSBrowse.sendKeys(RHS_Image_Path);
+		Thread.sleep(3000);
+		ImageFrontBrowse.sendKeys(Front_Image_Path);
+		Thread.sleep(3000);
+		ImageLHSBrowse.sendKeys(LHS_Image_Path);
+		
+		//Add court details
+		InmateAddNewCase.click();
+		InmateCaseDetailsCourt.sendKeys("Colombo");
+		InmateCaseDetailsCaseNumber.sendKeys("CASE001");
+		InmateCaseDetailsDateConviction.sendKeys("2015-02-24");
+		
+		//Add Health Condition
+		InmateHealthConditionTab.click();
+		InmateHealthConditionMedicalAttention.click();
+		InmateHealthConditionPregnant.click();
+		InmateHealthConditionRemarks.sendKeys("Health Conditions Remarks");
+		InmateHealthConditionForPreSchool.click();
+		InmateHealthConditionOfPreSchool.sendKeys("Health of school");
+		InmateHealthConditionDrugsAddNew.click();
+		InmateHealthConditionManageDrugs_Drugs.sendKeys("Other");
+		InmateHealthConditionPhysicalAddNew.click();
+		InmateHealthConditionPhysicalObservation.sendKeys("Cough");
+		
+		//Inmate Complaint
+		InmateComplainTab.click();
+		InmateComplainAddNew.click();
+		InmateComplainDate.sendKeys("2015-02-10");
+		InmateComplainType.sendKeys("Health");
+		InmateComplainDescription.sendKeys("Descriptios");
+		
+		//Inmate Private Properties
+		InmatePrivatePropertiesTab.click();
+		InmatePrivatePropertiesAddNew.click();
+		InmatePrivatePropertiesDate.sendKeys("2015-02-18");
+		InmatePrivatePropertiesItem.sendKeys("Other");
+		InmatePrivatePropertiesDesciption.sendKeys("Descriptions");
+		InmatePrivatePropertiesQuantity.sendKeys("1");
+		InmatePrivatePropertiesValue.sendKeys("200.89");
+		
+		//InfantsPreschoolTab.
+		InmateInfantsPreschoolTab.click();
+		InmateInfantsPreschoolAddNew.click();
+		InmateInfantsPreschoolName.sendKeys("Name hi");
+		InmateInfantsPreschoolDateOfBirth.sendKeys("2015-02-25");
+	}
+	*/
 
 }

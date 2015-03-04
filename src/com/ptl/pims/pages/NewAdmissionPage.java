@@ -20,9 +20,9 @@ public class NewAdmissionPage extends SelectInmatePage {
 		driver = dr;
 	}
 	
-	public CreateNewAdmissionPage getCreateAdmissionPage(){
+	public CreateAdmissionPage getCreateAdmissionPage(){
 		CreateAdmissionButton.click();
-		CreateNewAdmissionPage createNewAdmissionPage = PageFactory.initElements(driver, CreateNewAdmissionPage.class);
+		CreateAdmissionPage createNewAdmissionPage = PageFactory.initElements(driver, CreateAdmissionPage.class);
 		return createNewAdmissionPage;	
 	}
 	
