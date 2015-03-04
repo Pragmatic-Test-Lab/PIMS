@@ -9,7 +9,7 @@ import com.ptl.pims.util.Constants;
 
 public class LoginPage {
 
-	public WebDriver driver;
+	WebDriver driver;
 
 	@FindBy(xpath = Constants.Login_username)
 	public WebElement username;
