@@ -147,6 +147,13 @@ public class CreateAdmissionPage extends CommonMethods {
 	
 	String Name_As_Warrent = "Nimal pathirana";
 
+	//temporary variables for admission date selection
+	String dateText_FirstPart = Constants.CalendarPopup_DateText_FirstPart;
+	String dateText_LastPart = Constants.CalendarPopup_DateText_LastPart;	
+	String hourText_FirstPart = Constants.CalendarPopup_HourText_FirstPart;
+	String hourText_LastPart = Constants.CalendarPopup_HourText_LastPart;	
+	String minuteText_FirstPart = Constants.CalendarPopup_MinuteText_FirstPart;
+	String minuteText_LastPart = Constants.CalendarPopup_MinuteText_LastPart;	
 	
 	
 	public CreateAdmissionPage(WebDriver dr){
@@ -164,6 +171,15 @@ public class CreateAdmissionPage extends CommonMethods {
 		NameWarrent.sendKeys(nameAsWarrent);
 		OccurenceClassificatio.sendKeys(classification);
 		Gender.sendKeys(gender);	
+		
+		//
+		//temporary date of admission selection
+		//
+		DateAddmission.click();
+		//backMonth.click();
+		driver.findElement(By.xpath(dateText_FirstPart + "3" + dateText_LastPart)).click(); //click on the selected date text
+		driver.findElement(By.xpath(hourText_FirstPart + "10:00" + hourText_LastPart)).click(); //click on the selected hour text
+		driver.findElement(By.xpath(minuteText_FirstPart + "10:25" + minuteText_LastPart)).click();
 	}
 
 	//Create any type of inmate with all sub headings fields

@@ -145,6 +145,8 @@ public class Constants {
 	public static final String CreateAdmission_Youth_AgeCategory = ".//select[@id='admission-adm_age_category_id']//option[@selected='5']";
 	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_registration_no']";
 	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";
+	public static final String CreateAdmission_DateAdmission_MonthBackSelect = ".//*[@class='prev']";
+	
 	public static final String CreateAdmission_MealType = "//*[@id='admission-adm_meal_type_id']";
 	public static final String CreateAdmission_Biometric = "//*[@id='admission-adm_biometric_id']";
 	public static final String CreateAdmission_NameWarrant = "//*[@id='admission-adm_name_as_in_warrant']";
@@ -442,6 +444,7 @@ public class Constants {
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
 	public static final String InmateSearchPage_SuccessMessage = ".//div[@class='alert alert-success']";
+	public static final String InmateSearchPage_NoSearchResultsFound = ".//*[text()='No results found.']";
 	
 	
 	// Authorize Registration Page
@@ -458,6 +461,10 @@ public class Constants {
 	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";	
 	public static final String CalendarPopup_DateText_FirstPart = "//td[@class='day'][text()='";
 	public static final String CalendarPopup_DateText_LastPart = "']";
+	public static final String CalendarPopup_HourText_FirstPart = "//*[text()='";
+	public static final String CalendarPopup_HourText_LastPart = "']";
+	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
+	public static final String CalendarPopup_MinuteText_LastPart = "']";
 	
 
 

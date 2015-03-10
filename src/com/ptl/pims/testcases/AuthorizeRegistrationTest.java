@@ -1,9 +1,11 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
+
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
+
 import com.ptl.pims.pages.AuthorizeRegistrationInmateSelectPage;
 import com.ptl.pims.pages.AuthorizeRegistrationPage;
 import com.ptl.pims.pages.HomePage;
@@ -36,12 +38,24 @@ public class AuthorizeRegistrationTest extends TestBase {
 	
 	
 	@Test(dependsOnMethods = "GoToAuthorizeRegistration")      //pims-1196
-	public void AuthorizeInmate(Hashtable<String, String> data) {
+	public void AuthorizeInmate() {
 		
 		inmateAuthorizeSelect = inmateAuthorize.authorizeInmate();	
 				
-		Assert.assertTrue(inmateAuthorizeSelect.getSuccessMessage().matches(Constants.AuthorizeRegistration_SuccessMessageText), "Unable to authorize inmate");			
-		APPLICATION_LOGS.debug("Changed Inmate location successfully");
+/*		Assert.assertTrue(inmateAuthorizeSelect.getSuccessMessage().matches(Constants.AuthorizeRegistration_SuccessMessageText), "Unable to authorize inmate");			
+		APPLICATION_LOGS.debug("Changed Inmate location successfully");*/
+		
+		//validate authorization
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"", "");	
+
+		Assert.assertTrue(inmateAuthorizeSelect.NoSearchResultsFound(), 
+				"Inmate Still available in authorization page. Authorization Failed.");
 	}
 
 

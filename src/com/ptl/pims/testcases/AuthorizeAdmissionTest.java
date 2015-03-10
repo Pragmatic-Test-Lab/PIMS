@@ -1,6 +1,8 @@
 package com.ptl.pims.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.ptl.pims.pages.AuthorizeAdmissionPage;
 import com.ptl.pims.pages.AuthorizeAdmissionSelectPage;
 import com.ptl.pims.pages.HomePage;
@@ -19,6 +21,18 @@ public class AuthorizeAdmissionTest extends TestBase {
 		AuthorizeAdmissionPage authorizeAdmissionPage =  authorizeAdmissionSelectPage.clickFirstInmate();
 		
 		authorizeAdmissionSelectPage = authorizeAdmissionPage.doAuthorizeAdmission();
+		
+		//validate authorization
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		authorizeAdmissionSelectPage = authorizeAdmissionSelectPage.doSearch(registrationNo,"", "");	
+
+		Assert.assertTrue(authorizeAdmissionSelectPage.NoSearchResultsFound(), 
+				"Inmate Still available in authorization page. Authorization Failed.");
 	}
 	
 }

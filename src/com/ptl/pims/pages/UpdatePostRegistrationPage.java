@@ -170,7 +170,7 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(education_tbody);
 		for (int i = 0; i < Institute.length; i++) {
 			addNew.click();
-			int newDataRow = dataRows + i - 1;
+			int newDataRow = dataRows + i;
 			String DataRowNumber = String.valueOf(newDataRow);
 			try {
 				Thread.sleep(3000);

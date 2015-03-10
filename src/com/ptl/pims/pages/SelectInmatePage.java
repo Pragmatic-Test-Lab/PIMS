@@ -1,5 +1,6 @@
 package com.ptl.pims.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.pims.util.Constants;
 
 
-public abstract class SelectInmatePage {
+public abstract class SelectInmatePage extends CommonMethods {
 
 	
 	// Inmate Select Page Header
@@ -17,6 +18,8 @@ public abstract class SelectInmatePage {
 	public WebElement HeaderField;
 	@FindBy(xpath = Constants.InmateSearchPage_SuccessMessage)
 	public WebElement successMessage;
+	By SearchEmpty =  By.xpath(Constants.InmateSearchPage_NoSearchResultsFound);
+
 	// SearchFields
 	@FindBy(xpath = Constants.InmateSearch_RegNoSearchField)
 	public WebElement RegNoSearchField;
@@ -52,6 +55,15 @@ public abstract class SelectInmatePage {
 	public String getSuccessMessage(){
 		
 		return successMessage.getText();
+	}
+	
+	
+	public boolean NoSearchResultsFound(){
+		
+		if(checkElementIsPresent(driver, SearchEmpty))
+		return true;
+		else
+			return false;
 	}
 
 	

@@ -23,6 +23,10 @@ public class AuthorizeAdmissionPage {
 	//PIMS-1194
 	public AuthorizeAdmissionSelectPage doAuthorizeAdmission(){
 
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+		
 		AuthorizeInamteAdmissionButton.click();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
 		return authorizeAdmissionSelectPage;

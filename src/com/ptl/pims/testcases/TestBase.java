@@ -33,7 +33,7 @@ public class TestBase {
 	public static WebDriver driver = null;
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
-	public static String registrationNo = "C/10012/10/NHC/2015";
+	public static String registrationNo = "";
 	ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
