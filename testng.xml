@@ -4,23 +4,20 @@
 <listeners>
     <listener class-name="listener.TestsListenerAdapter" />
 </listeners>
-<!-- <test name="User Login Test">
-    <classes>
-        <class name="com.ptl.testcases.LoginTest" ></class>  
-    </classes>
-</test> -->
-
+<!--  
 <test name="Login Test">
     <classes>
         <class name="com.ptl.pims.testcases.LoginTest" ></class>  
     </classes>
 </test>
-<test name="Admission Test">
+-->
+<test name="New Admission Test">
     <classes>
-        <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
+        <class name="com.ptl.pims.testcases.CreateAdmissionTest_Child" ></class>  
     </classes>
+    				<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
 </test>
-<test name="Authorize Admission Test">
+<test name="Admission Authorization Test">
     <classes>
         <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
     </classes>
