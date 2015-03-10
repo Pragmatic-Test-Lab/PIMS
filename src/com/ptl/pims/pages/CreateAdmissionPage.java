@@ -178,8 +178,8 @@ public class CreateAdmissionPage extends CommonMethods {
 		DateAddmission.click();
 		//backMonth.click();
 		driver.findElement(By.xpath(dateText_FirstPart + "3" + dateText_LastPart)).click(); //click on the selected date text
-		driver.findElement(By.xpath(hourText_FirstPart + "10:00" + hourText_LastPart)).click(); //click on the selected hour text
-		driver.findElement(By.xpath(minuteText_FirstPart + "10:25" + minuteText_LastPart)).click();
+		driver.findElement(By.xpath(hourText_FirstPart + "1:00" + hourText_LastPart)).click(); //click on the selected hour text
+		driver.findElement(By.xpath(minuteText_FirstPart + "1:25" + minuteText_LastPart)).click();
 	}
 
 	//Create any type of inmate with all sub headings fields

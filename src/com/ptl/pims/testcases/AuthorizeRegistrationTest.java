@@ -47,11 +47,8 @@ public class AuthorizeRegistrationTest extends TestBase {
 		
 		//validate authorization
 		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {}
 		inmateAuthorizeSelect = inmateAuthorizeSelect.doSearch(registrationNo,"", "");	
 
 		Assert.assertTrue(inmateAuthorizeSelect.NoSearchResultsFound(), 
