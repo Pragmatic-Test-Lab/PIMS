@@ -19,9 +19,24 @@
     </classes>
     				<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
 </test>
-<test name="Admission Authorization Test">
+<test name="Admission Authorization Test"> 
     <classes>
         <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
+    </classes>
+</test>
+<test name="Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
+    </classes>
+</test>
+<test name="Allocate Location Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.AllocateLocationTest" ></class>  
+    </classes>
+</test>
+<test name="Property Management Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.PropertyManagementNewTest" ></class>  
     </classes>
 </test>
 <test name="Registeration Test">
@@ -44,7 +59,6 @@
         <class name="com.ptl.pims.testcases.AuthorizePostRegistration" ></class>  
     </classes>
 </test>
-
 </suite>
 
 

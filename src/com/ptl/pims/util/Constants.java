@@ -142,6 +142,9 @@ public class Constants {
 	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
 	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
 	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
+	public static final String AgeCatagoryOptionFirstPart = ".//*[@id='admission-adm_age_category_id']/option[@value='";
+	public static final String AgeCatagoryOptionLastPart = "']";
+	
 	public static final String CreateAdmission_Youth_AgeCategory = ".//select[@id='admission-adm_age_category_id']//option[@selected='5']";
 	public static final String CreateAdmission_RegistrationNumber = "//*[@id='admission-adm_registration_no']";
 	public static final String CreateAdmission_DateAdmission = "//*[@id='admission-adm_date_of_admission']";

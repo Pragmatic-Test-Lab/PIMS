@@ -77,49 +77,76 @@
 			<artifactId>xml-apis</artifactId>
 			<version>1.4.01</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.uncommons</groupId>
 			<artifactId>reportng</artifactId>
 			<version>1.1.4</version>
 		</dependency>
+		
+
+		
 	</dependencies>
 
+	
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.4.2</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>./testNG.xml</suiteXmlFile>
-					</suiteXmlFiles>
-					<reportsDirectory>./reports</reportsDirectory>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<properties>
-						<property>
-							<name>usedefaultlisteners</name>
-							<value>false</value>
-						</property>
-						<property>
-							<name>listener</name>
-							<value>org.uncommons.reportng.HTMLReporter,
-								org.uncommons.reportng.JUnitXMLReporter
-							</value>
-						</property>
-					</properties>
-				</configuration>
-			</plugin>
-		</plugins>
 
-	</build>
+	<plugins>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.4.2</version>
+		
+	</plugin>
+
+		<plugin>
+
+			<groupId>org.apache.maven.plugins</groupId>
+
+			<artifactId>maven-surefire-plugin</artifactId>
+
+			<version>2.5</version>
+
+			<configuration>
+
+				<properties>
+					<property>
+
+						<name>usedefaultlisteners</name>
+
+						<value>false</value>
+
+					</property>
+
+					<property>
+
+						<name>listener</name>
+
+						<value>org.uncommons.reportng.HTMLReporter,
+
+							org.uncommons.reportng.JUnitXMLReporter
+
+						</value>
+
+					</property>
+				</properties>
+				
+					<suiteXmlFiles>
+				<suiteXmlFile>./testNG.xml</suiteXmlFile>
+			</suiteXmlFiles>
+			<reportsDirectory>./reports</reportsDirectory>
+
+			</configuration>
+			
+
+
+		</plugin>
+
+	</plugins>
+
+</build>
+
 
 
 

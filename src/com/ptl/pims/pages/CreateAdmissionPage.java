@@ -28,9 +28,11 @@ public class CreateAdmissionPage extends CommonMethods {
 	@FindBy(xpath = Constants.CreateAdmission_CourtWarant)
 	WebElement CourtWarant;
 	@FindBy(xpath = Constants.CreateAdmission_AgeAdmission)
-	WebElement AgeAddmission;
+	WebElement AgeAdmission;
 	@FindBy(xpath = Constants.CreateAdmission_AgeCategory)
-	WebElement AgeCatagory;
+	WebElement AgeCatagoryDropdown;
+	String AgeCatagoryOptionFirstPart = Constants.AgeCatagoryOptionFirstPart;
+	String AgeCategoryOptionLastPart = Constants.AgeCatagoryOptionLastPart;
 	@FindBy(xpath = Constants.CreateAdmission_Youth_AgeCategory)
 	WebElement SelectedAgeCatagoryAsYoth;
 	@FindBy(xpath = Constants.CreateAdmission_RegistrationNumber)
@@ -162,10 +164,11 @@ public class CreateAdmissionPage extends CommonMethods {
 	
 	//Create any type of inmate with required fields
 	public void doCreateNewAdmissionWithRequiredFileds(String inmateCatagory, String court, String age, String meal, 
-			String biometric,String nameAsWarrent, String classification, String gender) throws Exception{
+			String biometric,String nameAsWarrent, String classification, String gender){
+		
 		InmateCatagory.sendKeys(inmateCatagory);
      	CourtWarant.sendKeys(court);
-     	AgeAddmission.sendKeys(age);
+     	AgeAdmission.sendKeys(age);
 		MealType.sendKeys(meal);
 		BioMetric.sendKeys(biometric);
 		NameWarrent.sendKeys(nameAsWarrent);
@@ -193,7 +196,7 @@ public class CreateAdmissionPage extends CommonMethods {
 		
 		InmateCatagory.sendKeys(inmateCatagory);
      	CourtWarant.sendKeys(court);
-     	AgeAddmission.sendKeys(age);
+     	AgeAdmission.sendKeys(age);
 		MealType.sendKeys(meal);
 		BioMetric.sendKeys(biometric);
 		NameWarrent.sendKeys(nameAsWarrent);
@@ -284,7 +287,7 @@ public class CreateAdmissionPage extends CommonMethods {
 	public String checkAgeCatagoryIsAutoSelected() throws Exception{	
 		InmateCatagory.sendKeys("Un-Convicted");
      	CourtWarant.sendKeys("Negombo");
-		AgeAddmission.sendKeys("20");
+		AgeAdmission.sendKeys("20");
 		MealType.sendKeys("Diet");
 		String selectedOption = new Select(driver.findElement(By.xpath(Constants.CreateAdmission_AgeCategory))).getFirstSelectedOption().getText();
 		return selectedOption;
@@ -294,7 +297,7 @@ public class CreateAdmissionPage extends CommonMethods {
 	public void checkUserCanUploadTheAllThreeImages() throws Exception{	
 		InmateCatagory.sendKeys("Child");
      	CourtWarant.sendKeys("Negombo");
-     	AgeAddmission.sendKeys("25");
+     	AgeAdmission.sendKeys("25");
 		MealType.sendKeys("Diet");
 		NameWarrent.sendKeys(Name_As_Warrent);
 		OccurenceClassificatio.sendKeys("FO");
@@ -323,7 +326,7 @@ public class CreateAdmissionPage extends CommonMethods {
      
 	}
 		
-	public NewAdmissionPage doAdmission() throws Exception {
+	public NewAdmissionPage doAdmission(){
 			SaveInamteAdmissionButton.click();
 			NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver,NewAdmissionPage.class);
 			return newAdmissionPage;
@@ -348,56 +351,22 @@ public class CreateAdmissionPage extends CommonMethods {
 		System.out.println("Inmate Registration Number : " + RegistrationNumber);
 		return RegistrationNumber;
 	}
+
 	
 	
-	public String getExpectedAutoSelectedAgeCategory(String AdmissionAge){		
-		AgeAddmission.clear();
-		AgeAddmission.sendKeys(AdmissionAge);
-		AgeAddmission.sendKeys(Keys.TAB);
+	public String getActualSelectedAgeCategory(){
 		
-		int AgeAtAdmission=0;
-		String ExpectedAgeCategory;
-		try {
-			Thread.sleep(2000);
-			String EnteredAge = AgeAddmission.getAttribute("value");
-			AgeAtAdmission = Integer.parseInt(EnteredAge);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String ageCategoryValue = AgeCatagoryDropdown.getAttribute("value");
+		WebElement ageCategorySelectedOption = driver.findElement(By.xpath(AgeCatagoryOptionFirstPart + ageCategoryValue + AgeCategoryOptionLastPart));
 		
-		
-		if(AgeAtAdmission<6){
-			ExpectedAgeCategory = "Preschool";
-		} else if(AgeAtAdmission>5 && AgeAtAdmission<17){
-			ExpectedAgeCategory = "Juvenile";
-		} else if(AgeAtAdmission>16 && AgeAtAdmission<23){
-			ExpectedAgeCategory = "Youth";
-		} else {
-			ExpectedAgeCategory = "Adult";
-		}
-		
-		return ExpectedAgeCategory;
-		
+		return ageCategorySelectedOption.getText();
 	}
 	
-	
-	public String getActualAutoSelectedAgeCategory(){
-		String ActualAgeCategory = AgeCatagory.getAttribute("value");
+	public void addAge(String age){
 		
-		if(ActualAgeCategory.equals("1")){
-			ActualAgeCategory = "Adult";
-		} else if(ActualAgeCategory.equals("3")){
-			ActualAgeCategory = "Youth";
-		}  else if(ActualAgeCategory.equals("4")){
-			ActualAgeCategory = "Juvenile";
-		} else{
-			ActualAgeCategory = "Preschool";
-		}
-		
-		return ActualAgeCategory;
+		AgeAdmission.sendKeys(age + Keys.TAB);
 	}
-	
+
 	
 	//-------------------Previous code--To Be Deleted----------------------------
 	/*
