@@ -65,6 +65,7 @@ public class Constants {
 	public static final String InmateRegistration_identification_eyesd ="//*[@id='admission-adm_eyes_description']";
 	public static final String InmateRegistration_identification_nose ="//*[@id='admission-adm_norse_id']";
 	public static final String InmateRegistration_identification_nosed ="//*[@id='admission-adm_norse_description']";
+	public static final String InmateRegistration_identification_health ="//*[@id='admission-adm_health_id']";
 	public static final String InmateRegistration_identification_bodymark ="//*[@id='admission-adm_body_mark_1']";
 	
 	

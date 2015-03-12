@@ -356,6 +356,12 @@ public class CreateAdmissionPage extends CommonMethods {
 	
 	public String getActualSelectedAgeCategory(){
 		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		String ageCategoryValue = AgeCatagoryDropdown.getAttribute("value");
 		WebElement ageCategorySelectedOption = driver.findElement(By.xpath(AgeCatagoryOptionFirstPart + ageCategoryValue + AgeCategoryOptionLastPart));
 		
@@ -364,6 +370,9 @@ public class CreateAdmissionPage extends CommonMethods {
 	
 	public void addAge(String age){
 		
+		AgeAdmission.click();
+		AgeAdmission.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		AgeAdmission.sendKeys(Keys.DELETE);		
 		AgeAdmission.sendKeys(age + Keys.TAB);
 	}
 

@@ -104,6 +104,8 @@ public class InmateRegistration extends CommonMethods{
 	public WebElement eyesd;
 	@FindBy(xpath = Constants.InmateRegistration_identification_nose)
 	public WebElement nose;
+	@FindBy(xpath = Constants.InmateRegistration_identification_health)
+	public WebElement health;
 	@FindBy(xpath = Constants.InmateRegistration_identification_bodymark)
 	public WebElement bodymark;
 
@@ -232,7 +234,7 @@ public class InmateRegistration extends CommonMethods{
 	}
 
 
-	public void doAddIdentificationDetailsOfInmate(String Face, String FaceD, String Hair, String HairD, String Eyes, String EyesD, String Nose, String BodyMark){
+	public void doAddIdentificationDetailsOfInmate(String Face, String FaceD, String Hair, String HairD, String Eyes, String EyesD, String Nose, String Health, String BodyMark){
 
 		tab_identification.click();
 		face.sendKeys(Face);
@@ -242,6 +244,7 @@ public class InmateRegistration extends CommonMethods{
 		eyes.sendKeys(Eyes);
 		eyesd.sendKeys(EyesD);
 		nose.sendKeys(Nose);
+		health.sendKeys(Health);
 		bodymark.sendKeys(BodyMark);
 
 	}

@@ -25,10 +25,7 @@ public class NewAdmissionPage extends SelectInmatePage {
 		CreateAdmissionPage createNewAdmissionPage = PageFactory.initElements(driver, CreateAdmissionPage.class);
 		return createNewAdmissionPage;	
 	}
-	
-	public String getSuccessMessage() {		
-		return CreateAdmission_Success_Alert.getText();
-	}
+
 	
 
 }

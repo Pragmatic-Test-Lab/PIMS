@@ -93,7 +93,7 @@ public class InmateRegistrationTest extends TestBase {
 		
 		APPLICATION_LOGS.debug("Adding Identification Data");
 		inmateRegistration.doAddIdentificationDetailsOfInmate(data.get("face"),data.get("faced"),data.get("hair"),data.get("haird"),
-				data.get("eyes"),data.get("eyesd"), data.get("nose"), data.get("bodymark")); 
+				data.get("eyes"),data.get("eyesd"), data.get("nose"), null, data.get("bodymark")); 
 
 	}
 
