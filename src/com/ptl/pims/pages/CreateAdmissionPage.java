@@ -334,7 +334,7 @@ public class CreateAdmissionPage extends CommonMethods {
 	public boolean checkNumberFormat(String category, String court) {
 		
 		InmateCatagory.sendKeys(category);
-		CourtWarant.sendKeys(court);
+		CourtWarant.sendKeys(court + Keys.TAB);
 		
 		String CourtId = "";		
 		if(court.equals("Colombo")) CourtId = "CSC";
@@ -344,27 +344,27 @@ public class CreateAdmissionPage extends CommonMethods {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {e.printStackTrace();}
 		
-		String genaratedRegNum = RegNumber.getText();
+		String genaratedRegNum = RegNumber.getAttribute("value");
 		
 		switch (category) {
 		case "Baby":
-			if(genaratedRegNum.contains("B/...../../CSC/2015"))
+			if(genaratedRegNum.matches("B/...../../" + CourtId + "/2015"))
 				return true;
 			break;
 		case "Child":
-			if(genaratedRegNum.contains("C/...../../CSC/2015"))
+			if(genaratedRegNum.matches("C/...../../" + CourtId + "/2015"))
 				return true;
 			break;
 		case "Convicted":
-			if(genaratedRegNum.contains("./...../2015"))
+			if(genaratedRegNum.matches("./...../2015"))
 				return true;
 			break;
 		case "Un-Convicted":
-			if(genaratedRegNum.contains("...../../CSC/2015"))
+			if(genaratedRegNum.matches("...../../" + CourtId + "/2015"))
 				return true;
 			break;
 		case "Youth":
-			if(genaratedRegNum.contains("Y/...../../CSC/2015"))
+			if(genaratedRegNum.matches("Y/...../../" + CourtId + "/2015"))
 				return true;
 			break;
 		}
