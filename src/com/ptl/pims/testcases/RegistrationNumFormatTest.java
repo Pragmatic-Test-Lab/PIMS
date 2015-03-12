@@ -1,13 +1,15 @@
-package com.ptl.pims.pages;
+package com.ptl.pims.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.ptl.pims.testcases.TestBase;
+
+import com.ptl.pims.pages.CreateAdmissionPage;
+import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.NewAdmissionPage;
+import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 
-public class RegistrationNumFormatTest {
-
-	public class AdmissionEditTest extends TestBase {
+public class RegistrationNumFormatTest extends TestBase{
 
 		NewAdmissionPage newAdmissionPage;
 		CreateAdmissionPage createNewAdmissionPage;
@@ -35,8 +37,6 @@ public class RegistrationNumFormatTest {
 			Assert.assertTrue(createNewAdmissionPage.checkNumberFormat("Youth", "Colombo"),
 					"Failed for Youth and Colombo");
 			
-
 		}
-	}
 
 }
