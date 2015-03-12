@@ -435,7 +435,7 @@ public class Constants {
 	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
 	public static final String CalendarPopup_MonthYearText_LastPart = "'])";
 	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";
-	public static final String CalendarPopup_DateText_FirstPart = "//td[@class='day'][text()='";
+	public static final String CalendarPopup_DateText_FirstPart = "//td[contains(@class,'day')][text()='";
 	public static final String CalendarPopup_DateText_LastPart = "']";
 	public static final String CalendarPopup_HourText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_HourText_LastPart = "']";
