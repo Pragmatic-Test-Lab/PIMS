@@ -39,11 +39,7 @@
         <class name="com.ptl.pims.testcases.PropertyManagementNewTest" ></class>  
     </classes>
 </test>
-<test name="Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
-    </classes>
-</test>
+
 <test name="Authorize Registration Test">
     <classes>
         <class name="com.ptl.pims.testcases.AuthorizeRegistrationTest" ></class>  
