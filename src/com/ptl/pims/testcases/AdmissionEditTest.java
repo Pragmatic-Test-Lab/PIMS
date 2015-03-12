@@ -11,18 +11,18 @@ import com.ptl.pims.util.Constants;
 
 public class AdmissionEditTest extends TestBase{
 
-	HomePage landingPage = null;
-
 	@Test // PIMS-1194
-	public void Test_doCreateNewAdmitionFor_ConvictedInmate() throws InterruptedException{
+	public void Test_doEditAdmission(){
 		
-		landingPage = returnToHomePage();		
+		HomePage landingPage = returnToHomePage();		
 		TopMenu topMenu = getTopMenu();
 		EditAdmissionSelectPage editAdmissionSelectPage = topMenu.gotoEditAdmissionPage();
+		
 		editAdmissionSelectPage = editAdmissionSelectPage.doSearch(registrationNo,"","");
 		EditAdmissionPage editAdmissionPage =  editAdmissionSelectPage.clickFirstInmate();
 		
-		editAdmissionSelectPage = editAdmissionPage.doEditAdmition();
+		editAdmissionSelectPage = editAdmissionPage.doEditAdmition("Child","Colombo","20","Vegeterian"
+				,"Biometric Content Updated","Nimal Pathirana Updated","RC","male");
 		Assert.assertTrue(editAdmissionSelectPage.getSuccessMessage().matches(Constants.EditAdmission_SuccessMessageText), "Editing Admission has failed");		
 
 	}

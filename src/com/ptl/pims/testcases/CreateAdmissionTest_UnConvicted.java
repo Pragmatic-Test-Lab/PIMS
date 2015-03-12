@@ -19,7 +19,7 @@ public class CreateAdmissionTest_UnConvicted extends TestBase {
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
+		    creAdmissionPage.doFillAllRequiredFileds("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
 			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create Un-convicted type inmate");		

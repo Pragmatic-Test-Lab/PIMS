@@ -19,7 +19,7 @@ public class CreateAdmissionTest_Youth extends TestBase {
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Youth","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
+		    creAdmissionPage.doFillAllRequiredFileds("Youth","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
 			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create youth type inmate");		

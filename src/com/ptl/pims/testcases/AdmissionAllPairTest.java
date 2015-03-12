@@ -31,7 +31,7 @@ public class AdmissionAllPairTest extends TestBase{
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 			
-		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds(data.get("Type of User"),data.get("Location"),data.get("Age"),data.get("meal"),
+		    creAdmissionPage.doFillAllRequiredFileds(data.get("Type of User"),data.get("Location"),data.get("Age"),data.get("meal"),
 		    		"Test Biometric","Test Name",data.get("Classification"),data.get("Gender"));
 			newAdmissionPage = creAdmissionPage.doAdmission();
 			

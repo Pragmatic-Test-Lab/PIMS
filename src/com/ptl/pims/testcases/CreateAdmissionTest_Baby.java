@@ -18,7 +18,7 @@ public class CreateAdmissionTest_Baby extends TestBase {
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();			
 			CreateAdmissionPage creAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
-		    creAdmissionPage.doCreateNewAdmissionWithRequiredFileds("Baby","Negombo","7","Diet","Test Biometric","Nimal Pathirana","FO","male");
+		    creAdmissionPage.doFillAllRequiredFileds("Baby","Negombo","7","Diet","Test Biometric","Nimal Pathirana","FO","male");
 			registrationNo = creAdmissionPage.getRegistrationNumber();
 			newAdmissionPage = creAdmissionPage.doAdmission();	
 			Assert.assertTrue(newAdmissionPage.getSuccessMessage().matches(Constants.CreateAdmission_SuccessMessageText),"Faild - Create baby type inmate");		

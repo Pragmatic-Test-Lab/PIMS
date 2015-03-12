@@ -13,9 +13,6 @@ public class NewAdmissionPage extends SelectInmatePage {
 	@FindBy(xpath = Constants.CreateAdmissionButton)
 	WebElement CreateAdmissionButton;
 	
-	@FindBy(xpath = Constants.CreateAdmission_Allert)
-	WebElement CreateAdmission_Success_Alert;
-	
 	public NewAdmissionPage(WebDriver dr){
 		driver = dr;
 	}

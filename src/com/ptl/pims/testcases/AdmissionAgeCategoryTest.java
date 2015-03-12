@@ -14,27 +14,22 @@ public class AdmissionAgeCategoryTest extends TestBase {
 
 	CreateAdmissionPage createAdmissionPage;
 
-	@Test
+	@Test //PIMS-1190
 	public void GoToCreateAdmission() {
 
 			HomePage landingPage = returnToHomePage();
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 			createAdmissionPage = newAdmissionPage.getCreateAdmissionPage();					
-	}
-	
+	}	
 
 	@Test(dataProvider = "getAgeCategoryData")
 	public void ValidateAutoSelectedAgeCategory(Hashtable<String, String> data) {
 
-			createAdmissionPage.addAge(data.get("Min Age"));		
+			createAdmissionPage.addAge(data.get("Age"));		
 			Assert.assertEquals(createAdmissionPage.getActualSelectedAgeCategory(), data.get("Category"),
-					"Failed for minimum age of " + data.get("Category") + ".");
-			
-			createAdmissionPage.addAge(data.get("Max Age"));		
-			Assert.assertEquals(createAdmissionPage.getActualSelectedAgeCategory(), data.get("Category"),
-					"Failed for maximum age of " + data.get("Category") + ".");
-					
+					"Failed for age of "+ data.get("Age") + "for " + data.get("Category") + ".");
+				
 	}
 	
 
