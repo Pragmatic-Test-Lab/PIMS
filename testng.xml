@@ -15,7 +15,7 @@
 -->
 <test name="New Admission Test">
     <classes>
-        <class name="com.ptl.pims.testcases.CreateAdmissionTest_Child" ></class>  
+        <class name="com.ptl.pims.testcases.CreateAdmissionTest_Convicted" ></class>  
     </classes>
     				<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
 </test>
