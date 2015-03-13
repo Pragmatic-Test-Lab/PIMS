@@ -230,7 +230,7 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(employer_tbody);
 		for (int i = 0; i < Employer.length; i++) {
 			employmentAddNew.click();
-			int newDataRow = dataRows + i - 1;
+			int newDataRow = dataRows + i;
 			String DataRowNumber = String.valueOf(newDataRow);
 			
 			try {

@@ -43,16 +43,16 @@ public class PostRegistrationTest extends TestBase{
 	public void fillPostRegistrationTabsTest(Hashtable<String, String> data){
 		
 		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
+			
+		updatePostRegPage.gotoEmploymentTab();
+		APPLICATION_LOGS.debug("Go to the Employment tab");
+		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
+				data.get("Dates From"), data.get("Dates To"));
 		
 		updatePostRegPage.gotoChildTab();
 		APPLICATION_LOGS.debug("Clicked on the Child tab");
 		updatePostRegPage.EnterChildData(data.get("Names"), data.get("Addresss"), data.get("Ages"), data.get("Schools"), data.get("Grades"));
 		
-		updatePostRegPage.gotoEmploymentTab();
-		APPLICATION_LOGS.debug("Go to the Employment tab");
-		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
-				data.get("Dates From"), data.get("Dates To"));
-
 	}
 	
 	@Test(dependsOnMethods="fillPostRegistrationTabsTest")
