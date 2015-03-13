@@ -17,6 +17,9 @@ public class LoginPage {
 	public WebElement password;
 	@FindBy(xpath = Constants.Login_login)
 	public WebElement login;
+	@FindBy(xpath = Constants.Login_PasswordError)
+	WebElement loginErrorMessage;
+	
 
 	public LoginPage(WebDriver dr) {
 		driver = dr;
@@ -30,6 +33,25 @@ public class LoginPage {
 		
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		return homePage;
+	}
+
+	public String getTitle() {
+		
+		return driver.getTitle();
+	}
+	
+	public String getUsernameFieldValue(){
+		
+		return username.getAttribute("value");
+	}
+	
+	public String getPasswordFieldValue(){
+		
+		return password.getAttribute("value");
+	}	
+
+	public String getErrorMessage() {
+		return loginErrorMessage.getText();
 	}
 
 }

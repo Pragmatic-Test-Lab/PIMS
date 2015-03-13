@@ -54,6 +54,10 @@ public abstract class SelectInmatePage extends CommonMethods {
 	
 	public String getSuccessMessage(){
 		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+		
 		return successMessage.getText();
 	}
 	

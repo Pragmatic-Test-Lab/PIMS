@@ -15,7 +15,7 @@ public class PostRegistration_VerifyChildrenTabEnableTest extends TestBase{
 	@Test
 	public void VerifyChildTabEnable() {
 		
-		landingPage = returnToHomePage();
+		loginToApplication();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");

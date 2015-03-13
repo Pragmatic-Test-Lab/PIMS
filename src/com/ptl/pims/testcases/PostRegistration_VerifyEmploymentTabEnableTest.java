@@ -2,8 +2,6 @@ package com.ptl.pims.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.PostRegistrationPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.pages.UpdatePostRegistrationPage;
@@ -13,12 +11,10 @@ public class PostRegistration_VerifyEmploymentTabEnableTest extends TestBase {
 	@Test
 	public void VerifyEmploymentTabEnable() {
 		
-		HomePage landingPage = returnToHomePage();
-		APPLICATION_LOGS.debug("Going to Home Page");
+		loginToApplication();
 		TopMenu topMenu = getTopMenu();
-		APPLICATION_LOGS.debug("Going to Top Menu");
+
 		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();
-		APPLICATION_LOGS.debug("Going to Post Registration Page");
 		UpdatePostRegistrationPage updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to Post Registration Page");
 		updatePostRegPage.gotoEmploymentTab();

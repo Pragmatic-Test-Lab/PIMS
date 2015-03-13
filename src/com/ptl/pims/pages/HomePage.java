@@ -3,84 +3,30 @@ package com.ptl.pims.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 
-public class HomePage {
+public class HomePage extends CommonMethods {
 
 	WebDriver driver;
-
-	String ActualPageHeader;
-	@FindBy(xpath = Constants.Home_PageHeader2)
-	WebElement pageHeader2;
-
-	String ActualPageHeader2;
-	@FindBy(xpath = Constants.LogOutLink)
-	WebElement LogoutLink;
-
-	@FindBy(xpath = Constants.TopMenu_RegistrationMainLink)
-	WebElement registrationMainLink;
-	@FindBy(xpath = Constants.TopMenu_RegistrationSubLink)
-	WebElement registrationSubLink;
-
 	@FindBy(xpath = Constants.Home_PageHeader)
 	WebElement pageHeader;
 
-	@FindBy(xpath = Constants.Login_PasswordError)
-	WebElement ErrorMessage2;
-
-	String loginline;
-	@FindBy(xpath = Constants.Loginline2)
-	WebElement loginline2;
-	String emptyLogin = Constants.Login_emptylogin;
-
-	String passwordline;
-	@FindBy(xpath = Constants.Login_passwordline2)
-	WebElement PasswordLine2;
-	String emptyPassword = Constants.Login_emptyPassword;
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
 
 	}
 
-	public String getErrorMessage() {
-		return ErrorMessage2.getText();
-	}
-
-	public String getloginline() {
-		return loginline = loginline2.getText();
-	}
-
-	public String getemptylogin() {
-		return emptyLogin;
-	}
-
-	public String getpasswordline() {
-		return passwordline = PasswordLine2.getText();
-	}
-
-	public String getemptypassword() {
-		return emptyPassword;
-	}
-
 	public String getActualPageHeader() {
-		return ActualPageHeader = pageHeader.getText();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+		return pageHeader.getText();
 	}
 
 
-	public String getActualPageHeader2() {
-		return ActualPageHeader = pageHeader2.getText();
-	}
 
-	public LoginPage gotoLogout() {
-		LogoutLink.click();
-		LoginPage Logout = PageFactory.initElements(driver, LoginPage.class);
-		TestBase.isLoggedIn = false;
-		System.out.println("Logout done");
-		return Logout;
-	}
+
 
 }

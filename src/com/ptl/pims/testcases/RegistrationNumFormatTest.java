@@ -1,13 +1,10 @@
 package com.ptl.pims.testcases;
 
 import java.util.Hashtable;
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.ptl.pims.pages.CreateAdmissionPage;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
@@ -21,7 +18,7 @@ public class RegistrationNumFormatTest extends TestBase{
 		@Test   
 		public void goToNewAdmissionPage(){
 
-				HomePage landingPage = returnToHomePage();		
+				loginToApplication();		
 				TopMenu topMenu = getTopMenu();
 				newAdmissionPage = topMenu.gotoNewAdmissionPage();
 			    createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();

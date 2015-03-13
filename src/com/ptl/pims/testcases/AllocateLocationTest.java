@@ -7,7 +7,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.ptl.pims.pages.AllocateLocationInmateSelectPage;
 import com.ptl.pims.pages.AllocateLocationPage;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
@@ -18,37 +17,28 @@ public class AllocateLocationTest extends TestBase {
 	AllocateLocationInmateSelectPage allocateLocationInmateSelect = null;
 	AllocateLocationPage allocationPage;
 
-	@Test(dataProvider = "getAllocationData")
-	public void GoToAllocateLocationPage(Hashtable<String, String> data) {
+	@Test
+	public void GoToAllocateLocationPage() {
 
-		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls) || data.get("Runmode").equals("No"))
+		if (!TestUtil.isTestCaseRunmodeYes("Allocate Location Test", xls))
 			throw new SkipException("Skipping the test");
 
-		HomePage landingPage = returnToHomePage();
+		loginToApplication();
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Allocate Location Page");		
 		allocateLocationInmateSelect = topMenu.goToAllocateLocation();
 		
-		Assert.assertEquals(allocateLocationInmateSelect.getHeader(), Constants.AllocateLocation_ExpectedHeader, "Could not reach Allocate Location");
-	}
-	
-
-	@Test(dependsOnMethods = "GoToAllocateLocationPage")	//pims-921
-	public void clickInmateLink() {
-		
 		allocateLocationInmateSelect = allocateLocationInmateSelect.doSearch(registrationNo,"","");
-
 		allocationPage = allocateLocationInmateSelect.clickFirstInmate();		
-		APPLICATION_LOGS.debug("Reached Inmates Allocate Location Page");
-		Assert.assertTrue(allocationPage.validateInmateData(registrationNo, null), "Inmate data is invalid");
 
-	}
+		Assert.assertTrue(allocationPage.validateInmateData(registrationNo, null), "Inmate data is invalid");
+	}	
 	
-	
-	@Test(dependsOnMethods = "clickInmateLink", dataProvider = "getAllocationData")      //pims-993, pims-994
+	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getAllocationData")      //pims-993, pims-994
 	public void changeInmateLocation(Hashtable<String, String> data) {
 		
-		Assert.assertTrue(!allocationPage.getCurrentLocation().equals(data.get("New Location")),"Cannot proceed. Inmate already in " + allocationPage.getCurrentLocation());
+		String newLocation = data.get("New Location");
+		Assert.assertTrue(!newLocation.equalsIgnoreCase(allocationPage.getCurrentLocation()),"Cannot proceed. Inmate already in " + newLocation);
 		
 		//Change Inmate Location
 		allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));

@@ -12,20 +12,16 @@ public class Constants {
 	public static final String Login_username = "//*[@id='login-form-login']";
 	public static final String Login_password = "//*[@id='login-form-password']";
 	public static final String Login_login = "//*[@id='login-form']/button";
-
+	public static final String Login_ExpectedTitle = "Sign in";
 	public static final String Login_PasswordError = "//*[text()='Password']/following::div[1]";
 	public static final String Login_PasswordErrorText = "Invalid login or password";
 	public static final String Loginline2 = "//*[@id='login-form-login']";
-	public static final String Login_emptylogin = "";
 	public static final String Login_passwordline2 = "//*[@id='login-form-password']";
-	public static final String Login_emptyPassword = "";
 
 	// Home Page
-	public static final String Home_PageHeader = "html/body/div[2]/div[2]/div/div/h1";
+	public static final String Home_PageHeader = ".//h1[@style='font-family:quicksandregular']";
 	public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
-	public static final String Home_PageHeader2 = "//*[@id='w2']/li[1]/a";
-	public static final String Home_PageHeaderText2 = "Login";
-	public static final String LogOutLink = "//*[@id='w1']/li[6]/a";
+
 
 	// Top Menu Links
 	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
@@ -41,7 +37,7 @@ public class Constants {
 	public static final String TopMenu_PostRegistrationMainLink = "//a[text()='Post Registration ']";
 	public static final String TopMenu_PostRegistrationSubLink = "//a[text()='Post Registration']";
 	public static final String TopMenu_AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";
-	public static final String TopMenu_LogOut = "//*[text()='Logout (admin_wataraka)']";
+	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
 	//
 	// New Admission Page

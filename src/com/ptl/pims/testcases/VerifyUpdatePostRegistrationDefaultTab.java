@@ -24,7 +24,7 @@ public class VerifyUpdatePostRegistrationDefaultTab extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
+		loginToApplication();
 		APPLICATION_LOGS.debug("Going to Home Page");
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Top Menu");

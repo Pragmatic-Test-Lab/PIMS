@@ -23,15 +23,14 @@ public class PostRegistrationEducation_MultipleEntriesTest extends TestBase{
 		if (!TestUtil.isTestCaseRunmodeYes("UpdatePostReg Test", xls) || data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 
-		landingPage = returnToHomePage();
-		APPLICATION_LOGS.debug("Going to Home Page");
+		loginToApplication();
 		TopMenu topMenu = getTopMenu();
-		APPLICATION_LOGS.debug("Going to Top Menu");
+		
 		PostRegistrationPage postRegPage = topMenu.gotoPostRegistrationPage();
-		APPLICATION_LOGS.debug("Going to Post Registration Page");
 		postRegPage.doSearch(registrationNo, null, null, null);
 		UpdatePostRegistrationPage updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Going to Update Post Registration Page");
+		
 		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
 		postRegPage = updatePostRegPage.ClickUpdateButton();
 		APPLICATION_LOGS.debug("Actual Message: "+ postRegPage.getActualSuccessMessage());

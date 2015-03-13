@@ -143,33 +143,25 @@ public class TestBase {
 		return topMenu;
 	}
 	
-	public HomePage returnToHomePage(){
+	public void loginToApplication(){
 		
 		HomePage landingPage;
 				
 		if (!isLoggedIn) {
-			APPLICATION_LOGS.debug("Attempting login to system");
+			APPLICATION_LOGS.debug("Login into system");
 			driver.get(CONFIG.getProperty("BASE_URL"));
 			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
 
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-
 			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
 					"Could not login!");
-
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;
-		} else {
-			APPLICATION_LOGS.debug("User is already logged in, so do not want to go to the log in page");
-			topMenu = PageFactory.initElements(driver, TopMenu.class);
-			landingPage = topMenu.gotoHomePage();
-			APPLICATION_LOGS.debug("Navigated to Home page through the top menu");
 		}
-		
-		return landingPage;
+
 	}
 	
 	

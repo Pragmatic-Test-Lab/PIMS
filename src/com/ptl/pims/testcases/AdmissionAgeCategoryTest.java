@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.ptl.pims.pages.CreateAdmissionPage;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.TestUtil;
@@ -17,7 +16,7 @@ public class AdmissionAgeCategoryTest extends TestBase {
 	@Test //PIMS-1190
 	public void GoToCreateAdmission() {
 
-			HomePage landingPage = returnToHomePage();
+			loginToApplication();
 			TopMenu topMenu = getTopMenu();
 			NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 			createAdmissionPage = newAdmissionPage.getCreateAdmissionPage();					

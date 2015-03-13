@@ -28,11 +28,17 @@ public class AllocateLocationPage {
 	}
 	
 	public boolean validateInmateData(String RegNo, String Name) {
+		boolean validated = true;
+		
+		if( RegNo == null || RegNo.isEmpty());
+		else if(!RegNo.equals(RegistrationNum.getText()))
+				validated = false;
+		
+		if(Name == null || Name.isEmpty());
+		else if(!Name.equals(InmateName.getText()))
+				validated = false;
 
-		if ((!RegNo.equals(RegistrationNum.getText()) && !RegNo.equals("")) || (!Name.equals(InmateName.getText()) && !Name.equals("")))
-			return false;
-
-		return true;
+		return validated;
 	}
 	
 	public String getCurrentLocation(){

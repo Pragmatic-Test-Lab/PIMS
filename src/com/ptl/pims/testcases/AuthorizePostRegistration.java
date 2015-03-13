@@ -3,7 +3,6 @@ package com.ptl.pims.testcases;
 import org.testng.annotations.Test;
 import com.ptl.pims.pages.AuthorizePostRegUserPage;
 import com.ptl.pims.pages.PostRegistrationAuthorizePage;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.TopMenu;
 
 public class AuthorizePostRegistration extends TestBase {
@@ -11,7 +10,7 @@ public class AuthorizePostRegistration extends TestBase {
 	@Test // PIMS-674
 	public void Test_doAuthorizePostReg(){
 		
-		HomePage landingPage = returnToHomePage();		
+		loginToApplication();		
 		TopMenu topMenu = getTopMenu();
 		PostRegistrationAuthorizePage authorizePostRegsitrationSelectPage = topMenu.gotoAuthorizePostRegistration();
 

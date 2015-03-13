@@ -1,26 +1,34 @@
 package com.ptl.pims.testcases;
 
 import org.testng.Assert;
-import org.testng.SkipException;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.ptl.pims.pages.HomePage;
+import com.ptl.pims.pages.LoginPage;
+import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
-import com.ptl.pims.util.TestUtil;
+
 
 public class LogoutTest extends TestBase {
 	
+	LoginPage loginPage;
+	
 	@Test
 	public void logoutTest() {
-
-		if(!TestUtil.isTestCaseRunmodeYes("Login-out Test", xls))
-		throw new SkipException("Skipping the test");
 		
-		HomePage landingPage = returnToHomePage();
-		landingPage.gotoLogout();
+		loginToApplication();
+		TopMenu topMenu = getTopMenu();
+		loginPage = topMenu.doLogout();
 		
-		Assert.assertEquals(landingPage.getActualPageHeader2(), Constants.Home_PageHeaderText2, "Could not logout!");
+		Assert.assertEquals(loginPage.getTitle(), Constants.Login_ExpectedTitle, "Could not logout!");
 		APPLICATION_LOGS.debug("logged out");
+	}
+	
+	@Test(dependsOnMethods = "logoutTest")
+	public void afterlogoutTest() {
+
+		Assert.assertTrue(loginPage.getUsernameFieldValue().equals(""), "login field not empty");
+		Assert.assertTrue(loginPage.getPasswordFieldValue().equals(""), "password field not empty");
+
+	
 	}
 
 

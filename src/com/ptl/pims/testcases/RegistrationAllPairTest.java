@@ -5,31 +5,19 @@ import java.util.Hashtable;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.ptl.pims.pages.CreateAdmissionPage;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
-import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;
 
 public class RegistrationAllPairTest extends TestBase{
-
-	TopMenu topMenu;
 	
-	@Test 
-	public void loginToSystem(){
-		
-			HomePage landingPage = returnToHomePage();		
-			topMenu = getTopMenu();		
-	} 
-	
-	
-	@Test (dependsOnMethods = "loginToSystem", dataProvider = "getAllPairData")
+	@Test (dataProvider = "getAllPairData")
 	public void fillIdentificationDetailsTab(Hashtable<String, String> data){
 		
+			loginToApplication();		
+			TopMenu topMenu = getTopMenu();	
 
 			InmateRegistrationSelectPage inmateRegistrationSelect  = topMenu.goToInmateRegistration();
 		

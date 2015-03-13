@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.PropertyManagementInmateSelectPage;
 import com.ptl.pims.pages.PropertyManagementPage;
 import com.ptl.pims.pages.TopMenu;
@@ -24,7 +23,7 @@ public class PropertyManagementNewTest extends TestBase {
 		if (!TestUtil.isTestCaseRunmodeYes("Property Management Test", xls)	|| data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");
 		
-		HomePage landingPage = returnToHomePage();
+		loginToApplication();
 		TopMenu topMenu = getTopMenu();
 		
 		APPLICATION_LOGS.debug("Going to Property Management Page");		

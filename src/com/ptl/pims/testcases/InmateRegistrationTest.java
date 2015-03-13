@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.ptl.pims.pages.HomePage;
 import com.ptl.pims.pages.InmateRegistration;
 import com.ptl.pims.pages.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.TopMenu;
@@ -23,7 +22,7 @@ public class InmateRegistrationTest extends TestBase {
 		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration Test", xls))
 			throw new SkipException("Skipping the test");
 		
-		HomePage landingPage = returnToHomePage();
+		loginToApplication();
 		TopMenu topMenu = getTopMenu();
 		APPLICATION_LOGS.debug("Going to Inmate Registration Page");
 		inmateRegistrationSelect  = topMenu.goToInmateRegistration();
@@ -48,7 +47,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 	
-	//@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
+	@Test(dataProvider = "getInmatePersonalData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1079
 	public void enterInmatePersonalData(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -63,7 +62,7 @@ public class InmateRegistrationTest extends TestBase {
 	}	
 	
 
-//	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
+	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
 	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -73,7 +72,7 @@ public class InmateRegistrationTest extends TestBase {
 		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("classif")); 
 	}
 
-//	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082
+	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082
 	public void enterInmateCharacteristicTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -85,7 +84,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 
-//	@Test(dataProvider = "getIdentificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1083
+	@Test(dataProvider = "getIdentificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1083
 	public void enterInmateIdentificationTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
@@ -110,7 +109,7 @@ public class InmateRegistrationTest extends TestBase {
 
 	}
 	
-	//@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-990,PIMS-49
+	@Test(dependsOnMethods="goInmateRegistrationPage")   //PIMS-990,PIMS-49
 	public void submitRegistrationData() {
 	
 		inmateRegistrationSelect = inmateRegistration.clickButton();
