@@ -39,7 +39,7 @@ public class PostRegistrationTest extends TestBase{
 		
 	}
 	
-	@Test(dependsOnMethods="SearchInmate")
+	@Test(dependsOnMethods="SearchAnInmate", dataProvider="getPostRegistrationData")
 	public void fillPostRegistrationTabsTest(Hashtable<String, String> data){
 		
 		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
