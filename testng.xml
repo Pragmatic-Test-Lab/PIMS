@@ -1,60 +1,73 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="PIMS Project">
+    
+    <listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<!-- <test name="Login Test"> <classes> <class name="com.ptl.pims.testcases.LoginTest" 
+		></class> </classes> </test> -->
+	<test name="New Admission Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.CreateAdmissionTest_Child"></class>
+		</classes>
+		<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
+	</test>
+	<test name="Admission Authorization Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.AuthorizeAdmissionTest"></class>
+		</classes>
+	</test>
+	<test name="Registeration Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.InmateRegistrationTest"></class>
+		</classes>
+	</test>
+	<test name="Allocate Location Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.AllocateLocationTest"></class>
+		</classes>
+	</test>
+	<test name="Property Management Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.PropertyManagementNewTest"></class>
+		</classes>
+	</test>
 
-<listeners>
-    <listener class-name="listener.TestsListenerAdapter" />
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
- 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>    
-</listeners>
-<!--  
-<test name="Login Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.LoginTest" ></class>  
-    </classes>
-</test>
--->
-<test name="New Admission Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.CreateAdmissionTest_Child" ></class>  
-    </classes>
-    				<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
-</test>
-<test name="Admission Authorization Test"> 
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
-    </classes>
-</test>
-<test name="Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
-    </classes>
-</test>
-<test name="Allocate Location Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.AllocateLocationTest" ></class>  
-    </classes>
-</test>
-<test name="Property Management Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.PropertyManagementNewTest" ></class>  
-    </classes>
-</test>
+	<test name="Authorize Registration Test">
+		<classes>
+			<class name="com.ptl.pims.testcases.AuthorizeRegistrationTest"></class>
+		</classes>
+	</test>
+	<test name="Post-Registeration Test">
+		<classes>
+			<class
+				name="com.ptl.pims.testcases.PostRegistrationEducation_MultipleEntriesTest"></class>
+		</classes>
+	</test>
+	<test name="Post-Registeration Authorization">
+		<classes>
+			<class name="com.ptl.pims.testcases.AuthorizePostRegistration"></class>
+		</classes>
+	</test>
 
-<test name="Authorize Registration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizeRegistrationTest" ></class>  
-    </classes>
-</test>
-<test name="Post-Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.PostRegistrationEducation_MultipleEntriesTest" ></class>  
-    </classes>
-</test>
-<test name="Post-Registeration Authorization">
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizePostRegistration" ></class>  
-    </classes>
-</test>
+</suite>
+
+<suite name="Admission Validation Tests">
+    
+	<test name="CreateNewAdmissionTest">
+		<classes>
+			<class name="com.ptl.pims.testcases.CreateNewAdmissionTest"></class>
+		</classes>
+	</test>
+	<test name="AdmissionAgeCategoryTest">
+		<classes>
+			<class name="com.ptl.pims.testcases.AdmissionAgeCategoryTest"></class>
+		</classes>
+	</test>
+    
+    
 </suite>
 
 
