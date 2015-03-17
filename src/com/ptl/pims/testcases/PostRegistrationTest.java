@@ -42,7 +42,7 @@ public class PostRegistrationTest extends TestBase{
 	@Test(dependsOnMethods="SearchAnInmate", dataProvider="getPostRegistrationData")
 	public void fillPostRegistrationTabsTest(Hashtable<String, String> data){
 		
-		/*updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
+		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
 		
 		updatePostRegPage.gotoChildTab();
 		APPLICATION_LOGS.debug("Clicked on the Child tab");
@@ -51,11 +51,11 @@ public class PostRegistrationTest extends TestBase{
 		updatePostRegPage.gotoEmploymentTab();
 		APPLICATION_LOGS.debug("Go to the Employment tab");
 		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
-				data.get("Dates From"), data.get("Dates To"));*/
-		
+				data.get("Dates From"), data.get("Dates To"));
+		/*
 		updatePostRegPage.EnterFamilyData("Herath", "1111223", "212121212v", "31", "brothah",
 				"11223331212", "32000");
-
+*/
 	}
 	
 	//@Test(dependsOnMethods="fillPostRegistrationTabsTest")
