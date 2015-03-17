@@ -271,12 +271,14 @@ public class Constants {
 	public static final String PostRegistration_SearchByWarrantName = "//input[contains(@name,'adm_name_as_in_warrant')]";
 	public static final String PostRegistration_SearchByOtherName = "//input[contains(@name,'adm_other_name1')]";
 	public static final String PostRegistration_FirstUpdateIcon = "(.//a[@title='Update']/span)[1]";
-	// Update Post Registration Page
+	public static final String UpdatePostRegistration_Update = "//button[text()='Update']";
+	// Update Post Registration Page  
 	public static final String UpdatePostRegistration_CheckBox = "//*[@id='admission-adm_is_attended_to_orientation_programe']";
 	public static final String UpdatePostRegistration_CurrentPrisonInstitute = "//*[@id='admission-adm_current_prison_institute_id']";
 	public static final String UpdatePostRegistration_PhotoRightBrowse = "//*[@id='admission-image_rhs']";
 	public static final String UpdatePostRegistration_PhotoFrontBrowse = "//*[@id='admission-image_front']";
 	public static final String UpdatePostRegistration_PhotoLeftBrowse = "//*[@id='admission-image_lhs']";
+	//Educational Qualification Tab
 	public static final String UpdatePostRegistration_EducationalQualificationTab = "//a[text()='Educational Qualifications']";
 	public static final String UpdatePostRegistration_EducationalTBody = "//*[@id='educational_qualification_grid']/tbody";
 	public static final String UpdatePostRegistration_EducationalQualificationTabStatus = "true";
@@ -288,6 +290,7 @@ public class Constants {
 	public static final String UpdatePostRegistration_LanguageFirstPart = "//*[@id='educationalqualification-";
 	public static final String UpdatePostRegistration_LanguageLastPart = "-equ_language_id']";
 	public static final String UpdatePostRegistration_EducationalQualificationAction = "//a[contains(@onclick,'removeeducational')]";
+	//Employment Tab
 	public static final String UpdatePostRegistration_EmploymentTab = "//a[text()='Employment']";
 	public static final String UpdatePostRegistration_EmployerTBody = "//*[@id='employment_grid']/tbody";
 	public static final String UpdatePostRegistration_EmploymentTabStatus = "true";
@@ -303,32 +306,42 @@ public class Constants {
 	public static final String UpdatePostRegistration_DateToFirstPart = "//*[@id='employment-";
 	public static final String UpdatePostRegistration_DateToLastPart = "-emp_date_to']";
 	public static final String UpdatePostRegistration_EmploymentAction = "//a[contains(@onclick,'removeemployment')]";
+	//Family Tab
 	public static final String UpdatePostRegistration_FamilyTab = "//a[text()='Family Data']";
+	public static final String UpdatePostRegistration_FamilyTBody = "//*[@id='family_data_grid']/tbody";
 	public static final String UpdatePostRegistration_FamilyAddNew = "(.//button[text()='Add New'])[3]";
-	public static final String UpdatePostRegistration_Name = "//*[@id='familydata-1-fda_name']";
-	public static final String UpdatePostRegistration_Address1 = "//*[@id='familydata-1-fda_address_line1']";
-	public static final String UpdatePostRegistration_Address2 = "//*[@id='familydata-1-fda_address_line2']";
-	public static final String UpdatePostRegistration_Address3 = "//*[@id='familydata-1-fda_address_line3']";
-	public static final String UpdatePostRegistration_NIC = "//*[@id='familydata-1-fda_nic']";
-	public static final String UpdatePostRegistration_Age = "//*[@id='familydata-1-fda_age']";
-	public static final String UpdatePostRegistration_Relationship = "//*[@id='familydata-1-fda_relationship_id']";
-	public static final String UpdatePostRegistration_Telephone = "//*[@id='familydata-1-fda_telephone']";
-	public static final String UpdatePostRegistration_Income = "//*[@id='familydata-1-fda_income']";
+	public static final String UpdatePostRegistration_FamilyNameFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_FamilyNameLastPart = "-fda_name']";
+	public static final String UpdatePostRegistration_Address1FirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_Address1LastPart = "-fda_address_line1']";
+	public static final String UpdatePostRegistration_NICFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_NICLastPart = "-fda_nic']";
+	public static final String UpdatePostRegistration_FamilyAgeFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_FamilyAgeLastPart = "-fda_age']";
+	public static final String UpdatePostRegistration_RelationshipFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_RelationshipLastPart = "-fda_relationship_id']";
+	public static final String UpdatePostRegistration_TelephoneFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_TelephoneLastPart = "-fda_telephone']";
+	public static final String UpdatePostRegistration_IncomeFirstPart = "//*[@id='familydata-";
+	public static final String UpdatePostRegistration_IncomeLastPart = "-fda_income']";
 	public static final String UpdatePostRegistration_FamilyAction = "//a[contains(@onclick,'removefamily')]";
+	//Child Tab
 	public static final String UpdatePostRegistration_ChildTab = "//a[text()='Child Data']";
+	public static final String UpdatePostRegistration_ChildTBody = "//*[@id='child_data_grid']/tbody";
 	public static final String UpdatePostRegistration_ChildAddNew = "(.//button[text()='Add New'])[4]";
-	public static final String UpdatePostRegistration_ChildName = "//*[@id='childdata-1-cda_name']";
-	public static final String UpdatePostRegistration_ChildAddress1 = "//*[@id='childdata-1-cda_address_line1']";
-	public static final String UpdatePostRegistration_ChildAddress2 = "//*[@id='childdata-1-cda_address_line2']";
-	public static final String UpdatePostRegistration_ChildAddress3 = "//*[@id='childdata-1-cda_address_line3']";
-	public static final String UpdatePostRegistration_ChildAge = "//*[@id='childdata-1-cda_age']";
-	public static final String UpdatePostRegistration_ChildSchool = "//*[@id='childdata-1-cda_school']";
-	public static final String UpdatePostRegistration_ChildGrade = "//*[@id='childdata-1-cda_grade']";
-	public static final String UpdatePostRegistration_ChildSchoolAddress1 = "//*[@id='childdata-1-cda_school_address_line1']";
-	public static final String UpdatePostRegistration_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
-	public static final String UpdatePostRegistration_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
+	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
+	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
+	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
+	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
+	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
+	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
+	public static final String UpdatePostRegistration_ChildTabStatus = "true";
 	public static final String UpdatePostRegistration_ChildAction = "//a[contains(@onclick,'removechild')]";
-	public static final String UpdatePostRegistration_Update = "//button[text()='Update']";
+
 	
 	//
 	// Post Registration Authorize
@@ -391,28 +404,8 @@ public class Constants {
 	public static final String AuthorizePostRegUserPage_FamilyAction = "//a[contains(@onclick,'removefamily')]";
 	public static final String AuthorizePostRegUserPage_ChildTab = "//a[text()='Child Data']";
 	public static final String AuthorizePostRegUserPage_ChildAddNew = "(.//button[text()='Add New'])[4]";
-	public static final String AuthorizePostRegUserPage_ChildName = "//*[@id='childdata-1-cda_name']";
-	public static final String AuthorizePostRegUserPage_ChildAddress1 = "//*[@id='childdata-1-cda_address_line1']";
-	public static final String AuthorizePostRegUserPage_ChildAddress2 = "//*[@id='childdata-1-cda_address_line2']";
-	public static final String AuthorizePostRegUserPage_ChildAddress3 = "//*[@id='childdata-1-cda_address_line3']";
-	public static final String AuthorizePostRegUserPage_ChildAge = "//*[@id='childdata-1-cda_age']";
-	public static final String AuthorizePostRegUserPage_ChildSchool = "//*[@id='childdata-1-cda_school']";
-	public static final String AuthorizePostRegUserPage_ChildGrade = "//*[@id='childdata-1-cda_grade']";
-	public static final String AuthorizePostRegUserPage_ChildSchoolAddress1 = "//*[@id='childdata-1-cda_school_address_line1']";
-	public static final String AuthorizePostRegUserPage_ChildSchoolAddress2 = "//*[@id='childdata-1-cda_school_address_line2']";
-	public static final String AuthorizePostRegUserPage_ChildSchoolAddress3 = "//*[@id='childdata-1-cda_school_address_line3']";
 	public static final String AuthorizePostRegUserPage_ChildAction = "//a[contains(@onclick,'removechild')]";
-	public static final String UpdatePostRegistration_ChildGrade_firstpart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildGrade_lastpart = "-cda_grade']";
-	public static final String UpdatePostRegistration_ChildAddress1_FirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildAddress1_LastPart = "-cda_address_line1']";
-	public static final String UpdatePostRegistration_ChildAge_FirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildAge_LastPart = "-cda_age']";
-	public static final String UpdatePostRegistration_ChildNameFirstPart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildNamelasttPart = "-cda_name']";
-	public static final String UpdatePostRegistration_ChildSchool_firstpart = "//*[@id='childdata-";
-	public static final String UpdatePostRegistration_ChildSchool_lastpart = "-cda_school']";
-	public static final String UpdatePostRegistration_ChildTabStatus = "true";
+
 	public static final String AuthorizePostRegUserPage_Authorize = "//button[text()='Authorize']";
 
 

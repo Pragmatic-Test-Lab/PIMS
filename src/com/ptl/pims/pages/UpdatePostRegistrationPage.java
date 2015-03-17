@@ -25,108 +25,89 @@ public class UpdatePostRegistrationPage {
 	WebElement photoFront;
 	@FindBy(xpath=Constants.UpdatePostRegistration_PhotoLeftBrowse)
 	WebElement photoLeft;
+	@FindBy(xpath=Constants.UpdatePostRegistration_Update)
+	WebElement update;
+
+	//Educational Qualification tab
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationTab)
 	WebElement educationalQualificationTab;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalTBody)
 	WebElement education_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAddNew)
 	WebElement addNew;
-
 	String instituteFirstPart=Constants.UpdatePostRegistration_InstituteFirstPart;	
 	String instituteLastPart=Constants.UpdatePostRegistration_InstituteLastPart;
-
 	String qualificationTypeFirstPart=Constants.UpdatePostRegistration_QualificationTypeFirstPart;
 	String qualificationTypeLastPart=Constants.UpdatePostRegistration_QualificationTypeLastPart;
-
 	String languageFirstPart = Constants.UpdatePostRegistration_LanguageFirstPart;
 	String languageLastPart=Constants.UpdatePostRegistration_LanguageLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EducationalQualificationAction)
 	WebElement educationAction;
+	
+	//Employment tab
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentTab)
 	WebElement employmentTab;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmployerTBody)
 	WebElement employer_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAddNew)
 	WebElement employmentAddNew;
-
 	String employerFirstPart=Constants.UpdatePostRegistration_EmployerFirstPart;	
 	String employerLastPart=Constants.UpdatePostRegistration_EmployerLastPart;
-
 	String organizationalTypeFirstPart=Constants.UpdatePostRegistration_OrganizationalTypeFirstPart;	
 	String organizationalTypeLastPart=Constants.UpdatePostRegistration_OrganizationalTypeLastPart;
-
 	String positionFirstPart=Constants.UpdatePostRegistration_PositionFirstPart;	
 	String positionLastPart=Constants.UpdatePostRegistration_PositionLastPart;
-
 	String dateFromFirstPart=Constants.UpdatePostRegistration_DateFromFirstPart;	
 	String dateFromLastPart=Constants.UpdatePostRegistration_DateFromLastPart;
-
 	String dateToFirstPart=Constants.UpdatePostRegistration_DateToFirstPart;	
 	String dateToLastPart=Constants.UpdatePostRegistration_DateToLastPart;
 	@FindBy(xpath=Constants.UpdatePostRegistration_EmploymentAction)
 	WebElement employmentAction;	
+	
+	//Family Tab
 	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyTab)
 	WebElement familyDataTab;
+	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyTBody)
+	WebElement family_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyAddNew)
 	WebElement familyAddNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Name)
-	WebElement name;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address1)
-	WebElement addressLine1;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address2)
-	WebElement addressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Address3)
-	WebElement addressLine3;
-	@FindBy(xpath=Constants.UpdatePostRegistration_NIC)
-	WebElement nic;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Age)
-	WebElement age;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Relationship)
-	WebElement relationship;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Telephone)
-	WebElement telephone;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Income)
-	WebElement income;
+	String familyNameFirstPart = Constants.UpdatePostRegistration_FamilyNameFirstPart;
+	String familyNameLastPart = Constants.UpdatePostRegistration_FamilyNameLastPart;
+	String FamilyAddress1FirstPart = Constants.UpdatePostRegistration_Address1FirstPart;
+	String FamilyAddress1LastPart = Constants.UpdatePostRegistration_Address1LastPart;
+	String NICFirstPart = Constants.UpdatePostRegistration_NICFirstPart;
+	String NICLastPart = Constants.UpdatePostRegistration_NICLastPart;
+	String familyAgeFirstPart = Constants.UpdatePostRegistration_FamilyAgeFirstPart;
+	String familyAgeLastPart = Constants.UpdatePostRegistration_FamilyAgeLastPart;
+	String relationshipFirstPart = Constants.UpdatePostRegistration_RelationshipFirstPart;
+	String relationshipLastPart = Constants.UpdatePostRegistration_RelationshipLastPart;
+	String telephoneFirstPart = Constants.UpdatePostRegistration_TelephoneFirstPart;
+	String telephoneLastPart = Constants.UpdatePostRegistration_TelephoneLastPart;
+	String incomeFirstPart = Constants.UpdatePostRegistration_IncomeFirstPart;
+	String incomeLastPart = Constants.UpdatePostRegistration_IncomeLastPart;	
 	@FindBy(xpath=Constants.UpdatePostRegistration_FamilyAction)
 	WebElement familyAction;
+	
+	//Child Tab
 	@FindBy(xpath=Constants.UpdatePostRegistration_ChildTab)
 	WebElement childTab;
+	@FindBy(xpath=Constants.UpdatePostRegistration_ChildTBody)
+	WebElement child_tbody;
 	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddNew)
-	WebElement childAddNew;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildName)
-	WebElement childName;
+	WebElement childAddNew;	
 	String Child_Name_first_part=Constants.UpdatePostRegistration_ChildNameFirstPart;
 	String Child_Name_last_part=Constants.UpdatePostRegistration_ChildNamelasttPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress1)
-	WebElement childAddressLine1;
 	String Child_Address_first_part=Constants.UpdatePostRegistration_ChildAddress1_FirstPart;
 	String Child_Address_last_part=Constants.UpdatePostRegistration_ChildAddress1_LastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress2)
-	WebElement childAddressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAddress3)
-	WebElement childAddressLine3;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAge)
-	WebElement childAge;
 	String Child_age_first_part=Constants.UpdatePostRegistration_ChildAge_FirstPart;
 	String Child_age_last_part=Constants.UpdatePostRegistration_ChildAge_LastPart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchool)
-	WebElement childSchool;
 	String Child_school_first_part=Constants.UpdatePostRegistration_ChildSchool_firstpart;
 	String Child_school_last_part=Constants.UpdatePostRegistration_ChildSchool_lastpart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildGrade)
-	WebElement childGrade;
 	String Child_grade_first_part=Constants.UpdatePostRegistration_ChildGrade_firstpart;
 	String Child_grade_last_part=Constants.UpdatePostRegistration_ChildGrade_lastpart;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress1)
-	WebElement schoolAddressLine1;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress2)
-	WebElement schoolAddressLine2;
-	@FindBy(xpath=Constants.UpdatePostRegistration_ChildSchoolAddress3)
-	WebElement schoolAddressLine3;
 	@FindBy(xpath=Constants.UpdatePostRegistration_ChildAction)
 	WebElement childAction;
-	@FindBy(xpath=Constants.UpdatePostRegistration_Update)
-	WebElement update;
+
 	
 	
 	
@@ -178,10 +159,7 @@ public class UpdatePostRegistrationPage {
 				driver.findElement(By.xpath(qualificationTypeFirstPart+DataRowNumber+qualificationTypeLastPart)).sendKeys(QualificationType[i]);
 				driver.findElement(By.xpath(languageFirstPart+DataRowNumber+languageLastPart)).sendKeys(Language[i]);
 				
-			} catch (Throwable t) {
-				// TODO Auto-generated catch block
-				t.printStackTrace();
-			}
+			} catch (Throwable t) { t.printStackTrace();}
 			
 		}
 	}
@@ -230,20 +208,50 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(employer_tbody);
 		for (int i = 0; i < Employer.length; i++) {
 			employmentAddNew.click();
-			int newDataRow = dataRows + i - 1;
+			int newDataRow = dataRows + i;
 			String DataRowNumber = String.valueOf(newDataRow);
 			
 			try {
 				Thread.sleep(3000);
-				driver.findElement(By.xpath(Child_Name_first_part+DataRowNumber+Child_Name_last_part)).sendKeys(Employer[i]);
+				driver.findElement(By.xpath(employerFirstPart +DataRowNumber+employerLastPart)).sendKeys(Employer[i]);
 				driver.findElement(By.xpath(organizationalTypeFirstPart+DataRowNumber+organizationalTypeLastPart)).sendKeys(OrganizationalType[i]);
 				driver.findElement(By.xpath(positionFirstPart+DataRowNumber+positionLastPart)).sendKeys(Position[i]);
 				driver.findElement(By.xpath(dateFromFirstPart+DataRowNumber+dateFromLastPart)).sendKeys(DateFrom[i]);
 				driver.findElement(By.xpath(dateToFirstPart+DataRowNumber+dateToLastPart)).sendKeys(DateTo[i]);
-			} catch (Throwable t) {
-				// TODO Auto-generated catch block
-				t.printStackTrace();
-			}	
+			} catch (Throwable t) { t.printStackTrace();}	
+		}		
+	}
+	
+	
+	public void EnterFamilyData(String Name, String Address, String NIC, String Age, String Relationship,
+			String Telephone, String Income){
+
+		
+		String[] Names = Name.split(",");
+		String[] Addresss = Address.split(",");
+		String[] NICs = NIC.split(",");
+		String[] Ages = Age.split(",");
+		String[] Relationships = Relationship.split(",");
+		String[] Telephones = Telephone.split(",");
+		String[] Incomes = Income.split(",");
+		
+		int dataRows = initialRowCount(family_tbody);
+		for (int i = 0; i < Names.length; i++) {
+			familyAddNew.click();
+			int newDataRow = dataRows + i;
+			String DataRowNumber = String.valueOf(newDataRow);
+			
+			try {
+				Thread.sleep(3000);
+				driver.findElement(By.xpath(familyNameFirstPart+DataRowNumber+familyNameLastPart)).sendKeys(Names[i]);
+				driver.findElement(By.xpath(FamilyAddress1FirstPart+DataRowNumber+FamilyAddress1LastPart)).sendKeys(Addresss[i]);
+				driver.findElement(By.xpath(NICFirstPart+DataRowNumber+NICLastPart)).sendKeys(NICs[i]);
+				driver.findElement(By.xpath(familyAgeFirstPart+DataRowNumber+familyAgeLastPart)).sendKeys(Ages[i]);
+				driver.findElement(By.xpath(relationshipFirstPart+DataRowNumber+relationshipLastPart)).sendKeys(Relationships[i]);
+				driver.findElement(By.xpath(telephoneFirstPart+DataRowNumber+telephoneLastPart)).sendKeys(Telephones[i]);
+				driver.findElement(By.xpath(incomeFirstPart+DataRowNumber+incomeLastPart)).sendKeys(Incomes[i]);
+				
+			} catch (Throwable t) { t.printStackTrace();}			
 		}		
 	}
 	
@@ -255,7 +263,7 @@ public class UpdatePostRegistrationPage {
 		String[] School = Schools.split(",");
 		String[] Grade = Grades.split(",");
 		
-		int dataRows = initialRowCount(employer_tbody);
+		int dataRows = initialRowCount(child_tbody);
 		for (int i = 0; i < Name.length; i++) {
 			childAddNew.click();
 			int newDataRow = dataRows + i;
@@ -268,56 +276,14 @@ public class UpdatePostRegistrationPage {
 				driver.findElement(By.xpath(Child_age_first_part+DataRowNumber+Child_age_last_part)).sendKeys(Age[i]);
 				driver.findElement(By.xpath(Child_school_first_part+DataRowNumber+Child_school_last_part)).sendKeys(School[i]);
 				driver.findElement(By.xpath(Child_grade_first_part+DataRowNumber+Child_grade_last_part)).sendKeys(Grade[i]);
-			} catch (Throwable t) {
-				// TODO Auto-generated catch block
-				t.printStackTrace();
-			}
-			
+				
+			} catch (Throwable t) { t.printStackTrace();}
 			
 		}
 	
-		
-//		childName.sendKeys(Name);
-//		childAddressLine1.sendKeys(Address);
-//		childAge.sendKeys(Age);
-//		childSchool.sendKeys(School);
-//		childGrade.sendKeys(Grade);
-//		
-//		
 	}
-	
-	public void EnterFamilyData(String Name, String AddressLine1, String AddressLine2, String AddressLine3, String NIC, String Age, String Relationship,
-			String Telephone, String Income){
-		name.sendKeys(Name);
-		addressLine1.sendKeys(AddressLine1);
-		addressLine2.sendKeys(AddressLine2);
-		addressLine3.sendKeys(AddressLine3);
-		nic.sendKeys(NIC);
-		age.sendKeys(Age);
-		relationship.sendKeys(Relationship);
-		telephone.sendKeys(Telephone);
-		income.sendKeys(Income);
-		
-		
-	}
-	
-	
-//	public void EnterChildData(String Name, String AddressLine1, String AddressLine2, String AddressLine3, String Age, String School,
-//			String Grade, String SchoolAddressLine1, String SchoolAddressLine2, String SchoolAddressLine3){
-//		
-//		childName.sendKeys(Name);
-//		childAddressLine1.sendKeys(AddressLine1);
-//		childAddressLine2.sendKeys(AddressLine2);
-//		childAddressLine3.sendKeys(AddressLine3);
-//		childAge.sendKeys(Age);
-//		childSchool.sendKeys(School);
-//		childGrade.sendKeys(Grade);
-//		schoolAddressLine1.sendKeys(SchoolAddressLine1);
-//		schoolAddressLine2.sendKeys(SchoolAddressLine2);
-//		schoolAddressLine3.sendKeys(SchoolAddressLine3);
-//	}
-//	
-	
+
+
 	public int initialRowCount(WebElement element){
 		List<WebElement> rows = element.findElements(By.tagName("tr"));		
 		int size = rows.size();
