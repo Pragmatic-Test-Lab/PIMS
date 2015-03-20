@@ -32,8 +32,8 @@ public class PostRegistrationTest extends TestBase{
 		Assert.assertEquals(postRegPage.getActualPageTitle(), postRegPage.getExpectedPageTitle(), "Could not get to Post Registration Page");	
 		APPLICATION_LOGS.debug("Going to the Post Registration Page");
 
-		//postRegPage.doSearch(registrationNo, "", "", "");
-		//APPLICATION_LOGS.debug("Search an inmate");
+		postRegPage.doSearch(registrationNo, "", "", "");
+		APPLICATION_LOGS.debug("Search an inmate");
 		updatePostRegPage = postRegPage.gotoUpdatePostRegistrationPage();
 		APPLICATION_LOGS.debug("Reached Update Post Registration User Page");	
 		
@@ -44,21 +44,21 @@ public class PostRegistrationTest extends TestBase{
 		
 		updatePostRegPage.EnterEducationalQualifications(data.get("Institues"), data.get("Qualification Types"), data.get("Languages"));
 		
-		updatePostRegPage.gotoChildTab();
-		APPLICATION_LOGS.debug("Clicked on the Child tab");
-		updatePostRegPage.EnterChildData(data.get("Names"), data.get("Addresss"), data.get("Ages"), data.get("Schools"), data.get("Grades"));
-		
 		updatePostRegPage.gotoEmploymentTab();
 		APPLICATION_LOGS.debug("Go to the Employment tab");
 		updatePostRegPage.EnterEmploymentData(data.get("Employers"), data.get("Organizational Types"), data.get("Positions"), 
 				data.get("Dates From"), data.get("Dates To"));
-		/*
-		updatePostRegPage.EnterFamilyData("Herath", "1111223", "212121212v", "31", "brothah",
-				"11223331212", "32000");
-*/
+		
+		updatePostRegPage.gotoFamilyTab();
+		updatePostRegPage.EnterFamilyData("Herath", "1111223", "212121212v", "31", "Spouse", "11223331212", "32000");		
+		
+		updatePostRegPage.gotoChildTab();
+		APPLICATION_LOGS.debug("Clicked on the Child tab");
+		updatePostRegPage.EnterChildData(data.get("Names"), data.get("Addresss"), data.get("Ages"), data.get("Schools"), data.get("Grades"));
+
 	}
 	
-	//@Test(dependsOnMethods="fillPostRegistrationTabsTest")
+	@Test(dependsOnMethods="fillPostRegistrationTabsTest")
 	public void submitPostRegistrationTest(){
 		
 		postRegPage = updatePostRegPage.ClickUpdateButton();

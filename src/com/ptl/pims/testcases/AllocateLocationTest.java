@@ -37,9 +37,6 @@ public class AllocateLocationTest extends TestBase {
 	@Test(dependsOnMethods = "GoToAllocateLocationPage", dataProvider = "getAllocationData")      //pims-993, pims-994
 	public void changeInmateLocation(Hashtable<String, String> data) {
 		
-		String newLocation = data.get("New Location");
-		Assert.assertTrue(!newLocation.equalsIgnoreCase(allocationPage.getCurrentLocation()),"Cannot proceed. Inmate already in " + newLocation);
-		
 		//Change Inmate Location
 		allocateLocationInmateSelect = allocationPage.changeLocation(data.get("New Location"));
 

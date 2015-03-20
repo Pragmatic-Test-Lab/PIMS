@@ -173,6 +173,10 @@ public class UpdatePostRegistrationPage {
 		childTab.click();
 	}
 	
+	public void gotoFamilyTab(){
+		familyDataTab.click();
+	}
+	
 	public String getActualEmploymnetTabStatus(){		
 		String ActualStatus = employmentTab.getAttribute("aria-expanded");
 		return ActualStatus;
@@ -208,7 +212,7 @@ public class UpdatePostRegistrationPage {
 		int dataRows = initialRowCount(employer_tbody);
 		for (int i = 0; i < Employer.length; i++) {
 			employmentAddNew.click();
-			int newDataRow = dataRows + i;
+			int newDataRow = dataRows + i - 1;
 			String DataRowNumber = String.valueOf(newDataRow);
 			
 			try {

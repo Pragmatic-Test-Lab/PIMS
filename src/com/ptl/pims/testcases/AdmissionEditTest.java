@@ -20,7 +20,7 @@ public class AdmissionEditTest extends TestBase{
 		EditAdmissionPage editAdmissionPage =  editAdmissionSelectPage.clickFirstInmate();
 		
 		editAdmissionSelectPage = editAdmissionPage.doEditAdmition("Child","Colombo","20","Vegeterian"
-				,"Biometric Content Updated","Nimal Pathirana Updated","RC","male");
+				,"Biometric Updated","Nimal Pathirana Updated","RC","male");
 		Assert.assertTrue(editAdmissionSelectPage.getSuccessMessage().matches(Constants.EditAdmission_SuccessMessageText), "Editing Admission has failed");		
 
 	}

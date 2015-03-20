@@ -42,12 +42,14 @@ public class CreateNewAdmissionTest extends TestBase{
 		
 		createNewAdmissionPage.doFillAllRequiredFileds("Un-Convicted","Negombo","25","Diet","Test Biometric","Nimal Pathirana","FO","male");
 		createNewAdmissionPage.addInmatePictures(RHS_Image_Path,Front_Image_Path, LHS_Image_Path);
+		
 		createNewAdmissionPage.filleCourtDetailsTab("Colombo","CASE001","2015-02-24");
 		createNewAdmissionPage.filleHealthConditionTab(true,"Health Conditions Remarks",true,"Health of school","Other", "Cough");
-		createNewAdmissionPage.fillInfantsPreschoolTab("Name hi","2015-02-25");
 		createNewAdmissionPage.fillInmateComplaint("2015-02-10","Health","Descriptios");
 		createNewAdmissionPage.fillPrivatePropertiesTab("2015-02-18","Phone","Descriptions","1","200.89");
-					
+		createNewAdmissionPage.fillInfantsPreschoolTab("Name hi","2015-02-25");
+
+		
 		registrationNo = createNewAdmissionPage.getRegistrationNumber();		
 	    newAdmissionPage = createNewAdmissionPage.doAdmission();	
 	    

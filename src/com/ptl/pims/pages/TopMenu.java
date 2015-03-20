@@ -14,7 +14,9 @@ public class TopMenu {
 	
 	@FindBy(xpath=Constants.TopMenu_PIMSTopLink)
 	WebElement homePageTopLink;
-	@FindBy(xpath=Constants.TopMenu_AdmissionTopLink)
+	@FindBy(xpath=Constants.TopMenu_RegistrationManagementTopLink)
+	WebElement registrationManagementTopLink;	
+	@FindBy(xpath=Constants.TopMenu_RegistrationManagement_AdmissionTopLink)
 	WebElement admissionTopLink;
 	@FindBy(xpath = Constants.TopMenu_NewAdmissionSubLink)
 	WebElement newAdmissionSubLink;
@@ -22,7 +24,7 @@ public class TopMenu {
 	WebElement editSubLink;
 	@FindBy(xpath = Constants.TopMenu_AuthorizeSubLink)
 	WebElement authorizeSubLink;
-	@FindBy(xpath = Constants.TopMenu_RegistrationMainLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationManagement_RegistrationTopLink)
 	WebElement registrationMainLink;
 	@FindBy(xpath = Constants.TopMenu_RegistrationSubLink)
 	WebElement registrationSubLink;
@@ -32,7 +34,7 @@ public class TopMenu {
 	WebElement propertyManagement;
 	@FindBy(xpath = Constants.TopMenu_AuthorizeRegistrationSubLink)
 	WebElement authorizeRegSub;
-	@FindBy(xpath = Constants.TopMenu_PostRegistrationMainLink)
+	@FindBy(xpath = Constants.TopMenu_RegistrationManagement_PostRegistrationTopLink)
 	WebElement postRegMain;
 	@FindBy(xpath = Constants.TopMenu_PostRegistrationSubLink)
 	WebElement postRegSub;
@@ -55,6 +57,7 @@ public class TopMenu {
 
 	
 	public NewAdmissionPage gotoNewAdmissionPage(){
+		registrationManagementTopLink.click();
 		admissionTopLink.click();
 		newAdmissionSubLink.click();
 		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
@@ -63,6 +66,7 @@ public class TopMenu {
 	
 	
 	public EditAdmissionSelectPage gotoEditAdmissionPage() {
+		registrationManagementTopLink.click();
 		admissionTopLink.click();
 		editSubLink.click();
 		EditAdmissionSelectPage editAdminSelectPage = PageFactory.initElements(driver, EditAdmissionSelectPage.class);
@@ -71,6 +75,7 @@ public class TopMenu {
 	
 	
 	public AuthorizeAdmissionSelectPage gotoAuthorizeAdmissionPage() {
+		registrationManagementTopLink.click();
 		admissionTopLink.click();
 		authorizeSubLink.click();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
@@ -79,6 +84,7 @@ public class TopMenu {
 	
 	
 	public PostRegistrationPage gotoPostRegistrationPage(){
+		registrationManagementTopLink.click();
 		postRegMain.click();
 		postRegSub.click();
 		PostRegistrationPage postRegPage = PageFactory.initElements(driver, PostRegistrationPage.class);
@@ -88,6 +94,7 @@ public class TopMenu {
 	
 	
 	public PostRegistrationAuthorizePage gotoPostRegistrationAuthorizePage(){
+		registrationManagementTopLink.click();
 		postRegMain.click();
 		postRegAuthorizeSub.click();
 		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
@@ -97,6 +104,7 @@ public class TopMenu {
 	
 	
 	public PropertyManagementInmateSelectPage gotoManageProperty(){
+		registrationManagementTopLink.click();
 		registrationMainLink.click();
 		propertyManagement.click();
 		PropertyManagementInmateSelectPage managePropertySelectInmate = PageFactory.initElements(driver, PropertyManagementInmateSelectPage.class);
@@ -106,6 +114,7 @@ public class TopMenu {
 	
 
 	public AuthorizeRegistrationInmateSelectPage gotoAuthorizeRegistrationPage() {
+		registrationManagementTopLink.click();
 		registrationMainLink.click();
 		authorizeRegSub.click();
 		AuthorizeRegistrationInmateSelectPage authorizeInmateSelectPage = PageFactory.initElements(driver, AuthorizeRegistrationInmateSelectPage.class);
@@ -114,6 +123,7 @@ public class TopMenu {
 	
 
 	public AllocateLocationInmateSelectPage goToAllocateLocation() {
+		registrationManagementTopLink.click();
 		registrationMainLink.click();
 		allocateLocationSubLink.click();
 		AllocateLocationInmateSelectPage allocateLocation = PageFactory
@@ -124,6 +134,7 @@ public class TopMenu {
 
 
 	public InmateRegistrationSelectPage goToInmateRegistration() {
+		registrationManagementTopLink.click();
 		registrationMainLink.click();
 		registrationSubLink.click();
 		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
@@ -132,6 +143,7 @@ public class TopMenu {
 	}
 
 	public PostRegistrationAuthorizePage gotoAuthorizePostRegistration() {
+		registrationManagementTopLink.click();
 		postRegMain.click();
 		postRegAuthorizeSub.click();
 		PostRegistrationAuthorizePage postRegistration = PageFactory.initElements(

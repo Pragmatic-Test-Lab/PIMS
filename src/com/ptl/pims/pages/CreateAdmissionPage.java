@@ -180,18 +180,9 @@ public class CreateAdmissionPage extends CommonMethods {
 
 	public void addInmatePictures(String RHS_Image,String Front_Image, String LHS_Image){
 
-		try {
-			
-			Thread.sleep(3000);
 			ImageRHSBrowse.sendKeys(RHS_Image);
-			Thread.sleep(3000);
 			ImageFrontBrowse.sendKeys(Front_Image);
-			Thread.sleep(3000);
 			ImageLHSBrowse.sendKeys(LHS_Image);			
-			
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 
 	}
 
@@ -276,11 +267,7 @@ public class CreateAdmissionPage extends CommonMethods {
 	public boolean checkIsInmateRegistrationNumberIsAutoGenarated(){
 		InmateCatagory.sendKeys("Convicted");
      	CourtWarant.sendKeys("Negombo");
-		
-		try {
-			Thread.sleep(3000);
-			} catch (InterruptedException e) {e.printStackTrace();}
-				
+
 		if(RegNumber.getText()!= "")
 			return  true;
 		else
@@ -303,18 +290,11 @@ public class CreateAdmissionPage extends CommonMethods {
 	}
 	
 	public String getRegistrationNumber(){
-		try {
-			Thread.sleep(3000);		
-		} catch (InterruptedException e) {}
 		
 		return RegNumber.getAttribute("value");		
 	}
 		
 	public String getActualSelectedAgeCategory(){
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {e.printStackTrace();}
 		
 		String ageCategoryValue = AgeCatagoryDropdown.getAttribute("value");
 		WebElement ageCategorySelectedOption = driver.findElement(By.xpath(AgeCatagoryOptionFirstPart + ageCategoryValue + AgeCategoryOptionLastPart));
@@ -339,10 +319,6 @@ public class CreateAdmissionPage extends CommonMethods {
 		String CourtId = "";		
 		if(court.equals("Colombo")) CourtId = "CSC";
 		if(court.equals("Negombo"))	CourtId = "NHC";
-		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {e.printStackTrace();}
 		
 		String genaratedRegNum = RegNumber.getAttribute("value");
 		

@@ -18,9 +18,6 @@ public class InmateRegistrationTest extends TestBase {
 
 	@Test  //PIMS-1080
 	public void goInmateRegistrationPage() {
-
-		if(!TestUtil.isTestCaseRunmodeYes("Inmate Registration Test", xls))
-			throw new SkipException("Skipping the test");
 		
 		loginToApplication();
 		TopMenu topMenu = getTopMenu();
@@ -69,7 +66,7 @@ public class InmateRegistrationTest extends TestBase {
 			throw new SkipException("Skipping the test");
 
 		APPLICATION_LOGS.debug("Adding Classification Data");
-		inmateRegistration.doAddClassifiactionDetailsOfInmate(data.get("classif")); 
+		inmateRegistration.doAddClassifiactionDetailsOfInmate(); 
 	}
 
 	@Test(dataProvider = "getInmateCharacteristicData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1082

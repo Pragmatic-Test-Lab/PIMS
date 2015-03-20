@@ -2,9 +2,8 @@
 <suite name="PIMS Project">
 
 <listeners>
-    <listener class-name="listener.TestsListenerAdapter" />
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
- 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>    
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 <!--  
 <test name="Login Test">
@@ -13,14 +12,20 @@
     </classes>
 </test>
 -->
+<!--
 <test name="Admission Reg. No. Format">
     <classes>
         <class name="com.ptl.pims.testcases.RegistrationNumFormatTest" ></class>  
     </classes>
-</test>
+</test>  
 <test name="Admission AllPair Test">
     <classes>
         <class name="com.ptl.pims.testcases.AdmissionAllPairTest" ></class>  
+    </classes>
+</test>
+<test name="Registration AllPair Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.RegistrationAllPairTest" ></class>  
     </classes>
 </test>
 <test name="Admission Age Category Test">
@@ -32,16 +37,17 @@
     <classes>
         <class name="com.ptl.pims.testcases.CreateAdmissionTest_Child" ></class>  
     </classes>
-    				<!-- _Child, _Baby, _Convicted, _UnConvicted, _Youth -->
+    			_Child, _Baby, _Convicted, _UnConvicted, _Youth	    				
+</test>
+-->
+<test name="New Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
+    </classes>
 </test>
 <test name="Admission Authorization Test"> 
     <classes>
         <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
-    </classes>
-</test>
-<test name="Registration AllPair Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.RegistrationAllPairTest" ></class>  
     </classes>
 </test>
 <test name="Registeration Test">
@@ -67,7 +73,7 @@
 </test>
 <test name="Post-Registeration Test">
     <classes>
-        <class name="com.ptl.pims.testcases.PostRegistrationEducation_MultipleEntriesTest" ></class>  
+        <class name="com.ptl.pims.testcases.PostRegistrationTest" ></class>  
     </classes>
 </test>
 <test name="Post-Registeration Authorization">

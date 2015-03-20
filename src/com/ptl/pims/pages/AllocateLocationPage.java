@@ -30,12 +30,12 @@ public class AllocateLocationPage {
 	public boolean validateInmateData(String RegNo, String Name) {
 		boolean validated = true;
 		
-		if( RegNo == null || RegNo.isEmpty());
-		else if(!RegNo.equals(RegistrationNum.getText()))
+		if( RegNo == null);
+		else if(!RegNo.equals(RegistrationNum.getAttribute("value")))
 				validated = false;
 		
-		if(Name == null || Name.isEmpty());
-		else if(!Name.equals(InmateName.getText()))
+		if(Name == null);
+		else if(!Name.equals(RegistrationNum.getAttribute("value")))
 				validated = false;
 
 		return validated;
