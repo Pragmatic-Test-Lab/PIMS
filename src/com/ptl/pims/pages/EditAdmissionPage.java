@@ -86,7 +86,7 @@ public class EditAdmissionPage extends CommonMethods{
 	public boolean allMandatoryAdmissionDataSavedProperly(String inmateCatagory, String court, String age, String meal, 
 			String biometric,String nameAsWarrent, String classification, String gender){
 		
-		WebElement selectedCategory = driver.findElement(By.xpath(Constants.CreateAdmission_InmateCategory 
+		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.CreateAdmission_InmateCategory 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
 		WebElement selectedCourt = driver.findElement(By.xpath(Constants.CreateAdmission_CourtWarant 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));		
@@ -96,6 +96,8 @@ public class EditAdmissionPage extends CommonMethods{
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
 		WebElement selectedGender = driver.findElement(By.xpath(Constants.CreateAdmission_Gender 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
+		
+		
 		
 		//page values
 		String InmateCat = selectedCategory.getText();

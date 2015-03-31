@@ -11,35 +11,36 @@
         <class name="com.ptl.pims.testcases.LoginTest" ></class>  
     </classes>
 </test>
--->
-<!--
+
+
 <test name="Admission Reg. No. Format">
     <classes>
         <class name="com.ptl.pims.testcases.RegistrationNumFormatTest" ></class>  
     </classes>
-</test>  
+</test> 
+
+
 <test name="Admission AllPair Test">
     <classes>
         <class name="com.ptl.pims.testcases.AdmissionAllPairTest" ></class>  
     </classes>
 </test>
-<test name="Registration AllPair Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.RegistrationAllPairTest" ></class>  
-    </classes>
-</test>
+
+
+
 <test name="Admission Age Category Test">
     <classes>
         <class name="com.ptl.pims.testcases.AdmissionAgeCategoryTest" ></class>  
     </classes>
 </test>
+--> 
+<!--  
 <test name="New Admission Test">
     <classes>
         <class name="com.ptl.pims.testcases.CreateAdmissionTest_Child" ></class>  
     </classes>
     			_Child, _Baby, _Convicted, _UnConvicted, _Youth	    				
 </test>
--->
 <test name="New Admission Test">
     <classes>
         <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
@@ -50,11 +51,32 @@
         <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
     </classes>
 </test>
+
+<test name="Registration AllPair Test">
+    <classes>	
+        <class name="com.ptl.pims.testcases.RegistrationAllPairTest" ></class>  
+    </classes>
+</test>
+-->
+<test name="New Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
+    </classes>
+</test>
+
+<!-- 
+<test name="Admission Authorization Test"> 
+    <classes>
+        <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
+    </classes>
+</test>
+ 
 <test name="Registeration Test">
     <classes>
         <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
     </classes>
 </test>
+-->
 <test name="Allocate Location Test">
     <classes>
         <class name="com.ptl.pims.testcases.AllocateLocationTest" ></class>  
@@ -81,6 +103,8 @@
         <class name="com.ptl.pims.testcases.AuthorizePostRegistration" ></class>  
     </classes>
 </test>
+
+ -->
 </suite>
 
 

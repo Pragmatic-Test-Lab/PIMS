@@ -60,7 +60,7 @@ public class InmateRegistrationTest extends TestBase {
 	
 
 	@Test(dataProvider = "getInmateClassificationData",dependsOnMethods="goInmateRegistrationPage")   //PIMS-1080
-	public void enterInmateCalasificationTest(Hashtable<String, String> data) {
+	public void enterInmateClassificationTest(Hashtable<String, String> data) {
 
 		if(data.get("Runmode").equals("No"))
 			throw new SkipException("Skipping the test");

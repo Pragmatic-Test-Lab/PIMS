@@ -64,6 +64,8 @@ public class CreateAdmissionPage extends CommonMethods {
 	WebElement InmateCaseDetailsCaseNumber;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCourtDetail_DateConviction)
 	WebElement InmateCaseDetailsDateConviction;
+	@FindBy(xpath = Constants.CreateAdmission_InmateCourtDetail_DateSentence)
+	WebElement InmateCaseDetailsDateOfSentence;
 	@FindBy(xpath = Constants.CreateAdmission_InmateCourtDetail_Action)
 	WebElement InmateCaseDetailsAction;
 
@@ -187,11 +189,12 @@ public class CreateAdmissionPage extends CommonMethods {
 	}
 
 	public void filleCourtDetailsTab(String caseCourt, String caseNo,
-			String caseDate) {
+			String caseDate, String senDate) {
 		InmateAddNewCase.click();
 		InmateCaseDetailsCourt.sendKeys(caseCourt);
 		InmateCaseDetailsCaseNumber.sendKeys(caseNo);
 		InmateCaseDetailsDateConviction.sendKeys(caseDate);
+		InmateCaseDetailsDateOfSentence.sendKeys(senDate);
 	}
 
 	public void filleHealthConditionTab(boolean isPregnant, String hlthRemarks,	boolean isFroPreSchool, String ofPreSchool, String drug,
@@ -296,6 +299,10 @@ public class CreateAdmissionPage extends CommonMethods {
 		
 	public String getActualSelectedAgeCategory(){
 		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+		
 		String ageCategoryValue = AgeCatagoryDropdown.getAttribute("value");
 		WebElement ageCategorySelectedOption = driver.findElement(By.xpath(AgeCatagoryOptionFirstPart + ageCategoryValue + AgeCategoryOptionLastPart));
 		
@@ -319,6 +326,12 @@ public class CreateAdmissionPage extends CommonMethods {
 		String CourtId = "";		
 		if(court.equals("Colombo")) CourtId = "CSC";
 		if(court.equals("Negombo"))	CourtId = "NHC";
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		String genaratedRegNum = RegNumber.getAttribute("value");
 		

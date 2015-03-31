@@ -26,16 +26,16 @@ public class Constants {
 	// Top Menu Links
 	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
 	public static final String TopMenu_RegistrationManagementTopLink = "//a[contains(text(),'Registration Management')]";
-	public static final String TopMenu_RegistrationManagement_AdmissionTopLink = "//*[contains(text(),'Admission')]";
+	public static final String TopMenu_RegistrationManagement_AdmissionTopLink = "//*[text() = 'Admission']";
 	public static final String TopMenu_NewAdmissionSubLink = "//*[text()='New Admission']";
 	public static final String TopMenu_EditSubLink = "//*[text()='Edit']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
-	public static final String TopMenu_RegistrationManagement_RegistrationTopLink = "//*[contains(text(),'Registration')]";
-	public static final String TopMenu_RegistrationSubLink = "//*[text()='Registration']";
+	public static final String TopMenu_RegistrationManagement_RegistrationTopLink = "//*[text() = 'Registration']";
+	public static final String TopMenu_RegistrationSubLink = "(.//*[text()='Registration'])[2]";
 	public static final String TopMenu_AllocateLocationSubLink = "//*[text()='Allocate Location']";
 	public static final String TopMenu_PropertyManagementSubLink = "//*[text()='Property Management']";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
-	public static final String TopMenu_RegistrationManagement_PostRegistrationTopLink = "//a[contains(text(),'Post Registration')]";
+	public static final String TopMenu_RegistrationManagement_PostRegistrationTopLink = "//a[text() = 'Post Registration']";
 	public static final String TopMenu_PostRegistrationSubLink = "//a[text()='Post Registration']";
 	public static final String TopMenu_AuthorizePostRegistrationSubLink = "//a[contains(@href,'/post-registration-authorization')]";
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
@@ -72,6 +72,7 @@ public class Constants {
 	public static final String CreateAdmission_InmateCourtDetail_Court = "(//select[contains(@name, 'icd_court_id')])[1]";
 	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "(//input[contains(@name, 'icd_case_number')])[1]";
 	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "(//input[contains(@name, 'icd_date_of_conviction')])[1]";
+	public static final String CreateAdmission_InmateCourtDetail_DateSentence = "//*[@id='inmatecasedetails-1-icd_date_of_sentence']";
 	public static final String CreateAdmission_InmateCourtDetail_Action = "";
 	// New Admission Health Details
 	public static final String CreateAdmission_HealthConditionTab = "//a[text() = 'Health Condition']";
@@ -155,21 +156,21 @@ public class Constants {
 	//public static final String InmateRegistration_Personal_Province = "//*[@id='admission-adm_province_id']";
 	public static final String InmateRegistration_Personal_Province = "//*[@id='province-id']";
 	//public static final String InmateRegistration_Personal_District = "//*[@id='admission-adm_district_id']";
-	public static final String InmateRegistration_Personal_District = "//*[@id='district_id']";
+	public static final String InmateRegistration_Personal_District = "//*[@id='district-id']";
 	//public static final String InmateRegistration_Personal_DS = "//*[@id='admission-adm_ds_id']";
-	public static final String InmateRegistration_Personal_DS = "//*[@id='ds_id']";
+	public static final String InmateRegistration_Personal_DS = "//*[@id='ds-id']";
 	//public static final String InmateRegistration_Personal_GSDivision = "//*[@id='admission-adm_gn_devision_id']";
-	public static final String InmateRegistration_Personal_GSDivision = "//*[@id='gn_id']";
+	public static final String InmateRegistration_Personal_GSDivision = "//*[@id='gn-id']";
 	//public static final String InmateRegistration_Personal_City = "//*[@id='admission-adm_city_id']";
-	public static final String InmateRegistration_Personal_City = "//*[@id='city_id']";
+	public static final String InmateRegistration_Personal_City = "//*[@id='city-id']";
 	//public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='admission-adm_police_division_id']";
-	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='pd_id']";
+	public static final String InmateRegistration_Personal_PoliceDivision = "//*[@id='pd-id']";
 	public static final String InmateRegistration_Personal_Update = "//*[text()='Update']";
 	// Inmate classification tab
 	public static final String InmateRegistration_calssfication_tab = "//a[text()='Inmate Classification Details']";
 	public static final String InmateRegistration_Header = "";
 	public static final String InmateRegistration_Classification_Pervious_Conviction = "";
-	public static final String InmateRegistration_Classifiaction_IsLife = "//*[@id='admission-adm_is_life']";
+	public static final String InmateRegistration_Classifiaction_IsSpecial = "//*[@id='admission-adm_is_special']";
 	// Inmate characteristics tab
 	public static final String InmateRegistration_characteristics_tab = "//a[text()='Inmate Characteristic Details']";
 	public static final String InmateRegistration_Characteristic_nationality = "//*[@id='admission-adm_nationality_id']";
@@ -421,7 +422,7 @@ public class Constants {
 	public static final String InmateSearch_RegNoSearchField = ".//*[contains(@name,'Search[adm_registration_no]')]";
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
-	public static final String InmateSearch_TableFirstInmate = "(.//a/descendant::span)[1]";
+	public static final String InmateSearch_TableFirstInmate = "(.//*[contains(@class, 'glyphicon')]//parent::a)[1]";
 	public static final String InmateSearchPage_SuccessMessage = ".//div[@class='alert alert-success']";
 	public static final String InmateSearchPage_NoSearchResultsFound = ".//*[text()='No results found.']";
 

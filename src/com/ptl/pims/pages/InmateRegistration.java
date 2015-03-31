@@ -67,8 +67,8 @@ public class InmateRegistration extends CommonMethods{
 	//Classification details tab
 	@FindBy(xpath = Constants.InmateRegistration_Classification_Pervious_Conviction)
 	public WebElement previous_conviction;
-	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_IsLife)
-	public WebElement classification_IsLife;
+	@FindBy(xpath = Constants.InmateRegistration_Classifiaction_IsSpecial)
+	public WebElement classification_IsSpecial;
 
 	//characteristic details tab
 	@FindBy(xpath = Constants.InmateRegistration_Characteristic_nationality)
@@ -214,7 +214,7 @@ public class InmateRegistration extends CommonMethods{
 	public void doAddClassifiactionDetailsOfInmate(){
 
 		tab_classification.click();
-		classification_IsLife.click();		
+		classification_IsSpecial.click();		
 
 	}
 

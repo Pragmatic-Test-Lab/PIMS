@@ -73,7 +73,7 @@ public class PropertyManagementPage {
 		String[] quantities = quantity.split(",");
 		String[] values = value.split(",");		
 
-		int dataRows = initialRowCount(Private_TabTableBody)-1;
+		int dataRows = initialRowCount(Private_TabTableBody);
 		
 		for(int i=0; i< dates.length; i++){
 
@@ -103,7 +103,7 @@ public class PropertyManagementPage {
 		String[] descriptions = description.split(",");
 		String[] quantities = quantity.split(",");
 
-		int dataRows = initialRowCount(Prison_TabTableBody) - 1;
+		int dataRows = initialRowCount(Prison_TabTableBody);
 		
 		for(int i=0; i< dates.length; i++){
 
