@@ -34,7 +34,7 @@ public class TestBase {
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
 	public static int tempNum = 1;
-	public static String registrationNo = "";
+	public static String registrationNo = "T/10310/2015";
 	protected ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 

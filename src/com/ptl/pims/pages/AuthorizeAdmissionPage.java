@@ -5,13 +5,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import com.ptl.pims.util.Constants;
 
 public class AuthorizeAdmissionPage {
 
     WebDriver driver;
+    
+	@FindBy(xpath = Constants.CreateAdmission_NameWarrant)
+	WebElement NameWarrent;
+	@FindBy(xpath = Constants.CreateAdmission_Biometric)
+	WebElement BioMetric;
+	@FindBy(xpath = Constants.CreateAdmission_AgeAdmission)
+	WebElement AgeAddmission;
   
     @FindBy(xpath = Constants.Authorize_Admission)
 	WebElement AuthorizeInamteAdmissionButton;
@@ -37,24 +43,24 @@ public class AuthorizeAdmissionPage {
 	public boolean checkAvailableData(String inmateCatagory, String court, String age, String meal, 
 			String biometric,String nameAsWarrent, String classification, String gender){
 		
-		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.AuthorizeAdmission_InmateCategory 
+		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.CreateAdmission_InmateCategory 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedCourt = driver.findElement(By.xpath(Constants.AuthorizeAdmission_CourtWarant 
+		WebElement selectedCourt = driver.findElement(By.xpath(Constants.CreateAdmission_CourtWarant 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));		
-		WebElement selectedMeal = driver.findElement(By.xpath(Constants.AuthorizeAdmission_MealType 
+		WebElement selectedMeal = driver.findElement(By.xpath(Constants.CreateAdmission_MealType 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedClassification = driver.findElement(By.xpath(Constants.AuthorizeAdmission_OccurenceClassification 
+		WebElement selectedClassification = driver.findElement(By.xpath(Constants.CreateAdmission_OccurenceClassification 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedGender = driver.findElement(By.xpath(Constants.AuthorizeAdmission_Gender 
+		WebElement selectedGender = driver.findElement(By.xpath(Constants.CreateAdmission_Gender 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));		
 		
 		//page values
 		String InmateCat = selectedCategory.getText();
 		String Court = selectedCourt.getText();
-		String Age = AgeAuthAddmission.getAttribute("value");
+		String Age = AgeAddmission.getAttribute("value");
 		String Meal = selectedMeal.getText();
-		String Biometric = AuthBioMetric.getAttribute("value");
-		String NameAsWarrent = AuthNameWarrent.getAttribute("value");
+		String Biometric = BioMetric.getAttribute("value");
+		String NameAsWarrent = NameWarrent.getAttribute("value");
 		String Classification = selectedClassification.getText();
 		String Gender = selectedGender.getText();
 		
@@ -63,7 +69,7 @@ public class AuthorizeAdmissionPage {
 				&& classification.equals(Classification) && gender.equals(Gender))		
 		return true;
 		else return false;
-	return false;
+		
 	}
 	
 }

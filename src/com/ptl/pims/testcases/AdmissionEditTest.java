@@ -46,7 +46,7 @@ public class AdmissionEditTest extends TestBase{
 	}		
 	
 	@Test(dependsOnMethods = "GoToEditAdmissionPage", dataProvider = "getEditAdmissionData") // PIMS-1194
-	public void Test_doEditAdmission(Hashtable<String, String> data){
+	public void TestDoEditAdmission(Hashtable<String, String> data){
 		
 		editAdmissionPage.doEditAdmition(data.get("Inmate Category"),data.get("Court"),data.get("Age"),
 				data.get("Meal Type"),data.get("Biometric"),data.get("Name"),data.get("Classification"),data.get("Gender"));
