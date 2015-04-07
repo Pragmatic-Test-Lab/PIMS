@@ -55,7 +55,7 @@ public class EditAdmissionPage extends CommonMethods{
 	}	
 	
 	//PIMS-1194
-	public EditAdmissionSelectPage doEditAdmition(String inmateCatagory, String court, String age, String meal, 
+	public void doEditAdmition(String inmateCatagory, String court, String age, String meal, 
 			String biometric,String nameAsWarrent, String classification, String gender){
 		
      	InmateCatagory.sendKeys(inmateCatagory);
@@ -69,12 +69,18 @@ public class EditAdmissionPage extends CommonMethods{
 			NameWarrent.sendKeys(nameAsWarrent);
 		OccurenceClassificatio.sendKeys(classification);
 		Gender.sendKeys(gender);
-		
+
+	}
+	
+	public EditAdmissionSelectPage clickUpdateButton(){
+
 		UpdateInamteAdmissionButton.click();
 		
 		EditAdmissionSelectPage editAdmissionSelectPage = PageFactory.initElements(driver, EditAdmissionSelectPage.class);
 		return editAdmissionSelectPage;	
 	}
+	
+	
 	
 	private void clearField(WebElement element){
 		
@@ -83,7 +89,7 @@ public class EditAdmissionPage extends CommonMethods{
 		element.sendKeys(Keys.DELETE);	
 	}
 	
-	public boolean allMandatoryAdmissionDataSavedProperly(String inmateCatagory, String court, String age, String meal, 
+	public boolean checkAvailableData(String inmateCatagory, String court, String age, String meal, 
 			String biometric,String nameAsWarrent, String classification, String gender){
 		
 		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.CreateAdmission_InmateCategory 
@@ -95,9 +101,7 @@ public class EditAdmissionPage extends CommonMethods{
 		WebElement selectedClassification = driver.findElement(By.xpath(Constants.CreateAdmission_OccurenceClassification 
 				+ Constants.EditAdmission_SelectedDropdownEndPart));
 		WebElement selectedGender = driver.findElement(By.xpath(Constants.CreateAdmission_Gender 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		
-		
+				+ Constants.EditAdmission_SelectedDropdownEndPart));		
 		
 		//page values
 		String InmateCat = selectedCategory.getText();
@@ -126,6 +130,11 @@ public class EditAdmissionPage extends CommonMethods{
 
 		
 		return false;
+	}
+
+	public String getRegistrationNumber() {
+		
+		return RegNumber.getAttribute("value");		
 	}
 
 }

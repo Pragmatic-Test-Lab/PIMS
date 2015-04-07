@@ -1,5 +1,6 @@
 package com.ptl.pims.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,39 @@ public class AuthorizeAdmissionPage {
 		AuthorizeInamteAdmissionButton.click();
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
 		return authorizeAdmissionSelectPage;
+	}
+
+
+	public boolean checkAvailableData(String inmateCatagory, String court, String age, String meal, 
+			String biometric,String nameAsWarrent, String classification, String gender){
+		
+		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.AuthorizeAdmission_InmateCategory 
+				+ Constants.EditAdmission_SelectedDropdownEndPart));
+		WebElement selectedCourt = driver.findElement(By.xpath(Constants.AuthorizeAdmission_CourtWarant 
+				+ Constants.EditAdmission_SelectedDropdownEndPart));		
+		WebElement selectedMeal = driver.findElement(By.xpath(Constants.AuthorizeAdmission_MealType 
+				+ Constants.EditAdmission_SelectedDropdownEndPart));
+		WebElement selectedClassification = driver.findElement(By.xpath(Constants.AuthorizeAdmission_OccurenceClassification 
+				+ Constants.EditAdmission_SelectedDropdownEndPart));
+		WebElement selectedGender = driver.findElement(By.xpath(Constants.AuthorizeAdmission_Gender 
+				+ Constants.EditAdmission_SelectedDropdownEndPart));		
+		
+		//page values
+		String InmateCat = selectedCategory.getText();
+		String Court = selectedCourt.getText();
+		String Age = AgeAuthAddmission.getAttribute("value");
+		String Meal = selectedMeal.getText();
+		String Biometric = AuthBioMetric.getAttribute("value");
+		String NameAsWarrent = AuthNameWarrent.getAttribute("value");
+		String Classification = selectedClassification.getText();
+		String Gender = selectedGender.getText();
+		
+		if(inmateCatagory.equals(InmateCat) && court.equals(Court) && age.equals(Age) && meal.equals(Meal) 
+				&& biometric.equals(Biometric) && nameAsWarrent.equals(NameAsWarrent) 
+				&& classification.equals(Classification) && gender.equals(Gender))		
+		return true;
+		else return false;
+	return false;
 	}
 	
 }

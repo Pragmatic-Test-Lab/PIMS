@@ -169,15 +169,12 @@ public class CreateAdmissionPage extends CommonMethods {
 		NameWarrent.sendKeys(nameAsWarrent);
 		OccurenceClassificatio.sendKeys(classification);
 		Gender.sendKeys(gender);	
-		
-		//
-		//temporary date of admission selection
-		//
-		DateAddmission.click();
-		//backMonth.click();
+
+		/*DateAddmission.click();
+		backMonth.click();
 		driver.findElement(By.xpath(dateText_FirstPart + "3" + dateText_LastPart)).click(); //click on the selected date text
 		driver.findElement(By.xpath(hourText_FirstPart + "1:00" + hourText_LastPart)).click(); //click on the selected hour text
-		driver.findElement(By.xpath(minuteText_FirstPart + "1:25" + minuteText_LastPart)).click();
+		driver.findElement(By.xpath(minuteText_FirstPart + "1:25" + minuteText_LastPart)).click();*/
 	}
 
 	public void addInmatePictures(String RHS_Image,String Front_Image, String LHS_Image){
@@ -300,7 +297,7 @@ public class CreateAdmissionPage extends CommonMethods {
 	public String getActualSelectedAgeCategory(){
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3500);
 		} catch (InterruptedException e) {}
 		
 		String ageCategoryValue = AgeCatagoryDropdown.getAttribute("value");
@@ -328,7 +325,7 @@ public class CreateAdmissionPage extends CommonMethods {
 		if(court.equals("Negombo"))	CourtId = "NHC";
 		
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

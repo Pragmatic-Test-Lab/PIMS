@@ -9,7 +9,7 @@ import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
 import com.ptl.pims.util.TestUtil;
 
-public class AdmissionAgeCategoryTest extends TestBase {
+public class AdmissionAutoGenratedFieldTest extends TestBase {
 
 	CreateAdmissionPage createAdmissionPage;
 
@@ -22,15 +22,28 @@ public class AdmissionAgeCategoryTest extends TestBase {
 			createAdmissionPage = newAdmissionPage.getCreateAdmissionPage();					
 	}	
 
-	@Test(dataProvider = "getAgeCategoryData")
+	@Test(dependsOnMethods="GoToCreateAdmission", dataProvider = "getAgeCategoryData")
 	public void ValidateAutoSelectedAgeCategory(Hashtable<String, String> data) {
 
 			createAdmissionPage.addAge(data.get("Age"));		
 			Assert.assertEquals(createAdmissionPage.getActualSelectedAgeCategory(), data.get("Category"),
-					"Failed for age of "+ data.get("Age") + "for " + data.get("Category") + ".");
-				
+					"Failed for age of "+ data.get("Age") + ".");				
 	}
 	
+	
+	@Test(dependsOnMethods="GoToCreateAdmission",  dataProvider = "getRegNoData") 
+	public void TestRegNumFormat(Hashtable<String, String> data) {
+		
+		Assert.assertTrue(createAdmissionPage.checkNumberFormat(data.get("Category"), data.get("Case")));
+
+	}
+
+	
+	@DataProvider
+	public Object[][] getRegNoData() {
+		return TestUtil.getTestData("Registration Number Format Data", xls);
+
+	}
 
 	@DataProvider
 	public Object[][] getAgeCategoryData() {
