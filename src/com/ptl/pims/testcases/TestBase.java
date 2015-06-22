@@ -2,10 +2,16 @@ package com.ptl.pims.testcases;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -34,7 +40,8 @@ public class TestBase {
 	public static TopMenu topMenu = null;
 	public static boolean isLoggedIn = false;
 	public static int tempNum = 1;
-	public static String registrationNo = "T/10310/2015";
+	public static String registrationNo = "";
+	public static String inmateCase = "";
 	protected ReadXLS xls = new ReadXLS(System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx");
 
@@ -156,14 +163,28 @@ public class TestBase {
 			landingPage = lp
 					.doLogin(CONFIG.getProperty("USER_NAME"), CONFIG.getProperty("PASSWORD"));
 
-			Assert.assertTrue(landingPage.getActualPageHeader().equalsIgnoreCase(Constants.Home_PageHeaderText),
-					"Could not login!");
+			Assert.assertTrue(landingPage.IsMainPageImageShown(),
+					"Homepage Image not found!");
 			
 			APPLICATION_LOGS.debug("Successfully logged in");
 			isLoggedIn = true;
 		}
 
 	}
+	
+	public void assertTrue(boolean condition, String message){		
+
+		if(!condition){
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile, new File("c:\\Selenium-TestRun\\Failure Screenshots\\Iteration 1\\" 
+							+ (new SimpleDateFormat("yyyy-MM-dd\\HH-mm-ss").format(Calendar.getInstance().getTime())) + " - " + message + ".png"));
+		} catch (IOException e1) {}		
+		}
+		Assert.assertTrue(condition, message);
+		
+	}
+	
 	
 	
 

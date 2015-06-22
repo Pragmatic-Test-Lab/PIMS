@@ -5,7 +5,59 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
+<!--  
+<test name="New Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.AdmissionTest.AdmissionCreateNewTest" ></class>  
+    </classes>    						
+</test>
 
+<test name="Edit Admission Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.AdmissionTest.AdmissionEditTest" ></class>  
+    </classes>    						
+</test>
+ 
+<test name="Admission Authorization Test"> 
+    <classes>
+        <class name="com.ptl.pims.testcases.AdmissionTest.AdmissionAuthorizeTest" ></class>  
+    </classes>
+</test>
+
+-->
+<test name="Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.RegistrationTest.InmateRegistrationTest" ></class>  
+    </classes>
+</test>
+
+<test name="Allocate Location Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.RegistrationTest.AllocateLocationTest" ></class>  
+    </classes>
+</test>
+<test name="Property Management Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.RegistrationTest.PropertyManagementNewTest" ></class>  
+    </classes>
+</test>
+
+<test name="Authorize Registration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.RegistrationTest.AuthorizeRegistrationTest" ></class>  
+    </classes>
+</test>
+
+<test name="Post-Registeration Test">
+    <classes>
+        <class name="com.ptl.pims.testcases.PostRegistration.PostRegistrationTest" ></class>  
+    </classes>
+</test>
+<test name="Post-Registeration Authorization">
+    <classes>
+        <class name="com.ptl.pims.testcases.PostRegistration.AuthorizePostRegistration" ></class>  
+    </classes>
+</test>
 
 <!-- 
 <test name="Admission AllPair Test">
@@ -32,60 +84,11 @@
         <class name="com.ptl.pims.testcases.AdmissionAutoGenratedFieldTest" ></class>  
     </classes>
 </test> 
-
-<test name="New Admission Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.CreateNewAdmissionTest" ></class>  
-    </classes>    						
-</test>
-
-<test name="Edit Admission Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.AdmissionEditTest" ></class>  
-    </classes>    						
-</test>
-
-<test name="Admission Authorization Test"> 
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizeAdmissionTest" ></class>  
-    </classes>
-</test>
--->
  
-<test name="Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.InmateRegistrationTest" ></class>  
-    </classes>
-</test>
 
-<test name="Allocate Location Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.AllocateLocationTest" ></class>  
-    </classes>
-</test>
-<test name="Property Management Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.PropertyManagementNewTest" ></class>  
-    </classes>
-</test>
-
-<test name="Authorize Registration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizeRegistrationTest" ></class>  
-    </classes>
-</test>
-
+-->
 <!--  
-<test name="Post-Registeration Test">
-    <classes>
-        <class name="com.ptl.pims.testcases.PostRegistrationTest" ></class>  
-    </classes>
-</test>
-<test name="Post-Registeration Authorization">
-    <classes>
-        <class name="com.ptl.pims.testcases.AuthorizePostRegistration" ></class>  
-    </classes>
-</test>
+
 -->
 
 </suite>

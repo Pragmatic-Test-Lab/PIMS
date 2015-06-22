@@ -2,11 +2,11 @@ package com.ptl.pims.TestDataAutomation;
 
 import org.testng.annotations.Test;
 
-import com.ptl.pims.pages.AuthorizeAdmissionPage;
-import com.ptl.pims.pages.AuthorizeAdmissionSelectPage;
-import com.ptl.pims.pages.CreateAdmissionPage;
-import com.ptl.pims.pages.NewAdmissionPage;
 import com.ptl.pims.pages.TopMenu;
+import com.ptl.pims.pages.Admission.AuthorizeAdmissionPage;
+import com.ptl.pims.pages.Admission.AuthorizeAdmissionSelectPage;
+import com.ptl.pims.pages.Admission.CreateAdmissionPage;
+import com.ptl.pims.pages.Admission.NewAdmissionPage;
 import com.ptl.pims.testcases.TestBase;
 
 public class CreateInmates extends TestBase {

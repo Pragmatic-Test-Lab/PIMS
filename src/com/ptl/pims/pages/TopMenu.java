@@ -2,9 +2,19 @@ package com.ptl.pims.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.pims.pages.Admission.AuthorizeAdmissionSelectPage;
+import com.ptl.pims.pages.Admission.EditAdmissionSelectPage;
+import com.ptl.pims.pages.Admission.NewAdmissionPage;
+import com.ptl.pims.pages.PostRegistration.PostRegistrationAuthorizePage;
+import com.ptl.pims.pages.PostRegistration.PostRegistrationPage;
+import com.ptl.pims.pages.Registration.AuthorizeRegistrationInmateSelectPage;
+import com.ptl.pims.pages.Registration.InmateRegistrationSelectPage;
+import com.ptl.pims.pages.Registration.AllocateLocation.AllocateLocationInmateSelectPage;
+import com.ptl.pims.pages.Registration.PropertyManagement.PropertyManagementInmateSelectPage;
 import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 
@@ -57,36 +67,40 @@ public class TopMenu {
 
 	
 	public NewAdmissionPage gotoNewAdmissionPage(){
-		registrationManagementTopLink.click();
-		admissionTopLink.click();
-		newAdmissionSubLink.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(newAdmissionSubLink).click().build().perform();
+		
 		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
 		return newAdmissionPage;
 	}	
 	
 	
 	public EditAdmissionSelectPage gotoEditAdmissionPage() {
-		registrationManagementTopLink.click();
-		admissionTopLink.click();
-		editSubLink.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(editSubLink).click().build().perform();
+		
 		EditAdmissionSelectPage editAdminSelectPage = PageFactory.initElements(driver, EditAdmissionSelectPage.class);
 		return editAdminSelectPage;
 	}
 	
 	
 	public AuthorizeAdmissionSelectPage gotoAuthorizeAdmissionPage() {
-		registrationManagementTopLink.click();
-		admissionTopLink.click();
-		authorizeSubLink.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(authorizeSubLink).click().build().perform();
+		
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
 		return authorizeAdmissionSelectPage;
 	}
 	
 	
 	public PostRegistrationPage gotoPostRegistrationPage(){
-		registrationManagementTopLink.click();
-		postRegMain.click();
-		postRegSub.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegSub).click().build().perform();
+		
 		PostRegistrationPage postRegPage = PageFactory.initElements(driver, PostRegistrationPage.class);
 		return postRegPage;
 		
@@ -94,9 +108,10 @@ public class TopMenu {
 	
 	
 	public PostRegistrationAuthorizePage gotoPostRegistrationAuthorizePage(){
-		registrationManagementTopLink.click();
-		postRegMain.click();
-		postRegAuthorizeSub.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegAuthorizeSub).click().build().perform();
+		
 		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
 		return postRegAuthorizePage;
 		
@@ -104,9 +119,10 @@ public class TopMenu {
 	
 	
 	public PropertyManagementInmateSelectPage gotoManageProperty(){
-		registrationManagementTopLink.click();
-		registrationMainLink.click();
-		propertyManagement.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(propertyManagement).click().build().perform();
+		
 		PropertyManagementInmateSelectPage managePropertySelectInmate = PageFactory.initElements(driver, PropertyManagementInmateSelectPage.class);
 		return managePropertySelectInmate;
 		
@@ -114,18 +130,20 @@ public class TopMenu {
 	
 
 	public AuthorizeRegistrationInmateSelectPage gotoAuthorizeRegistrationPage() {
-		registrationManagementTopLink.click();
-		registrationMainLink.click();
-		authorizeRegSub.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(authorizeRegSub).click().build().perform();
+		
 		AuthorizeRegistrationInmateSelectPage authorizeInmateSelectPage = PageFactory.initElements(driver, AuthorizeRegistrationInmateSelectPage.class);
 		return authorizeInmateSelectPage;
 	}
 	
 
 	public AllocateLocationInmateSelectPage goToAllocateLocation() {
-		registrationManagementTopLink.click();
-		registrationMainLink.click();
-		allocateLocationSubLink.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(allocateLocationSubLink).click().build().perform();
+		
 		AllocateLocationInmateSelectPage allocateLocation = PageFactory
 				.initElements(driver, AllocateLocationInmateSelectPage.class);
 		return allocateLocation;
@@ -134,18 +152,20 @@ public class TopMenu {
 
 
 	public InmateRegistrationSelectPage goToInmateRegistration() {
-		registrationManagementTopLink.click();
-		registrationMainLink.click();
-		registrationSubLink.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(registrationSubLink).click().build().perform();
+		
 		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
 				driver, InmateRegistrationSelectPage.class);
 		return inmateRegistration;
 	}
 
 	public PostRegistrationAuthorizePage gotoAuthorizePostRegistration() {
-		registrationManagementTopLink.click();
-		postRegMain.click();
-		postRegAuthorizeSub.click();
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegAuthorizeSub).click().build().perform();
+		
 		PostRegistrationAuthorizePage postRegistration = PageFactory.initElements(
 				driver, PostRegistrationAuthorizePage.class);
 		return postRegistration;

@@ -1,28 +1,27 @@
 package com.ptl.pims.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import com.ptl.pims.util.Constants;
 
-public class HomePage extends CommonMethods {
+
+public class HomePage extends CommonMethods{
 
 	WebDriver driver;
-	@FindBy(xpath = Constants.Home_PageHeader)
-	WebElement pageHeader;
-
 
 	public HomePage(WebDriver dr) {
 		driver = dr;
 
 	}
 
-	public String getActualPageHeader() {
+	public boolean IsMainPageImageShown() {
+
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {}
-		return pageHeader.getText();
+		
+		return checkElementIsPresent(driver, By.xpath(Constants.Home_MainImage));
 	}
 
 

@@ -6,9 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.pims.pages.InmateRegistration;
-import com.ptl.pims.pages.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.TopMenu;
+import com.ptl.pims.pages.Registration.InmateRegistration;
+import com.ptl.pims.pages.Registration.InmateRegistrationSelectPage;
 import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 import com.ptl.pims.util.TestUtil;

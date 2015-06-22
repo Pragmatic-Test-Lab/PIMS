@@ -18,7 +18,8 @@ public abstract class SelectInmatePage extends CommonMethods {
 	public WebElement HeaderField;
 	@FindBy(xpath = Constants.InmateSearchPage_SuccessMessage)
 	public WebElement successMessage;
-	By SearchEmpty =  By.xpath(Constants.InmateSearchPage_NoSearchResultsFound);
+	
+	By noResultsMessage =  By.xpath(Constants.InmateSearchPage_NoSearchResultsFound);
 
 	// SearchFields
 	@FindBy(xpath = Constants.InmateSearch_RegNoSearchField)
@@ -52,19 +53,21 @@ public abstract class SelectInmatePage extends CommonMethods {
  
 	}
 	
-	public String getSuccessMessage(){
-		
+	public boolean successMessageAvaiable(){
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {}
-		
-		return successMessage.getText();
+		return checkElementIsPresent(driver, By.xpath(Constants.InmateSearchPage_SuccessMessage));
 	}
 	
+	public String getSuccessMessage(){
+		
+		return driver.findElement(By.xpath(Constants.InmateSearchPage_SuccessMessage)).getText();
+	}
 	
 	public boolean NoSearchResultsFound(){
 		
-		if(checkElementIsPresent(driver, SearchEmpty))
+		if(checkElementIsPresent(driver, noResultsMessage))
 		return true;
 		else
 			return false;

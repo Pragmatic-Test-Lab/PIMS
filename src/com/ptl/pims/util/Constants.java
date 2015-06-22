@@ -21,6 +21,7 @@ public class Constants {
 	// Home Page
 	public static final String Home_PageHeader = ".//h1[@style='font-family:quicksandregular']";
 	public static final String Home_PageHeaderText = "PRISON INFORMATION MANAGEMENT SYSTEM";
+	public static final String Home_MainImage = ".//img[@src='../views/site/prison.jpg']";
 
 
 	// Top Menu Links
@@ -51,6 +52,7 @@ public class Constants {
 	public static final String CreateAdmission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
 	public static final String CreateAdmission_CourtWarant = "//*[@id='admission-adm_court_id']";
 	public static final String CreateAdmission_AgeAdmission = "//*[@id='admission-age_at_admission']";
+	public static final String Admission_DOAdmission = "//*[@id='admission-adm_date_of_admission']";
 	public static final String CreateAdmission_AgeCategory = "//*[@id='admission-adm_age_category_id']";
 	public static final String AgeCatagoryOptionFirstPart = ".//*[@id='admission-adm_age_category_id']/option[@value='";
 	public static final String AgeCatagoryOptionLastPart = "']";
@@ -66,14 +68,19 @@ public class Constants {
 	public static final String CreateAdmission_ImageRHSBrowse = "//*[@id='admission-image_rhs']";
 	public static final String CreateAdmission_ImageFrontBrowse = "//*[@id='admission-image_front']";
 	public static final String CreateAdmission_ImageLHSBrowse = "//*[@id='admission-image_lhs']";
+	
+	public static final String CalendarPopup_AdmissionMonthYearText = "(.//th[contains(@class,'switch')])[3]";
+	public static final String CalendarPopup_AdmissionYearText = "(.//th[contains(@class,'switch')])[4]";
+	public static final String CalendarPopup_AdmissionYearText_FirstPart = ".//span[text()='";
+	public static final String CalendarPopup_AdmissionYearText_LastPart = "' and @class='year active']";
 	// New Admission Court Details
 	public static final String CreateAdmission_InmateCourtDetailTab = "//a[text() = 'Court Detail']";
+	public static final String Admission_InmateCourtTableBody = "//*[@id='inmate_case_details_grid']/tbody";
 	public static final String CreateAdmission_InmateCourtDetail_AddNew = "(.//button[text()='Add New'])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_Court = "(//select[contains(@name, 'icd_court_id')])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_CaseNumber = "(//input[contains(@name, 'icd_case_number')])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_DateConviction = "(//input[contains(@name, 'icd_date_of_conviction')])[1]";
-	public static final String CreateAdmission_InmateCourtDetail_DateSentence = "//*[@id='inmatecasedetails-1-icd_date_of_sentence']";
-	public static final String CreateAdmission_InmateCourtDetail_Action = "";
+	public static final String Admission_InmateCourtDetail_Court = "(.//select[contains(@name, 'icd_court_id')])";
+	public static final String Admission_InmateCourtDetail_CaseNumber = "(.//input[contains(@name, 'icd_case_number')])";
+	public static final String Admission_InmateCourtDetail_DateConviction = "(.//input[contains(@name, 'icd_date_of_conviction')])";
+	public static final String Admission_InmateCourtDetail_DateSentence = "(.//*[contains(@name, 'icd_date_of_sentence')])";
 	// New Admission Health Details
 	public static final String CreateAdmission_HealthConditionTab = "//a[text() = 'Health Condition']";
 	public static final String CreateAdmission_HealthCondition_AddNew = "(//button[text() ='Add New'])[1]";
@@ -429,11 +436,13 @@ public class Constants {
 
 	// Calendar Popup
 	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
-	public static final String CalendarPopup_MonthYearText_FirstPart = "(.//span[text()='";
-	public static final String CalendarPopup_MonthYearText_LastPart = "'])";
+	public static final String CalendarPopup_YearText_FirstPart = ".//span[text()='";
+	public static final String CalendarPopup_YearText_LastPart = "' and @class='year']";
+	public static final String CalendarPopup_MonthText_FirstPart = "(.//span[text()='";
+	public static final String CalendarPopup_MonthText_LastPart = "' and @class='month'])";
 	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";
-	public static final String CalendarPopup_DateText_FirstPart = "//td[contains(@class,'day')][text()='";
-	public static final String CalendarPopup_DateText_LastPart = "']";
+	public static final String CalendarPopup_DateText_FirstPart = "(.//td[contains(@class,'day')][text()='";
+	public static final String CalendarPopup_DateText_LastPart = "'])";
 	public static final String CalendarPopup_HourText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";

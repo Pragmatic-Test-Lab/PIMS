@@ -2,11 +2,14 @@ package com.ptl.pims.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Hashtable;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import com.ptl.pims.testcases.TestBase;
 
@@ -64,16 +67,46 @@ public class TestUtil {
 		return data;
 		
 	}
-	
-	public static void takeScreenShot(String fileName) {
-		File srcFile = ((TakesScreenshot)(TestBase.driver)).getScreenshotAs(OutputType.FILE);
-	    try {
-	    	/*Date date = new Date(System.currentTimeMillis());*/				
-	        String dateString = String.valueOf(System.currentTimeMillis());
-	    	FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir")+"\\screenshots\\"+fileName+dateString+".jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
+
+	public static void takeScreenShot(WebDriver driver, String fileName) {
+		File scrFile = ((TakesScreenshot) driver)
+				.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(
+					scrFile,
+					new File(
+							"c:\\Selenium-TestRun\\Failure Screenshots\\Iteration 1\\"
+									+ (new SimpleDateFormat("yyyy-MM-dd")
+											.format(Calendar.getInstance()
+													.getTime())) + "\\"
+									+ fileName + ".png"));
+		} catch (IOException e1) {
 		}
 	}
+
+	public static String getTodaysDate(){
+		
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		int month = Calendar.getInstance().get(Calendar.MONTH);
+		int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+		
+		String Month = "";
+		
+		switch(month){
+			case 0:Month = "Jan"; break;
+			case 1:Month = "Feb"; break;
+			case 2:Month = "Mar"; break;
+			case 3:Month = "Apr"; break;
+			case 4:Month = "May"; break;
+			case 5:Month = "Jun"; break;
+			case 6:Month = "Jul"; break;
+			case 7:Month = "Aug"; break;
+			case 8:Month = "Sep"; break;
+			case 9:Month = "Oct"; break;
+			case 10:Month = "Nov"; break;
+			case 11:Month = "Dec"; break;		
+		}
+		
+		return year + "-" +  Month + "-" + day;}
 
 }
