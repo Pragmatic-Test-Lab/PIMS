@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.pims.pages.Admission.AuthorizeAdmissionSelectPage;
 import com.ptl.pims.pages.Admission.EditAdmissionSelectPage;
 import com.ptl.pims.pages.Admission.NewAdmissionPage;
-import com.ptl.pims.pages.PostRegistration.PostRegistrationAuthorizePage;
-import com.ptl.pims.pages.PostRegistration.PostRegistrationPage;
 import com.ptl.pims.pages.Registration.AuthorizeRegistrationInmateSelectPage;
 import com.ptl.pims.pages.Registration.InmateRegistrationSelectPage;
 import com.ptl.pims.pages.Registration.AllocateLocation.AllocateLocationInmateSelectPage;
@@ -18,43 +16,17 @@ import com.ptl.pims.pages.Registration.PropertyManagement.PropertyManagementInma
 import com.ptl.pims.testcases.TestBase;
 import com.ptl.pims.util.Constants;
 
-public class TopMenu {
+import java.util.ArrayList;
+
+public class TopMenu extends CommonMethods{
 	
 	WebDriver driver;
 	
 	@FindBy(xpath=Constants.TopMenu_PIMSTopLink)
 	WebElement homePageTopLink;
-	@FindBy(xpath=Constants.TopMenu_RegistrationManagementTopLink)
-	WebElement registrationManagementTopLink;	
-	@FindBy(xpath=Constants.TopMenu_RegistrationManagement_AdmissionTopLink)
-	WebElement admissionTopLink;
-	@FindBy(xpath = Constants.TopMenu_NewAdmissionSubLink)
-	WebElement newAdmissionSubLink;
-	@FindBy(xpath=Constants.TopMenu_EditSubLink)
-	WebElement editSubLink;
-	@FindBy(xpath = Constants.TopMenu_AuthorizeSubLink)
-	WebElement authorizeSubLink;
-	@FindBy(xpath = Constants.TopMenu_RegistrationManagement_RegistrationTopLink)
-	WebElement registrationMainLink;
-	@FindBy(xpath = Constants.TopMenu_RegistrationSubLink)
-	WebElement registrationSubLink;
-	@FindBy(xpath = Constants.TopMenu_AllocateLocationSubLink)
-	WebElement allocateLocationSubLink;
-	@FindBy(xpath = Constants.TopMenu_PropertyManagementSubLink)
-	WebElement propertyManagement;
-	@FindBy(xpath = Constants.TopMenu_AuthorizeRegistrationSubLink)
-	WebElement authorizeRegSub;
-	@FindBy(xpath = Constants.TopMenu_RegistrationManagement_PostRegistrationTopLink)
-	WebElement postRegMain;
-	@FindBy(xpath = Constants.TopMenu_PostRegistrationSubLink)
-	WebElement postRegSub;
-	@FindBy(xpath = Constants.TopMenu_AuthorizePostRegistrationSubLink)
-	WebElement postRegAuthorizeSub;
 	@FindBy(xpath = Constants.TopMenu_LogOut)
-	WebElement logOut;
-	
-	
-	
+	WebElement logout;
+
 	public TopMenu(WebDriver dr){
 		driver = dr;
 	}
@@ -64,22 +36,28 @@ public class TopMenu {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		return homePage;
 	}
-
 	
 	public NewAdmissionPage gotoNewAdmissionPage(){
 
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(newAdmissionSubLink).click().build().perform();
+		moveAlongMenuAndClick(driver,
+				new ArrayList<String>(){{
+					add(Constants.TopMenu_RegistrationManagementTopLink);
+					add(Constants.TopMenu_RegistrationManagement_AdmissionTopLink);
+					add(Constants.TopMenu_NewAdmissionSubLink);
+				}});
 		
 		NewAdmissionPage newAdmissionPage = PageFactory.initElements(driver, NewAdmissionPage.class);
 		return newAdmissionPage;
-	}	
-	
+	}
 	
 	public EditAdmissionSelectPage gotoEditAdmissionPage() {
 
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(editSubLink).click().build().perform();
+        moveAlongMenuAndClick(driver,
+                new ArrayList<String>(){{
+                    add(Constants.TopMenu_RegistrationManagementTopLink);
+                    add(Constants.TopMenu_RegistrationManagement_AdmissionTopLink);
+                    add(Constants.TopMenu_EditAdmissionSubLink);
+                }});
 		
 		EditAdmissionSelectPage editAdminSelectPage = PageFactory.initElements(driver, EditAdmissionSelectPage.class);
 		return editAdminSelectPage;
@@ -88,98 +66,65 @@ public class TopMenu {
 	
 	public AuthorizeAdmissionSelectPage gotoAuthorizeAdmissionPage() {
 
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(admissionTopLink).moveToElement(authorizeSubLink).click().build().perform();
+        moveAlongMenuAndClick(driver,
+                new ArrayList<String>(){{
+                    add(Constants.TopMenu_RegistrationManagementTopLink);
+                    add(Constants.TopMenu_RegistrationManagement_AdmissionTopLink);
+                    add(Constants.TopMenu_AuthorizeAdmissionSubLink);
+                }});
 		
 		AuthorizeAdmissionSelectPage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionSelectPage.class);
 		return authorizeAdmissionSelectPage;
 	}
-	
-	
-	public PostRegistrationPage gotoPostRegistrationPage(){
-
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegSub).click().build().perform();
-		
-		PostRegistrationPage postRegPage = PageFactory.initElements(driver, PostRegistrationPage.class);
-		return postRegPage;
-		
-	}
-	
-	
-	public PostRegistrationAuthorizePage gotoPostRegistrationAuthorizePage(){
-
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegAuthorizeSub).click().build().perform();
-		
-		PostRegistrationAuthorizePage postRegAuthorizePage = PageFactory.initElements(driver, PostRegistrationAuthorizePage.class);
-		return postRegAuthorizePage;
-		
-	}
-	
-	
-	public PropertyManagementInmateSelectPage gotoManageProperty(){
-
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(propertyManagement).click().build().perform();
-		
-		PropertyManagementInmateSelectPage managePropertySelectInmate = PageFactory.initElements(driver, PropertyManagementInmateSelectPage.class);
-		return managePropertySelectInmate;
-		
-	}
-	
-
-	public AuthorizeRegistrationInmateSelectPage gotoAuthorizeRegistrationPage() {
-
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(authorizeRegSub).click().build().perform();
-		
-		AuthorizeRegistrationInmateSelectPage authorizeInmateSelectPage = PageFactory.initElements(driver, AuthorizeRegistrationInmateSelectPage.class);
-		return authorizeInmateSelectPage;
-	}
-	
-
-	public AllocateLocationInmateSelectPage goToAllocateLocation() {
-
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(allocateLocationSubLink).click().build().perform();
-		
-		AllocateLocationInmateSelectPage allocateLocation = PageFactory
-				.initElements(driver, AllocateLocationInmateSelectPage.class);
-		return allocateLocation;
-	}
-	
-
 
 	public InmateRegistrationSelectPage goToInmateRegistration() {
 
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(registrationSubLink).click().build().perform();
-		
+		moveAlongMenuAndClick(driver,
+				new ArrayList<String>(){{
+					add(Constants.TopMenu_RegistrationManagementTopLink);
+					add(Constants.TopMenu_RegistrationManagement_RegistrationTopLink);
+					add(Constants.TopMenu_RegistrationSubLink);
+				}});
+
 		InmateRegistrationSelectPage inmateRegistration = PageFactory.initElements(
 				driver, InmateRegistrationSelectPage.class);
 		return inmateRegistration;
 	}
 
-	public PostRegistrationAuthorizePage gotoAuthorizePostRegistration() {
+	public AuthorizeRegistrationInmateSelectPage gotoAuthorizeRegistrationPage() {
 
-		Actions action = new Actions(driver);
-		action.moveToElement(registrationManagementTopLink).moveToElement(postRegMain).moveToElement(postRegAuthorizeSub).click().build().perform();
-		
-		PostRegistrationAuthorizePage postRegistration = PageFactory.initElements(
-				driver, PostRegistrationAuthorizePage.class);
-		return postRegistration;
+		moveAlongMenuAndClick(driver,
+				new ArrayList<String>(){{
+					add(Constants.TopMenu_RegistrationManagementTopLink);
+					add(Constants.TopMenu_RegistrationManagement_RegistrationTopLink);
+					add(Constants.TopMenu_AuthorizeRegistrationSubLink);
+				}});
+
+		AuthorizeRegistrationInmateSelectPage authorizeInmateSelectPage = PageFactory.initElements(driver, AuthorizeRegistrationInmateSelectPage.class);
+		return authorizeInmateSelectPage;
 	}
-	
+
+	public AllocateLocationInmateSelectPage goToAllocateLocation() {
+
+		moveAlongMenuAndClick(driver,
+				new ArrayList<String>(){{
+					add(Constants.TopMenu_RegistrationManagementTopLink);
+					add(Constants.TopMenu_RegistrationManagement_RegistrationTopLink);
+					add(Constants.TopMenu_AllocateLocationSubLink);
+					add(Constants.TopMenu_AllocateLocationLastLink);
+				}});
+		
+		AllocateLocationInmateSelectPage allocateLocation = PageFactory
+				.initElements(driver, AllocateLocationInmateSelectPage.class);
+		return allocateLocation;
+	}
+
 	public LoginPage doLogout(){
-		logOut.click();
+		logout.click();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		TestBase.isLoggedIn = false;
 		return loginPage;
 		
 	}
-
-
-	
 
 }

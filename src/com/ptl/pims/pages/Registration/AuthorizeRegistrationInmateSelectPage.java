@@ -14,8 +14,7 @@ public class AuthorizeRegistrationInmateSelectPage extends SelectInmatePage {
 	// clicks the first inmate in Table
 	public AuthorizeRegistrationPage clickFirstInmate() {
 		
-		firstInmateLink.click();
-		
+		clickFirstRecord();
 		AuthorizeRegistrationPage allocateLocation = PageFactory.initElements(driver, AuthorizeRegistrationPage.class);
 		return allocateLocation;
 	}

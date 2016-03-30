@@ -31,23 +31,17 @@ public class AdmissionAllPairTest extends TestBase {
 		CreateAdmissionPage creAdmissionPage = newAdmissionPage
 				.getCreateAdmissionPage();
 
-		creAdmissionPage.doFillAllRequiredFileds(data.get("Type of User"),
+		creAdmissionPage.fillRequiredFields(data.get("Type of User"),
 				data.get("Location"), data.get("Age"), data.get("meal"),
-				"Test Biometric", "Test Name", data.get("Classification"),
+				TestUtil.getRandomString(8), TestUtil.getRandomString(16) , data.get("Classification"),
 				data.get("Gender"));
-		newAdmissionPage = creAdmissionPage.doAdmission();
+		newAdmissionPage = creAdmissionPage.submitAdmission();
 
-		Assert.assertTrue(
-				newAdmissionPage.getSuccessMessage().matches(
-						Constants.CreateAdmission_SuccessMessageText),
-				"Failed to create inmate with data : "
-						+ data.get("Type of User") + ", "
-						+ data.get("Location") + ", " + data.get("Age") + ", "
-						+ data.get("meal") + ", " + data.get("Classification")
-						+ ", " + data.get("Gender"));
-		APPLICATION_LOGS
-				.debug("Completed Test No : " + data.get("Test Number"));
+		Assert.assertTrue(newAdmissionPage.successMessageAvaiable(),
+				"Failed to create inmate with data : " + data.get("Type of User") + ", " + data.get("Location") + ", " + data.get("Age") + ", "
+						+ data.get("meal") + ", " + data.get("Classification") + ", " + data.get("Gender"));
 
+		APPLICATION_LOGS.debug("Completed Test No : " + data.get("Test Number"));
 	}
 
 	@DataProvider

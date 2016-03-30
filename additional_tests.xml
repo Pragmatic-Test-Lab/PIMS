@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PIMS Project">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="Login Logout Test">
+        <classes>
+            <class name="com.ptl.pims.testcases.LoginLogoutTest" ></class>
+        </classes>
+    </test>
+
+    <test name="Admission AllPair Test">
+        <classes>
+            <class name="com.ptl.pims.testcases.AllPairTests.AdmissionAllPairTest"></class>
+        </classes>
+    </test>
+
+    <test name="Admission Auto Genrated Field Tests(Registration Num and Age Category)" >
+        <classes>
+            <class name="com.ptl.pims.testcases.AdmissionTest.AdmissionAutoGenratedFieldTest" ></class>
+        </classes>
+    </test>
+
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

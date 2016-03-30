@@ -64,11 +64,13 @@ public class CalendarPopup extends CommonMethods{
 		yearText.click(); //click on the top year text
 		
 		YearToBeSelected_XPath = YearText_FirstPart + year + YearText_LastPart;
-		driver.findElement(By.xpath(YearToBeSelected_XPath)).click(); //click on the selected year text
+		waitAndClick(driver,YearToBeSelected_XPath); //click on the selected year text
+
 		MonthToBeSelected_XPath = MonthText_FirstPart + month + MonthText_LastPart + "[" + NoOfElements(driver, MonthText_FirstPart + month + MonthText_LastPart) + "]";
-		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click(); //click on the selected month text
+		waitAndClick(driver, MonthToBeSelected_XPath); //click on the selected month text
+
 		DateToBeSelected_XPath = dateText_FirstPart + day + dateText_LastPart + "[" + NoOfElements(driver, dateText_FirstPart + day + dateText_LastPart) + "]";;
-		driver.findElement(By.xpath(DateToBeSelected_XPath)).click(); //click on the selected date text
+		waitAndClick(driver, DateToBeSelected_XPath); //click on the selected date text
 		
 	}
 

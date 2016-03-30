@@ -1,5 +1,6 @@
 package com.ptl.pims.pages.Registration.AllocateLocation;
 
+import com.ptl.pims.pages.CommonMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.pims.util.Constants;
 
-public class AllocateLocationPage {
+public class AllocateLocationPage extends CommonMethods{
 
 	WebDriver driver;	
 
@@ -42,12 +43,13 @@ public class AllocateLocationPage {
 	}
 	
 	public String getCurrentLocation(){
+
 		return CurrentLocation.getText();
-		
 	}
 
 	public AllocateLocationInmateSelectPage changeLocation(String newLocation) {
-		LocationDropdown.sendKeys(newLocation);
+
+		waitAndSendKeys(driver, ".//*[@id='admission-adm_current_permenent_location_id']", newLocation);
 		SaveButton.click();
 		
 		AllocateLocationInmateSelectPage allocateLocationSelectPage = PageFactory

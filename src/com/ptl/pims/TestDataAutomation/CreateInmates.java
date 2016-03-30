@@ -24,19 +24,19 @@ public class CreateInmates extends TestBase {
 		NewAdmissionPage newAdmissionPage = topMenu.gotoNewAdmissionPage();
 		CreateAdmissionPage createNewAdmissionPage = newAdmissionPage.getCreateAdmissionPage();
 		
-		createNewAdmissionPage.doFillAllRequiredFileds(inmateCategory, inmateCourt, "25", "Diet", "Test Biometric", 
+		createNewAdmissionPage.fillRequiredFields(inmateCategory, inmateCourt, "25", "Diet", "Test Biometric",
 				inmateName + (tempNum++),	"FO", "male");
 		
-		createNewAdmissionPage.filleCourtDetailsTab("Colombo", "CASE001","2015-02-24", "2015-03-10");
+		createNewAdmissionPage.fillCourtDetailsTab("Colombo", "CASE001","2015-02-24", "2015-03-10");
 		
-		/*createNewAdmissionPage.filleHealthConditionTab(true,"Health Conditions Remarks", true, "Health of school", "Other",
+		/*createNewAdmissionPage.fillHealthConditionsTab(true,"Health Conditions Remarks", true, "Health of school", "Other",
 				"Cough");
-		createNewAdmissionPage.fillInmateComplaint("2015-02-10", "Health","Descriptions");
+		createNewAdmissionPage.fillInmateComplaintsTab("2015-02-10", "Health","Descriptions");
 		createNewAdmissionPage.fillPrivatePropertiesTab("2015-02-18", "Phone","Descriptions", "1", "200.89");
 		createNewAdmissionPage.fillInfantsPreschoolTab("Name hi", "2015-02-25");*/
 		
 		registrationNo = createNewAdmissionPage.getRegistrationNumber();		
-		newAdmissionPage = createNewAdmissionPage.doAdmission();
+		newAdmissionPage = createNewAdmissionPage.submitAdmission();
 
 	}
 

@@ -15,8 +15,7 @@ public class AllocateLocationInmateSelectPage extends SelectInmatePage{
 	// clicks the first inmate in Table
 	public AllocateLocationPage clickFirstInmate() {
 		
-		firstInmateLink.click();
-		
+		clickFirstRecord();
 		AllocateLocationPage allocateLocation = PageFactory
 				.initElements(driver, AllocateLocationPage.class);
 		return allocateLocation;

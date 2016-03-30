@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PIMS Project">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="Admission Test">
+        <classes>
+            <class name="com.ptl.pims.testcases.AdmissionTest.AdmissionTest"></class>
+        </classes>
+    </test>
+
+    <test name="Registeration Test">
+        <classes>
+            <class name="com.ptl.pims.testcases.RegistrationTest.InmateRegistrationTest"></class>
+        </classes>
+    </test>
+
+    <test name="Allocate Location Test">
+        <classes>
+            <class name="com.ptl.pims.testcases.RegistrationTest.AllocateLocationTest"></class>
+        </classes>
+    </test>
+
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

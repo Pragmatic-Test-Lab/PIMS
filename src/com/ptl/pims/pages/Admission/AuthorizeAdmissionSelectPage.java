@@ -18,8 +18,7 @@ public class AuthorizeAdmissionSelectPage extends SelectInmatePage{
 	// clicks the first inmate in Table
 	public AuthorizeAdmissionPage clickFirstInmate() {
 		
-		firstInmateLink.click();
-		
+		clickFirstRecord();
 		AuthorizeAdmissionPage authorizeAdmissionPage = PageFactory.initElements(driver, AuthorizeAdmissionPage.class);
 		return authorizeAdmissionPage;
 	}

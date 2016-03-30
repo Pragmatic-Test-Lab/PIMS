@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.pims.util.Constants;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public abstract class SelectInmatePage extends CommonMethods {
@@ -29,10 +30,6 @@ public abstract class SelectInmatePage extends CommonMethods {
 	@FindBy(xpath = Constants.InmateSearch_NameSearchField)
 	public WebElement NameSearchField;
 
-	//first Inmate Select Button
-	@FindBy(xpath = Constants.InmateSearch_TableFirstInmate)
-	public WebElement firstInmateLink;
-	
 	public WebDriver driver;
 	
 	public String getHeader() {
@@ -43,14 +40,12 @@ public abstract class SelectInmatePage extends CommonMethods {
 	@SuppressWarnings("unchecked")
 	public <T extends SelectInmatePage>T doSearch(String RegNo, String Biometric, String Name) {
 
-		RegNoSearchField.sendKeys(RegNo);
-		BiometricSearchField.sendKeys(Biometric);
-		NameSearchField.sendKeys(Name);
-		
-		NameSearchField.sendKeys(Keys.ENTER);
-		
-		return (T)PageFactory.initElements(driver, this.getClass());
- 
+		waitAndReplaceKeys(driver, Constants.InmateSearch_RegNoSearchField, RegNo);
+        waitAndReplaceKeys(driver, Constants.InmateSearch_BiometricSearchField, Biometric);
+        waitAndReplaceKeys(driver, Constants.InmateSearch_NameSearchField, Name);
+
+        NameSearchField.sendKeys(Keys.ENTER);
+        return (T)PageFactory.initElements(driver, this.getClass());
 	}
 	
 	public boolean successMessageAvaiable(){
@@ -64,14 +59,12 @@ public abstract class SelectInmatePage extends CommonMethods {
 		
 		return driver.findElement(By.xpath(Constants.InmateSearchPage_SuccessMessage)).getText();
 	}
-	
-	public boolean NoSearchResultsFound(){
-		
-		if(checkElementIsPresent(driver, noResultsMessage))
-		return true;
-		else
-			return false;
-	}
 
+	public void clickFirstRecord(){
+
+        //click first record
+        waitForJSandJQueryToLoad(driver);
+        waitAndClick(driver, Constants.InmateSearch_TableFirstInmate);
+	}
 	
 }

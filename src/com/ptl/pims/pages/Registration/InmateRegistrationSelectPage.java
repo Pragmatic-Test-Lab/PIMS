@@ -15,8 +15,7 @@ public class InmateRegistrationSelectPage extends SelectInmatePage {
 	// clicks the first inmate in Table
 	public InmateRegistration clickFirstInmate() {
 
-		firstInmateLink.click();
-
+		clickFirstRecord();
 		InmateRegistration inmateRegistration = PageFactory.initElements(driver, InmateRegistration.class);
 		return inmateRegistration;
 	}

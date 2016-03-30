@@ -21,7 +21,7 @@ import java.util.Calendar;
 public class ReadXLS {
 
 	public static String filename = System.getProperty("user.dir")
-			+ "\\src\\config\\testcases\\TestData.xlsx";
+			+ "\\src\\com\\ptl\\data\\TestData.xlsx";
 	public String path;
 	public FileInputStream fis = null;
 	public FileOutputStream fileOut = null;

@@ -1,5 +1,6 @@
 package com.ptl.pims.pages.Admission;
 
+import com.ptl.pims.pages.CommonMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.pims.pages.CalendarPopup;
 import com.ptl.pims.util.Constants;
 
-public class AuthorizeAdmissionPage {
+public class AuthorizeAdmissionPage extends CommonMethods{
 
     WebDriver driver;
     
@@ -51,34 +52,16 @@ public class AuthorizeAdmissionPage {
 	}
 
 
-	public boolean checkAvailableData(String inmateCatagory, String court, String age, String meal, 
-			String nameAsWarrent, String classification, String gender){
-		
-		WebElement selectedCategory = driver.findElement(By.xpath("." + Constants.CreateAdmission_InmateCategory 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedCourt = driver.findElement(By.xpath(Constants.CreateAdmission_CourtWarant 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));		
-		WebElement selectedMeal = driver.findElement(By.xpath(Constants.CreateAdmission_MealType 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedClassification = driver.findElement(By.xpath(Constants.CreateAdmission_OccurenceClassification 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));
-		WebElement selectedGender = driver.findElement(By.xpath(Constants.CreateAdmission_Gender 
-				+ Constants.EditAdmission_SelectedDropdownEndPart));		
-		
-		//page values
-		String InmateCat = selectedCategory.getText();
-		String Court = selectedCourt.getText();
-		String Age = AgeAddmission.getAttribute("value");
-		String Meal = selectedMeal.getText();
-		String NameAsWarrent = NameWarrent.getAttribute("value");
-		String Classification = selectedClassification.getText();
-		String Gender = selectedGender.getText();
-		
-		if(inmateCatagory.equals(InmateCat) && court.equals(Court) && age.equals(Age) && meal.equals(Meal) 
-				&& nameAsWarrent.equals(NameAsWarrent) && classification.equals(Classification) && gender.equals(Gender))		
-		return true;
-		else return false;
-		
+	public void checkSavedData(String inmateCatagory, String court, String age, String meal,
+							   String nameAsWarrent, String classification, String gender){
+
+		matchSelectedDropdownWithText(driver, Constants.CreateAdmission_InmateCategory, inmateCatagory, true);
+		matchSelectedDropdownWithText(driver, Constants.CreateAdmission_CourtWarant, court, true);
+		matchSelectedDropdownWithText(driver, Constants.CreateAdmission_MealType, meal, false);
+		matchSelectedDropdownWithText(driver, Constants.CreateAdmission_OccurenceClassification, classification, false);
+		matchSelectedDropdownWithText(driver, Constants.CreateAdmission_Gender, gender, false);
+		matchValueWithText(driver, Constants.CreateAdmission_AgeAdmission, age, false);
+		matchValueWithText(driver, Constants.CreateAdmission_NameWarrant, nameAsWarrent, true);
 	}
 	
 }

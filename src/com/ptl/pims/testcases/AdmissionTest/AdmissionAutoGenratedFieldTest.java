@@ -1,5 +1,6 @@
 package com.ptl.pims.testcases.AdmissionTest;
 
+import java.util.Calendar;
 import java.util.Hashtable;
 
 import org.testng.Assert;
@@ -28,16 +29,42 @@ public class AdmissionAutoGenratedFieldTest extends TestBase {
 	@Test(dependsOnMethods="GoToCreateAdmission", dataProvider = "getAgeCategoryData")
 	public void ValidateAutoSelectedAgeCategory(Hashtable<String, String> data) {
 
-			createAdmissionPage.addAge(data.get("Age"));		
+			createAdmissionPage.addAge(data.get("Age"));
 			Assert.assertEquals(createAdmissionPage.getActualSelectedAgeCategory(), data.get("Category"),
-					"Failed for age of "+ data.get("Age") + ".");				
+					"failed for age of "+ data.get("Age") + ".");
 	}
 	
 	
 	@Test(dependsOnMethods="GoToCreateAdmission",  dataProvider = "getRegNoData") 
 	public void TestRegNumFormat(Hashtable<String, String> data) {
-		
-		Assert.assertTrue(createAdmissionPage.checkNumberFormat(data.get("Category"), data.get("Case")));
+
+		String category = data.get("Category");
+		String court = data.get("Case");
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+
+		String registrationNum = createAdmissionPage.setCategoryAndCourt(category, court);
+
+		String CourtId = "";
+		if(court.equalsIgnoreCase("colombo court of appeal")) CourtId = " CM";
+		if(court.equalsIgnoreCase("negombo high court"))	CourtId = "NHC";
+
+		switch (category.toLowerCase()) {
+			case "baby":
+				assertTrue(registrationNum.matches("B/...../../" + CourtId + "/" + year), registrationNum + " did not match pattern B/...../../" + CourtId + "/" + year);
+				break;
+			case "child":
+				assertTrue(registrationNum.matches("C/...../../" + CourtId + "/" + year), registrationNum + " did not match pattern C/...../../" + CourtId + "/" + year);
+				break;
+			case "convicted":
+				assertTrue(registrationNum.matches("./...../" + year), registrationNum + " did not match pattern ./...../" + year);
+				break;
+			case "un-convicted":
+				assertTrue(registrationNum.matches("...../../" + CourtId + "/" + year), registrationNum + " did not match pattern ...../../" + CourtId + "/" + year);
+				break;
+			case "youth":
+				assertTrue(registrationNum.matches("Y/...../../" + CourtId + "/" + year), registrationNum + " did not match pattern Y/...../../" + CourtId + "/" + year);
+				break;
+		}
 
 	}
 
